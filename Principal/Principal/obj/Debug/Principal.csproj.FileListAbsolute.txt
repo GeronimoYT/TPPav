@@ -8,3 +8,15 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.pdb
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.FormIngresar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.FormIngresar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Consultar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\ariel\Visual Studio 2019\PAV 1\TPPav\Principal\Principal\obj\Debug\Principal.pdb
