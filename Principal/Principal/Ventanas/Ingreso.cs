@@ -27,5 +27,10 @@ namespace Principal
             else MessageBox.Show("Ingrese un usaurio y contraseña válido!");
             
         }
+
+        private void FormIngresar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
