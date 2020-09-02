@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Ventanas\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ventanas\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>
     </EmbeddedResource>

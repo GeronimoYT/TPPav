@@ -1,6 +1,6 @@
 ﻿namespace Principal
 {
-    partial class FormIngresar
+    partial class formIngresar
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,8 +30,8 @@
         {
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.LblContrasena = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblContrasena = new System.Windows.Forms.Label();
             this.BtnIngresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,25 +52,25 @@
             this.txtContrasena.Size = new System.Drawing.Size(152, 23);
             this.txtContrasena.TabIndex = 1;
             // 
-            // LblUsuario
+            // lblUsuario
             // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Location = new System.Drawing.Point(58, 61);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(68, 20);
-            this.LblUsuario.TabIndex = 2;
-            this.LblUsuario.Text = "Usuario:";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(58, 61);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(68, 20);
+            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.Text = "Usuario:";
             // 
-            // LblContrasena
+            // lblContrasena
             // 
-            this.LblContrasena.AutoSize = true;
-            this.LblContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContrasena.Location = new System.Drawing.Point(58, 125);
-            this.LblContrasena.Name = "LblContrasena";
-            this.LblContrasena.Size = new System.Drawing.Size(96, 20);
-            this.LblContrasena.TabIndex = 3;
-            this.LblContrasena.Text = "Contraseña:";
+            this.lblContrasena.AutoSize = true;
+            this.lblContrasena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasena.Location = new System.Drawing.Point(58, 125);
+            this.lblContrasena.Name = "lblContrasena";
+            this.lblContrasena.Size = new System.Drawing.Size(96, 20);
+            this.lblContrasena.TabIndex = 3;
+            this.lblContrasena.Text = "Contraseña:";
             // 
             // BtnIngresar
             // 
@@ -83,17 +83,17 @@
             this.BtnIngresar.UseVisualStyleBackColor = true;
             this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
-            // FormIngresar
+            // formIngresar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 245);
             this.Controls.Add(this.BtnIngresar);
-            this.Controls.Add(this.LblContrasena);
-            this.Controls.Add(this.LblUsuario);
+            this.Controls.Add(this.lblContrasena);
+            this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
-            this.Name = "FormIngresar";
+            this.Name = "formIngresar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar";
             this.ResumeLayout(false);
@@ -105,8 +105,8 @@
 
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.Label LblUsuario;
-        private System.Windows.Forms.Label LblContrasena;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lblContrasena;
         private System.Windows.Forms.Button BtnIngresar;
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Principal.Clases;
+using Principal.Ventanas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,21 +12,26 @@ using System.Windows.Forms;
 
 namespace Principal
 {
-    public partial class FormIngresar : Form
+    public partial class formIngresar : Form
     {
-        public FormIngresar()
+        public formIngresar()
         {
             InitializeComponent();
+
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            string user = "Geronimo";
-            string pass = "gerito22";
+            Usuario user = new Usuario(txtUsuario.Text, txtContrasena.Text);
+            string usuarioValido = "Geronimo";
+            string contrasenaValida = "gerito22";
 
-            if (txtUsuario.Text == user && txtContrasena.Text == pass)
-                MessageBox.Show("Bienvenido " + txtUsuario.Text);
-            else MessageBox.Show("Ingrese un usaurio y contraseña válido!");
+            if (txtUsuario.Text.Equals(usuarioValido) && txtContrasena.Text.Equals(contrasenaValida)) { 
+                formPrincipal ventanaPrincipal = new formPrincipal(user);
+                ventanaPrincipal.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Ingrese un usuario y contraseña válido!");
             
         }
     }
