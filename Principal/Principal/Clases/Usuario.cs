@@ -9,7 +9,7 @@ namespace Principal.Clases
     public class Usuario
     {
         string nombre;
-        string contrasena; 
+        string contrasena;
 
 
         public Usuario(string nombre, string contrasena)

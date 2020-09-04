@@ -26,9 +26,11 @@ namespace Principal
             string usuarioValido = "Geronimo";
             string contrasenaValida = "gerito22";
 
-            if (txtUsuario.Text.Equals(usuarioValido) && txtContrasena.Text.Equals(contrasenaValida)) { 
-                formPrincipal ventanaPrincipal = new formPrincipal(user);
-                ventanaPrincipal.Show();
+            if (txtUsuario.Text.Equals(usuarioValido) && txtContrasena.Text.Equals(contrasenaValida)) {
+                //formPrincipal ventanaPrincipal = new formPrincipal(user);
+                formAeropuerto ventanaAeropuerto = new formAeropuerto();
+                //ventanaPrincipal.Show();
+                ventanaAeropuerto.Show();
                 this.Hide();
             }
             else MessageBox.Show("Ingrese un usuario y contraseña válido!");
