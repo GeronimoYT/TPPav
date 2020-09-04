@@ -46,7 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Ventanas\Aeropuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aeropuerto.Designer.cs">
+      <DependentUpon>Aeropuerto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +68,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Ventanas\Aeropuerto.resx">
+      <DependentUpon>Aeropuerto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
