@@ -24,7 +24,7 @@ namespace Principal.Ventanas
         {
             try
             {
-                string consulta = "SELECT domicilio FROM Aeropuerto";
+                string consulta = "SELECT Domicilio FROM Aeropuerto";
                 var combo = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 cmbAeropuerto.DataSource = combo;
                 cmbAeropuerto.DisplayMember = "domicilio";
