@@ -18,7 +18,6 @@ namespace Principal
         public formIngresar()
         {
             InitializeComponent();
-
         }
 
         private void BtnIngresar_Click(object sender, EventArgs e)
