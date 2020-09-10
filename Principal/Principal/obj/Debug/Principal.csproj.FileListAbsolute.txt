@@ -8,6 +8,7 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.pdb
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.FormIngresar.resources
+<<<<<<< HEAD
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\bin\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\bin\Debug\Principal.pdb
@@ -20,3 +21,21 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Prin
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.pdb
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+=======
+>>>>>>> c72327299dec306611ea3c579437f9c3cddb0b3c
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+<<<<<<< HEAD
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+=======
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.FormIngresar.resources
+>>>>>>> c72327299dec306611ea3c579437f9c3cddb0b3c
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.pdb
