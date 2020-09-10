@@ -41,10 +41,11 @@
             this.btnEditarAeropuerto = new System.Windows.Forms.Button();
             this.btnAceptarEdicion = new System.Windows.Forms.Button();
             this.groupAeropuerto = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txtBusquedaID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtBusquedaID = new System.Windows.Forms.TextBox();
+            this.btnAgregarAeropuerto = new System.Windows.Forms.Button();
+            this.btnEliminarAeropuerto = new System.Windows.Forms.Button();
+            this.btnBuscarAeropuerto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).BeginInit();
             this.groupAeropuerto.SuspendLayout();
             this.SuspendLayout();
@@ -164,11 +165,12 @@
             // 
             // groupAeropuerto
             // 
+            this.groupAeropuerto.Controls.Add(this.btnBuscarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.label1);
             this.groupAeropuerto.Controls.Add(this.txtBusquedaID);
-            this.groupAeropuerto.Controls.Add(this.button1);
+            this.groupAeropuerto.Controls.Add(this.btnAgregarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.btnAceptarEdicion);
-            this.groupAeropuerto.Controls.Add(this.button2);
+            this.groupAeropuerto.Controls.Add(this.btnEliminarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.btnEditarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.lblDatosAeropuerto);
             this.groupAeropuerto.Controls.Add(this.dgvDatosAeropuerto);
@@ -180,46 +182,58 @@
             this.groupAeropuerto.TabIndex = 7;
             this.groupAeropuerto.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(514, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(416, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtBusquedaID
-            // 
-            this.txtBusquedaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaID.Location = new System.Drawing.Point(145, 230);
-            this.txtBusquedaID.MaxLength = 2;
-            this.txtBusquedaID.Name = "txtBusquedaID";
-            this.txtBusquedaID.Size = new System.Drawing.Size(100, 23);
-            this.txtBusquedaID.TabIndex = 8;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 233);
+            this.label1.Location = new System.Drawing.Point(12, 230);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Buscar por ID:";
+            // 
+            // txtBusquedaID
+            // 
+            this.txtBusquedaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaID.Location = new System.Drawing.Point(129, 227);
+            this.txtBusquedaID.MaxLength = 2;
+            this.txtBusquedaID.Name = "txtBusquedaID";
+            this.txtBusquedaID.Size = new System.Drawing.Size(100, 26);
+            this.txtBusquedaID.TabIndex = 8;
+            this.txtBusquedaID.Text = "0";
+            // 
+            // btnAgregarAeropuerto
+            // 
+            this.btnAgregarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAeropuerto.Location = new System.Drawing.Point(514, 9);
+            this.btnAgregarAeropuerto.Name = "btnAgregarAeropuerto";
+            this.btnAgregarAeropuerto.Size = new System.Drawing.Size(75, 28);
+            this.btnAgregarAeropuerto.TabIndex = 7;
+            this.btnAgregarAeropuerto.Text = "Agregar";
+            this.btnAgregarAeropuerto.UseVisualStyleBackColor = true;
+            this.btnAgregarAeropuerto.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnEliminarAeropuerto
+            // 
+            this.btnEliminarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAeropuerto.Location = new System.Drawing.Point(416, 9);
+            this.btnEliminarAeropuerto.Name = "btnEliminarAeropuerto";
+            this.btnEliminarAeropuerto.Size = new System.Drawing.Size(75, 28);
+            this.btnEliminarAeropuerto.TabIndex = 6;
+            this.btnEliminarAeropuerto.Text = "Eliminar";
+            this.btnEliminarAeropuerto.UseVisualStyleBackColor = true;
+            this.btnEliminarAeropuerto.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnBuscarAeropuerto
+            // 
+            this.btnBuscarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(251, 225);
+            this.btnBuscarAeropuerto.Name = "btnBuscarAeropuerto";
+            this.btnBuscarAeropuerto.Size = new System.Drawing.Size(75, 28);
+            this.btnBuscarAeropuerto.TabIndex = 10;
+            this.btnBuscarAeropuerto.Text = "Buscar";
+            this.btnBuscarAeropuerto.UseVisualStyleBackColor = true;
+            this.btnBuscarAeropuerto.Click += new System.EventHandler(this.btnBuscarAeropuerto_Click);
             // 
             // formAeropuerto
             // 
@@ -254,7 +268,8 @@
         private System.Windows.Forms.GroupBox groupAeropuerto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBusquedaID;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregarAeropuerto;
+        private System.Windows.Forms.Button btnEliminarAeropuerto;
+        private System.Windows.Forms.Button btnBuscarAeropuerto;
     }
 }

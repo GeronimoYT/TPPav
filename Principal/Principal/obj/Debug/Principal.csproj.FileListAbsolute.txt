@@ -20,3 +20,4 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Prin
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.pdb
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
