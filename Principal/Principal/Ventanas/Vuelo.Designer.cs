@@ -52,6 +52,9 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -120,11 +123,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 285);
+            this.label10.Location = new System.Drawing.Point(23, 284);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 16);
+            this.label10.Size = new System.Drawing.Size(65, 16);
             this.label10.TabIndex = 15;
-            this.label10.Text = "AVION :";
+            this.label10.Text = "N° Avion :";
             // 
             // groupBox1
             // 
@@ -200,9 +203,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(87, 284);
+            this.textBox2.Location = new System.Drawing.Point(87, 283);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(290, 20);
+            this.textBox2.Size = new System.Drawing.Size(162, 20);
             this.textBox2.TabIndex = 18;
             // 
             // label8
@@ -256,7 +259,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(87, 370);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(138, 21);
+            this.comboBox5.Size = new System.Drawing.Size(162, 21);
             this.comboBox5.TabIndex = 24;
             // 
             // button1
@@ -272,18 +275,51 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(281, 406);
+            this.button2.Location = new System.Drawing.Point(268, 406);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(109, 23);
             this.button2.TabIndex = 26;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(268, 281);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(109, 23);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Consultar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(396, 310);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(110, 23);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Consultar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(396, 339);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(110, 23);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "Consultar";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Vuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 441);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox5);
@@ -335,5 +371,8 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
