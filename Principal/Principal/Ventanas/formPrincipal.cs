@@ -25,5 +25,11 @@ namespace Principal.Ventanas
             
             
         }
+
+        private void aeropuertoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAeropuerto ventanaAeropuerto = new formAeropuerto();
+            ventanaAeropuerto.Show();
+        }
     }
 }

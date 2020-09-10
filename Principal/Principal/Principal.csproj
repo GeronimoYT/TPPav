@@ -49,34 +49,43 @@
   <ItemGroup>
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="Ventanas\Aeropuerto.cs">
+    <Compile Include="Ventanas\formAeropuerto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Aeropuerto.Designer.cs">
-      <DependentUpon>Aeropuerto.cs</DependentUpon>
+    <Compile Include="Ventanas\formAeropuerto.Designer.cs">
+      <DependentUpon>formAeropuerto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Principal.cs">
+    <Compile Include="Ventanas\formAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Ventanas\formAgregar.Designer.cs">
+      <DependentUpon>formAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Ingreso.cs">
+    <Compile Include="Ventanas\formPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Ingreso.Designer.cs">
-      <DependentUpon>Ingreso.cs</DependentUpon>
+    <Compile Include="Ventanas\formPrincipal.Designer.cs">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\formIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\formIngreso.Designer.cs">
+      <DependentUpon>formIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Ventanas\Aeropuerto.resx">
-      <DependentUpon>Aeropuerto.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
+      <DependentUpon>formAeropuerto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\formAgregar.resx">
+      <DependentUpon>formAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Ingreso.resx">
-      <DependentUpon>Ingreso.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\formPrincipal.resx">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\formIngreso.resx">
+      <DependentUpon>formIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

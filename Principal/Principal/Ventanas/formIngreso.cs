@@ -29,8 +29,8 @@ namespace Principal
                 var usuario = DBHelper.GetDBHelper().ConsultaSQL(consultarUser);
                 if(usuario.Rows.Count == 1)
                 {
-                    formAeropuerto ventanaAeropuerto = new formAeropuerto();
-                    ventanaAeropuerto.Show();
+                    formPrincipal ventanaPrincipal = new formPrincipal(user);
+                    ventanaPrincipal.Show();
                     this.Hide();
                 }else MessageBox.Show("Ingrese un usuario y contraseña válido!");
             }
