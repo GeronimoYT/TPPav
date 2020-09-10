@@ -89,7 +89,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(68, 16);
+            this.monthCalendar1.Location = new System.Drawing.Point(79, 11);
             this.monthCalendar1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.ShowToday = false;
@@ -99,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 191);
+            this.label4.Location = new System.Drawing.Point(29, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 5;
@@ -108,7 +108,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(177, 191);
+            this.label5.Location = new System.Drawing.Point(187, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(25, 16);
             this.label5.TabIndex = 7;
@@ -117,7 +117,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(69, 188);
+            this.comboBox1.Location = new System.Drawing.Point(79, 183);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(102, 24);
             this.comboBox1.TabIndex = 8;
@@ -158,7 +158,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(383, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 225);
+            this.groupBox2.Size = new System.Drawing.Size(354, 225);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LLEGADA";
@@ -166,7 +166,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(172, 191);
+            this.label7.Location = new System.Drawing.Point(183, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 16);
             this.label7.TabIndex = 9;
@@ -183,7 +183,7 @@
             // 
             // monthCalendar2
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(65, 16);
+            this.monthCalendar2.Location = new System.Drawing.Point(74, 11);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.ShowToday = false;
             this.monthCalendar2.TabIndex = 4;
@@ -192,7 +192,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 191);
+            this.label6.Location = new System.Drawing.Point(24, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 5;
@@ -201,7 +201,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(63, 188);
+            this.comboBox2.Location = new System.Drawing.Point(74, 183);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(103, 24);
             this.comboBox2.TabIndex = 8;
@@ -210,7 +210,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(85, 291);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(103, 20);
             this.textBox2.TabIndex = 18;
             // 
             // label8
