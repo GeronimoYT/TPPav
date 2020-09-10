@@ -30,7 +30,7 @@ namespace Principal
                 var usuario = DBHelper.GetDBHelper().ConsultaSQL(consultarUser);
                 if(usuario.Rows.Count == 1)
                 {
-                    formAeropuerto ventanaAeropuerto = new formAeropuerto();
+                    FormAviones ventanaAeropuerto = new FormAviones();
                     ventanaAeropuerto.Show();
                     this.Hide();
                 }else MessageBox.Show("Ingrese un usuario y contraseña válido!");
@@ -38,6 +38,11 @@ namespace Principal
             catch(SqlException ex) { 
                 MessageBox.Show("Consulta inválida!");
             }
+
+        }
+
+        private void formIngresar_Load(object sender, EventArgs e)
+        {
 
         }
     }

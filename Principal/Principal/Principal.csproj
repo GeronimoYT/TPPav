@@ -46,13 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Avion.cs" />
+    <Compile Include="Clases\AvionesRepositorio.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Utils\Form Utils.cs" />
     <Compile Include="Ventanas\Aeropuerto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanas\Aeropuerto.Designer.cs">
       <DependentUpon>Aeropuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Alta Avion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Alta Avion.Designer.cs">
+      <DependentUpon>Alta Avion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Aviones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Aviones.Designer.cs">
+      <DependentUpon>Aviones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Baja Avion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Baja Avion.Designer.cs">
+      <DependentUpon>Baja Avion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Modificacion Avion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Modificacion Avion.Designer.cs">
+      <DependentUpon>Modificacion Avion.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Principal.cs">
       <SubType>Form</SubType>
@@ -70,6 +97,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Ventanas\Aeropuerto.resx">
       <DependentUpon>Aeropuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Aviones.resx">
+      <DependentUpon>Aviones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
+      <DependentUpon>Baja Avion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
