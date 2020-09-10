@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Ventanas\Aeropuerto.cs">
@@ -61,13 +60,6 @@
     </Compile>
     <Compile Include="Ventanas\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
-=======
-    <Compile Include="Ventanas\FrmVuelo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\FrmVuelo.Designer.cs">
-      <DependentUpon>FrmVuelo.cs</DependentUpon>
->>>>>>> c72327299dec306611ea3c579437f9c3cddb0b3c
     </Compile>
     <Compile Include="Ventanas\Ingreso.cs">
       <SubType>Form</SubType>
@@ -77,16 +69,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
+    <Compile Include="Ventanas\Vuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Vuelo.Designer.cs">
+      <DependentUpon>Vuelo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ventanas\Aeropuerto.resx">
       <DependentUpon>Aeropuerto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="Ventanas\FrmVuelo.resx">
-      <DependentUpon>FrmVuelo.cs</DependentUpon>
->>>>>>> c72327299dec306611ea3c579437f9c3cddb0b3c
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>
@@ -101,6 +94,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\Vuelo.resx">
+      <DependentUpon>Vuelo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
