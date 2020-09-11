@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumVuelo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbHoras = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -42,25 +42,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbHoras2 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cmbAeropuerto1 = new System.Windows.Forms.ComboBox();
+            this.cmbAeropuerto2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConfirmarVuelo = new System.Windows.Forms.Button();
+            this.btnCancelarVuelo = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtTipoAvion = new System.Windows.Forms.TextBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,13 +69,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "N° Vuelo :";
             // 
-            // textBox1
+            // txtNumVuelo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(96, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtNumVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumVuelo.Location = new System.Drawing.Point(96, 12);
+            this.txtNumVuelo.Name = "txtNumVuelo";
+            this.txtNumVuelo.Size = new System.Drawing.Size(163, 22);
+            this.txtNumVuelo.TabIndex = 2;
             // 
             // label3
             // 
@@ -117,14 +113,14 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "hs.";
             // 
-            // comboBox1
+            // cmbHoras
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(79, 183);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 24);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbHoras.FormattingEnabled = true;
+            this.cmbHoras.Location = new System.Drawing.Point(79, 183);
+            this.cmbHoras.Name = "cmbHoras";
+            this.cmbHoras.Size = new System.Drawing.Size(102, 24);
+            this.cmbHoras.TabIndex = 8;
+            this.cmbHoras.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -142,7 +138,7 @@
             this.groupBox1.Controls.Add(this.monthCalendar1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbHoras);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 43);
             this.groupBox1.Name = "groupBox1";
@@ -157,7 +153,7 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.monthCalendar2);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cmbHoras2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(383, 43);
             this.groupBox2.Name = "groupBox2";
@@ -201,20 +197,13 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Hora :";
             // 
-            // comboBox2
+            // cmbHoras2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(74, 183);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(103, 24);
-            this.comboBox2.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(96, 281);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 20);
-            this.textBox2.TabIndex = 18;
+            this.cmbHoras2.FormattingEnabled = true;
+            this.cmbHoras2.Location = new System.Drawing.Point(74, 183);
+            this.cmbHoras2.Name = "cmbHoras2";
+            this.cmbHoras2.Size = new System.Drawing.Size(103, 24);
+            this.cmbHoras2.TabIndex = 8;
             // 
             // label8
             // 
@@ -236,21 +225,21 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Aeropuerto Destino :";
             // 
-            // comboBox3
+            // cmbAeropuerto1
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(162, 314);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(299, 21);
-            this.comboBox3.TabIndex = 21;
+            this.cmbAeropuerto1.FormattingEnabled = true;
+            this.cmbAeropuerto1.Location = new System.Drawing.Point(162, 314);
+            this.cmbAeropuerto1.Name = "cmbAeropuerto1";
+            this.cmbAeropuerto1.Size = new System.Drawing.Size(299, 21);
+            this.cmbAeropuerto1.TabIndex = 21;
             // 
-            // comboBox4
+            // cmbAeropuerto2
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(162, 346);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(299, 21);
-            this.comboBox4.TabIndex = 22;
+            this.cmbAeropuerto2.FormattingEnabled = true;
+            this.cmbAeropuerto2.Location = new System.Drawing.Point(162, 346);
+            this.cmbAeropuerto2.Name = "cmbAeropuerto2";
+            this.cmbAeropuerto2.Size = new System.Drawing.Size(299, 21);
+            this.cmbAeropuerto2.TabIndex = 22;
             // 
             // label11
             // 
@@ -262,25 +251,25 @@
             this.label11.TabIndex = 23;
             this.label11.Text = "Estado :";
             // 
-            // button1
+            // btnConfirmarVuelo
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(422, 423);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Confirmar Vuelo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConfirmarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarVuelo.Location = new System.Drawing.Point(422, 423);
+            this.btnConfirmarVuelo.Name = "btnConfirmarVuelo";
+            this.btnConfirmarVuelo.Size = new System.Drawing.Size(138, 23);
+            this.btnConfirmarVuelo.TabIndex = 25;
+            this.btnConfirmarVuelo.Text = "Confirmar Vuelo";
+            this.btnConfirmarVuelo.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelarVuelo
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(596, 423);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarVuelo.Location = new System.Drawing.Point(596, 423);
+            this.btnCancelarVuelo.Name = "btnCancelarVuelo";
+            this.btnCancelarVuelo.Size = new System.Drawing.Size(109, 23);
+            this.btnCancelarVuelo.TabIndex = 26;
+            this.btnCancelarVuelo.Text = "Cancelar";
+            this.btnCancelarVuelo.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -293,97 +282,68 @@
             this.label12.Text = "Tipo de Avion :";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // textBox3
+            // txtTipoAvion
             // 
-            this.textBox3.Location = new System.Drawing.Point(318, 282);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtTipoAvion.Location = new System.Drawing.Point(318, 282);
+            this.txtTipoAvion.Name = "txtTipoAvion";
+            this.txtTipoAvion.Size = new System.Drawing.Size(143, 20);
+            this.txtTipoAvion.TabIndex = 31;
             // 
-            // groupBox3
+            // btnConsultar
             // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton2);
-            this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(95, 373);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(174, 84);
-            this.groupBox3.TabIndex = 32;
-            this.groupBox3.TabStop = false;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Location = new System.Drawing.Point(482, 280);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(109, 23);
+            this.btnConsultar.TabIndex = 33;
+            this.btnConsultar.Text = "Detalle";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // radioButton1
+            // comboBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 10);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(82, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Programado";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(96, 280);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(102, 21);
+            this.comboBox1.TabIndex = 34;
             // 
-            // radioButton2
+            // cmbEstado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 33);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 56);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(482, 280);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 23);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Consultar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(95, 385);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(134, 21);
+            this.cmbEstado.TabIndex = 35;
             // 
             // Vuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 476);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.txtTipoAvion);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelarVuelo);
+            this.Controls.Add(this.btnConfirmarVuelo);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbAeropuerto2);
+            this.Controls.Add(this.cmbAeropuerto1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNumVuelo);
             this.Controls.Add(this.label1);
             this.Name = "Vuelo";
-            this.Text = "Vuelo";
+            this.Load += new System.EventHandler(this.Vuelo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,12 +352,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumVuelo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbHoras;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -405,21 +365,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MonthCalendar monthCalendar2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cmbHoras2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbAeropuerto1;
+        private System.Windows.Forms.ComboBox cmbAeropuerto2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConfirmarVuelo;
+        private System.Windows.Forms.Button btnCancelarVuelo;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtTipoAvion;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbEstado;
     }
 }
