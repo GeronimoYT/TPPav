@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbAeropuerto = new System.Windows.Forms.ComboBox();
-            this.lblAeropuerto = new System.Windows.Forms.Label();
             this.dgvDatosAeropuerto = new System.Windows.Forms.DataGridView();
             this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,34 +39,14 @@
             this.btnEditarAeropuerto = new System.Windows.Forms.Button();
             this.btnAceptarEdicion = new System.Windows.Forms.Button();
             this.groupAeropuerto = new System.Windows.Forms.GroupBox();
+            this.btnBuscarAeropuerto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBusquedaID = new System.Windows.Forms.TextBox();
             this.btnAgregarAeropuerto = new System.Windows.Forms.Button();
             this.btnEliminarAeropuerto = new System.Windows.Forms.Button();
-            this.btnBuscarAeropuerto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).BeginInit();
             this.groupAeropuerto.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cmbAeropuerto
-            // 
-            this.cmbAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAeropuerto.FormattingEnabled = true;
-            this.cmbAeropuerto.Location = new System.Drawing.Point(145, 12);
-            this.cmbAeropuerto.Name = "cmbAeropuerto";
-            this.cmbAeropuerto.Size = new System.Drawing.Size(180, 24);
-            this.cmbAeropuerto.TabIndex = 0;
-            this.cmbAeropuerto.SelectedIndexChanged += new System.EventHandler(this.cmbAeropuerto_SelectedIndexChanged);
-            // 
-            // lblAeropuerto
-            // 
-            this.lblAeropuerto.AutoSize = true;
-            this.lblAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeropuerto.Location = new System.Drawing.Point(12, 12);
-            this.lblAeropuerto.Name = "lblAeropuerto";
-            this.lblAeropuerto.Size = new System.Drawing.Size(101, 20);
-            this.lblAeropuerto.TabIndex = 1;
-            this.lblAeropuerto.Text = "Aeropuertos:";
             // 
             // dgvDatosAeropuerto
             // 
@@ -87,6 +65,7 @@
             this.dgvDatosAeropuerto.ReadOnly = true;
             this.dgvDatosAeropuerto.Size = new System.Drawing.Size(573, 113);
             this.dgvDatosAeropuerto.TabIndex = 2;
+            this.dgvDatosAeropuerto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosAeropuerto_CellContentClick);
             // 
             // IdAeropuerto
             // 
@@ -174,13 +153,22 @@
             this.groupAeropuerto.Controls.Add(this.btnEditarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.lblDatosAeropuerto);
             this.groupAeropuerto.Controls.Add(this.dgvDatosAeropuerto);
-            this.groupAeropuerto.Controls.Add(this.lblAeropuerto);
-            this.groupAeropuerto.Controls.Add(this.cmbAeropuerto);
             this.groupAeropuerto.Location = new System.Drawing.Point(36, 20);
             this.groupAeropuerto.Name = "groupAeropuerto";
             this.groupAeropuerto.Size = new System.Drawing.Size(602, 259);
             this.groupAeropuerto.TabIndex = 7;
             this.groupAeropuerto.TabStop = false;
+            // 
+            // btnBuscarAeropuerto
+            // 
+            this.btnBuscarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(251, 225);
+            this.btnBuscarAeropuerto.Name = "btnBuscarAeropuerto";
+            this.btnBuscarAeropuerto.Size = new System.Drawing.Size(75, 28);
+            this.btnBuscarAeropuerto.TabIndex = 10;
+            this.btnBuscarAeropuerto.Text = "Buscar";
+            this.btnBuscarAeropuerto.UseVisualStyleBackColor = true;
+            this.btnBuscarAeropuerto.Click += new System.EventHandler(this.btnBuscarAeropuerto_Click);
             // 
             // label1
             // 
@@ -201,6 +189,7 @@
             this.txtBusquedaID.Size = new System.Drawing.Size(100, 26);
             this.txtBusquedaID.TabIndex = 8;
             this.txtBusquedaID.Text = "0";
+            this.txtBusquedaID.TextChanged += new System.EventHandler(this.txtBusquedaID_TextChanged);
             // 
             // btnAgregarAeropuerto
             // 
@@ -224,17 +213,6 @@
             this.btnEliminarAeropuerto.UseVisualStyleBackColor = true;
             this.btnEliminarAeropuerto.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnBuscarAeropuerto
-            // 
-            this.btnBuscarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(251, 225);
-            this.btnBuscarAeropuerto.Name = "btnBuscarAeropuerto";
-            this.btnBuscarAeropuerto.Size = new System.Drawing.Size(75, 28);
-            this.btnBuscarAeropuerto.TabIndex = 10;
-            this.btnBuscarAeropuerto.Text = "Buscar";
-            this.btnBuscarAeropuerto.UseVisualStyleBackColor = true;
-            this.btnBuscarAeropuerto.Click += new System.EventHandler(this.btnBuscarAeropuerto_Click);
-            // 
             // formAeropuerto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,9 +230,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmbAeropuerto;
-        private System.Windows.Forms.Label lblAeropuerto;
         private System.Windows.Forms.DataGridView dgvDatosAeropuerto;
         private System.Windows.Forms.Label lblDatosAeropuerto;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdAeropuerto;

@@ -17,25 +17,9 @@ namespace Principal.Ventanas
         public formAeropuerto()
         {
             InitializeComponent();
-            CargoCombo();
         }
 
-        private void CargoCombo()
-        {
 
-            try
-            {
-                string consulta = "SELECT * FROM Aeropuerto";
-                var combo = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                cmbAeropuerto.DataSource = combo;
-                cmbAeropuerto.DisplayMember = "domicilio";            
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente");
-            }
-            
-        }
 
 
         private void CargaGrilla()
@@ -52,7 +36,7 @@ namespace Principal.Ventanas
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente " + ex);
+                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
             }
         }
 
@@ -79,9 +63,9 @@ namespace Principal.Ventanas
             if(resultado == System.Windows.Forms.DialogResult.Yes)
             {
                 try {
-                    string consulta = $"DELETE FROM Aeropuerto WHERE Domicilio LIKE {cmbAeropuerto.DisplayMember}";
+                    string consulta = $"DELETE FROM Aeropuerto WHERE IdAeropuerto LIKE {txtBusquedaID.Text}";
                     var eliminar = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                    CargoCombo();
+                    MessageBox.Show("Se eliminó el aeropuerto exitosamente");
                 }
                 catch(Exception ex) {
                     MessageBox.Show("No se ha podido realizar la operación"); 
@@ -92,12 +76,24 @@ namespace Principal.Ventanas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            formAgregar agregarAeropuerto = new formAgregar();
+            agregarAeropuerto.Show();
+            this.Hide();
         }
 
         private void btnBuscarAeropuerto_Click(object sender, EventArgs e)
         {
             CargaGrilla();
+        }
+
+        private void dgvDatosAeropuerto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBusquedaID_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
