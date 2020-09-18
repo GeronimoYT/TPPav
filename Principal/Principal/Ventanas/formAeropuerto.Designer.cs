@@ -41,7 +41,7 @@
             this.groupAeropuerto = new System.Windows.Forms.GroupBox();
             this.btnBuscarAeropuerto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBusquedaID = new System.Windows.Forms.TextBox();
+            this.txtBusquedaNombre = new System.Windows.Forms.TextBox();
             this.btnAgregarAeropuerto = new System.Windows.Forms.Button();
             this.btnEliminarAeropuerto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).BeginInit();
@@ -122,6 +122,7 @@
             // 
             // btnEditarAeropuerto
             // 
+            this.btnEditarAeropuerto.Enabled = false;
             this.btnEditarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAeropuerto.Location = new System.Drawing.Point(416, 225);
             this.btnEditarAeropuerto.Name = "btnEditarAeropuerto";
@@ -146,7 +147,7 @@
             // 
             this.groupAeropuerto.Controls.Add(this.btnBuscarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.label1);
-            this.groupAeropuerto.Controls.Add(this.txtBusquedaID);
+            this.groupAeropuerto.Controls.Add(this.txtBusquedaNombre);
             this.groupAeropuerto.Controls.Add(this.btnAgregarAeropuerto);
             this.groupAeropuerto.Controls.Add(this.btnAceptarEdicion);
             this.groupAeropuerto.Controls.Add(this.btnEliminarAeropuerto);
@@ -162,7 +163,7 @@
             // btnBuscarAeropuerto
             // 
             this.btnBuscarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(251, 225);
+            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(268, 225);
             this.btnBuscarAeropuerto.Name = "btnBuscarAeropuerto";
             this.btnBuscarAeropuerto.Size = new System.Drawing.Size(75, 28);
             this.btnBuscarAeropuerto.TabIndex = 10;
@@ -174,22 +175,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 230);
+            this.label1.Location = new System.Drawing.Point(6, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar por ID:";
+            this.label1.Text = "Buscar por Nombre:";
             // 
-            // txtBusquedaID
+            // txtBusquedaNombre
             // 
-            this.txtBusquedaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaID.Location = new System.Drawing.Point(129, 227);
-            this.txtBusquedaID.MaxLength = 2;
-            this.txtBusquedaID.Name = "txtBusquedaID";
-            this.txtBusquedaID.Size = new System.Drawing.Size(100, 26);
-            this.txtBusquedaID.TabIndex = 8;
-            this.txtBusquedaID.Text = "0";
-            this.txtBusquedaID.TextChanged += new System.EventHandler(this.txtBusquedaID_TextChanged);
+            this.txtBusquedaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusquedaNombre.Location = new System.Drawing.Point(162, 227);
+            this.txtBusquedaNombre.MaxLength = 37284;
+            this.txtBusquedaNombre.Name = "txtBusquedaNombre";
+            this.txtBusquedaNombre.Size = new System.Drawing.Size(100, 26);
+            this.txtBusquedaNombre.TabIndex = 8;
+            this.txtBusquedaNombre.TextChanged += new System.EventHandler(this.txtBusquedaID_TextChanged);
             // 
             // btnAgregarAeropuerto
             // 
@@ -242,7 +242,7 @@
         private System.Windows.Forms.Button btnAceptarEdicion;
         private System.Windows.Forms.GroupBox groupAeropuerto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBusquedaID;
+        private System.Windows.Forms.TextBox txtBusquedaNombre;
         private System.Windows.Forms.Button btnAgregarAeropuerto;
         private System.Windows.Forms.Button btnEliminarAeropuerto;
         private System.Windows.Forms.Button btnBuscarAeropuerto;

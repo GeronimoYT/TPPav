@@ -47,7 +47,7 @@
             this.CantPuertasEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantMangasVuelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             // 
             this.lblDatosNuevoAeropuerto.AutoSize = true;
             this.lblDatosNuevoAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosNuevoAeropuerto.Location = new System.Drawing.Point(12, 27);
+            this.lblDatosNuevoAeropuerto.Location = new System.Drawing.Point(12, 9);
             this.lblDatosNuevoAeropuerto.Name = "lblDatosNuevoAeropuerto";
             this.lblDatosNuevoAeropuerto.Size = new System.Drawing.Size(212, 20);
             this.lblDatosNuevoAeropuerto.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.lblDomicilioNuevoAeropuerto.AutoSize = true;
             this.lblDomicilioNuevoAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomicilioNuevoAeropuerto.Location = new System.Drawing.Point(43, 70);
+            this.lblDomicilioNuevoAeropuerto.Location = new System.Drawing.Point(43, 52);
             this.lblDomicilioNuevoAeropuerto.Name = "lblDomicilioNuevoAeropuerto";
             this.lblDomicilioNuevoAeropuerto.Size = new System.Drawing.Size(68, 17);
             this.lblDomicilioNuevoAeropuerto.TabIndex = 1;
@@ -73,14 +73,14 @@
             // 
             // txtNuevoDomicilio
             // 
-            this.txtNuevoDomicilio.Location = new System.Drawing.Point(154, 69);
+            this.txtNuevoDomicilio.Location = new System.Drawing.Point(154, 51);
             this.txtNuevoDomicilio.Name = "txtNuevoDomicilio";
             this.txtNuevoDomicilio.Size = new System.Drawing.Size(155, 20);
             this.txtNuevoDomicilio.TabIndex = 2;
             // 
             // txtNuevoTelefono
             // 
-            this.txtNuevoTelefono.Location = new System.Drawing.Point(154, 119);
+            this.txtNuevoTelefono.Location = new System.Drawing.Point(154, 101);
             this.txtNuevoTelefono.MaxLength = 10;
             this.txtNuevoTelefono.Name = "txtNuevoTelefono";
             this.txtNuevoTelefono.Size = new System.Drawing.Size(155, 20);
@@ -90,7 +90,7 @@
             // 
             this.lblNuevoTelefono.AutoSize = true;
             this.lblNuevoTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoTelefono.Location = new System.Drawing.Point(43, 120);
+            this.lblNuevoTelefono.Location = new System.Drawing.Point(43, 102);
             this.lblNuevoTelefono.Name = "lblNuevoTelefono";
             this.lblNuevoTelefono.Size = new System.Drawing.Size(68, 17);
             this.lblNuevoTelefono.TabIndex = 3;
@@ -98,7 +98,7 @@
             // 
             // txtNuevaDescripcion
             // 
-            this.txtNuevaDescripcion.Location = new System.Drawing.Point(154, 168);
+            this.txtNuevaDescripcion.Location = new System.Drawing.Point(154, 150);
             this.txtNuevaDescripcion.Multiline = true;
             this.txtNuevaDescripcion.Name = "txtNuevaDescripcion";
             this.txtNuevaDescripcion.Size = new System.Drawing.Size(155, 44);
@@ -108,7 +108,7 @@
             // 
             this.lblDescripcionNuevoVuelo.AutoSize = true;
             this.lblDescripcionNuevoVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionNuevoVuelo.Location = new System.Drawing.Point(43, 168);
+            this.lblDescripcionNuevoVuelo.Location = new System.Drawing.Point(43, 150);
             this.lblDescripcionNuevoVuelo.Name = "lblDescripcionNuevoVuelo";
             this.lblDescripcionNuevoVuelo.Size = new System.Drawing.Size(86, 17);
             this.lblDescripcionNuevoVuelo.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             // txtCMVuelo
             // 
-            this.txtCMVuelo.Location = new System.Drawing.Point(239, 283);
+            this.txtCMVuelo.Location = new System.Drawing.Point(239, 265);
             this.txtCMVuelo.MaxLength = 2;
             this.txtCMVuelo.Name = "txtCMVuelo";
             this.txtCMVuelo.Size = new System.Drawing.Size(70, 20);
@@ -126,7 +126,7 @@
             // 
             this.lblCMNuevoVuelo.AutoSize = true;
             this.lblCMNuevoVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMNuevoVuelo.Location = new System.Drawing.Point(43, 284);
+            this.lblCMNuevoVuelo.Location = new System.Drawing.Point(43, 266);
             this.lblCMNuevoVuelo.Name = "lblCMNuevoVuelo";
             this.lblCMNuevoVuelo.Size = new System.Drawing.Size(162, 17);
             this.lblCMNuevoVuelo.TabIndex = 9;
@@ -134,7 +134,7 @@
             // 
             // txtCPEmbarque
             // 
-            this.txtCPEmbarque.Location = new System.Drawing.Point(239, 239);
+            this.txtCPEmbarque.Location = new System.Drawing.Point(239, 221);
             this.txtCPEmbarque.MaxLength = 2;
             this.txtCPEmbarque.Name = "txtCPEmbarque";
             this.txtCPEmbarque.Size = new System.Drawing.Size(70, 20);
@@ -144,7 +144,7 @@
             // 
             this.lblCPNuevoEmbarque.AutoSize = true;
             this.lblCPNuevoEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPNuevoEmbarque.Location = new System.Drawing.Point(43, 240);
+            this.lblCPNuevoEmbarque.Location = new System.Drawing.Point(43, 222);
             this.lblCPNuevoEmbarque.Name = "lblCPNuevoEmbarque";
             this.lblCPNuevoEmbarque.Size = new System.Drawing.Size(190, 17);
             this.lblCPNuevoEmbarque.TabIndex = 7;
@@ -162,7 +162,7 @@
             this.Descripcion,
             this.CantPuertasEmbarque,
             this.CantMangasVuelo});
-            this.dgvDatosAeropuerto.Location = new System.Drawing.Point(353, 69);
+            this.dgvDatosAeropuerto.Location = new System.Drawing.Point(353, 51);
             this.dgvDatosAeropuerto.Name = "dgvDatosAeropuerto";
             this.dgvDatosAeropuerto.ReadOnly = true;
             this.dgvDatosAeropuerto.Size = new System.Drawing.Size(340, 234);
@@ -214,7 +214,7 @@
             // btnCargar
             // 
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(239, 331);
+            this.btnCargar.Location = new System.Drawing.Point(239, 313);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 33);
             this.btnCargar.TabIndex = 12;
@@ -222,23 +222,23 @@
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // btnCancelar
+            // btnAtras
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(46, 331);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 33);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(46, 313);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 33);
+            this.btnAtras.TabIndex = 13;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // formAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 376);
-            this.Controls.Add(this.btnCancelar);
+            this.ClientSize = new System.Drawing.Size(706, 357);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgvDatosAeropuerto);
             this.Controls.Add(this.txtCMVuelo);
@@ -283,6 +283,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantPuertasEmbarque;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantMangasVuelo;
         private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

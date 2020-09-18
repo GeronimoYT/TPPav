@@ -62,6 +62,12 @@
     <Compile Include="Ventanas\formAgregar.Designer.cs">
       <DependentUpon>formAgregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\formEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\formEditar.Designer.cs">
+      <DependentUpon>formEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\formPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAgregar.resx">
       <DependentUpon>formAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\formEditar.resx">
+      <DependentUpon>formEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
