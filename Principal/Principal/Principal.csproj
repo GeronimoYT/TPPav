@@ -103,6 +103,18 @@
     <EmbeddedResource Include="Ventanas\formIngreso.resx">
       <DependentUpon>formIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Ventanas\Pasajes\Buscar Vuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Pasajes\Buscar Vuelo.Designer.cs">
+      <DependentUpon>Buscar Vuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Pasajes\Pasajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Pasajes\Pasajes.Designer.cs">
+      <DependentUpon>Pasajes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -113,6 +125,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\Pasajes\Buscar Vuelo.resx">
+      <DependentUpon>Buscar Vuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Pasajes\Pasajes.resx">
+      <DependentUpon>Pasajes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Vuelo.resx">
       <DependentUpon>Vuelo.cs</DependentUpon>
     </EmbeddedResource>
