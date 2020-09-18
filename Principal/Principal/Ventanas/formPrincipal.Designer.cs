@@ -75,6 +75,7 @@
             this.vueloToolStripMenuItem.Name = "vueloToolStripMenuItem";
             this.vueloToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.vueloToolStripMenuItem.Text = "Vuelo";
+            this.vueloToolStripMenuItem.Click += new System.EventHandler(this.vueloToolStripMenuItem_Click);
             // 
             // pasajeToolStripMenuItem
             // 
