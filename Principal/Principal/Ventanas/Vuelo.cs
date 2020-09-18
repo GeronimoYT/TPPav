@@ -22,7 +22,7 @@ namespace Principal.Ventanas
         private void Vuelo_Load(object sender, EventArgs e)
         {
             CargoCombo();
-            CargaHoras();
+            //CargaHoras();
         }
 
         private void CargoCombo()
@@ -46,10 +46,7 @@ namespace Principal.Ventanas
         public void cargaHoras()
         {
 
-            foreach ()
-            {
-
-            }
+            
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
