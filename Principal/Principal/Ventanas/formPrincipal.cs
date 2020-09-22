@@ -36,5 +36,12 @@ namespace Principal.Ventanas
         {
 
         }
+
+        private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formularioPasajes = new formPasajes(this);
+            formularioPasajes.Show();
+            this.Hide();
+        }
     }
 }
