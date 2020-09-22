@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Principal.Clases;
+using Principal.Clases.Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,17 @@ namespace Principal.Ventanas
 {
     public partial class formPasajes : Form
     {
+        private PasajesServicio _pasajesServicio;
+        private EmbarquesServicio _embarquesServicio;
+        private PasajerosServicio _pasajerosServicio;
+        private TipoPasajesServicio _tipoPasajesServicio;
         private formPrincipal _frmPrincipal;
         public formPasajes(formPrincipal principal)
         {
+            _pasajesServicio = new PasajesServicio();
+            _embarquesServicio = new EmbarquesServicio();
+            _pasajerosServicio = new PasajerosServicio();
+            _tipoPasajesServicio = new TipoPasajesServicio();
             _frmPrincipal = principal;
             InitializeComponent();
         }
@@ -34,6 +44,24 @@ namespace Principal.Ventanas
         {
             _frmPrincipal.Show();
             this.Dispose();
+        }
+        public void ConsultarPasajes()
+        {
+            var pasajes = _pasajesServicio.ObtenerPasajes();
+            CargarGrilla(pasajes);
+        }
+        private void CargarGrilla(List<Pasaje> pasajes)
+        {
+            dgvPasajes.Rows.Clear();
+            foreach (var pasaje in pasajes)
+            {
+                var fila = new String[] {
+                pasaje.Id.ToString(),
+                pasaje.Precio.ToString(),
+                pasaje.Descripcion
+                };
+                dgvPasajes.Rows.Add(fila);
+            }
         }
     }
 }
