@@ -12,30 +12,38 @@ using System.Windows.Forms;
 
 namespace Principal.Ventanas
 {
-    public partial class Vuelo : Form
+    public partial class formVuelo : Form
     {
-        public Vuelo()
+        public formVuelo()
         {
             InitializeComponent();
-        }
-
-        private void Vuelo_Load(object sender, EventArgs e)
-        {
             CargoCombo();
-            CargaHoras();
+            //CargaHoras();
         }
 
+       
         private void CargoCombo()
         {
             try
             {
-                string consulta = "SELECT Domicilio FROM Aeropuerto";
-                var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                cmbAeropuerto1.DataSource = combo1;
-                cmbAeropuerto2.DataSource = combo2;
+                //string consulta1 = "SELECT NroAvion FROM Avion";
+                string consulta2 = "SELECT Domicilio FROM Aeropuerto";
+                //string consulta3 = "SELECT NombreEstado FROM Estado";
+
+                //var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta1);
+                var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
+                var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
+               // var combo4 = DBHelper.GetDBHelper().ConsultaSQL(consulta3);
+
+                //cmbNumAvion.DataSource = combo1;
+                cmbAeropuerto1.DataSource = combo2;
+                cmbAeropuerto2.DataSource = combo3;
+                //cmbEstadoVuelo.DataSource = combo4;
+
+                cmbNumAvion.DisplayMember = "numero avion";
                 cmbAeropuerto1.DisplayMember = "domicilio";
                 cmbAeropuerto2.DisplayMember = "domicilio";
+                cmbEstadoVuelo.DisplayMember = "estado vuelo";
             }
             catch (SqlException ex)
             {
@@ -46,10 +54,7 @@ namespace Principal.Ventanas
         public void cargaHoras()
         {
 
-            foreach ()
-            {
-
-            }
+            
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)

@@ -1,6 +1,6 @@
 ﻿namespace Principal.Ventanas
 {
-    partial class Vuelo
+    partial class formVuelo
     {
         /// <summary>
         /// Required designer variable.
@@ -52,9 +52,9 @@
             this.btnCancelarVuelo = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTipoAvion = new System.Windows.Forms.TextBox();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.btnDetalleAvion = new System.Windows.Forms.Button();
+            this.cmbNumAvion = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoVuelo = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -289,41 +289,41 @@
             this.txtTipoAvion.Size = new System.Drawing.Size(143, 20);
             this.txtTipoAvion.TabIndex = 31;
             // 
-            // btnConsultar
+            // btnDetalleAvion
             // 
-            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(482, 280);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(109, 23);
-            this.btnConsultar.TabIndex = 33;
-            this.btnConsultar.Text = "Detalle";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            this.btnDetalleAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleAvion.Location = new System.Drawing.Point(482, 280);
+            this.btnDetalleAvion.Name = "btnDetalleAvion";
+            this.btnDetalleAvion.Size = new System.Drawing.Size(109, 23);
+            this.btnDetalleAvion.TabIndex = 33;
+            this.btnDetalleAvion.Text = "Detalle";
+            this.btnDetalleAvion.UseVisualStyleBackColor = true;
+            this.btnDetalleAvion.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // comboBox1
+            // cmbNumAvion
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(96, 280);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 21);
-            this.comboBox1.TabIndex = 34;
+            this.cmbNumAvion.FormattingEnabled = true;
+            this.cmbNumAvion.Location = new System.Drawing.Point(96, 280);
+            this.cmbNumAvion.Name = "cmbNumAvion";
+            this.cmbNumAvion.Size = new System.Drawing.Size(102, 21);
+            this.cmbNumAvion.TabIndex = 34;
             // 
-            // cmbEstado
+            // cmbEstadoVuelo
             // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(95, 385);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(134, 21);
-            this.cmbEstado.TabIndex = 35;
+            this.cmbEstadoVuelo.FormattingEnabled = true;
+            this.cmbEstadoVuelo.Location = new System.Drawing.Point(95, 385);
+            this.cmbEstadoVuelo.Name = "cmbEstadoVuelo";
+            this.cmbEstadoVuelo.Size = new System.Drawing.Size(134, 21);
+            this.cmbEstadoVuelo.TabIndex = 35;
             // 
-            // Vuelo
+            // formVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 476);
-            this.Controls.Add(this.cmbEstado);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.cmbEstadoVuelo);
+            this.Controls.Add(this.cmbNumAvion);
+            this.Controls.Add(this.btnDetalleAvion);
             this.Controls.Add(this.txtTipoAvion);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnCancelarVuelo);
@@ -338,8 +338,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNumVuelo);
             this.Controls.Add(this.label1);
-            this.Name = "Vuelo";
-            this.Load += new System.EventHandler(this.Vuelo_Load);
+            this.Name = "formVuelo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -375,8 +374,8 @@
         private System.Windows.Forms.Button btnCancelarVuelo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtTipoAvion;
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Button btnDetalleAvion;
+        private System.Windows.Forms.ComboBox cmbNumAvion;
+        private System.Windows.Forms.ComboBox cmbEstadoVuelo;
     }
 }
