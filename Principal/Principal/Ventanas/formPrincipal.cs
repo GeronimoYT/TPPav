@@ -25,5 +25,23 @@ namespace Principal.Ventanas
             
             
         }
+
+        private void aeropuertoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAeropuerto ventanaAeropuerto = new formAeropuerto();
+            ventanaAeropuerto.Show();
+        }
+
+        private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formularioPasajes = new formPasajes(this);
+            formularioPasajes.Show();
+            this.Hide();
+        }
     }
 }
