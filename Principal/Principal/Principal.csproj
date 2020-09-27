@@ -49,8 +49,10 @@
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\AvionesRepositorio.cs" />
     <Compile Include="Clases\DBHelper.cs" />
+    <Compile Include="Clases\TipoAvion.cs" />
+    <Compile Include="Clases\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="Utils\Form Utils.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Ventanas\Aeropuerto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +100,17 @@
     <EmbeddedResource Include="Ventanas\Aeropuerto.resx">
       <DependentUpon>Aeropuerto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Alta Avion.resx">
+      <DependentUpon>Alta Avion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Aviones\Aviones.resx">
       <DependentUpon>Aviones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
       <DependentUpon>Baja Avion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Modificacion Avion.resx">
+      <DependentUpon>Modificacion Avion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

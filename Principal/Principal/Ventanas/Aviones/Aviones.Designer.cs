@@ -38,8 +38,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.comboCategorias = new System.Windows.Forms.ComboBox();
             this.picAvion = new System.Windows.Forms.PictureBox();
-            this.txtboxBuscar = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvion)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.gridAviones.Name = "gridAviones";
             this.gridAviones.RowHeadersWidth = 51;
             this.gridAviones.RowTemplate.Height = 24;
-            this.gridAviones.Size = new System.Drawing.Size(429, 329);
+            this.gridAviones.Size = new System.Drawing.Size(841, 329);
             this.gridAviones.TabIndex = 0;
             this.gridAviones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAviones_CellContentClick);
             // 
@@ -82,16 +82,17 @@
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(490, 156);
+            this.btnAlta.Location = new System.Drawing.Point(896, 156);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(100, 23);
             this.btnAlta.TabIndex = 1;
             this.btnAlta.Text = "Nuevo Avion";
             this.btnAlta.UseVisualStyleBackColor = true;
+            this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(490, 203);
+            this.btnModificar.Location = new System.Drawing.Point(896, 203);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 23);
             this.btnModificar.TabIndex = 2;
@@ -101,12 +102,13 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(490, 248);
+            this.btnBaja.Location = new System.Drawing.Point(896, 248);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(100, 23);
             this.btnBaja.TabIndex = 3;
             this.btnBaja.Text = "Eliminar";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnBuscar
             // 
@@ -120,43 +122,48 @@
             // 
             // comboCategorias
             // 
+            this.comboCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCategorias.FormattingEnabled = true;
+            this.comboCategorias.IntegralHeight = false;
             this.comboCategorias.Location = new System.Drawing.Point(31, 430);
             this.comboCategorias.Name = "comboCategorias";
             this.comboCategorias.Size = new System.Drawing.Size(290, 24);
             this.comboCategorias.TabIndex = 5;
+            this.comboCategorias.SelectedIndexChanged += new System.EventHandler(this.comboCategorias_SelectedIndexChanged);
             // 
             // picAvion
             // 
-            this.picAvion.Location = new System.Drawing.Point(490, 29);
+            this.picAvion.Location = new System.Drawing.Point(896, 29);
             this.picAvion.Name = "picAvion";
             this.picAvion.Size = new System.Drawing.Size(100, 93);
             this.picAvion.TabIndex = 6;
             this.picAvion.TabStop = false;
             // 
-            // txtboxBuscar
-            // 
-            this.txtboxBuscar.Location = new System.Drawing.Point(31, 387);
-            this.txtboxBuscar.Name = "txtboxBuscar";
-            this.txtboxBuscar.Size = new System.Drawing.Size(198, 22);
-            this.txtboxBuscar.TabIndex = 7;
-            // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(490, 431);
+            this.btnAtras.Location = new System.Drawing.Point(772, 431);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(100, 23);
             this.btnAtras.TabIndex = 8;
             this.btnAtras.Text = "Atras";
             this.btnAtras.UseVisualStyleBackColor = true;
             // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(31, 386);
+            this.txtBuscar.Mask = "99999";
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(209, 22);
+            this.txtBuscar.TabIndex = 9;
+            this.txtBuscar.ValidatingType = typeof(int);
+            // 
             // FormAviones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 474);
+            this.ClientSize = new System.Drawing.Size(1024, 474);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtboxBuscar);
             this.Controls.Add(this.picAvion);
             this.Controls.Add(this.comboCategorias);
             this.Controls.Add(this.btnBuscar);
@@ -183,10 +190,10 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox comboCategorias;
         private System.Windows.Forms.PictureBox picAvion;
-        private System.Windows.Forms.TextBox txtboxBuscar;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.MaskedTextBox txtBuscar;
     }
 }
