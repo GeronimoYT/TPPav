@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Principal</RootNamespace>
     <AssemblyName>Principal</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,11 +52,14 @@
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Utils\Form Utils.cs" />
-    <Compile Include="Ventanas\Aeropuerto.cs">
+    <Compile Include="Clases\Aeropuerto.cs" />
+    <Compile Include="Clases\DBHelper.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Ventanas\formAeropuerto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Aeropuerto.Designer.cs">
-      <DependentUpon>Aeropuerto.cs</DependentUpon>
+    <Compile Include="Ventanas\formAeropuerto.Designer.cs">
+      <DependentUpon>formAeropuerto.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
       <SubType>Form</SubType>
@@ -81,22 +85,43 @@
     <Compile Include="Ventanas\Aviones\Modificacion Avion.Designer.cs">
       <DependentUpon>Modificacion Avion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Principal.cs">
+    <Compile Include="Ventanas\formAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Ventanas\formAgregar.Designer.cs">
+      <DependentUpon>formAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Ingreso.cs">
+    <Compile Include="Ventanas\formEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Ingreso.Designer.cs">
-      <DependentUpon>Ingreso.cs</DependentUpon>
+    <Compile Include="Ventanas\formEditar.Designer.cs">
+      <DependentUpon>formEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\formPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\formPrincipal.Designer.cs">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\formIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\formIngreso.Designer.cs">
+      <DependentUpon>formIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Ventanas\Aeropuerto.resx">
-      <DependentUpon>Aeropuerto.cs</DependentUpon>
+    <Compile Include="Ventanas\Vuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Vuelo.Designer.cs">
+      <DependentUpon>Vuelo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
+      <DependentUpon>formAeropuerto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\formAgregar.resx">
+      <DependentUpon>formAgregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Aviones\Aviones.resx">
       <DependentUpon>Aviones.cs</DependentUpon>
@@ -104,12 +129,27 @@
     <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
       <DependentUpon>Baja Avion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\formEditar.resx">
+      <DependentUpon>formEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Ingreso.resx">
-      <DependentUpon>Ingreso.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\formPrincipal.resx">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\formIngreso.resx">
+      <DependentUpon>formIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Ventanas\Pasajes\Buscar Vuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Pasajes\Buscar Vuelo.Designer.cs">
+      <DependentUpon>Buscar Vuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Pasajes\Pasajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Pasajes\Pasajes.Designer.cs">
+      <DependentUpon>Pasajes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -118,7 +158,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\Pasajes\Buscar Vuelo.resx">
+      <DependentUpon>Buscar Vuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Pasajes\Pasajes.resx">
+      <DependentUpon>Pasajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Vuelo.resx">
+      <DependentUpon>Vuelo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
