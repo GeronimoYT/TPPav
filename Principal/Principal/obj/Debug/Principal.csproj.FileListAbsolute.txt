@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
@@ -17,3 +18,42 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.pdb
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+=======
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\Principal\Principal\obj\Debug\Principal.FormIngresar.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.FormAviones.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Baja_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
+>>>>>>> b65bee5d71da8346443a526798c1536dd874df8b

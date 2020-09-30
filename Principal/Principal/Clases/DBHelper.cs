@@ -40,7 +40,20 @@ namespace Principal.Clases
             return tabla;
         }
 
-        private void CloseConnection(SqlConnection conn)
+        public void ComandoSQL(string strSql)
+        {
+            SqlConnection conn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            conn.ConnectionString = cadenaDeConexion;
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = strSql;
+            cmd.ExecuteNonQuery();
+            this.CloseConnection(conn);
+        }
+
+            private void CloseConnection(SqlConnection conn)
         {
             if(conn.State == ConnectionState.Open)
             {

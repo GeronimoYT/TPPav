@@ -50,12 +50,19 @@
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\AvionesRepositorio.cs" />
     <Compile Include="Clases\DBHelper.cs" />
+    <Compile Include="Clases\TipoAvion.cs" />
+    <Compile Include="Clases\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Usuario.cs" />
+<<<<<<< HEAD
     <Compile Include="Utils\Form Utils.cs" />
     <Compile Include="Clases\Aeropuerto.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Ventanas\formAeropuerto.cs">
+=======
+    <Compile Include="Utils\FormUtils.cs" />
+    <Compile Include="Ventanas\Aeropuerto.cs">
+>>>>>>> b65bee5d71da8346443a526798c1536dd874df8b
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanas\formAeropuerto.Designer.cs">
@@ -123,17 +130,28 @@
     <EmbeddedResource Include="Ventanas\formAgregar.resx">
       <DependentUpon>formAgregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Alta Avion.resx">
+      <DependentUpon>Alta Avion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Aviones\Aviones.resx">
       <DependentUpon>Aviones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
       <DependentUpon>Baja Avion.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Ventanas\formEditar.resx">
       <DependentUpon>formEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Ventanas\Aviones\Modificacion Avion.resx">
+      <DependentUpon>Modificacion Avion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+>>>>>>> b65bee5d71da8346443a526798c1536dd874df8b
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formIngreso.resx">
       <DependentUpon>formIngreso.cs</DependentUpon>
