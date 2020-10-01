@@ -177,17 +177,17 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 20);
+            this.label1.Size = new System.Drawing.Size(157, 20);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar por Nombre:";
+            this.label1.Text = "Buscar por Domicilio:";
             // 
             // txtBusquedaNombre
             // 
             this.txtBusquedaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaNombre.Location = new System.Drawing.Point(162, 227);
+            this.txtBusquedaNombre.Location = new System.Drawing.Point(163, 227);
             this.txtBusquedaNombre.MaxLength = 37284;
             this.txtBusquedaNombre.Name = "txtBusquedaNombre";
-            this.txtBusquedaNombre.Size = new System.Drawing.Size(100, 26);
+            this.txtBusquedaNombre.Size = new System.Drawing.Size(99, 26);
             this.txtBusquedaNombre.TabIndex = 8;
             this.txtBusquedaNombre.TextChanged += new System.EventHandler(this.txtBusquedaID_TextChanged);
             // 
@@ -204,6 +204,7 @@
             // 
             // btnEliminarAeropuerto
             // 
+            this.btnEliminarAeropuerto.Enabled = false;
             this.btnEliminarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarAeropuerto.Location = new System.Drawing.Point(416, 9);
             this.btnEliminarAeropuerto.Name = "btnEliminarAeropuerto";

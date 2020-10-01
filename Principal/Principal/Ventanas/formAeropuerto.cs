@@ -26,13 +26,13 @@ namespace Principal.Ventanas
         {
             try
             {
-                string consulta = $"SELECT * FROM Aeropuerto WHERE NombreAeropuerto LIKE {txtBusquedaNombre.Text}";
+                string consulta = $"SELECT * FROM Aeropuerto WHERE Domicilio LIKE '%{txtBusquedaNombre.Text}%'";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 if (grilla.Rows.Count > 0)
                 {
                     dgvDatosAeropuerto.DataSource = grilla;
                 }
-                else MessageBox.Show("No se ha encontrado ningún aeropuerto con el Nombre " + txtBusquedaNombre.Text);
+                else MessageBox.Show("No se ha encontrado ningún aeropuerto con el Domicilio " + txtBusquedaNombre.Text);
             }
             catch (SqlException ex)
             {
@@ -65,7 +65,7 @@ namespace Principal.Ventanas
             if(resultado == System.Windows.Forms.DialogResult.Yes)
             {
                 try {
-                    string consulta = $"DELETE FROM Aeropuerto WHERE NombreAeropuerto LIKE {txtBusquedaNombre.Text}";
+                    string consulta = $"DELETE FROM Aeropuerto WHERE Domicilio LIKE '{dgvDatosAeropuerto.CurrentCell.Value.ToString()}'";
                     var eliminar = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                     MessageBox.Show("Se eliminó el aeropuerto exitosamente");
                 }
@@ -89,8 +89,9 @@ namespace Principal.Ventanas
         }
 
         private void dgvDatosAeropuerto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        {            
+            btnEditarAeropuerto.Enabled = true;
+            btnEliminarAeropuerto.Enabled = true;
         }
 
         private void txtBusquedaID_TextChanged(object sender, EventArgs e)
