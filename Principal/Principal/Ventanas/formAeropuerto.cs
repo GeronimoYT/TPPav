@@ -78,7 +78,7 @@ namespace Principal.Ventanas
             Aeropuerto ae = new Aeropuerto();
             ae.IdAeropuerto = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[0].Value.ToString());
             ae.Domicilio = dgvDatosAeropuerto.CurrentRow.Cells[1].Value.ToString();
-            ae.Telefono = Int64.Parse(dgvDatosAeropuerto.CurrentRow.Cells[2].Value.ToString());
+            ae.Telefono = dgvDatosAeropuerto.CurrentRow.Cells[2].Value.ToString();
             ae.Descripcion = dgvDatosAeropuerto.CurrentRow.Cells[3].Value.ToString();
             ae.CantPuertasEmbarque = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[4].Value.ToString());
             ae.CantMangasVuelo = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[5].Value.ToString());

@@ -31,19 +31,12 @@
             this.lblDatosNuevoAeropuerto = new System.Windows.Forms.Label();
             this.lblDomicilioNuevoAeropuerto = new System.Windows.Forms.Label();
             this.txtNuevoDomicilio = new System.Windows.Forms.TextBox();
-            this.txtNuevoTelefono = new System.Windows.Forms.TextBox();
             this.lblNuevoTelefono = new System.Windows.Forms.Label();
             this.txtNuevaDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcionNuevoVuelo = new System.Windows.Forms.Label();
-            this.txtCMVuelo = new System.Windows.Forms.TextBox();
             this.lblCMNuevoVuelo = new System.Windows.Forms.Label();
-            this.txtCPEmbarque = new System.Windows.Forms.TextBox();
             this.lblCPNuevoEmbarque = new System.Windows.Forms.Label();
             this.dgvDatosAeropuerto = new System.Windows.Forms.DataGridView();
-            this.btnCargar = new System.Windows.Forms.Button();
-            this.btnAtras = new System.Windows.Forms.Button();
-            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +44,13 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantPuertasEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantMangasVuelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.txtNuevoNombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNuevoTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtCPEmbarque = new System.Windows.Forms.MaskedTextBox();
+            this.txtCMVuelo = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,14 +81,6 @@
             this.txtNuevoDomicilio.Size = new System.Drawing.Size(155, 20);
             this.txtNuevoDomicilio.TabIndex = 2;
             // 
-            // txtNuevoTelefono
-            // 
-            this.txtNuevoTelefono.Location = new System.Drawing.Point(154, 143);
-            this.txtNuevoTelefono.MaxLength = 10;
-            this.txtNuevoTelefono.Name = "txtNuevoTelefono";
-            this.txtNuevoTelefono.Size = new System.Drawing.Size(155, 20);
-            this.txtNuevoTelefono.TabIndex = 4;
-            // 
             // lblNuevoTelefono
             // 
             this.lblNuevoTelefono.AutoSize = true;
@@ -117,14 +109,6 @@
             this.lblDescripcionNuevoVuelo.TabIndex = 5;
             this.lblDescripcionNuevoVuelo.Text = "Descripcion:";
             // 
-            // txtCMVuelo
-            // 
-            this.txtCMVuelo.Location = new System.Drawing.Point(239, 307);
-            this.txtCMVuelo.MaxLength = 2;
-            this.txtCMVuelo.Name = "txtCMVuelo";
-            this.txtCMVuelo.Size = new System.Drawing.Size(70, 20);
-            this.txtCMVuelo.TabIndex = 10;
-            // 
             // lblCMNuevoVuelo
             // 
             this.lblCMNuevoVuelo.AutoSize = true;
@@ -134,14 +118,6 @@
             this.lblCMNuevoVuelo.Size = new System.Drawing.Size(162, 17);
             this.lblCMNuevoVuelo.TabIndex = 9;
             this.lblCMNuevoVuelo.Text = "Cantidad Mangas Vuelo:";
-            // 
-            // txtCPEmbarque
-            // 
-            this.txtCPEmbarque.Location = new System.Drawing.Point(239, 263);
-            this.txtCPEmbarque.MaxLength = 2;
-            this.txtCPEmbarque.Name = "txtCPEmbarque";
-            this.txtCPEmbarque.Size = new System.Drawing.Size(70, 20);
-            this.txtCPEmbarque.TabIndex = 8;
             // 
             // lblCPNuevoEmbarque
             // 
@@ -169,48 +145,9 @@
             this.dgvDatosAeropuerto.Location = new System.Drawing.Point(353, 51);
             this.dgvDatosAeropuerto.Name = "dgvDatosAeropuerto";
             this.dgvDatosAeropuerto.ReadOnly = true;
-            this.dgvDatosAeropuerto.Size = new System.Drawing.Size(340, 234);
+            this.dgvDatosAeropuerto.Size = new System.Drawing.Size(340, 274);
             this.dgvDatosAeropuerto.TabIndex = 11;
             this.dgvDatosAeropuerto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosAeropuerto_CellContentClick);
-            // 
-            // btnCargar
-            // 
-            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(239, 355);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 33);
-            this.btnCargar.TabIndex = 12;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.Location = new System.Drawing.Point(46, 355);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 33);
-            this.btnAtras.TabIndex = 13;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
-            this.btnAtras.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // txtNuevoNombre
-            // 
-            this.txtNuevoNombre.Location = new System.Drawing.Point(154, 98);
-            this.txtNuevoNombre.Name = "txtNuevoNombre";
-            this.txtNuevoNombre.Size = new System.Drawing.Size(155, 20);
-            this.txtNuevoNombre.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Nombre:";
             // 
             // IdAeropuerto
             // 
@@ -262,23 +199,87 @@
             this.CantMangasVuelo.Name = "CantMangasVuelo";
             this.CantMangasVuelo.ReadOnly = true;
             // 
+            // btnCargar
+            // 
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Location = new System.Drawing.Point(239, 355);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(75, 33);
+            this.btnCargar.TabIndex = 12;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(46, 355);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 33);
+            this.btnAtras.TabIndex = 13;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtNuevoNombre
+            // 
+            this.txtNuevoNombre.Location = new System.Drawing.Point(154, 98);
+            this.txtNuevoNombre.Name = "txtNuevoNombre";
+            this.txtNuevoNombre.Size = new System.Drawing.Size(155, 20);
+            this.txtNuevoNombre.TabIndex = 33;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Nombre:";
+            // 
+            // txtNuevoTelefono
+            // 
+            this.txtNuevoTelefono.Location = new System.Drawing.Point(154, 141);
+            this.txtNuevoTelefono.Mask = "000-000-0000";
+            this.txtNuevoTelefono.Name = "txtNuevoTelefono";
+            this.txtNuevoTelefono.Size = new System.Drawing.Size(79, 20);
+            this.txtNuevoTelefono.TabIndex = 34;
+            // 
+            // txtCPEmbarque
+            // 
+            this.txtCPEmbarque.Location = new System.Drawing.Point(239, 261);
+            this.txtCPEmbarque.Mask = "99";
+            this.txtCPEmbarque.Name = "txtCPEmbarque";
+            this.txtCPEmbarque.Size = new System.Drawing.Size(27, 20);
+            this.txtCPEmbarque.TabIndex = 35;
+            this.txtCPEmbarque.ValidatingType = typeof(int);
+            // 
+            // txtCMVuelo
+            // 
+            this.txtCMVuelo.Location = new System.Drawing.Point(239, 305);
+            this.txtCMVuelo.Mask = "99";
+            this.txtCMVuelo.Name = "txtCMVuelo";
+            this.txtCMVuelo.Size = new System.Drawing.Size(27, 20);
+            this.txtCMVuelo.TabIndex = 36;
+            // 
             // formAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 419);
+            this.Controls.Add(this.txtCMVuelo);
+            this.Controls.Add(this.txtCPEmbarque);
+            this.Controls.Add(this.txtNuevoTelefono);
             this.Controls.Add(this.txtNuevoNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgvDatosAeropuerto);
-            this.Controls.Add(this.txtCMVuelo);
             this.Controls.Add(this.lblCMNuevoVuelo);
-            this.Controls.Add(this.txtCPEmbarque);
             this.Controls.Add(this.lblCPNuevoEmbarque);
             this.Controls.Add(this.txtNuevaDescripcion);
             this.Controls.Add(this.lblDescripcionNuevoVuelo);
-            this.Controls.Add(this.txtNuevoTelefono);
             this.Controls.Add(this.lblNuevoTelefono);
             this.Controls.Add(this.txtNuevoDomicilio);
             this.Controls.Add(this.lblDomicilioNuevoAeropuerto);
@@ -298,13 +299,10 @@
         private System.Windows.Forms.Label lblDatosNuevoAeropuerto;
         private System.Windows.Forms.Label lblDomicilioNuevoAeropuerto;
         private System.Windows.Forms.TextBox txtNuevoDomicilio;
-        private System.Windows.Forms.TextBox txtNuevoTelefono;
         private System.Windows.Forms.Label lblNuevoTelefono;
         private System.Windows.Forms.TextBox txtNuevaDescripcion;
         private System.Windows.Forms.Label lblDescripcionNuevoVuelo;
-        private System.Windows.Forms.TextBox txtCMVuelo;
         private System.Windows.Forms.Label lblCMNuevoVuelo;
-        private System.Windows.Forms.TextBox txtCPEmbarque;
         private System.Windows.Forms.Label lblCPNuevoEmbarque;
         private System.Windows.Forms.DataGridView dgvDatosAeropuerto;
         private System.Windows.Forms.Button btnCargar;
@@ -318,5 +316,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CantMangasVuelo;
         private System.Windows.Forms.TextBox txtNuevoNombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox txtNuevoTelefono;
+        private System.Windows.Forms.MaskedTextBox txtCPEmbarque;
+        private System.Windows.Forms.MaskedTextBox txtCMVuelo;
     }
 }
