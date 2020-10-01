@@ -74,5 +74,10 @@ namespace Principal.Ventanas
             txtCPEmbarque.Text = "";
             txtCMVuelo.Text = "";
         }
+
+        private void dgvDatosAeropuerto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

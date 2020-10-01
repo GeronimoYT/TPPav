@@ -17,17 +17,31 @@ namespace Principal.Ventanas
         public formAeropuerto()
         {
             InitializeComponent();
+            CargaInicial();
         }
 
 
-
-
-        private void CargaGrilla()
+        private void CargaInicial()
         {
             try
             {
-                string consulta = $"SELECT * FROM Aeropuerto WHERE Domicilio LIKE '%{txtBusquedaNombre.Text}%'";
+                string consulta = $"SELECT * FROM Aeropuerto";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                dgvDatosAeropuerto.DataSource = grilla;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
+            }
+        }
+
+        private void CargaGrilla()
+        {
+            
+            try
+            {
+                string consulta = $"SELECT * FROM Aeropuerto WHERE Domicilio LIKE '%{txtBusquedaNombre.Text}%'";
+                var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);                
                 if (grilla.Rows.Count > 0)
                 {
                     dgvDatosAeropuerto.DataSource = grilla;
@@ -53,9 +67,23 @@ namespace Principal.Ventanas
 
         private void btnEditarAeropuerto_Click(object sender, EventArgs e)
         {
-            formEditar edicion = new formEditar();
+            formEditar edicion = new formEditar(CargarAeropuerto());
             edicion.Show();
             this.Close();
+        }
+
+        private Aeropuerto CargarAeropuerto()
+        {
+
+            Aeropuerto ae = new Aeropuerto();
+            ae.IdAeropuerto = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[0].Value.ToString());
+            ae.Domicilio = dgvDatosAeropuerto.CurrentRow.Cells[1].Value.ToString();
+            ae.Telefono = Int64.Parse(dgvDatosAeropuerto.CurrentRow.Cells[2].Value.ToString());
+            ae.Descripcion = dgvDatosAeropuerto.CurrentRow.Cells[3].Value.ToString();
+            ae.CantPuertasEmbarque = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[4].Value.ToString());
+            ae.CantMangasVuelo = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[5].Value.ToString());
+
+            return ae;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,8 +118,11 @@ namespace Principal.Ventanas
 
         private void dgvDatosAeropuerto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {            
-            btnEditarAeropuerto.Enabled = true;
-            btnEliminarAeropuerto.Enabled = true;
+            if(e.RowIndex >= 0)
+            {
+                btnEditarAeropuerto.Enabled = true;
+                btnEliminarAeropuerto.Enabled = true;
+            }
         }
 
         private void txtBusquedaID_TextChanged(object sender, EventArgs e)

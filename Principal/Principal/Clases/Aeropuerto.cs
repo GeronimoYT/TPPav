@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace Principal.Clases
 {
-    class Aeropuerto
+    public class Aeropuerto
     {
         private int idAeropuerto;
-        private string nombre;
         private string domicilio;
-        private int telefono;
+        private long telefono;
         private string descripcion;
         private int cantPuertasEmbarque;
         private int cantMangasVuelo;
 
+        public Aeropuerto()
+        {
 
-        public Aeropuerto(int idAeropuerto, string nombre,string domicilio,int telefono,string descripcion, int cantPuertasEmbarque, int cantMangasVuelo)
+        }
+        public Aeropuerto(int idAeropuerto,string domicilio,long telefono,string descripcion, int cantPuertasEmbarque, int cantMangasVuelo)
         {
             this.idAeropuerto = idAeropuerto;
-            this.nombre = nombre;
             this.domicilio = domicilio;
             this.telefono = telefono;
             this.descripcion = descripcion;
@@ -31,19 +32,15 @@ namespace Principal.Clases
         public int IdAeropuerto
         {
             get => idAeropuerto;
+            set => idAeropuerto = value;
         }
 
-        public string Nombre
-        {
-            get => nombre;
-            set => nombre = value;
-        }
         public string Domicilio
         {
             get => domicilio;
             set => domicilio = value;
         }
-        public int Telefono
+        public long Telefono
         {
             get => telefono;
             set => telefono = value;
