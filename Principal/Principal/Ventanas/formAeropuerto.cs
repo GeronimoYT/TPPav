@@ -31,7 +31,7 @@ namespace Principal.Ventanas
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
+                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente");
             }
         }
 
@@ -40,13 +40,13 @@ namespace Principal.Ventanas
             
             try
             {
-                string consulta = $"SELECT * FROM Aeropuerto WHERE Domicilio LIKE '%{txtBusquedaNombre.Text}%'";
+                string consulta = $"SELECT * FROM Aeropuerto WHERE Nombre LIKE '%{txtBusquedaNombre.Text}%'";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);                
                 if (grilla.Rows.Count > 0)
                 {
                     dgvDatosAeropuerto.DataSource = grilla;
                 }
-                else MessageBox.Show("No se ha encontrado ningún aeropuerto con el Domicilio " + txtBusquedaNombre.Text);
+                else MessageBox.Show("No se ha encontrado ningún aeropuerto con el Nombre " + txtBusquedaNombre.Text);
             }
             catch (SqlException ex)
             {
@@ -82,6 +82,7 @@ namespace Principal.Ventanas
             ae.Descripcion = dgvDatosAeropuerto.CurrentRow.Cells[3].Value.ToString();
             ae.CantPuertasEmbarque = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[4].Value.ToString());
             ae.CantMangasVuelo = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[5].Value.ToString());
+            ae.Nombre = dgvDatosAeropuerto.CurrentRow.Cells[6].Value.ToString();
 
             return ae;
         }
@@ -93,7 +94,7 @@ namespace Principal.Ventanas
             if(resultado == System.Windows.Forms.DialogResult.Yes)
             {
                 try {
-                    string consulta = $"DELETE FROM Aeropuerto WHERE Domicilio LIKE '{dgvDatosAeropuerto.CurrentCell.Value.ToString()}'";
+                    string consulta = $"DELETE FROM Aeropuerto WHERE Nombre LIKE '{dgvDatosAeropuerto.CurrentRow.Cells[6].Value.ToString()}'";
                     var eliminar = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                     MessageBox.Show("Se eliminó el aeropuerto exitosamente");
                 }

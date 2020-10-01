@@ -19,6 +19,7 @@ namespace Principal.Ventanas
             InitializeComponent();
             CargaGrilla();
             txtID.Text = ae.IdAeropuerto.ToString();
+            txtNuevoNombre.Text = ae.Nombre.ToString();
             txtNuevoDomicilio.Text = ae.Domicilio;
             txtNuevoTelefono.Text = ae.Telefono.ToString();
             txtNuevaDescripcion.Text = ae.Descripcion;
@@ -59,6 +60,7 @@ namespace Principal.Ventanas
         private void LimpiarCampos()
         {
             txtID.Text = "";
+            txtNuevoNombre.Text = "";
             txtNuevoDomicilio.Text = "";
             txtNuevoTelefono.Text = "";
             txtNuevaDescripcion.Text = "";
@@ -70,7 +72,7 @@ namespace Principal.Ventanas
         {
             try
             {
-                string consulta = $"UPDATE Aeropuerto SET Domicilio = '{txtNuevoDomicilio.Text}', Telefono = '{txtNuevoTelefono.Text}', Descripcion = '{txtNuevaDescripcion.Text}', CantPuertasEmbarque = '{txtCPEmbarque.Text}', CantMangasVuelo = '{txtCMVuelo.Text}' WHERE IdAeropuerto = '{txtID.Text}'";
+                string consulta = $"UPDATE Aeropuerto SET Nombre = '{txtNuevoNombre.Text}', Domicilio = '{txtNuevoDomicilio.Text}', Telefono = '{txtNuevoTelefono.Text}', Descripcion = '{txtNuevaDescripcion.Text}', CantPuertasEmbarque = '{txtCPEmbarque.Text}', CantMangasVuelo = '{txtCMVuelo.Text}' WHERE IdAeropuerto = '{txtID.Text}'";
                 var aeropuerto = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 MessageBox.Show("Actualización exitosa!");
                 LimpiarCampos();

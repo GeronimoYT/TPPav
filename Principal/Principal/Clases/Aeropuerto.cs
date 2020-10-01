@@ -9,6 +9,7 @@ namespace Principal.Clases
     public class Aeropuerto
     {
         private int idAeropuerto;
+        private string nombre;
         private string domicilio;
         private long telefono;
         private string descripcion;
@@ -19,9 +20,10 @@ namespace Principal.Clases
         {
 
         }
-        public Aeropuerto(int idAeropuerto,string domicilio,long telefono,string descripcion, int cantPuertasEmbarque, int cantMangasVuelo)
+        public Aeropuerto(int idAeropuerto,string nombre,string domicilio,long telefono,string descripcion, int cantPuertasEmbarque, int cantMangasVuelo)
         {
             this.idAeropuerto = idAeropuerto;
+            this.nombre = nombre;
             this.domicilio = domicilio;
             this.telefono = telefono;
             this.descripcion = descripcion;
@@ -35,6 +37,11 @@ namespace Principal.Clases
             set => idAeropuerto = value;
         }
 
+        public string Nombre
+        {
+            get => nombre;
+            set => nombre = value;
+        }
         public string Domicilio
         {
             get => domicilio;
