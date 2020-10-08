@@ -21,57 +21,47 @@ namespace Principal.Ventanas
 
         private void Vuelo_Load(object sender, EventArgs e)
         {
-            CargoCombo();
-            //CargaHoras();
+            CargaGrilla();
         }
 
-        private void CargoCombo()
+        private void CargaGrilla()
         {
             try
             {
-                string consulta = "SELECT Domicilio FROM Aeropuerto";
-                var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                cmbAeropuerto1.DataSource = combo1;
-                cmbAeropuerto2.DataSource = combo2;
-                cmbAeropuerto1.DisplayMember = "domicilio";
-                cmbAeropuerto2.DisplayMember = "domicilio";
+                string consulta = $"SELECT * FROM Vuelo";
+                var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                dgvVuelos.DataSource = grilla;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente");
+                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
             }
         }
 
-        public void cargaHoras()
+        private void btnBorrar_Click(object sender, EventArgs e)
         {
-
-            
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operación?", "Eliminar Vuelo", buttons);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                try
+                {
+                    if (dgvVuelos.CurrentRow == null)
+                        return;
+                    //ELSE ?
+                    dgvVuelos.Rows.Remove(dgvVuelos.CurrentRow);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se ha podido realizar la operación");
+                }
+            }
 
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
