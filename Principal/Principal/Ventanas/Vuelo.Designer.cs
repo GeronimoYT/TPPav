@@ -1,6 +1,6 @@
 ﻿namespace Principal.Ventanas
 {
-    partial class Vuelo
+    partial class formVuelo
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,42 @@
             this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).BeginInit();
+=======
+            this.txtNumVuelo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbHoras = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbHoras2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbAeropuerto1 = new System.Windows.Forms.ComboBox();
+            this.cmbAeropuerto2 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnConfirmarVuelo = new System.Windows.Forms.Button();
+            this.btnCancelarVuelo = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtTipoAvion = new System.Windows.Forms.TextBox();
+            this.btnDetalleAvion = new System.Windows.Forms.Button();
+            this.cmbNumAvion = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoVuelo = new System.Windows.Forms.ComboBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+>>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
             this.SuspendLayout();
             // 
             // dgvVuelos
@@ -95,6 +126,7 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
+<<<<<<< HEAD
             // label1
             // 
             this.label1.AutoSize = true;
@@ -146,11 +178,104 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+=======
+            // cmbAeropuerto1
             // 
-            // Vuelo
+            this.cmbAeropuerto1.FormattingEnabled = true;
+            this.cmbAeropuerto1.Location = new System.Drawing.Point(162, 314);
+            this.cmbAeropuerto1.Name = "cmbAeropuerto1";
+            this.cmbAeropuerto1.Size = new System.Drawing.Size(299, 21);
+            this.cmbAeropuerto1.TabIndex = 21;
+            // 
+            // cmbAeropuerto2
+            // 
+            this.cmbAeropuerto2.FormattingEnabled = true;
+            this.cmbAeropuerto2.Location = new System.Drawing.Point(162, 346);
+            this.cmbAeropuerto2.Name = "cmbAeropuerto2";
+            this.cmbAeropuerto2.Size = new System.Drawing.Size(299, 21);
+            this.cmbAeropuerto2.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(20, 385);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 16);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Estado :";
+            // 
+            // btnConfirmarVuelo
+            // 
+            this.btnConfirmarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmarVuelo.Location = new System.Drawing.Point(422, 423);
+            this.btnConfirmarVuelo.Name = "btnConfirmarVuelo";
+            this.btnConfirmarVuelo.Size = new System.Drawing.Size(138, 23);
+            this.btnConfirmarVuelo.TabIndex = 25;
+            this.btnConfirmarVuelo.Text = "Confirmar Vuelo";
+            this.btnConfirmarVuelo.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelarVuelo
+            // 
+            this.btnCancelarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarVuelo.Location = new System.Drawing.Point(596, 423);
+            this.btnCancelarVuelo.Name = "btnCancelarVuelo";
+            this.btnCancelarVuelo.Size = new System.Drawing.Size(109, 23);
+            this.btnCancelarVuelo.TabIndex = 26;
+            this.btnCancelarVuelo.Text = "Cancelar";
+            this.btnCancelarVuelo.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(214, 282);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 16);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Tipo de Avion :";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // txtTipoAvion
+            // 
+            this.txtTipoAvion.Location = new System.Drawing.Point(318, 282);
+            this.txtTipoAvion.Name = "txtTipoAvion";
+            this.txtTipoAvion.Size = new System.Drawing.Size(143, 20);
+            this.txtTipoAvion.TabIndex = 31;
+            // 
+            // btnDetalleAvion
+            // 
+            this.btnDetalleAvion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleAvion.Location = new System.Drawing.Point(482, 280);
+            this.btnDetalleAvion.Name = "btnDetalleAvion";
+            this.btnDetalleAvion.Size = new System.Drawing.Size(109, 23);
+            this.btnDetalleAvion.TabIndex = 33;
+            this.btnDetalleAvion.Text = "Detalle";
+            this.btnDetalleAvion.UseVisualStyleBackColor = true;
+            this.btnDetalleAvion.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // cmbNumAvion
+            // 
+            this.cmbNumAvion.FormattingEnabled = true;
+            this.cmbNumAvion.Location = new System.Drawing.Point(96, 280);
+            this.cmbNumAvion.Name = "cmbNumAvion";
+            this.cmbNumAvion.Size = new System.Drawing.Size(102, 21);
+            this.cmbNumAvion.TabIndex = 34;
+            // 
+            // cmbEstadoVuelo
+            // 
+            this.cmbEstadoVuelo.FormattingEnabled = true;
+            this.cmbEstadoVuelo.Location = new System.Drawing.Point(95, 385);
+            this.cmbEstadoVuelo.Name = "cmbEstadoVuelo";
+            this.cmbEstadoVuelo.Size = new System.Drawing.Size(134, 21);
+            this.cmbEstadoVuelo.TabIndex = 35;
+>>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
+            // 
+            // formVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(886, 295);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBorrar);
@@ -162,6 +287,31 @@
             this.Text = "AEROLINEA SALETARDE";
             this.Load += new System.EventHandler(this.Vuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
+=======
+            this.ClientSize = new System.Drawing.Size(745, 476);
+            this.Controls.Add(this.cmbEstadoVuelo);
+            this.Controls.Add(this.cmbNumAvion);
+            this.Controls.Add(this.btnDetalleAvion);
+            this.Controls.Add(this.txtTipoAvion);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.btnCancelarVuelo);
+            this.Controls.Add(this.btnConfirmarVuelo);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cmbAeropuerto2);
+            this.Controls.Add(this.cmbAeropuerto1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtNumVuelo);
+            this.Controls.Add(this.label1);
+            this.Name = "formVuelo";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+>>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +321,7 @@
 
         private System.Windows.Forms.DataGridView dgvVuelos;
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBorrar;
@@ -182,5 +333,33 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdTipoAvion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdAeropuerto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+=======
+        private System.Windows.Forms.TextBox txtNumVuelo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbHoras;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbHoras2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbAeropuerto1;
+        private System.Windows.Forms.ComboBox cmbAeropuerto2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnConfirmarVuelo;
+        private System.Windows.Forms.Button btnCancelarVuelo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtTipoAvion;
+        private System.Windows.Forms.Button btnDetalleAvion;
+        private System.Windows.Forms.ComboBox cmbNumAvion;
+        private System.Windows.Forms.ComboBox cmbEstadoVuelo;
+>>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
     }
 }
