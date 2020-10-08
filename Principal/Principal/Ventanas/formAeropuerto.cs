@@ -55,10 +55,7 @@ namespace Principal.Ventanas
         }
 
 
-        private void cmbAeropuerto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void btnAceptarEdicion_Click(object sender, EventArgs e)
         {
@@ -124,11 +121,6 @@ namespace Principal.Ventanas
                 btnEditarAeropuerto.Enabled = true;
                 btnEliminarAeropuerto.Enabled = true;
             }
-        }
-
-        private void txtBusquedaID_TextChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }

@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvDatosAeropuerto = new System.Windows.Forms.DataGridView();
+            this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantPuertasEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantMangasVuelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblDatosAeropuerto = new System.Windows.Forms.Label();
             this.btnEditarAeropuerto = new System.Windows.Forms.Button();
             this.btnAceptarEdicion = new System.Windows.Forms.Button();
@@ -38,13 +45,6 @@
             this.txtBusquedaNombre = new System.Windows.Forms.TextBox();
             this.btnAgregarAeropuerto = new System.Windows.Forms.Button();
             this.btnEliminarAeropuerto = new System.Windows.Forms.Button();
-            this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantPuertasEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantMangasVuelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).BeginInit();
             this.groupAeropuerto.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,56 @@
             this.dgvDatosAeropuerto.Size = new System.Drawing.Size(573, 113);
             this.dgvDatosAeropuerto.TabIndex = 2;
             this.dgvDatosAeropuerto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosAeropuerto_CellContentClick);
+            // 
+            // IdAeropuerto
+            // 
+            this.IdAeropuerto.DataPropertyName = "IdAeropuerto";
+            this.IdAeropuerto.HeaderText = "Id";
+            this.IdAeropuerto.Name = "IdAeropuerto";
+            this.IdAeropuerto.ReadOnly = true;
+            this.IdAeropuerto.Width = 30;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "Domicilio";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // CantPuertasEmbarque
+            // 
+            this.CantPuertasEmbarque.DataPropertyName = "CantPuertasEmbarque";
+            this.CantPuertasEmbarque.HeaderText = "Cantidad Puertas Embarque";
+            this.CantPuertasEmbarque.Name = "CantPuertasEmbarque";
+            this.CantPuertasEmbarque.ReadOnly = true;
+            // 
+            // CantMangasVuelo
+            // 
+            this.CantMangasVuelo.DataPropertyName = "CantMangasVuelo";
+            this.CantMangasVuelo.HeaderText = "Cantidad Mangas Vuelo";
+            this.CantMangasVuelo.Name = "CantMangasVuelo";
+            this.CantMangasVuelo.ReadOnly = true;
             // 
             // lblDatosAeropuerto
             // 
@@ -148,7 +198,6 @@
             this.txtBusquedaNombre.Name = "txtBusquedaNombre";
             this.txtBusquedaNombre.Size = new System.Drawing.Size(99, 26);
             this.txtBusquedaNombre.TabIndex = 8;
-            this.txtBusquedaNombre.TextChanged += new System.EventHandler(this.txtBusquedaID_TextChanged);
             // 
             // btnAgregarAeropuerto
             // 
@@ -172,56 +221,6 @@
             this.btnEliminarAeropuerto.Text = "Eliminar";
             this.btnEliminarAeropuerto.UseVisualStyleBackColor = true;
             this.btnEliminarAeropuerto.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // IdAeropuerto
-            // 
-            this.IdAeropuerto.DataPropertyName = "IdAeropuerto";
-            this.IdAeropuerto.HeaderText = "Id";
-            this.IdAeropuerto.Name = "IdAeropuerto";
-            this.IdAeropuerto.ReadOnly = true;
-            this.IdAeropuerto.Width = 30;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Domicilio
-            // 
-            this.Domicilio.DataPropertyName = "Domicilio";
-            this.Domicilio.HeaderText = "Domicilio";
-            this.Domicilio.Name = "Domicilio";
-            this.Domicilio.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.DataPropertyName = "Telefono";
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "Descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // CantPuertasEmbarque
-            // 
-            this.CantPuertasEmbarque.DataPropertyName = "CantPuertasEmbarque";
-            this.CantPuertasEmbarque.HeaderText = "Cantidad Puertas Embarque";
-            this.CantPuertasEmbarque.Name = "CantPuertasEmbarque";
-            this.CantPuertasEmbarque.ReadOnly = true;
-            // 
-            // CantMangasVuelo
-            // 
-            this.CantMangasVuelo.DataPropertyName = "CantMangasVuelo";
-            this.CantMangasVuelo.HeaderText = "Cantidad Mangas Vuelo";
-            this.CantMangasVuelo.Name = "CantMangasVuelo";
-            this.CantMangasVuelo.ReadOnly = true;
             // 
             // formAeropuerto
             // 

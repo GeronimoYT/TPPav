@@ -147,7 +147,6 @@
             this.dgvDatosAeropuerto.ReadOnly = true;
             this.dgvDatosAeropuerto.Size = new System.Drawing.Size(340, 274);
             this.dgvDatosAeropuerto.TabIndex = 11;
-            this.dgvDatosAeropuerto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosAeropuerto_CellContentClick);
             // 
             // IdAeropuerto
             // 
