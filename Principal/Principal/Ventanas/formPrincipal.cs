@@ -56,5 +56,11 @@ namespace Principal.Ventanas
             formularioPasajeros.Show();
             //this.Hide();
         }
+
+        private void avionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAviones ventanaAeropuerto = new FormAviones();
+            ventanaAeropuerto.Show();
+        }
     }
 }

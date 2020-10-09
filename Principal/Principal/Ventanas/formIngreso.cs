@@ -27,17 +27,29 @@ namespace Principal
             {
                 string consultarUser = $"SELECT * FROM Usuario WHERE '{txtUsuario.Text}' LIKE NombreUsuario AND '{txtContrasena.Text}' LIKE Contraseña";
                 var usuario = DBHelper.GetDBHelper().ConsultaSQL(consultarUser);
-                if(usuario.Rows.Count == 1)
+                if (usuario.Rows.Count == 1)
                 {
                     formPrincipal ventanaPrincipal = new formPrincipal(user);
                     ventanaPrincipal.Show();
                     this.Hide();
-                }else MessageBox.Show("Ingrese un usuario y contraseña válido!");
+                } else MessageBox.Show("Ingrese un usuario y contraseña válido!");
             }
-            catch(SqlException ex) { 
+            catch (SqlException ex) {
                 MessageBox.Show("Consulta inválida!");
             }
 
         }
+
+
+        private void formIngresar_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void FormIngresar_Load(object sender, EventArgs e)
+
+        {
+
+        }
+
     }
 }
