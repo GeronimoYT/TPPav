@@ -17,14 +17,12 @@ namespace Principal.Ventanas
         public Vuelo()
         {
             InitializeComponent();
-
         }
 
-        private void Vuelo_Load(object sender, EventArgs e)
+        private void Vuelo_Load_1(object sender, EventArgs e)
         {
             CargaGrilla();
         }
-
         private void CargaGrilla()
         {
             try
@@ -32,39 +30,6 @@ namespace Principal.Ventanas
                 string consulta = $"SELECT * FROM Vuelo";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 dgvVuelos.DataSource = grilla;
-
-                CargoCombo();
-                //CargaHoras();
-            }catch(Exception ex)
-            {
-
-            }
-         }
-
-       
-        private void CargoCombo()
-        {
-            try
-            {
-                //string consulta1 = "SELECT NroAvion FROM Avion";
-                string consulta2 = "SELECT Domicilio FROM Aeropuerto";
-                //string consulta3 = "SELECT NombreEstado FROM Estado";
-
-                //var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta1);
-                var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
-                var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
-               // var combo4 = DBHelper.GetDBHelper().ConsultaSQL(consulta3);
-
-                //cmbNumAvion.DataSource = combo1;
-                cmbAeropuerto1.DataSource = combo2;
-                cmbAeropuerto2.DataSource = combo3;
-                //cmbEstadoVuelo.DataSource = combo4;
-
-                cmbNumAvion.DisplayMember = "numero avion";
-                cmbAeropuerto1.DisplayMember = "domicilio";
-                cmbAeropuerto2.DisplayMember = "domicilio";
-                cmbEstadoVuelo.DisplayMember = "estado vuelo";
-
             }
             catch (SqlException ex)
             {
@@ -72,7 +37,7 @@ namespace Principal.Ventanas
             }
         }
 
-        private void btnBorrar_Click(object sender, EventArgs e)
+        private void btnBorrar_Click_1(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operación?", "Eliminar Vuelo", buttons);
@@ -93,7 +58,7 @@ namespace Principal.Ventanas
 
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
