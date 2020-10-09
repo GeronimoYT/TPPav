@@ -379,6 +379,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultar);
             this.Name = "formPasajes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pasajes";
             this.Load += new System.EventHandler(this.formPasajes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajes)).EndInit();

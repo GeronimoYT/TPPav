@@ -240,6 +240,7 @@
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnCerrar);
             this.Name = "formPasajeros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formPasajeros";
             this.Load += new System.EventHandler(this.formPasajeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).EndInit();

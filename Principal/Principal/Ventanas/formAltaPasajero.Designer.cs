@@ -168,6 +168,7 @@
             this.Controls.Add(this.txtNroDocumento);
             this.Controls.Add(this.btnCancelar);
             this.Name = "formAltaPasajero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formAltaPasajero";
             this.Load += new System.EventHandler(this.formAltaPasajero_Load);
             this.ResumeLayout(false);

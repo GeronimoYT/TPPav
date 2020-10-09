@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Avion.cs" />
+    <Compile Include="Clases\AvionesRepositorio.cs" />
+    <Compile Include="Clases\DBHelper.cs" />
+    <Compile Include="Clases\TipoAvion.cs" />
+    <Compile Include="Clases\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Aeropuerto.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Embarque.cs" />
@@ -62,12 +68,38 @@
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
     <Compile Include="Clases\TipoPasaje.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Ventanas\formAeropuerto.cs" />
+    <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\formAeropuerto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanas\formAeropuerto.Designer.cs">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Alta Avion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Alta Avion.Designer.cs">
+      <DependentUpon>Alta Avion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Aviones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Aviones.Designer.cs">
+      <DependentUpon>Aviones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Baja Avion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Baja Avion.Designer.cs">
+      <DependentUpon>Baja Avion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Modificacion Avion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Aviones\Modificacion Avion.Designer.cs">
+      <DependentUpon>Modificacion Avion.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formAgregar.cs">
       <SubType>Form</SubType>
@@ -149,6 +181,15 @@
     <EmbeddedResource Include="Ventanas\formAgregar.resx">
       <DependentUpon>formAgregar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Alta Avion.resx">
+      <DependentUpon>Alta Avion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Aviones.resx">
+      <DependentUpon>Aviones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
+      <DependentUpon>Baja Avion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAltaPasaje.resx">
       <DependentUpon>formAltaPasaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Aviones\Modificacion Avion.resx">
+      <DependentUpon>Modificacion Avion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formIngreso.resx">
       <DependentUpon>formIngreso.cs</DependentUpon>

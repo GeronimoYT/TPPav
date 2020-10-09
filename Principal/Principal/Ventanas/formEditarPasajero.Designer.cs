@@ -166,6 +166,7 @@
             this.Controls.Add(this.txtNroDocumento);
             this.Controls.Add(this.btnCancelar);
             this.Name = "formEditarPasajero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Pasajero";
             this.Load += new System.EventHandler(this.formEditarPasajero_Load);
             this.ResumeLayout(false);
