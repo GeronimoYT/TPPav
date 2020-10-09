@@ -51,6 +51,11 @@ namespace Principal.Ventanas
 
         }
 
-        
+        private void pasajeroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formularioPasajeros = new formPasajeros(this);
+            formularioPasajeros.Show();
+            this.Hide();
+        }
     }
 }

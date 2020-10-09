@@ -96,6 +96,7 @@
             this.pasajeroToolStripMenuItem.Name = "pasajeroToolStripMenuItem";
             this.pasajeroToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.pasajeroToolStripMenuItem.Text = "Pasajero";
+            this.pasajeroToolStripMenuItem.Click += new System.EventHandler(this.pasajeroToolStripMenuItem_Click);
             // 
             // formPrincipal
             // 
