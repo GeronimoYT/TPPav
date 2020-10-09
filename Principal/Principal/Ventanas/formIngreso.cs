@@ -29,8 +29,6 @@ namespace Principal
                 var usuario = DBHelper.GetDBHelper().ConsultaSQL(consultarUser);
                 if (usuario.Rows.Count == 1)
                 {
-                    FormAviones ventanaAeropuerto = new FormAviones();
-                    ventanaAeropuerto.Show();
                     formPrincipal ventanaPrincipal = new formPrincipal(user);
                     ventanaPrincipal.Show();
                     this.Hide();
@@ -42,6 +40,7 @@ namespace Principal
 
         }
 
+
         private void formIngresar_Load(object sender, EventArgs e)
         {
 
@@ -51,5 +50,6 @@ namespace Principal
         {
 
         }
+
     }
 }

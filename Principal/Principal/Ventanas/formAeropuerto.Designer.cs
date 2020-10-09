@@ -30,6 +30,7 @@
         {
             this.dgvDatosAeropuerto = new System.Windows.Forms.DataGridView();
             this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +56,7 @@
             this.dgvDatosAeropuerto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosAeropuerto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdAeropuerto,
+            this.Nombre,
             this.Domicilio,
             this.Telefono,
             this.Descripcion,
@@ -74,6 +76,13 @@
             this.IdAeropuerto.Name = "IdAeropuerto";
             this.IdAeropuerto.ReadOnly = true;
             this.IdAeropuerto.Width = 30;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Domicilio
             // 
@@ -184,12 +193,11 @@
             // txtBusquedaNombre
             // 
             this.txtBusquedaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaNombre.Location = new System.Drawing.Point(162, 227);
+            this.txtBusquedaNombre.Location = new System.Drawing.Point(163, 227);
             this.txtBusquedaNombre.MaxLength = 37284;
             this.txtBusquedaNombre.Name = "txtBusquedaNombre";
-            this.txtBusquedaNombre.Size = new System.Drawing.Size(100, 26);
+            this.txtBusquedaNombre.Size = new System.Drawing.Size(99, 26);
             this.txtBusquedaNombre.TabIndex = 8;
-            this.txtBusquedaNombre.TextChanged += new System.EventHandler(this.txtBusquedaID_TextChanged);
             // 
             // btnAgregarAeropuerto
             // 
@@ -204,6 +212,7 @@
             // 
             // btnEliminarAeropuerto
             // 
+            this.btnEliminarAeropuerto.Enabled = false;
             this.btnEliminarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarAeropuerto.Location = new System.Drawing.Point(416, 9);
             this.btnEliminarAeropuerto.Name = "btnEliminarAeropuerto";
@@ -232,12 +241,6 @@
         #endregion
         private System.Windows.Forms.DataGridView dgvDatosAeropuerto;
         private System.Windows.Forms.Label lblDatosAeropuerto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdAeropuerto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantPuertasEmbarque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantMangasVuelo;
         private System.Windows.Forms.Button btnEditarAeropuerto;
         private System.Windows.Forms.Button btnAceptarEdicion;
         private System.Windows.Forms.GroupBox groupAeropuerto;
@@ -246,5 +249,12 @@
         private System.Windows.Forms.Button btnAgregarAeropuerto;
         private System.Windows.Forms.Button btnEliminarAeropuerto;
         private System.Windows.Forms.Button btnBuscarAeropuerto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdAeropuerto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantPuertasEmbarque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantMangasVuelo;
     }
 }
