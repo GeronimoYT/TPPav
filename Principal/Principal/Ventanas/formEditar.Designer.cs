@@ -307,6 +307,7 @@
             this.Controls.Add(this.lblDomicilioNuevoAeropuerto);
             this.Controls.Add(this.lblDatosNuevoAeropuerto);
             this.Name = "formEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Aeropuerto";
             this.Load += new System.EventHandler(this.formEditar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosAeropuerto)).EndInit();

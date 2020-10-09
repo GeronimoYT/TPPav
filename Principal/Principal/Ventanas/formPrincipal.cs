@@ -30,15 +30,14 @@ namespace Principal.Ventanas
         private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formAltaVuelo ventanaVuelo = new formAltaVuelo();
-            ventanaVuelo.Show();
-            this.Hide();
+            ventanaVuelo.Show();     
         }
 
         private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formularioPasajes = new formPasajes(this);
             formularioPasajes.Show();
-            this.Hide();
+            //this.Hide();
         }
 
 
@@ -55,7 +54,7 @@ namespace Principal.Ventanas
         {
             var formularioPasajeros = new formPasajeros(this);
             formularioPasajeros.Show();
-            this.Hide();
+            //this.Hide();
         }
     }
 }

@@ -228,6 +228,7 @@
             this.Controls.Add(this.cmbTipoDocumento);
             this.Controls.Add(this.GbEstado);
             this.Name = "formBajaPasajero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formBajaPasajero";
             this.Load += new System.EventHandler(this.formBajaPasajero_Load);
             this.GbEstado.ResumeLayout(false);

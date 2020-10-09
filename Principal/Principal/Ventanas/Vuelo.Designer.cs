@@ -402,6 +402,7 @@
             this.Controls.Add(this.txtNumVuelo);
             this.Controls.Add(this.label1);
             this.Name = "Vuelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AEROLINEA SALETARDE";
             this.Load += new System.EventHandler(this.Vuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
