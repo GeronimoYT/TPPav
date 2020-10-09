@@ -90,6 +90,7 @@
             this.avionToolStripMenuItem.Name = "avionToolStripMenuItem";
             this.avionToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.avionToolStripMenuItem.Text = "Avion";
+            this.avionToolStripMenuItem.Click += new System.EventHandler(this.avionToolStripMenuItem_Click);
             // 
             // pasajeroToolStripMenuItem
             // 
