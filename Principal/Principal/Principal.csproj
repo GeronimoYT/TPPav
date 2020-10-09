@@ -54,7 +54,6 @@
     <Compile Include="Clases\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Aeropuerto.cs" />
-    <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Embarque.cs" />
     <Compile Include="Clases\Pasaje.cs" />
     <Compile Include="Clases\Pasajero.cs" />
@@ -67,7 +66,6 @@
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
     <Compile Include="Clases\TipoPasaje.cs" />
-    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Ventanas\formAeropuerto.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
