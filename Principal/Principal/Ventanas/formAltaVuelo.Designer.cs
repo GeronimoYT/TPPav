@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNumVuelo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.calendarioSalida = new System.Windows.Forms.MonthCalendar();
             this.label4 = new System.Windows.Forms.Label();
@@ -58,27 +56,6 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "N° Vuelo :";
-            // 
-            // txtNumVuelo
-            // 
-            this.txtNumVuelo.Enabled = false;
-            this.txtNumVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumVuelo.Location = new System.Drawing.Point(96, 12);
-            this.txtNumVuelo.Name = "txtNumVuelo";
-            this.txtNumVuelo.ReadOnly = true;
-            this.txtNumVuelo.Size = new System.Drawing.Size(163, 22);
-            this.txtNumVuelo.TabIndex = 2;
-            this.txtNumVuelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -128,7 +105,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 282);
+            this.label10.Location = new System.Drawing.Point(16, 251);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 16);
             this.label10.TabIndex = 15;
@@ -142,7 +119,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmbHoraSalida);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 43);
+            this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(360, 225);
             this.groupBox1.TabIndex = 16;
@@ -157,7 +134,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.cmbHoraLlegada);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(383, 43);
+            this.groupBox2.Location = new System.Drawing.Point(379, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(354, 225);
             this.groupBox2.TabIndex = 17;
@@ -212,7 +189,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 315);
+            this.label8.Location = new System.Drawing.Point(15, 284);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 16);
             this.label8.TabIndex = 19;
@@ -222,7 +199,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 347);
+            this.label9.Location = new System.Drawing.Point(15, 316);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 16);
             this.label9.TabIndex = 20;
@@ -231,7 +208,7 @@
             // cmbAeropuertoOrigen
             // 
             this.cmbAeropuertoOrigen.FormattingEnabled = true;
-            this.cmbAeropuertoOrigen.Location = new System.Drawing.Point(162, 314);
+            this.cmbAeropuertoOrigen.Location = new System.Drawing.Point(158, 283);
             this.cmbAeropuertoOrigen.Name = "cmbAeropuertoOrigen";
             this.cmbAeropuertoOrigen.Size = new System.Drawing.Size(367, 21);
             this.cmbAeropuertoOrigen.TabIndex = 21;
@@ -239,7 +216,7 @@
             // cmbAeropuertoDestino
             // 
             this.cmbAeropuertoDestino.FormattingEnabled = true;
-            this.cmbAeropuertoDestino.Location = new System.Drawing.Point(162, 346);
+            this.cmbAeropuertoDestino.Location = new System.Drawing.Point(158, 315);
             this.cmbAeropuertoDestino.Name = "cmbAeropuertoDestino";
             this.cmbAeropuertoDestino.Size = new System.Drawing.Size(367, 21);
             this.cmbAeropuertoDestino.TabIndex = 22;
@@ -248,7 +225,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(20, 385);
+            this.label11.Location = new System.Drawing.Point(16, 354);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 16);
             this.label11.TabIndex = 23;
@@ -257,7 +234,7 @@
             // btnConfirmarVuelo
             // 
             this.btnConfirmarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarVuelo.Location = new System.Drawing.Point(422, 423);
+            this.btnConfirmarVuelo.Location = new System.Drawing.Point(418, 392);
             this.btnConfirmarVuelo.Name = "btnConfirmarVuelo";
             this.btnConfirmarVuelo.Size = new System.Drawing.Size(138, 23);
             this.btnConfirmarVuelo.TabIndex = 25;
@@ -268,7 +245,7 @@
             // btnCancelarVuelo
             // 
             this.btnCancelarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarVuelo.Location = new System.Drawing.Point(596, 423);
+            this.btnCancelarVuelo.Location = new System.Drawing.Point(592, 392);
             this.btnCancelarVuelo.Name = "btnCancelarVuelo";
             this.btnCancelarVuelo.Size = new System.Drawing.Size(109, 23);
             this.btnCancelarVuelo.TabIndex = 26;
@@ -280,7 +257,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(214, 282);
+            this.label12.Location = new System.Drawing.Point(210, 251);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 16);
             this.label12.TabIndex = 30;
@@ -288,7 +265,7 @@
             // 
             // txtTipoAvion
             // 
-            this.txtTipoAvion.Location = new System.Drawing.Point(318, 282);
+            this.txtTipoAvion.Location = new System.Drawing.Point(314, 251);
             this.txtTipoAvion.Name = "txtTipoAvion";
             this.txtTipoAvion.Size = new System.Drawing.Size(211, 20);
             this.txtTipoAvion.TabIndex = 31;
@@ -296,7 +273,7 @@
             // btnDetalle
             // 
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(596, 279);
+            this.btnDetalle.Location = new System.Drawing.Point(592, 248);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(109, 23);
             this.btnDetalle.TabIndex = 33;
@@ -307,7 +284,7 @@
             // cmbNumAvion
             // 
             this.cmbNumAvion.FormattingEnabled = true;
-            this.cmbNumAvion.Location = new System.Drawing.Point(96, 280);
+            this.cmbNumAvion.Location = new System.Drawing.Point(92, 249);
             this.cmbNumAvion.Name = "cmbNumAvion";
             this.cmbNumAvion.Size = new System.Drawing.Size(102, 21);
             this.cmbNumAvion.TabIndex = 34;
@@ -315,7 +292,7 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(95, 385);
+            this.cmbEstado.Location = new System.Drawing.Point(91, 354);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(134, 21);
             this.cmbEstado.TabIndex = 35;
@@ -324,7 +301,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 476);
+            this.ClientSize = new System.Drawing.Size(745, 429);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.cmbNumAvion);
             this.Controls.Add(this.btnDetalle);
@@ -340,8 +317,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtNumVuelo);
-            this.Controls.Add(this.label1);
             this.Name = "formAltaVuelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AEROLINEA SALETARDE";
@@ -356,9 +331,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNumVuelo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar calendarioSalida;
         private System.Windows.Forms.Label label4;

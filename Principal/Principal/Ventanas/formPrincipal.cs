@@ -40,10 +40,6 @@ namespace Principal.Ventanas
             //this.Hide();
         }
 
-
-        private void formPrincipal_Load(object sender, EventArgs e)
-        {
-        }
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

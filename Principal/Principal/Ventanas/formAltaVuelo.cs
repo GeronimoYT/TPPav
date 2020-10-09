@@ -94,8 +94,8 @@ namespace Principal.Ventanas
             {
                 try
                 {
-                    var fechaSalida = calendarioSalida.ToString();
-                    var fechaLlegada = calendarioLlegada.ToString();
+                    //var fechaSalida = calendarioSalida.ToString();
+                    //var fechaLlegada = calendarioLlegada.ToString();
                     //CARGA DE DATOS DEL VUELO A BD
                     //string consultaCarga = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdDestino,Estado) VALUES ('{calendarioSalida.Text}','{calendarioLlegada.Text}','{cmbNumAvion.Text}','{txtTipoAvion.Text}','{cmbAeropuertoOrigen.Text}','{cmbAeropuertoDestino.Text}','{cmbEstado.Text}')";
                     //var carga = DBHelper.GetDBHelper().ConsultaSQL(consultaCarga);
@@ -103,7 +103,7 @@ namespace Principal.Ventanas
                     Vuelo ventanaVuelo = new Vuelo();
                     ventanaVuelo.Show();
                     LimpiarCampos();
-                    this.Hide();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
