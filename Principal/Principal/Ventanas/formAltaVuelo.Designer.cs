@@ -267,6 +267,7 @@
             // 
             this.txtTipoAvion.Location = new System.Drawing.Point(314, 251);
             this.txtTipoAvion.Name = "txtTipoAvion";
+            this.txtTipoAvion.ReadOnly = true;
             this.txtTipoAvion.Size = new System.Drawing.Size(211, 20);
             this.txtTipoAvion.TabIndex = 31;
             // 

@@ -29,7 +29,7 @@ namespace Principal.Ventanas
 
         private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAltaVuelo ventanaVuelo = new formAltaVuelo();
+            Vuelo ventanaVuelo = new Vuelo();
             ventanaVuelo.Show();     
         }
 

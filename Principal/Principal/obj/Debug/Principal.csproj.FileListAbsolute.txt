@@ -73,8 +73,6 @@ C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Princ
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.pdb
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formVuelo.resources
-<<<<<<< HEAD
-=======
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
@@ -92,24 +90,11 @@ C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\obj\Debug\Principal.pdb
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
 >>>>>>> 116788bef910b2abd7d88d38ee54d292eae2bd92
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasaje.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajes.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formVuelo.resources
-<<<<<<< HEAD
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.exe
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.pdb
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.exe
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.pdb
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
-<<<<<<< HEAD
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.exe
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.pdb
@@ -134,7 +119,6 @@ C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.pdb
-=======
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
 >>>>>>> Nicolas
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasajero.resources
@@ -142,8 +126,6 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditarPasajero.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajeros.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
->>>>>>> master
-=======
 >>>>>>> origin
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV OCTUBRE\TPPav\Principal\Principal\bin\Debug\Principal.exe
@@ -169,4 +151,3 @@ C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.exe
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.pdb
->>>>>>> 116788bef910b2abd7d88d38ee54d292eae2bd92

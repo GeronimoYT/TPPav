@@ -91,7 +91,7 @@ namespace Principal.Ventanas
             if(resultado == System.Windows.Forms.DialogResult.Yes)
             {
                 try {
-                    string consulta = $"DELETE FROM Aeropuerto WHERE Nombre LIKE '{dgvDatosAeropuerto.CurrentRow.Cells[6].Value.ToString()}'";
+                    string consulta = $"DELETE FROM Aeropuerto WHERE IdAeropuerto LIKE '{dgvDatosAeropuerto.CurrentRow.Cells["IdAeropuerto"].Value.ToString()}'";
                     var eliminar = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                     MessageBox.Show("Se eliminó el aeropuerto exitosamente");
                 }

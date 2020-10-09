@@ -40,6 +40,7 @@
             this.NroAvion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdTipoAvion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +110,7 @@
             this.NroAvion,
             this.IdTipoAvion,
             this.IdAeropuerto,
+            this.IdDestino,
             this.Estado});
             this.dgvVuelos.Location = new System.Drawing.Point(12, 37);
             this.dgvVuelos.Name = "dgvVuelos";
@@ -154,10 +156,17 @@
             // 
             // IdAeropuerto
             // 
-            this.IdAeropuerto.DataPropertyName = "IdDestino";
-            this.IdAeropuerto.HeaderText = "IdDestino";
+            this.IdAeropuerto.DataPropertyName = "IdAeropuerto";
+            this.IdAeropuerto.HeaderText = "IdAeropuerto";
             this.IdAeropuerto.Name = "IdAeropuerto";
             this.IdAeropuerto.ReadOnly = true;
+            // 
+            // IdDestino
+            // 
+            this.IdDestino.DataPropertyName = "IdDestino";
+            this.IdDestino.HeaderText = "IdDestino";
+            this.IdDestino.Name = "IdDestino";
+            this.IdDestino.ReadOnly = true;
             // 
             // Estado
             // 
@@ -178,13 +187,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvVuelos);
             this.Name = "Vuelo";
-<<<<<<< HEAD
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AEROLINEA SALETARDE";
-=======
             this.Text = "Vuelo";
->>>>>>> 116788bef910b2abd7d88d38ee54d292eae2bd92
-            this.Load += new System.EventHandler(this.Vuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,6 +209,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NroAvion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdTipoAvion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdAeropuerto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDestino;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
