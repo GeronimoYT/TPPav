@@ -105,5 +105,10 @@ namespace Principal.Ventanas
             ventanaBaja.Show();
             this.Hide();
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
