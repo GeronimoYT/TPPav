@@ -52,7 +52,7 @@ namespace Principal.Ventanas
             else
             {
                 try {
-                    string consultaCarga = $"INSERT INTO Aeropuerto (Domicilio,Telefono,Descripcion,CantPuertasEmbarque,CantMangasVuelo) VALUES ('{txtNuevoDomicilio.Text}','{txtNuevoTelefono.Text}','{txtNuevaDescripcion.Text}','{txtCPEmbarque.Text}','{txtCMVuelo.Text}')";
+                    string consultaCarga = $"INSERT INTO Aeropuerto (Nombre,Domicilio,Telefono,Descripcion,CantPuertasEmbarque,CantMangasVuelo) VALUES ('{txtNuevoNombre.Text}','{txtNuevoDomicilio.Text}','{txtNuevoTelefono.Text}','{txtNuevaDescripcion.Text}','{txtCPEmbarque.Text}','{txtCMVuelo.Text}')";
                     var carga = DBHelper.GetDBHelper().ConsultaSQL(consultaCarga);
                     MessageBox.Show("Carga exitosa!");
                     CargaGrilla();
@@ -68,6 +68,7 @@ namespace Principal.Ventanas
 
         private void LimpiarCampos()
         {
+            txtNuevoNombre.Text = "";
             txtNuevoDomicilio.Text = "";
             txtNuevoTelefono.Text = "";
             txtNuevaDescripcion.Text = "";
