@@ -103,7 +103,7 @@ namespace Principal.Ventanas
                     Vuelo ventanaVuelo = new Vuelo();
                     ventanaVuelo.Show();
                     LimpiarCampos();
-                    this.Hide();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

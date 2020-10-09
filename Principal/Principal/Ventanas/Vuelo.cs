@@ -17,12 +17,10 @@ namespace Principal.Ventanas
         public Vuelo()
         {
             InitializeComponent();
-        }
-
-        private void Vuelo_Load_1(object sender, EventArgs e)
-        {
             CargaGrilla();
         }
+
+        
         private void CargaGrilla()
         {
             try
@@ -37,7 +35,7 @@ namespace Principal.Ventanas
             }
         }
 
-        private void btnBorrar_Click_1(object sender, EventArgs e)
+        private void btnBorrar_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operación?", "Eliminar Vuelo", buttons);
@@ -58,9 +56,21 @@ namespace Principal.Ventanas
 
         }
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            formAltaVuelo _formAltaVuelo = new formAltaVuelo();
+            _formAltaVuelo.Show();
+            this.Close();
+        }
+
+        private void Vuelo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,7 @@
             this.btnSalir.TabIndex = 16;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnBorrar
             // 
@@ -63,6 +64,7 @@
             this.btnBorrar.TabIndex = 15;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnModificar
             // 
@@ -83,6 +85,7 @@
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label1
             // 
@@ -110,47 +113,55 @@
             this.dgvVuelos.Location = new System.Drawing.Point(12, 37);
             this.dgvVuelos.Name = "dgvVuelos";
             this.dgvVuelos.ReadOnly = true;
-            this.dgvVuelos.Size = new System.Drawing.Size(738, 195);
+            this.dgvVuelos.Size = new System.Drawing.Size(723, 195);
             this.dgvVuelos.TabIndex = 11;
             // 
             // NroVuelo
             // 
+            this.NroVuelo.DataPropertyName = "NroVuelo";
             this.NroVuelo.HeaderText = "NroVuelo";
             this.NroVuelo.Name = "NroVuelo";
             this.NroVuelo.ReadOnly = true;
+            this.NroVuelo.Width = 75;
             // 
             // FechaHoraSalida
             // 
+            this.FechaHoraSalida.DataPropertyName = "FechaHoraSalida";
             this.FechaHoraSalida.HeaderText = "FechaHoraSalida";
             this.FechaHoraSalida.Name = "FechaHoraSalida";
             this.FechaHoraSalida.ReadOnly = true;
             // 
             // FechaHoraLlegada
             // 
+            this.FechaHoraLlegada.DataPropertyName = "FechaHoraLlegada";
             this.FechaHoraLlegada.HeaderText = "FechaHoraLlegada";
             this.FechaHoraLlegada.Name = "FechaHoraLlegada";
             this.FechaHoraLlegada.ReadOnly = true;
             // 
             // NroAvion
             // 
+            this.NroAvion.DataPropertyName = "NroAvion";
             this.NroAvion.HeaderText = "NroAvion";
             this.NroAvion.Name = "NroAvion";
             this.NroAvion.ReadOnly = true;
             // 
             // IdTipoAvion
             // 
+            this.IdTipoAvion.DataPropertyName = "IdTipoAvion";
             this.IdTipoAvion.HeaderText = "IdTipoAvion";
             this.IdTipoAvion.Name = "IdTipoAvion";
             this.IdTipoAvion.ReadOnly = true;
             // 
             // IdAeropuerto
             // 
+            this.IdAeropuerto.DataPropertyName = "IdDestino";
             this.IdAeropuerto.HeaderText = "IdDestino";
             this.IdAeropuerto.Name = "IdAeropuerto";
             this.IdAeropuerto.ReadOnly = true;
             // 
             // Estado
             // 
+            this.Estado.DataPropertyName = "Estado";
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
@@ -168,7 +179,7 @@
             this.Controls.Add(this.dgvVuelos);
             this.Name = "Vuelo";
             this.Text = "Vuelo";
-            this.Load += new System.EventHandler(this.Vuelo_Load_1);
+            this.Load += new System.EventHandler(this.Vuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
