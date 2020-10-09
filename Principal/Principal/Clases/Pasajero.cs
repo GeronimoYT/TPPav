@@ -24,12 +24,12 @@ namespace Principal.Clases
         public void ValidarNroDocumento()
         {
             if (string.IsNullOrEmpty(this.NroDocumento))
-                throw new ApplicationException("El nro documento es requerido");
-            //return "El Nro Documento es requerido";
-            if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length > 20)
-                throw new ApplicationException("nro Documento inválido. El nro documento no debe superar los 20 caracteres");
-            /*return "Nro Documento inválido. El nombre no debe superar los 20 caracteres";
-        return null;*/
+                throw new ApplicationException("El Numero documento es requerido");
+            
+            if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length > 8)
+                throw new ApplicationException("Numero de Documento inválido. El Numero de documento no debe superar los 8 Digitos");
+            if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length < 6)
+                throw new ApplicationException("Numero de Documento inválido. El Numero de documento no debe ser menor de 6 Digitos");
         }
         public void ValidarNombre()
         {
@@ -47,7 +47,7 @@ namespace Principal.Clases
                 throw new ApplicationException("El apellido es requerido");
             //return "El apellido es requerido";
             if (!string.IsNullOrEmpty(this.Apellido) && this.Apellido.Length > 20)
-                throw new ApplicationException("Apellido inválido. El nombre no debe superar los 20 caracteres");
+                throw new ApplicationException("Apellido inválido. El apellido no debe superar los 20 caracteres");
             /*return "Apellido inválido. El nombre no debe superar los 20 caracteres";
         return null;*/
         }
@@ -55,11 +55,12 @@ namespace Principal.Clases
         {
             if (string.IsNullOrEmpty(this.Telefono))
                 throw new ApplicationException("El telefono es requerido");
-            //return "El telefono es requerido";
+            
             if (!string.IsNullOrEmpty(this.Telefono) && this.Telefono.Length > 20)
-                throw new ApplicationException("Telefono inválido. El nombre no debe superar los 20 caracteres");
-            /*return "Telefono inválido. El nombre no debe superar los 20 caracteres";
-        return null;*/
+                throw new ApplicationException("Telefono inválido. El numero de telefono no debe superar los 20 Digitos");
+            if (!string.IsNullOrEmpty(this.Telefono) && this.Telefono.Length < 7)
+                throw new ApplicationException("Telefono inválido. El numero de telefono no debe ser menor a 7 Digitos");
+
         }
 
         public void ValidarEmail()
@@ -69,13 +70,7 @@ namespace Principal.Clases
             /*return "Email inválido. El email no debe superar los 60 caracteres";
         return null;*/
         }
-        public void ValidarTipoDocumento()
-        {
-            if (TipoDocumento == null || NroDocumento == "0")
-            {
-                throw new ApplicationException("Indetificacion por Documento Invalido");
-            }
-        }
+        
         public string EstadoABD()
         {
             //si estado es true devuelve S y si el falso una N

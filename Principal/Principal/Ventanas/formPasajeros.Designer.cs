@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.ckIncluirEnBaja = new System.Windows.Forms.CheckBox();
             this.dgvPasajeros = new System.Windows.Forms.DataGridView();
-            this.tipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,39 +49,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "TipoDocumento:";
-            // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(105, 56);
+            this.txtNroDocumento.Location = new System.Drawing.Point(103, 44);
+            this.txtNroDocumento.MaxLength = 8;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(149, 20);
             this.txtNroDocumento.TabIndex = 48;
+            this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeypressKeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 63);
+            this.label4.Location = new System.Drawing.Point(15, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 49;
-            this.label4.Text = "NroDocumetno:";
-            // 
-            // cmbTipoDocumento
-            // 
-            this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(105, 28);
-            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
-            this.cmbTipoDocumento.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoDocumento.TabIndex = 37;
+            this.label4.Text = "NroDocumento:";
             // 
             // btnBorrar
             // 
@@ -94,6 +75,7 @@
             this.btnBorrar.TabIndex = 47;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // ckIncluirEnBaja
             // 
@@ -114,7 +96,6 @@
             this.dgvPasajeros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPasajeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPasajeros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tipoDocumento,
             this.nroDocumento,
             this.apellido,
             this.nombre,
@@ -130,13 +111,6 @@
             this.dgvPasajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPasajeros.Size = new System.Drawing.Size(469, 227);
             this.dgvPasajeros.TabIndex = 45;
-            // 
-            // tipoDocumento
-            // 
-            this.tipoDocumento.HeaderText = "TipoDocumento";
-            this.tipoDocumento.Name = "tipoDocumento";
-            this.tipoDocumento.ReadOnly = true;
-            this.tipoDocumento.Width = 108;
             // 
             // nroDocumento
             // 
@@ -181,6 +155,7 @@
             this.btnModificar.TabIndex = 44;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnRegistrar
             // 
@@ -190,6 +165,7 @@
             this.btnRegistrar.TabIndex = 39;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnConsultar
             // 
@@ -199,6 +175,7 @@
             this.btnConsultar.TabIndex = 38;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnCerrar
             // 
@@ -208,11 +185,12 @@
             this.btnCerrar.TabIndex = 36;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 115);
+            this.label3.Location = new System.Drawing.Point(50, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 41;
@@ -221,7 +199,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 89);
+            this.label2.Location = new System.Drawing.Point(50, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 40;
@@ -229,14 +207,16 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(103, 108);
+            this.txtNombre.Location = new System.Drawing.Point(103, 96);
+            this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(151, 20);
             this.txtNombre.TabIndex = 43;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(105, 82);
+            this.txtApellido.Location = new System.Drawing.Point(103, 70);
+            this.txtApellido.MaxLength = 20;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(149, 20);
             this.txtApellido.TabIndex = 42;
@@ -246,10 +226,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 279);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNroDocumento);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cmbTipoDocumento);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.ckIncluirEnBaja);
             this.Controls.Add(this.dgvPasajeros);
@@ -271,20 +249,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNroDocumento;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbTipoDocumento;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.CheckBox ckIncluirEnBaja;
         private System.Windows.Forms.DataGridView dgvPasajeros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnConsultar;
@@ -293,5 +262,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }
