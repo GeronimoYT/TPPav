@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace Principal.Ventanas
 {
-    public partial class formVuelo : Form
+    public partial class Vuelo : Form
     {
-        public formVuelo()
+        public Vuelo()
         {
             InitializeComponent();
-<<<<<<< HEAD
+
         }
 
         private void Vuelo_Load(object sender, EventArgs e)
@@ -32,10 +32,14 @@ namespace Principal.Ventanas
                 string consulta = $"SELECT * FROM Vuelo";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 dgvVuelos.DataSource = grilla;
-=======
-            CargoCombo();
-            //CargaHoras();
-        }
+
+                CargoCombo();
+                //CargaHoras();
+            }catch(Exception ex)
+            {
+
+            }
+         }
 
        
         private void CargoCombo()
@@ -60,7 +64,7 @@ namespace Principal.Ventanas
                 cmbAeropuerto1.DisplayMember = "domicilio";
                 cmbAeropuerto2.DisplayMember = "domicilio";
                 cmbEstadoVuelo.DisplayMember = "estado vuelo";
->>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
+
             }
             catch (SqlException ex)
             {

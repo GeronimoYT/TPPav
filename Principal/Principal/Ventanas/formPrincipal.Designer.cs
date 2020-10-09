@@ -76,6 +76,7 @@
             this.vueloToolStripMenuItem.Name = "vueloToolStripMenuItem";
             this.vueloToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.vueloToolStripMenuItem.Text = "Vuelo";
+            this.vueloToolStripMenuItem.Click += new System.EventHandler(this.vueloToolStripMenuItem_Click);
             // 
             // pasajeToolStripMenuItem
             // 
@@ -107,11 +108,8 @@
             this.Name = "formPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
-<<<<<<< HEAD
-            this.Load += new System.EventHandler(this.formPrincipal_Load);
-=======
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPrincipal_FormClosing);
->>>>>>> master
+            this.Load += new System.EventHandler(this.formPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
