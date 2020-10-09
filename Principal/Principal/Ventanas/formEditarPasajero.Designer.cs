@@ -182,6 +182,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cmbTipoDocumento);
             this.Name = "formEditarPasajero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Pasajero";
             this.Load += new System.EventHandler(this.formEditarPasajero_Load);
             this.ResumeLayout(false);

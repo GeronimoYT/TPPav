@@ -180,6 +180,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.cmbTipoDocumento);
             this.Name = "formAltaPasajero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formAltaPasajero";
             this.Load += new System.EventHandler(this.formAltaPasajero_Load);
             this.ResumeLayout(false);

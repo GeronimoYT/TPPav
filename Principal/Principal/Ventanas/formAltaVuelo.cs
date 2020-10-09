@@ -143,7 +143,8 @@ namespace Principal.Ventanas
             {
                 try
                 {
-                    this.Close();
+                    //formPrincipal principal = new formPrincipal();
+                    this.Close();  
                 }
                 catch (Exception ex)
                 {
