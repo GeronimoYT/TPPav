@@ -77,16 +77,6 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajes.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formVuelo.resources
-<<<<<<< HEAD
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.exe
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.pdb
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.exe
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\Principal.pdb
-C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.exe
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.pdb
@@ -111,7 +101,6 @@ C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.pdb
-=======
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
 >>>>>>> Nicolas
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasajero.resources
@@ -119,4 +108,3 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditarPasajero.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajeros.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
->>>>>>> master
