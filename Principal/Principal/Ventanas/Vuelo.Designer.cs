@@ -1,6 +1,6 @@
 ﻿namespace Principal.Ventanas
 {
-    partial class formVuelo
+    partial class Vuelo
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,10 @@
             this.IdAeropuerto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).BeginInit();
-=======
             this.txtNumVuelo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -70,9 +67,7 @@
             this.btnDetalleAvion = new System.Windows.Forms.Button();
             this.cmbNumAvion = new System.Windows.Forms.ComboBox();
             this.cmbEstadoVuelo = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
->>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVuelos
@@ -126,7 +121,6 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
-<<<<<<< HEAD
             // label1
             // 
             this.label1.AutoSize = true;
@@ -178,7 +172,119 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-=======
+            // 
+            // txtNumVuelo
+            // 
+            this.txtNumVuelo.Location = new System.Drawing.Point(0, 0);
+            this.txtNumVuelo.Name = "txtNumVuelo";
+            this.txtNumVuelo.Size = new System.Drawing.Size(100, 20);
+            this.txtNumVuelo.TabIndex = 41;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 0;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 0;
+            // 
+            // cmbHoras
+            // 
+            this.cmbHoras.Location = new System.Drawing.Point(0, 0);
+            this.cmbHoras.Name = "cmbHoras";
+            this.cmbHoras.Size = new System.Drawing.Size(121, 21);
+            this.cmbHoras.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 23);
+            this.label10.TabIndex = 40;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 0;
+            // 
+            // monthCalendar2
+            // 
+            this.monthCalendar2.Location = new System.Drawing.Point(0, 0);
+            this.monthCalendar2.Name = "monthCalendar2";
+            this.monthCalendar2.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 0;
+            // 
+            // cmbHoras2
+            // 
+            this.cmbHoras2.Location = new System.Drawing.Point(0, 0);
+            this.cmbHoras2.Name = "cmbHoras2";
+            this.cmbHoras2.Size = new System.Drawing.Size(121, 21);
+            this.cmbHoras2.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 23);
+            this.label9.TabIndex = 36;
+            // 
             // cmbAeropuerto1
             // 
             this.cmbAeropuerto1.FormattingEnabled = true;
@@ -234,7 +340,6 @@
             this.label12.Size = new System.Drawing.Size(98, 16);
             this.label12.TabIndex = 30;
             this.label12.Text = "Tipo de Avion :";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // txtTipoAvion
             // 
@@ -252,7 +357,6 @@
             this.btnDetalleAvion.TabIndex = 33;
             this.btnDetalleAvion.Text = "Detalle";
             this.btnDetalleAvion.UseVisualStyleBackColor = true;
-            this.btnDetalleAvion.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // cmbNumAvion
             // 
@@ -269,26 +373,17 @@
             this.cmbEstadoVuelo.Name = "cmbEstadoVuelo";
             this.cmbEstadoVuelo.Size = new System.Drawing.Size(134, 21);
             this.cmbEstadoVuelo.TabIndex = 35;
->>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
             // 
-            // formVuelo
+            // Vuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(886, 295);
+            this.ClientSize = new System.Drawing.Size(745, 476);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvVuelos);
-            this.Name = "Vuelo";
-            this.Text = "AEROLINEA SALETARDE";
-            this.Load += new System.EventHandler(this.Vuelo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
-=======
-            this.ClientSize = new System.Drawing.Size(745, 476);
             this.Controls.Add(this.cmbEstadoVuelo);
             this.Controls.Add(this.cmbNumAvion);
             this.Controls.Add(this.btnDetalleAvion);
@@ -306,12 +401,10 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtNumVuelo);
             this.Controls.Add(this.label1);
-            this.Name = "formVuelo";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
->>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
+            this.Name = "Vuelo";
+            this.Text = "AEROLINEA SALETARDE";
+            this.Load += new System.EventHandler(this.Vuelo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVuelos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +414,7 @@
 
         private System.Windows.Forms.DataGridView dgvVuelos;
         private System.Windows.Forms.Label label1;
-<<<<<<< HEAD
+
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBorrar;
@@ -333,7 +426,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdTipoAvion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdAeropuerto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-=======
+
         private System.Windows.Forms.TextBox txtNumVuelo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
@@ -360,6 +453,6 @@
         private System.Windows.Forms.Button btnDetalleAvion;
         private System.Windows.Forms.ComboBox cmbNumAvion;
         private System.Windows.Forms.ComboBox cmbEstadoVuelo;
->>>>>>> 4ca83d16b1e6cdb95bb7cf20c4bb0898cbef4b7e
+
     }
 }

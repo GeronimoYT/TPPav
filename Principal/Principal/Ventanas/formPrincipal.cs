@@ -20,6 +20,7 @@ namespace Principal.Ventanas
             lblNombreUsuario.Visible = true;
         }
 
+
         private void aeropuertoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formAeropuerto ventanaAeropuerto = new formAeropuerto();
@@ -30,6 +31,7 @@ namespace Principal.Ventanas
         {
             formAltaVuelo ventanaVuelo = new formAltaVuelo();
             ventanaVuelo.Show();
+            this.Hide();
         }
 
         private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,9 +41,16 @@ namespace Principal.Ventanas
             this.Hide();
         }
 
+
         private void formPrincipal_Load(object sender, EventArgs e)
         {
+        }
+        private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
 
         }
+
+        
     }
 }

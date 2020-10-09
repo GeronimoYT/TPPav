@@ -98,7 +98,6 @@
             this.Name = "formIngresar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar";
-            this.Load += new System.EventHandler(this.FormIngresar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
