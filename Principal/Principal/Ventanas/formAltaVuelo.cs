@@ -94,7 +94,7 @@ namespace Principal.Ventanas
             {
                 try
                 {
-                    //var fechaSalida = calendarioSalida.ToString();
+                    //var fechaSalida = calendarioSalida.Date;
                     //var fechaLlegada = calendarioLlegada.ToString();
                     //CARGA DE DATOS DEL VUELO A BD
                     //string consultaCarga = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdDestino,Estado) VALUES ('{calendarioSalida.Text}','{calendarioLlegada.Text}','{cmbNumAvion.Text}','{txtTipoAvion.Text}','{cmbAeropuertoOrigen.Text}','{cmbAeropuertoDestino.Text}','{cmbEstado.Text}')";
