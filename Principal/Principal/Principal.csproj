@@ -66,8 +66,6 @@
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
     <Compile Include="Clases\TipoPasaje.cs" />
-    <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="Ventanas\formAeropuerto.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\formAeropuerto.cs">
