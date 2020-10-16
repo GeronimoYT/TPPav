@@ -129,7 +129,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(330, 84);
+            this.txtEmail.Location = new System.Drawing.Point(341, 84);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
@@ -137,7 +137,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(330, 53);
+            this.txtNombre.Location = new System.Drawing.Point(341, 53);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
@@ -163,20 +163,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(277, 60);
+            this.label5.Location = new System.Drawing.Point(275, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 93;
-            this.label5.Text = "Nombre:";
+            this.label5.Text = "Nombre (*):";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 91);
+            this.label4.Location = new System.Drawing.Point(39, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 92;
-            this.label4.Text = "Telefono:";
+            this.label4.Text = "Telefono (*):";
             // 
             // txtApellido
             // 
@@ -189,24 +189,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 60);
+            this.label3.Location = new System.Drawing.Point(44, 60);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 90;
-            this.label3.Text = "Apellido:";
+            this.label3.Text = "Apellido (*):";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(239, 31);
+            this.label2.Location = new System.Drawing.Point(237, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 89;
-            this.label2.Text = "Nro Documento:";
+            this.label2.Text = "Nro Documento (*):";
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(330, 24);
+            this.txtNroDocumento.Location = new System.Drawing.Point(341, 23);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.ReadOnly = true;
             this.txtNroDocumento.Size = new System.Drawing.Size(121, 20);
@@ -215,11 +215,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 31);
+            this.label1.Location = new System.Drawing.Point(2, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 87;
-            this.label1.Text = "Tipo Documento:";
+            this.label1.Text = "Tipo Documento (*):";
             // 
             // cmbTipoDocumento
             // 
@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 232);
+            this.ClientSize = new System.Drawing.Size(474, 232);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtEmail);

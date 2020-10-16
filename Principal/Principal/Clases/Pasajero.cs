@@ -25,8 +25,14 @@ namespace Principal.Clases
                 //DateTime now = DateTime.Today;
                 int edad = DateTime.Today.Year - FechaNacimiento.Year;
 
-                if (DateTime.Today < FechaNacimiento.AddYears(edad))
+                if (DateTime.Today < FechaNacimiento.AddYears(edad)) { 
+                    if(DateTime.Today.Day == FechaNacimiento.Day)
+                    {
+                        return edad;
+                    }
                     return --edad;
+                }
+
                 else
                     return edad;
             }
@@ -43,11 +49,18 @@ namespace Principal.Clases
         {
             if (string.IsNullOrEmpty(this.NroDocumento))
                 throw new ApplicationException("El Numero documento es requerido");
-            
+            if (this.TipoDocumento == "DNI") { 
             if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length > 8)
                 throw new ApplicationException("Numero de Documento inválido. El Numero de documento no debe superar los 8 Digitos");
             if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length < 6)
                 throw new ApplicationException("Numero de Documento inválido. El Numero de documento no debe ser menor de 6 Digitos");
+            }
+            else {
+                if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length > 9)
+                    throw new ApplicationException("Numero de Documento inválido. El Numero de documento no debe superar los 9 Digitos");
+                if (!string.IsNullOrEmpty(this.NroDocumento) && this.NroDocumento.Length < 9)
+                    throw new ApplicationException("Numero de Documento inválido. El Numero de documento no debe ser menor de 9");
+            }
         }
         public void ValidarNombre()
         {

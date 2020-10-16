@@ -43,9 +43,9 @@ namespace Principal.Clases.Repositorio
 
             if (!string.IsNullOrEmpty(nroDocumento))
             {
-                sentenciaSql += $" NroDNI like '{nroDocumento}%'";
+                sentenciaSql += $" and NroDNI like '%{nroDocumento}'";
             }
-            else { sentenciaSql += $" NroDNI like '%'"; }
+            else { sentenciaSql += $" and NroDNI like '%'"; }
             if (!string.IsNullOrEmpty(apellido))
             {
                 sentenciaSql += $" and Apellido like '{apellido}%'";

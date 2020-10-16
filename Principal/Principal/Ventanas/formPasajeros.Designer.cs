@@ -35,18 +35,14 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtEdad = new System.Windows.Forms.TextBox();
             this.ckIncluirEnBaja = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dgvPasajeros = new System.Windows.Forms.DataGridView();
             this.tipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,13 +52,19 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtEdadDesde = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtEdadHasta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(443, 243);
+            this.btnBorrar.Location = new System.Drawing.Point(443, 261);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 47;
@@ -72,7 +74,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(362, 243);
+            this.btnModificar.Location = new System.Drawing.Point(362, 261);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 44;
@@ -82,7 +84,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(281, 243);
+            this.btnRegistrar.Location = new System.Drawing.Point(281, 261);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 39;
@@ -92,7 +94,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(154, 185);
+            this.btnConsultar.Location = new System.Drawing.Point(187, 243);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 38;
@@ -102,7 +104,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(675, 243);
+            this.btnCerrar.Location = new System.Drawing.Point(680, 261);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 36;
@@ -112,9 +114,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtNroDocumento);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmbTipoDocumento);
             this.groupBox1.Controls.Add(this.btnConsultar);
@@ -122,13 +123,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtEdad);
             this.groupBox1.Controls.Add(this.ckIncluirEnBaja);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 235);
+            this.groupBox1.Size = new System.Drawing.Size(268, 272);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -136,31 +135,10 @@
             // txtNroDocumento
             // 
             this.txtNroDocumento.Location = new System.Drawing.Point(101, 58);
+            this.txtNroDocumento.MaxLength = 9;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(138, 20);
             this.txtNroDocumento.TabIndex = 7;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(154, 151);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(59, 151);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -201,6 +179,7 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(101, 81);
+            this.txtApellido.MaxLength = 20;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(138, 20);
             this.txtApellido.TabIndex = 10;
@@ -208,21 +187,15 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(101, 103);
+            this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(138, 20);
             this.txtNombre.TabIndex = 11;
             // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(101, 125);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(138, 20);
-            this.txtEdad.TabIndex = 18;
-            // 
             // ckIncluirEnBaja
             // 
             this.ckIncluirEnBaja.AutoSize = true;
-            this.ckIncluirEnBaja.Location = new System.Drawing.Point(63, 191);
+            this.ckIncluirEnBaja.Location = new System.Drawing.Point(35, 226);
             this.ckIncluirEnBaja.Name = "ckIncluirEnBaja";
             this.ckIncluirEnBaja.Size = new System.Drawing.Size(93, 17);
             this.ckIncluirEnBaja.TabIndex = 14;
@@ -236,16 +209,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "NroDocumetno:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(60, 132);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Edad:";
+            this.label4.Text = "NroDocumento:";
             // 
             // dgvPasajeros
             // 
@@ -272,7 +236,7 @@
             this.dgvPasajeros.RowHeadersWidth = 51;
             this.dgvPasajeros.RowTemplate.Height = 24;
             this.dgvPasajeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPasajeros.Size = new System.Drawing.Size(474, 227);
+            this.dgvPasajeros.Size = new System.Drawing.Size(474, 244);
             this.dgvPasajeros.TabIndex = 39;
             // 
             // tipoDocumento
@@ -331,11 +295,60 @@
             this.edad.ReadOnly = true;
             this.edad.Width = 57;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtEdadHasta);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtEdadDesde);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(25, 129);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(214, 91);
+            this.groupBox2.TabIndex = 49;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Edad";
+            // 
+            // txtEdadDesde
+            // 
+            this.txtEdadDesde.Location = new System.Drawing.Point(76, 29);
+            this.txtEdadDesde.MaxLength = 3;
+            this.txtEdadDesde.Name = "txtEdadDesde";
+            this.txtEdadDesde.Size = new System.Drawing.Size(95, 20);
+            this.txtEdadDesde.TabIndex = 20;
+            this.txtEdadDesde.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdadDesde_KeypressKeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Edad Entre:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Edad Hasta:";
+            // 
+            // txtEdadHasta
+            // 
+            this.txtEdadHasta.Location = new System.Drawing.Point(76, 55);
+            this.txtEdadHasta.MaxLength = 3;
+            this.txtEdadHasta.Name = "txtEdadHasta";
+            this.txtEdadHasta.Size = new System.Drawing.Size(95, 20);
+            this.txtEdadHasta.TabIndex = 22;
+            this.txtEdadHasta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdadHasta_KeypressKeyPress);
+            // 
             // formPasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 279);
+            this.ClientSize = new System.Drawing.Size(766, 296);
             this.Controls.Add(this.dgvPasajeros);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBorrar);
@@ -349,6 +362,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -361,18 +376,14 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNroDocumento;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipoDocumento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.CheckBox ckIncluirEnBaja;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvPasajeros;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumento;
         private System.Windows.Forms.DataGridViewTextBoxColumn nroDocumento;
@@ -382,5 +393,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn edad;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtEdadHasta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtEdadDesde;
+        private System.Windows.Forms.Label label5;
     }
 }

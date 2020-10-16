@@ -44,9 +44,18 @@ namespace Principal.Ventanas
             FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
             var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
             cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;*/
-            cmbTipoDocumento.Items.Add("Seleccionar");
             cmbTipoDocumento.Items.Add("DNI");
             cmbTipoDocumento.Items.Add("Pasaporte");
+
+            if (_pasajero.TipoDocumento == "DNI")
+            {
+                cmbTipoDocumento.SelectedItem = "DNI";
+            }
+            if (_pasajero.TipoDocumento == "Pasaporte")
+            {
+                cmbTipoDocumento.SelectedItem = "Pasaporte";
+
+            }
 
         }
         private void CargarDatos()

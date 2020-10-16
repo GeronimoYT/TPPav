@@ -130,13 +130,14 @@ namespace Principal.Ventanas
         private void txtNroDocumento_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
             //if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "Seleccionar") { }
-            if (cmbTipoDocumento.SelectedItem.ToString() == "Seleccionar") { }
+            if (cmbTipoDocumento.SelectedItem.ToString() == "Seleccionar") { txtNroDocumento.MaxLength = 9; }
             else
             {
                 //if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "DNI")
                 if (cmbTipoDocumento.SelectedItem.ToString() == "DNI")
                 {
                     //Para obligar a que sólo se introduzcan números
+                    txtNroDocumento.MaxLength = 8;
                     if (Char.IsDigit(e.KeyChar))
                     {
                         e.Handled = false;
@@ -155,6 +156,7 @@ namespace Principal.Ventanas
                 //if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "Pasaporte")
                 if (cmbTipoDocumento.SelectedItem.ToString() == "Pasaporte")
                 {
+                    txtNroDocumento.MaxLength = 9;
                     if (txtNroDocumento.TextLength < 3)
                     {
 
@@ -200,6 +202,25 @@ namespace Principal.Ventanas
         private void cmbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtNroDocumento.Text = "";
+            
+        }
+        private void txtTelefono_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
         }
     }
 }
