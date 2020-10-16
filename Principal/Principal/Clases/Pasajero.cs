@@ -15,6 +15,24 @@ namespace Principal.Clases
 
         public string Email { get; set; }
 
+        public DateTime FechaNacimiento { get; set; }
+
+        public int Edad
+        {
+
+            get
+            {
+                //DateTime now = DateTime.Today;
+                int edad = DateTime.Today.Year - FechaNacimiento.Year;
+
+                if (DateTime.Today < FechaNacimiento.AddYears(edad))
+                    return --edad;
+                else
+                    return edad;
+            }
+            //get { return CalcularEdad(); }
+            //set { _edad = value; }
+        }
 
 
         public bool Estado { get; set; }
@@ -70,7 +88,19 @@ namespace Principal.Clases
             /*return "Email inválido. El email no debe superar los 60 caracteres";
         return null;*/
         }
-        
+        public void ValidarTipoDocumento()
+        {
+            if (TipoDocumento == null || NroDocumento == "0")
+            {
+                throw new ApplicationException("Indetificacion por Documento Invalido");
+            }
+            //if (TipoDocumento.Id== "Seleccionar")
+            if (TipoDocumento == "Seleccionar")
+            {
+                throw new ApplicationException("Debe seleccionar el tipo de Documento");
+            }
+        }
+
         public string EstadoABD()
         {
             //si estado es true devuelve S y si el falso una N

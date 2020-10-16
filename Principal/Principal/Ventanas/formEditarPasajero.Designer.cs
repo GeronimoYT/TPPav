@@ -40,6 +40,10 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -114,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 19);
+            this.label2.Location = new System.Drawing.Point(238, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 47;
@@ -122,7 +126,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(328, 109);
+            this.btnGuardar.Location = new System.Drawing.Point(328, 154);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 46;
@@ -132,7 +136,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(109, 12);
+            this.txtNroDocumento.Location = new System.Drawing.Point(329, 12);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.ReadOnly = true;
             this.txtNroDocumento.Size = new System.Drawing.Size(121, 20);
@@ -140,7 +144,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(409, 109);
+            this.btnCancelar.Location = new System.Drawing.Point(409, 154);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 43;
@@ -148,11 +152,54 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "Tipo Documento:";
+            // 
+            // cmbTipoDocumento
+            // 
+            this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoDocumento.Enabled = false;
+            this.cmbTipoDocumento.FormattingEnabled = true;
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(109, 12);
+            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
+            this.cmbTipoDocumento.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoDocumento.TabIndex = 56;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 13);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Fecha Nacimiento:";
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaNacimiento.Enabled = false;
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(109, 104);
+            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(121, 20);
+            this.dtpFechaNacimiento.TabIndex = 58;
+            // 
             // formEditarPasajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 135);
+            this.ClientSize = new System.Drawing.Size(496, 189);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtpFechaNacimiento);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbTipoDocumento);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtTelefono);
@@ -188,5 +235,9 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNroDocumento;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbTipoDocumento;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
     }
 }

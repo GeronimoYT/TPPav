@@ -23,16 +23,24 @@ namespace Principal.Clases.Repositorio
                 pasajero.Apellido = fila["Apellido"].ToString();
                 pasajero.Telefono = fila["Telefono"].ToString();
                 pasajero.Email = fila["Mail"].ToString();
+                pasajero.FechaNacimiento = Convert.ToDateTime(fila["FechaNacimiento"].ToString());
 
                 pasajeros.Add(pasajero);
             }
             return pasajeros;
 
         }
-        public List<Pasajero> ObtenerPasajeros(string nroDocumento, string apellido, string nombre, bool estado)
+        public List<Pasajero> ObtenerPasajeros(string tipoDocumento, string nroDocumento, string apellido, string nombre, bool estado)
         {
             List<Pasajero> pasajeros = new List<Pasajero>();
             var sentenciaSql = "SELECT * FROM Pasajero where";
+            if (!string.IsNullOrEmpty(tipoDocumento))
+            {
+                if (tipoDocumento == "Seleccionar") { sentenciaSql += $" TipoDNI like '%'"; }
+                else { sentenciaSql += $" TipoDNI like '{tipoDocumento}%'"; }
+            }
+            else { sentenciaSql += $" TipoDNI like '%'"; }
+
             if (!string.IsNullOrEmpty(nroDocumento))
             {
                 sentenciaSql += $" NroDNI like '{nroDocumento}%'";
@@ -60,6 +68,7 @@ namespace Principal.Clases.Repositorio
                 pasajero.Apellido = fila["Apellido"].ToString();
                 pasajero.Telefono = fila["Telefono"].ToString();
                 pasajero.Email = fila["Mail"].ToString();
+                pasajero.FechaNacimiento = Convert.ToDateTime(fila["FechaNacimiento"].ToString());
 
                 pasajeros.Add(pasajero);
             }
@@ -67,17 +76,17 @@ namespace Principal.Clases.Repositorio
         }
         public int RegistrarPasajero(Pasajero pasajero)
         {
-            var sentenciaSql = $"INSERT INTO Pasajero (TipoDNI,NroDNI,Apellido,Nombre,Telefono,Mail,Estado)" +
-                $" VALUES('DNI', '{pasajero.NroDocumento}'," +
-                $" '{pasajero.Apellido}', '{pasajero.Nombre}', '{pasajero.Telefono}', '{pasajero.Email}','S')";
+            var sentenciaSql = $"INSERT INTO Pasajero (TipoDNI,NroDNI,Apellido,Nombre,Telefono,Mail,Estado,FechaNacimiento)" +
+                $" VALUES('{pasajero.TipoDocumento}', '{pasajero.NroDocumento}'," +
+                $" '{pasajero.Apellido}', '{pasajero.Nombre}', '{pasajero.Telefono}', '{pasajero.Email}','S','{pasajero.FechaNacimiento}')";
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
             return filasAfectadas;
         }
 
-        public Pasajero ObtenerPasajero(string nroDoc)
+        public Pasajero ObtenerPasajero(string tipoDoc, string nroDoc)
         {
             Pasajero pasajeroResultado = null;
-            var sentenciaSql = $"SELECT * FROM Pasajero where NroDNI = '{nroDoc}'";
+            var sentenciaSql = $"SELECT * FROM Pasajero where NroDNI = '{nroDoc}' and TipoDNI = '{tipoDoc}'";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             if (tabla.Rows.Count == 1)
             {
@@ -91,6 +100,7 @@ namespace Principal.Clases.Repositorio
                 pasajeroBD.Nombre = row["Nombre"].ToString();
                 pasajeroBD.Telefono = row["Telefono"].ToString();
                 pasajeroBD.Email = row["Mail"].ToString();
+                pasajeroBD.FechaNacimiento = Convert.ToDateTime(row["FechaNacimiento"].ToString());
                 return pasajeroBD;
             }
             return pasajeroResultado;
@@ -98,13 +108,14 @@ namespace Principal.Clases.Repositorio
         public int ActualizarPasajero(Pasajero _pasajero)
         {
             var sentenciaSql = $"UPDATE Pasajero SET Apellido='{_pasajero.Apellido}', Telefono='{_pasajero.Telefono}'," +
-                $" Mail='{_pasajero.Email}' WHERE NroDNI ='{_pasajero.NroDocumento}'";
+                $" Mail='{_pasajero.Email}' WHERE NroDNI ='{_pasajero.NroDocumento}' and TipoDNI='{_pasajero.TipoDocumento}'";
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
             return filasAfectadas;
         }
         public int DarBajaPasajero(Pasajero _pasajero)
         {
-            var sentenciaSql = $"UPDATE Pasajero SET Estado='{_pasajero.EstadoABD()}' WHERE NroDNI = '{_pasajero.NroDocumento}'";
+            var sentenciaSql = $"UPDATE Pasajero SET Estado='{_pasajero.EstadoABD()}' WHERE TipoDNI='{_pasajero.TipoDocumento}'" +
+                $" and NroDNI = '{_pasajero.NroDocumento}'";
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
             return filasAfectadas;
         }

@@ -17,10 +17,10 @@ namespace Principal.Ventanas
         private PasajerosServicio _pasajerosServicio;
         private formPasajeros _frmPasajeros;
         private Pasajero _pasajero;
-        public formBajaPasajero(formPasajeros formPasajeros, string nroDoc)
+        public formBajaPasajero(formPasajeros formPasajeros, string tipoDoc, string nroDoc)
         {
             _pasajerosServicio = new PasajerosServicio();
-            _pasajero = _pasajerosServicio.ObtenerPasajero(nroDoc);
+            _pasajero = _pasajerosServicio.ObtenerPasajero(tipoDoc, nroDoc);
             _frmPasajeros = formPasajeros;
             InitializeComponent();
         }
@@ -28,16 +28,37 @@ namespace Principal.Ventanas
         private void formBajaPasajero_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            
+            CargarTipoDocumento();
+
+        }
+        private void CargarTipoDocumento()
+        {
+            /*
+            var tipoDocumentos = _tipoDocumentosServicio.ObtenerTipoDocumentos();
+            tipoDocumentos.Add(new TipoDocumento
+            {
+                Id = "Seleccionar"
+            });
+            var conector = new BindingSource();
+            conector.DataSource = tipoDocumentos;
+            FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
+            cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;*/
+            cmbTipoDocumento.Items.Add("Seleccionar");
+            cmbTipoDocumento.Items.Add("DNI");
+            cmbTipoDocumento.Items.Add("Pasaporte");
+
         }
         private void CargarDatos()
         {
-            
+
+            cmbTipoDocumento.Text = _pasajero.TipoDocumento;
             txtNroDocumento.Text = _pasajero.NroDocumento;
             txtApellido.Text = _pasajero.Apellido;
             txtNombre.Text = _pasajero.Nombre;
             txtTelefono.Text = _pasajero.Telefono;
             txtEmail.Text = _pasajero.Email;
+            dtpFechaNacimiento.Value = _pasajero.FechaNacimiento;
             if (_pasajero.Estado)
                 rbActivo.Checked = true;
             else

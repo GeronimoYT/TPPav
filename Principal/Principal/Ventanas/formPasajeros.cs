@@ -26,7 +26,7 @@ namespace Principal.Ventanas
 
         private void formPasajeros_Load(object sender, EventArgs e)
         {
-            
+            CargarTipoDocumento();
         }
         
         private void CargarGrilla(List<Pasajero> pasajeros)
@@ -35,24 +35,51 @@ namespace Principal.Ventanas
             foreach (var pasajero in pasajeros)
             {
                 var fila = new String[] {
+                //pasajero.TipoDocumento?.Id,
+                pasajero.TipoDocumento,
                 pasajero.NroDocumento,
                 pasajero.Apellido,
                 pasajero.Nombre,
                 pasajero.Email,
                 pasajero.Telefono,
+                pasajero.FechaNacimiento.ToString("dd/MM/yyyy"),
+                pasajero.Edad.ToString()
                 };
                 dgvPasajeros.Rows.Add(fila);
             }
         }
         public void ConsultarPasajeros()
         {
-            
+            //var tipoDocumentoIngresado = (((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString();
+            var tipoDocumentoIngresado = cmbTipoDocumento.SelectedItem.ToString();
             var nroDocumentoIngresado = txtNroDocumento.Text;
             var nombreIngresado = txtNombre.Text;
             var apellidoIngresado = txtApellido.Text;
             var incluirEnBaja = ckIncluirEnBaja.Checked;
-            var pasajeros = _pasajerosServicio.ObtenerPasajeros(nroDocumentoIngresado, apellidoIngresado, nombreIngresado, incluirEnBaja);
+            
+            var pasajeros = _pasajerosServicio.ObtenerPasajeros(tipoDocumentoIngresado, nroDocumentoIngresado, apellidoIngresado, nombreIngresado, incluirEnBaja);
             CargarGrilla(pasajeros);
+        }
+        private void CargarTipoDocumento()
+        {
+            /*
+            var tipoDocumentos = _tipoDocumentosServicio.ObtenerTipoDocumentos();
+            tipoDocumentos.Add(new TipoDocumento
+            {
+                Id = "Seleccionar"
+            });
+            var conector = new BindingSource();
+            conector.DataSource = tipoDocumentos;
+            FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
+            cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;*/
+            cmbTipoDocumento.Items.Add("Seleccionar");
+            cmbTipoDocumento.Items.Add("DNI");
+            cmbTipoDocumento.Items.Add("Pasaporte");
+            cmbTipoDocumento.SelectedItem = "Seleccionar";
+
+
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -65,9 +92,9 @@ namespace Principal.Ventanas
         {
             if (dgvPasajeros.SelectedRows.Count == 1)
             {
-                
+                var tipoDoc = dgvPasajeros.SelectedRows[0].Cells["tipoDocumento"].Value.ToString();
                 var nroDoc = dgvPasajeros.SelectedRows[0].Cells["nroDocumento"].Value.ToString();
-                new formEditarPasajero(this, nroDoc).Show();
+                new formEditarPasajero(this, tipoDoc, nroDoc).Show();
                 this.Hide();
             }
             else
@@ -78,9 +105,9 @@ namespace Principal.Ventanas
         {
             if (dgvPasajeros.SelectedRows.Count == 1)
             {
-                
+                var tipoDoc = dgvPasajeros.SelectedRows[0].Cells["tipoDocumento"].Value.ToString();
                 var nroDoc = dgvPasajeros.SelectedRows[0].Cells["nroDocumento"].Value.ToString();
-                new formBajaPasajero(this, nroDoc).Show();
+                new formBajaPasajero(this, tipoDoc, nroDoc).Show();
                 this.Hide();
             }
             else
@@ -98,24 +125,7 @@ namespace Principal.Ventanas
             this.Dispose();
         }
 
-        private void txtNroDocumento_KeypressKeyPress(object sender, KeyPressEventArgs e)
-        {
-            //Para obligar a que sólo se introduzcan números
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
-        }
+        
 
     }
 }
