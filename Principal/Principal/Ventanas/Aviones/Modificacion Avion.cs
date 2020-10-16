@@ -34,7 +34,6 @@ namespace Principal.Ventanas.Aviones
         private void Modificacion_Avion_Load(object sender, EventArgs e)
         {
             txtNumero.Text = avion.numero.ToString();
-            txtNuevoNumero.Text = avion.numero.ToString();
             txtCategoria.Text = avion.idTipo.ToString();
             rTxtDescripcion.Text = avion.descripcion;
         
@@ -63,6 +62,16 @@ namespace Principal.Ventanas.Aviones
 
             _avionesRep.ModificacionAvion(avion);
             CerrarFormuario();
+        }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            _formUtils.KeypressKeyPress(sender, e);
         }
     }
 }

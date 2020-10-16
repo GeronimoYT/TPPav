@@ -9,36 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //
 using Principal.Clases;
+using Principal.Utils;
 
 namespace Principal.Ventanas.Aviones
 {
     public partial class Alta_Avion : Form
     {
+        private FormUtils _formUtils;
         private Form _formAviones;
         public Alta_Avion(Form formAviones)
         {
             _formAviones = formAviones;
+            _formUtils = new FormUtils();
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Alta_Avion_Load(object sender, EventArgs e)
@@ -84,6 +67,16 @@ namespace Principal.Ventanas.Aviones
         {
             _formAviones.Show();
             this.Close();
+        }
+
+        private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            _formUtils.KeypressKeyPress(sender, e);
+        }
+
+        private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
