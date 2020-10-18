@@ -15,12 +15,10 @@ namespace Principal.Ventanas.Aviones
 {
     public partial class Alta_Avion : Form
     {
-        private FormUtils _formUtils;
         private Form _formAviones;
         public Alta_Avion(Form formAviones)
         {
             _formAviones = formAviones;
-            _formUtils = new FormUtils();
             InitializeComponent();
         }
 
@@ -71,7 +69,7 @@ namespace Principal.Ventanas.Aviones
 
         private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)

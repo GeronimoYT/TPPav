@@ -16,12 +16,10 @@ namespace Principal.Ventanas.TiposAvion
     public partial class AltaTipo : Form
     {
         private Form _formTipos;
-        private FormUtils _formUtils;
         private TiposAvionRepositorio _tiposRepositorio;
         public AltaTipo(Form tipos)
         {
             _formTipos = tipos;
-            _formUtils = new FormUtils();
             _tiposRepositorio = new TiposAvionRepositorio();
             InitializeComponent();
         }
@@ -56,32 +54,32 @@ namespace Principal.Ventanas.TiposAvion
 
         private void txtLongitud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
 
         private void txtAlcance_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
 
         private void txtClase1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
 
         private void txtClaseTurista_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
 
         private void txtEquipaje_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
 
         private void txtSalidas_KeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
     }
 }

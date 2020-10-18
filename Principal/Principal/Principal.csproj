@@ -178,6 +178,12 @@
     <Compile Include="Ventanas\TiposAvion\BajaTipo.Designer.cs">
       <DependentUpon>BajaTipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\TiposAvion\Detalle Tipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\TiposAvion\Detalle Tipo.Designer.cs">
+      <DependentUpon>Detalle Tipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\TiposAvion\FormTipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\TiposAvion\BajaTipo.resx">
       <DependentUpon>BajaTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\TiposAvion\Detalle Tipo.resx">
+      <DependentUpon>Detalle Tipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\TiposAvion\FormTipos.resx">
       <DependentUpon>FormTipos.cs</DependentUpon>

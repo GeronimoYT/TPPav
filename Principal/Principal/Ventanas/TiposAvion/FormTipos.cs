@@ -15,13 +15,11 @@ namespace Principal.Ventanas.TiposAvion
 {
     public partial class FormTipos : Form
     {
-        FormUtils _formUtils;
         Form _formPrincipal;
         TiposAvionRepositorio _tiposRepositorio;
 
         public FormTipos(Form formPrincipal)
         {
-            _formUtils = new FormUtils();
             _formPrincipal = formPrincipal;
             _tiposRepositorio = new TiposAvionRepositorio();
             InitializeComponent();
@@ -75,7 +73,7 @@ namespace Principal.Ventanas.TiposAvion
             List<TipoAvion> tipos = _tiposRepositorio.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
-            _formUtils.CargarList(ref lboxTipos, conectorDeDatos, "descripcion", "id");
+            FormUtils.GetInstance.CargarList(ref lboxTipos, conectorDeDatos, "descripcion", "id");
         }
 
         private void FormTipos_VisibleChanged(object sender, EventArgs e)

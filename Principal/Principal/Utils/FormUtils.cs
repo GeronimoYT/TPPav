@@ -10,6 +10,19 @@ namespace Principal.Utils
 {
     public class FormUtils
     {
+        private static FormUtils instance = null;
+
+        protected FormUtils() {}
+
+        public static FormUtils GetInstance
+        {
+            get
+            {
+                if (instance == null) instance = new FormUtils();   
+                return instance;
+            }
+        }
+
         //Recibe y setea una ComboBox, apartir de los parametros recibidos.
         public void CargarCombo(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
         {

@@ -18,13 +18,11 @@ namespace Principal.Ventanas.Aviones
         private Form _formAviones;
         private Avion avion;
         private AvionesRepositorio _avionesRep;
-        private FormUtils _formUtils;
         private TiposAvionRepositorio _repTipo;
 
         public Modificacion_Avion(FormAviones formAviones, Avion avionModificar)
         {
             _formAviones = formAviones;
-            _formUtils = new FormUtils();
             _avionesRep = new AvionesRepositorio();
             _repTipo = new TiposAvionRepositorio();
             avion = avionModificar;
@@ -40,7 +38,7 @@ namespace Principal.Ventanas.Aviones
             List<TipoAvion> tipos = _repTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
-            _formUtils.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
+            FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
         }
 
         private void CerrarFormuario()
@@ -71,7 +69,7 @@ namespace Principal.Ventanas.Aviones
 
         private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            _formUtils.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
     }
 }
