@@ -52,7 +52,7 @@
             this.Categoria,
             this.Descripcion});
             this.gridAviones.Location = new System.Drawing.Point(23, 24);
-            this.gridAviones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridAviones.Margin = new System.Windows.Forms.Padding(2);
             this.gridAviones.Name = "gridAviones";
             this.gridAviones.RowHeadersWidth = 51;
             this.gridAviones.RowTemplate.Height = 24;
@@ -84,7 +84,7 @@
             // btnAlta
             // 
             this.btnAlta.Location = new System.Drawing.Point(672, 127);
-            this.btnAlta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 19);
             this.btnAlta.TabIndex = 1;
@@ -95,7 +95,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(672, 165);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 19);
             this.btnModificar.TabIndex = 2;
@@ -106,7 +106,7 @@
             // btnBaja
             // 
             this.btnBaja.Location = new System.Drawing.Point(672, 202);
-            this.btnBaja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBaja.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 19);
             this.btnBaja.TabIndex = 3;
@@ -117,7 +117,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(184, 314);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(56, 19);
             this.btnBuscar.TabIndex = 4;
@@ -131,7 +131,7 @@
             this.comboCategorias.FormattingEnabled = true;
             this.comboCategorias.IntegralHeight = false;
             this.comboCategorias.Location = new System.Drawing.Point(23, 349);
-            this.comboCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.comboCategorias.Name = "comboCategorias";
             this.comboCategorias.Size = new System.Drawing.Size(218, 21);
             this.comboCategorias.TabIndex = 5;
@@ -140,7 +140,7 @@
             // picAvion
             // 
             this.picAvion.Location = new System.Drawing.Point(672, 24);
-            this.picAvion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picAvion.Margin = new System.Windows.Forms.Padding(2);
             this.picAvion.Name = "picAvion";
             this.picAvion.Size = new System.Drawing.Size(75, 76);
             this.picAvion.TabIndex = 6;
@@ -149,7 +149,7 @@
             // btnAtras
             // 
             this.btnAtras.Location = new System.Drawing.Point(579, 350);
-            this.btnAtras.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 19);
             this.btnAtras.TabIndex = 8;
@@ -160,7 +160,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(23, 314);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Mask = "99999";
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(158, 20);
@@ -181,8 +181,9 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.gridAviones);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAviones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aviones";
             this.Load += new System.EventHandler(this.Aviones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).EndInit();
