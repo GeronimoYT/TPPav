@@ -26,3 +26,4 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.formEmbarque.resources
