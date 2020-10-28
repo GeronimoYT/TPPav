@@ -27,7 +27,7 @@ namespace Principal.Ventanas
 
         private void formAltaPasajero_Load(object sender, EventArgs e)
         {
-            CargarTipoDocumento();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -35,23 +35,7 @@ namespace Principal.Ventanas
             _frmPasajeros.Show();
             this.Dispose();
         }
-        private void CargarTipoDocumento()
-        {
-            /*
-            var pasajeros = _pasajerosServicio.ObtenerPasajeros();
-            //var tipoDocumentoSeleccionado = pasajeros.First();
-            //me conecto los datos al combo
-            var conector = new BindingSource();
-            conector.DataSource = pasajeros;
-            cmbTipoDocumento.DataSource = conector;
-            //que es lo que se va a mostara en el combo
-            cmbTipoDocumento.DisplayMember = "TipoDocumento";
-            // el nro de  documento del tipo documeno que voy a mostrar
-            cmbTipoDocumento.ValueMember = "NroDocumento";
-            //cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;*/
-            cmbTipoDocumento.Items.Add("DNI");
-            cmbTipoDocumento.Items.Add("Pasaporte");
-        }
+      
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -73,14 +57,14 @@ namespace Principal.Ventanas
         }
         private bool ValidarPasajero()
         {
-            var tipoDocumento = Convert.ToString(cmbTipoDocumento.SelectedItem);
+            
             var nroDocumento = txtNroDocumento.Text;
             var apellido = txtApellido.Text;
             var nombre = txtNombre.Text;
             var telefono = txtTelefono.Text;
             var email = txtEmail.Text;
             var pasajeroIngresado = new Pasajero();
-            pasajeroIngresado.TipoDocumento = tipoDocumento;
+            
             pasajeroIngresado.NroDocumento = nroDocumento;
             pasajeroIngresado.Apellido = apellido;
             pasajeroIngresado.Nombre = nombre;
@@ -98,7 +82,7 @@ namespace Principal.Ventanas
             if (resultado == DialogResult.Cancel) { return false; }
             return true;
         }
-        private void RegistrarPasajero(Pasajero pasajero)
+        private void RegistrarPasajero(Pasajero _pasajero)
         {
 
             if (_pasajerosServicio.RegistrarPasajero(_pasajero))
@@ -110,6 +94,47 @@ namespace Principal.Ventanas
             else
             {
                 MessageBox.Show("Hubo un error. Intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtNroDocumento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtNroDocumento_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+        private void txtTelefono_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
             }
         }
     }

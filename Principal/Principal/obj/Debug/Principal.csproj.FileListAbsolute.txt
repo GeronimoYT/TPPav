@@ -121,3 +121,4 @@ C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Pr
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache

@@ -1,12 +1,5 @@
 ﻿using Principal.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Principal.Ventanas
@@ -29,8 +22,8 @@ namespace Principal.Ventanas
 
         private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formAltaVuelo ventanaVuelo = new formAltaVuelo();
-            ventanaVuelo.Show();     
+            Vuelo ventanaVuelo = new Vuelo();
+            ventanaVuelo.Show();
         }
 
         private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,10 +33,6 @@ namespace Principal.Ventanas
             //this.Hide();
         }
 
-
-        private void formPrincipal_Load(object sender, EventArgs e)
-        {
-        }
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

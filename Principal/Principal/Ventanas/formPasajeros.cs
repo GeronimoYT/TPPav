@@ -26,36 +26,18 @@ namespace Principal.Ventanas
 
         private void formPasajeros_Load(object sender, EventArgs e)
         {
-            CargarTipoDocumento();
+            
         }
-        private void CargarTipoDocumento()
-        {
-            /*
-            var pasajeros = _pasajerosServicio.ObtenerPasajeros();
-            //var tipoDocumentoSeleccionado = pasajeros.First();
-            //me conecto los datos al combo
-            var conector = new BindingSource();
-            conector.DataSource = pasajeros;
-            cmbTipoDocumento.DataSource = conector;
-            //que es lo que se va a mostara en el combo
-            cmbTipoDocumento.DisplayMember = "TipoDocumento";
-            // el nro de  documento del tipo documeno que voy a mostrar
-            cmbTipoDocumento.ValueMember = "NroDocumento";
-            //cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;*/
-
-            cmbTipoDocumento.Items.Add("DNI");
-            cmbTipoDocumento.Items.Add("Pasaporte");
-        }
+        
         private void CargarGrilla(List<Pasajero> pasajeros)
         {
             dgvPasajeros.Rows.Clear();
             foreach (var pasajero in pasajeros)
             {
                 var fila = new String[] {
-                pasajero.TipoDocumento,
                 pasajero.NroDocumento,
-                //pasajero.Apellido,
-                //pasajero.Nombre,
+                pasajero.Apellido,
+                pasajero.Nombre,
                 pasajero.Email,
                 pasajero.Telefono,
                 };
@@ -64,12 +46,12 @@ namespace Principal.Ventanas
         }
         public void ConsultarPasajeros()
         {
-            var tipoDocumentoIngresado = Convert.ToString(cmbTipoDocumento.SelectedItem);
+            
             var nroDocumentoIngresado = txtNroDocumento.Text;
             var nombreIngresado = txtNombre.Text;
             var apellidoIngresado = txtApellido.Text;
             var incluirEnBaja = ckIncluirEnBaja.Checked;
-            var pasajeros = _pasajerosServicio.ObtenerPasajeros(tipoDocumentoIngresado, nroDocumentoIngresado, apellidoIngresado, nombreIngresado, incluirEnBaja);
+            var pasajeros = _pasajerosServicio.ObtenerPasajeros(nroDocumentoIngresado, apellidoIngresado, nombreIngresado, incluirEnBaja);
             CargarGrilla(pasajeros);
         }
 
@@ -83,9 +65,9 @@ namespace Principal.Ventanas
         {
             if (dgvPasajeros.SelectedRows.Count == 1)
             {
-                var tipoDoc = dgvPasajeros.SelectedRows[0].Cells["tipoDocumento"].Value.ToString();
+                
                 var nroDoc = dgvPasajeros.SelectedRows[0].Cells["nroDocumento"].Value.ToString();
-                new formEditarPasajero(this, tipoDoc, nroDoc).Show();
+                new formEditarPasajero(this, nroDoc).Show();
                 this.Hide();
             }
             else
@@ -96,9 +78,9 @@ namespace Principal.Ventanas
         {
             if (dgvPasajeros.SelectedRows.Count == 1)
             {
-                var tipoDoc = dgvPasajeros.SelectedRows[0].Cells["tipoDocumento"].Value.ToString();
+                
                 var nroDoc = dgvPasajeros.SelectedRows[0].Cells["nroDocumento"].Value.ToString();
-                new formBajaPasajero(this, tipoDoc, nroDoc).Show();
+                new formBajaPasajero(this, nroDoc).Show();
                 this.Hide();
             }
             else
@@ -115,5 +97,25 @@ namespace Principal.Ventanas
             _frmPrincipal.Show();
             this.Dispose();
         }
+
+        private void txtNroDocumento_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
     }
 }

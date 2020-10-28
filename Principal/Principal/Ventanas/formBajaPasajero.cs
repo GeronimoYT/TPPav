@@ -17,10 +17,10 @@ namespace Principal.Ventanas
         private PasajerosServicio _pasajerosServicio;
         private formPasajeros _frmPasajeros;
         private Pasajero _pasajero;
-        public formBajaPasajero(formPasajeros formPasajeros, string tipoDoc, string nroDoc)
+        public formBajaPasajero(formPasajeros formPasajeros, string nroDoc)
         {
             _pasajerosServicio = new PasajerosServicio();
-            _pasajero = _pasajerosServicio.ObtenerPasajero(tipoDoc, nroDoc);
+            _pasajero = _pasajerosServicio.ObtenerPasajero(nroDoc);
             _frmPasajeros = formPasajeros;
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace Principal.Ventanas
         private void formBajaPasajero_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            CargarTipoDocumento();
+            
         }
         private void CargarDatos()
         {
@@ -44,23 +44,7 @@ namespace Principal.Ventanas
                 rbInactivo.Checked = true;
 
         }
-        private void CargarTipoDocumento()
-        {
-
-            cmbTipoDocumento.Items.Add("DNI");
-            cmbTipoDocumento.Items.Add("Pasaporte");
-
-            if (_pasajero.TipoDocumento == "DNI")
-            {
-                cmbTipoDocumento.SelectedItem = "DNI";
-            }
-            if (_pasajero.TipoDocumento == "Pasaporte")
-            {
-                cmbTipoDocumento.SelectedItem = "Pasaporte";
-            }
-
-
-        }
+        
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -103,6 +87,11 @@ namespace Principal.Ventanas
         {
             _frmPasajeros.Show();
             this.Dispose();
+        }
+
+        private void rbInactivo_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

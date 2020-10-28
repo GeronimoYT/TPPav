@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aeropuertoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vueloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.avionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasajeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,20 +49,6 @@
             this.lblNombreUsuario.TabIndex = 0;
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNombreUsuario.Visible = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aeropuertoToolStripMenuItem,
-            this.vueloToolStripMenuItem,
-            this.pasajeToolStripMenuItem,
-            this.avionToolStripMenuItem,
-            this.pasajeroToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(567, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // aeropuertoToolStripMenuItem
             // 
@@ -99,6 +85,20 @@
             this.pasajeroToolStripMenuItem.Text = "Pasajero";
             this.pasajeroToolStripMenuItem.Click += new System.EventHandler(this.pasajeroToolStripMenuItem_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aeropuertoToolStripMenuItem,
+            this.vueloToolStripMenuItem,
+            this.pasajeToolStripMenuItem,
+            this.avionToolStripMenuItem,
+            this.pasajeroToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(567, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -111,7 +111,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPrincipal_FormClosing);
-            this.Load += new System.EventHandler(this.formPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -122,11 +121,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aeropuertoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vueloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem avionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasajeroToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

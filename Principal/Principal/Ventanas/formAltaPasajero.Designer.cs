@@ -39,14 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(326, 83);
+            this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(121, 20);
             this.txtEmail.TabIndex = 41;
@@ -54,6 +53,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(326, 52);
+            this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 40;
@@ -61,9 +61,11 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(106, 83);
+            this.txtTelefono.MaxLength = 20;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(121, 20);
             this.txtTelefono.TabIndex = 39;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeypressKeyPress);
             // 
             // label6
             // 
@@ -95,6 +97,7 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(106, 52);
+            this.txtApellido.MaxLength = 20;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(121, 20);
             this.txtApellido.TabIndex = 35;
@@ -102,7 +105,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 59);
+            this.label3.Location = new System.Drawing.Point(58, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 34;
@@ -111,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(235, 30);
+            this.label2.Location = new System.Drawing.Point(20, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 33;
@@ -125,22 +128,17 @@
             this.btnGuardar.TabIndex = 32;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(326, 23);
+            this.txtNroDocumento.Location = new System.Drawing.Point(106, 25);
+            this.txtNroDocumento.MaxLength = 8;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(121, 20);
             this.txtNroDocumento.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Tipo Documento:";
+            this.txtNroDocumento.TextChanged += new System.EventHandler(this.txtNroDocumento_TextChanged);
+            this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeypressKeyPress);
             // 
             // btnCancelar
             // 
@@ -150,15 +148,7 @@
             this.btnCancelar.TabIndex = 29;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // cmbTipoDocumento
-            // 
-            this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(106, 22);
-            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
-            this.cmbTipoDocumento.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoDocumento.TabIndex = 28;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // formAltaPasajero
             // 
@@ -176,9 +166,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNroDocumento);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.cmbTipoDocumento);
             this.Name = "formAltaPasajero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formAltaPasajero";
@@ -201,8 +189,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtNroDocumento;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox cmbTipoDocumento;
     }
 }

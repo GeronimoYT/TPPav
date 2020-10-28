@@ -17,10 +17,10 @@ namespace Principal.Ventanas
         private PasajerosServicio _pasajerosServicio;
         private formPasajeros _frmPasajeros;
         private Pasajero _pasajero;
-        public formEditarPasajero(formPasajeros formPasajeros, string tipoDoc, string nroDoc)
+        public formEditarPasajero(formPasajeros formPasajeros, string nroDoc)
         {
             _pasajerosServicio = new PasajerosServicio();
-            _pasajero = _pasajerosServicio.ObtenerPasajero(tipoDoc, nroDoc);
+            _pasajero = _pasajerosServicio.ObtenerPasajero(nroDoc);
             _frmPasajeros = formPasajeros;
             InitializeComponent();
         }
@@ -28,11 +28,11 @@ namespace Principal.Ventanas
         private void formEditarPasajero_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            CargarTipoDocumento();
+            
         }
         private void CargarDatos()
         {
-            //cmbTipoDocumento.Text = _pasajero.TipoDocumento;
+            
             txtNroDocumento.Text = _pasajero.NroDocumento;
             txtApellido.Text = _pasajero.Apellido;
             txtNombre.Text = _pasajero.Nombre;
@@ -40,21 +40,7 @@ namespace Principal.Ventanas
             txtEmail.Text = _pasajero.Email;
 
         }
-        private void CargarTipoDocumento()
-        {
-
-            cmbTipoDocumento.Items.Add("DNI");
-            cmbTipoDocumento.Items.Add("Pasaporte");
-
-            if (_pasajero.TipoDocumento == "DNI")
-            {
-                cmbTipoDocumento.SelectedItem = "DNI";
-            }
-            if (_pasajero.TipoDocumento == "Pasaporte")
-            {
-                cmbTipoDocumento.SelectedItem = "Pasaporte";
-            }
-        }
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             _frmPasajeros.Show();
@@ -88,7 +74,7 @@ namespace Principal.Ventanas
         }
         private void ValidarPasajero()
         {
-            _pasajero.TipoDocumento = Convert.ToString(cmbTipoDocumento.SelectedItem);
+            
             _pasajero.NroDocumento = txtNroDocumento.Text;
             _pasajero.Apellido = txtApellido.Text;
             _pasajero.Nombre = txtNombre.Text;
@@ -104,6 +90,24 @@ namespace Principal.Ventanas
             _frmPasajeros.Show();
             this.Dispose();
 
+        }
+        private void txtTelefono_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
         }
     }
 }

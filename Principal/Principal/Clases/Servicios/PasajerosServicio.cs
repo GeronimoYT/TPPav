@@ -20,9 +20,9 @@ namespace Principal.Clases.Servicios
         {
             return _repositorio.ObtenerPasajeros();
         }
-        public List<Pasajero> ObtenerPasajeros(string tipoDocumento, string nroDocumento, string apellido, string nombre, bool estado)
+        public List<Pasajero> ObtenerPasajeros(string nroDocumento, string apellido, string nombre, bool estado)
         {
-            return _repositorio.ObtenerPasajeros(tipoDocumento, nroDocumento, apellido, nombre, estado);
+            return _repositorio.ObtenerPasajeros(nroDocumento, apellido, nombre, estado);
         }
 
         public void ValidarPasajero(Pasajero _pasajero)
@@ -32,7 +32,7 @@ namespace Principal.Clases.Servicios
             _pasajero.ValidarApellido();
             _pasajero.ValidarTelefono();
             _pasajero.ValidarEmail();
-            _pasajero.ValidarTipoDocumento();
+            
 
         }
 
@@ -43,9 +43,9 @@ namespace Principal.Clases.Servicios
                 return true;
             return false;
         }
-        public Pasajero ObtenerPasajero(string tipoDocumento, string nroDocumento)
+        public Pasajero ObtenerPasajero(string nroDocumento)
         {
-            var pasajero = _repositorio.ObtenerPasajero(tipoDocumento, nroDocumento);
+            var pasajero = _repositorio.ObtenerPasajero(nroDocumento);
             return pasajero;
         }
         public void ActualizarPasajero(Pasajero _pasajero)
