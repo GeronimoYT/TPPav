@@ -35,7 +35,7 @@ namespace Principal.Ventanas.TiposAvion
             nuevoTipo.capacidadEquipaje = Convert.ToInt32(txtEquipaje.Text);
             nuevoTipo.salidasEmergencia = Convert.ToInt32(txtSalidas.Text);
 
-            nuevoTipo.id = Convert.ToInt32(txtId.Text);
+            nuevoTipo.id = 0;
 
             _tiposRepositorio.AltaTipo(nuevoTipo);
             CerrarFormuario();

@@ -52,8 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btnQuitarImagen = new System.Windows.Forms.Button();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagen)).BeginInit();
             this.SuspendLayout();
@@ -251,7 +249,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(31, 26);
+            this.label1.Location = new System.Drawing.Point(31, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(251, 25);
             this.label1.TabIndex = 45;
@@ -265,22 +263,6 @@
             this.btnQuitarImagen.TabIndex = 46;
             this.btnQuitarImagen.Text = "x";
             this.btnQuitarImagen.UseVisualStyleBackColor = true;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(131, 66);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 22);
-            this.txtId.TabIndex = 47;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 17);
-            this.label9.TabIndex = 48;
-            this.label9.Text = "Id (provisorio)";
             // 
             // label13
             // 
@@ -298,8 +280,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 459);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnQuitarImagen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAceptar);
@@ -357,8 +337,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button btnQuitarImagen;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
     }
 }

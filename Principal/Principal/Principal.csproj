@@ -47,10 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
-    <Compile Include="Clases\AvionesRepositorio.cs" />
+    <Compile Include="Clases\Equipaje.cs" />
+    <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
-    <Compile Include="Clases\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Aeropuerto.cs" />
     <Compile Include="Clases\DBHelper.cs" />

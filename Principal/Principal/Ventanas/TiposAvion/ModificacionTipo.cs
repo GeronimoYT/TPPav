@@ -37,7 +37,7 @@ namespace Principal.Ventanas.TiposAvion
             txtEquipaje.Text = tipoModificacion.capacidadEquipaje.ToString();
             txtSalidas.Text = tipoModificacion.salidasEmergencia.ToString();
 
-            txtId.Text = tipoModificacion.id.ToString();
+            //txtId.Text = tipoModificacion.id.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace Principal.Ventanas.TiposAvion
             modificarTipo.capacidadEquipaje = Convert.ToInt32(txtEquipaje.Text);
             modificarTipo.salidasEmergencia = Convert.ToInt32(txtSalidas.Text);
 
-            modificarTipo.id = Convert.ToInt32(txtId.Text);
+            //modificarTipo.id = Convert.ToInt32(txtId.Text);
             
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operación?", "Modificar Tipo Avion", buttons);

@@ -35,7 +35,7 @@ namespace Principal.Ventanas.TiposAvion
             txtEquipaje.Text = tipoBaja.capacidadEquipaje.ToString();
             txtSalidas.Text = tipoBaja.salidasEmergencia.ToString();
 
-            txtId.Text = tipoBaja.id.ToString();
+            //txtId.Text = tipoBaja.id.ToString();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

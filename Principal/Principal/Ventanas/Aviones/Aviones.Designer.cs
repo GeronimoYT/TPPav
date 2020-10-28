@@ -29,61 +29,46 @@
         private void InitializeComponent()
         {
             this.gridAviones = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.comboCategorias = new System.Windows.Forms.ComboBox();
-            this.picAvion = new System.Windows.Forms.PictureBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvion)).BeginInit();
             this.SuspendLayout();
             // 
             // gridAviones
             // 
+            this.gridAviones.AllowUserToAddRows = false;
+            this.gridAviones.AllowUserToDeleteRows = false;
+            this.gridAviones.AllowUserToResizeColumns = false;
+            this.gridAviones.AllowUserToResizeRows = false;
+            this.gridAviones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridAviones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.gridAviones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAviones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Categoria,
             this.Descripcion});
-            this.gridAviones.Location = new System.Drawing.Point(31, 30);
+            this.gridAviones.GridColor = System.Drawing.SystemColors.Control;
+            this.gridAviones.Location = new System.Drawing.Point(31, 40);
             this.gridAviones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridAviones.Name = "gridAviones";
+            this.gridAviones.ReadOnly = true;
             this.gridAviones.RowHeadersWidth = 51;
             this.gridAviones.RowTemplate.Height = 24;
-            this.gridAviones.Size = new System.Drawing.Size(841, 329);
+            this.gridAviones.Size = new System.Drawing.Size(577, 319);
             this.gridAviones.TabIndex = 0;
-            this.gridAviones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridAviones_CellContentClick);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id Avion";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.Width = 125;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Width = 125;
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(896, 156);
+            this.btnAlta.Location = new System.Drawing.Point(628, 244);
             this.btnAlta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(100, 23);
@@ -94,7 +79,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(896, 203);
+            this.btnModificar.Location = new System.Drawing.Point(628, 291);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 23);
@@ -105,7 +90,7 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(896, 249);
+            this.btnBaja.Location = new System.Drawing.Point(628, 337);
             this.btnBaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(100, 23);
@@ -137,18 +122,9 @@
             this.comboCategorias.TabIndex = 5;
             this.comboCategorias.SelectedIndexChanged += new System.EventHandler(this.comboCategorias_SelectedIndexChanged);
             // 
-            // picAvion
-            // 
-            this.picAvion.Location = new System.Drawing.Point(896, 30);
-            this.picAvion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picAvion.Name = "picAvion";
-            this.picAvion.Size = new System.Drawing.Size(100, 94);
-            this.picAvion.TabIndex = 6;
-            this.picAvion.TabStop = false;
-            // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(772, 431);
+            this.btnAtras.Location = new System.Drawing.Point(508, 430);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(100, 23);
@@ -166,14 +142,48 @@
             this.txtBuscar.TabIndex = 9;
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeypressKeyPress);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Numero";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 125;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label1.Location = new System.Drawing.Point(26, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 29);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Aviones";
+            // 
             // FormAviones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 474);
+            this.ClientSize = new System.Drawing.Size(738, 474);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.picAvion);
             this.Controls.Add(this.comboCategorias);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnBaja);
@@ -185,7 +195,6 @@
             this.Text = "Aviones";
             this.Load += new System.EventHandler(this.Aviones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,11 +208,11 @@
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox comboCategorias;
-        private System.Windows.Forms.PictureBox picAvion;
         private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -45,11 +45,6 @@ namespace Principal.Ventanas
             }
         }
 
-        private void gridAviones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Aviones_Load(object sender, EventArgs e)
         {
             List<Avion> aviones = avionesRep.ObtenerAviones();

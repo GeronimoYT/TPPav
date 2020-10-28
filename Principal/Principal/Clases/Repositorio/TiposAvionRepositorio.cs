@@ -36,9 +36,9 @@ namespace Principal.Clases
         {
             try
             {
-                var sentenciaSql = $"INSERT INTO TipoAvion (DescripcionTipo, IdTipoAvion, Longitud, AlcanceVuelo, CantidadPasajerosClase1," +
+                var sentenciaSql = $"INSERT INTO TipoAvion (DescripcionTipo, Longitud, AlcanceVuelo, CantidadPasajerosClase1," +
                                     $" CantidadPasajerosClase2, CapacidadKgEquip, CantidadSalidasEmergencia) " +
-                                    $"VALUES ('{tipo.descripcion}', {tipo.id}, {tipo.longitud}, {tipo.alcance}, {tipo.pasajerosClase1}," +
+                                    $"VALUES ('{tipo.descripcion}', {tipo.longitud}, {tipo.alcance}, {tipo.pasajerosClase1}," +
                                     $" {tipo.pasajerosClase2}, {tipo.capacidadEquipaje}, {tipo.salidasEmergencia})";
 
                 DBHelper.GetDBHelper().ComandoSQL(sentenciaSql);
