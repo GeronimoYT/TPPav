@@ -71,6 +71,12 @@
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
     <Compile Include="Clases\TipoPasaje.cs" />
+    <Compile Include="Transacciones\formEmbarque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\formEmbarque.Designer.cs">
+      <DependentUpon>formEmbarque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\formAeropuerto.cs">
@@ -207,6 +213,9 @@
     <Compile Include="Ventanas\Vuelo.Designer.cs">
       <DependentUpon>Vuelo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Transacciones\formEmbarque.resx">
+      <DependentUpon>formEmbarque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
     </EmbeddedResource>
