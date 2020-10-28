@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gridAviones = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
@@ -36,9 +39,6 @@
             this.comboCategorias = new System.Windows.Forms.ComboBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,30 @@
             this.gridAviones.RowTemplate.Height = 24;
             this.gridAviones.Size = new System.Drawing.Size(577, 319);
             this.gridAviones.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Numero";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 125;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 125;
             // 
             // btnAlta
             // 
@@ -141,30 +165,6 @@
             this.txtBuscar.Size = new System.Drawing.Size(208, 22);
             this.txtBuscar.TabIndex = 9;
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeypressKeyPress);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Numero";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 125;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 125;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 125;
             // 
             // label1
             // 
