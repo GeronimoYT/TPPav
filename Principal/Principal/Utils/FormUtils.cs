@@ -11,7 +11,7 @@ namespace Principal.Utils
     public class FormUtils
     {
         //Recibe y setea una ComboBox, apartir de los parametros recibidos.
-        public void CargarCombo(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
+        public static void CargarCombo(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
         {
             combo.DataSource = conectorDeDatos.DataSource;
             combo.DisplayMember = displayMember;

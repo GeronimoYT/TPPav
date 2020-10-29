@@ -9,7 +9,7 @@ namespace Principal.Clases.Repositorio
 {
     class TipoPasajesRepositorio
     {
-        public List<TipoPasaje> ObtenerTipoDocumentos()
+        public List<TipoPasaje> ObtenerTipoPasajes()
         {
             List<TipoPasaje> tipoPasajes = new List<TipoPasaje>();
             var sentenciaSql = "SELECT * FROM TipoPasaje";
@@ -18,6 +18,7 @@ namespace Principal.Clases.Repositorio
             {
                 var tipoPasaje = new TipoPasaje();
                 tipoPasaje.Id = Convert.ToInt32(fila["IdTipoPasaje"].ToString());
+                tipoPasaje.Detalle = fila["Descripcion"].ToString();
 
                 tipoPasajes.Add(tipoPasaje);
 
