@@ -1,6 +1,7 @@
 ﻿using Principal.Clases;
 using System;
 using System.Windows.Forms;
+using Principal.Ventanas.TiposAvion;
 
 namespace Principal.Ventanas
 {
@@ -50,6 +51,12 @@ namespace Principal.Ventanas
         {
             FormAviones ventanaAeropuerto = new FormAviones();
             ventanaAeropuerto.Show();
+        }
+
+        private void tipoAvionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTipos ventanaTipoAvion = new FormTipos(this);
+            ventanaTipoAvion.Show();
         }
     }
 }

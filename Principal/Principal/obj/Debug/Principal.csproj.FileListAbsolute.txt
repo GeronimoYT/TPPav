@@ -27,3 +27,8 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.pdb
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.formEmbarque.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.AltaTipo.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.BajaTipo.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.Detalle_Tipo.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.FormTipos.resources
+C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.ModificacionTipo.resources

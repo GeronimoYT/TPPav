@@ -30,7 +30,7 @@ namespace Principal.Clases
         public int pasajerosClase1 { get; set; }
         public int pasajerosClase2 { get; set; }
         public int salidasEmergencia { get; set; }
-        public int longitud { get; set; }
+        public float longitud { get; set; }
         public int alcance { get; set; }
     }
 }
