@@ -35,12 +35,12 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtNuevoNumero = new System.Windows.Forms.TextBox();
             this.rTxtNuevaDescripcion = new System.Windows.Forms.RichTextBox();
             this.rTxtDescripcion = new System.Windows.Forms.RichTextBox();
             this.comboCategorias = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtNuevoNumero = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label4
@@ -77,6 +77,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(202, 22);
             this.txtNumero.TabIndex = 14;
+            this.txtNumero.TextChanged += new System.EventHandler(this.txtNumero_TextChanged);
             // 
             // txtCategoria
             // 
@@ -106,17 +107,10 @@
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // txtNuevoNumero
-            // 
-            this.txtNuevoNumero.Enabled = false;
-            this.txtNuevoNumero.Location = new System.Drawing.Point(360, 44);
-            this.txtNuevoNumero.Name = "txtNuevoNumero";
-            this.txtNuevoNumero.Size = new System.Drawing.Size(202, 22);
-            this.txtNuevoNumero.TabIndex = 20;
-            // 
             // rTxtNuevaDescripcion
             // 
             this.rTxtNuevaDescripcion.Location = new System.Drawing.Point(360, 122);
+            this.rTxtNuevaDescripcion.MaxLength = 256;
             this.rTxtNuevaDescripcion.Name = "rTxtNuevaDescripcion";
             this.rTxtNuevaDescripcion.Size = new System.Drawing.Size(202, 41);
             this.rTxtNuevaDescripcion.TabIndex = 21;
@@ -133,6 +127,7 @@
             // 
             // comboCategorias
             // 
+            this.comboCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCategorias.FormattingEnabled = true;
             this.comboCategorias.Location = new System.Drawing.Point(360, 82);
             this.comboCategorias.Name = "comboCategorias";
@@ -157,11 +152,20 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Nuevos Datos";
             // 
+            // txtNuevoNumero
+            // 
+            this.txtNuevoNumero.Location = new System.Drawing.Point(360, 44);
+            this.txtNuevoNumero.MaxLength = 9;
+            this.txtNuevoNumero.Name = "txtNuevoNumero";
+            this.txtNuevoNumero.Size = new System.Drawing.Size(202, 22);
+            this.txtNuevoNumero.TabIndex = 20;
+            this.txtNuevoNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeypressKeyPress);
+            // 
             // Modificacion_Avion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 239);
+            this.ClientSize = new System.Drawing.Size(578, 259);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboCategorias);
@@ -192,11 +196,11 @@
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.TextBox txtNuevoNumero;
         private System.Windows.Forms.RichTextBox rTxtNuevaDescripcion;
         private System.Windows.Forms.RichTextBox rTxtDescripcion;
         private System.Windows.Forms.ComboBox comboCategorias;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNuevoNumero;
     }
 }
