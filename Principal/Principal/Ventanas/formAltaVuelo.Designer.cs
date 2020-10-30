@@ -68,9 +68,11 @@
             // 
             // calendarioSalida
             // 
+            this.calendarioSalida.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.calendarioSalida.Location = new System.Drawing.Point(79, 11);
             this.calendarioSalida.MaxDate = new System.DateTime(2021, 8, 31, 0, 0, 0, 0);
-            this.calendarioSalida.MinDate = new System.DateTime(2020, 10, 1, 0, 0, 0, 0);
+            this.calendarioSalida.MaxSelectionCount = 1;
+            this.calendarioSalida.MinDate = new System.DateTime(2020, 10, 29, 0, 0, 0, 0);
             this.calendarioSalida.Name = "calendarioSalida";
             this.calendarioSalida.ShowToday = false;
             this.calendarioSalida.TabIndex = 4;
@@ -95,7 +97,11 @@
             // 
             // cmbHoraSalida
             // 
+            this.cmbHoraSalida.DropDownHeight = 200;
+            this.cmbHoraSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHoraSalida.FormattingEnabled = true;
+            this.cmbHoraSalida.IntegralHeight = false;
+            this.cmbHoraSalida.ItemHeight = 16;
             this.cmbHoraSalida.Location = new System.Drawing.Point(79, 183);
             this.cmbHoraSalida.Name = "cmbHoraSalida";
             this.cmbHoraSalida.Size = new System.Drawing.Size(69, 24);
@@ -161,9 +167,11 @@
             // 
             // calendarioLlegada
             // 
+            this.calendarioLlegada.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.calendarioLlegada.Location = new System.Drawing.Point(74, 11);
             this.calendarioLlegada.MaxDate = new System.DateTime(2021, 8, 31, 0, 0, 0, 0);
-            this.calendarioLlegada.MinDate = new System.DateTime(2020, 10, 1, 0, 0, 0, 0);
+            this.calendarioLlegada.MaxSelectionCount = 1;
+            this.calendarioLlegada.MinDate = new System.DateTime(2020, 10, 29, 0, 0, 0, 0);
             this.calendarioLlegada.Name = "calendarioLlegada";
             this.calendarioLlegada.ShowToday = false;
             this.calendarioLlegada.TabIndex = 4;
@@ -179,7 +187,10 @@
             // 
             // cmbHoraLlegada
             // 
+            this.cmbHoraLlegada.DropDownHeight = 200;
+            this.cmbHoraLlegada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHoraLlegada.FormattingEnabled = true;
+            this.cmbHoraLlegada.IntegralHeight = false;
             this.cmbHoraLlegada.Location = new System.Drawing.Point(74, 183);
             this.cmbHoraLlegada.Name = "cmbHoraLlegada";
             this.cmbHoraLlegada.Size = new System.Drawing.Size(72, 24);
@@ -207,18 +218,20 @@
             // 
             // cmbAeropuertoOrigen
             // 
+            this.cmbAeropuertoOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAeropuertoOrigen.FormattingEnabled = true;
             this.cmbAeropuertoOrigen.Location = new System.Drawing.Point(158, 283);
             this.cmbAeropuertoOrigen.Name = "cmbAeropuertoOrigen";
-            this.cmbAeropuertoOrigen.Size = new System.Drawing.Size(367, 21);
+            this.cmbAeropuertoOrigen.Size = new System.Drawing.Size(223, 21);
             this.cmbAeropuertoOrigen.TabIndex = 21;
             // 
             // cmbAeropuertoDestino
             // 
+            this.cmbAeropuertoDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAeropuertoDestino.FormattingEnabled = true;
             this.cmbAeropuertoDestino.Location = new System.Drawing.Point(158, 315);
             this.cmbAeropuertoDestino.Name = "cmbAeropuertoDestino";
-            this.cmbAeropuertoDestino.Size = new System.Drawing.Size(367, 21);
+            this.cmbAeropuertoDestino.Size = new System.Drawing.Size(223, 21);
             this.cmbAeropuertoDestino.TabIndex = 22;
             // 
             // label11
@@ -234,7 +247,7 @@
             // btnConfirmarVuelo
             // 
             this.btnConfirmarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmarVuelo.Location = new System.Drawing.Point(418, 392);
+            this.btnConfirmarVuelo.Location = new System.Drawing.Point(379, 392);
             this.btnConfirmarVuelo.Name = "btnConfirmarVuelo";
             this.btnConfirmarVuelo.Size = new System.Drawing.Size(138, 23);
             this.btnConfirmarVuelo.TabIndex = 25;
@@ -245,7 +258,7 @@
             // btnCancelarVuelo
             // 
             this.btnCancelarVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarVuelo.Location = new System.Drawing.Point(592, 392);
+            this.btnCancelarVuelo.Location = new System.Drawing.Point(561, 392);
             this.btnCancelarVuelo.Name = "btnCancelarVuelo";
             this.btnCancelarVuelo.Size = new System.Drawing.Size(109, 23);
             this.btnCancelarVuelo.TabIndex = 26;
@@ -257,7 +270,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(210, 251);
+            this.label12.Location = new System.Drawing.Point(266, 252);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 16);
             this.label12.TabIndex = 30;
@@ -265,16 +278,17 @@
             // 
             // txtTipoAvion
             // 
-            this.txtTipoAvion.Location = new System.Drawing.Point(314, 251);
+            this.txtTipoAvion.Enabled = false;
+            this.txtTipoAvion.Location = new System.Drawing.Point(379, 251);
             this.txtTipoAvion.Name = "txtTipoAvion";
             this.txtTipoAvion.ReadOnly = true;
-            this.txtTipoAvion.Size = new System.Drawing.Size(211, 20);
+            this.txtTipoAvion.Size = new System.Drawing.Size(146, 20);
             this.txtTipoAvion.TabIndex = 31;
             // 
             // btnDetalle
             // 
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(592, 248);
+            this.btnDetalle.Location = new System.Drawing.Point(561, 249);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(109, 23);
             this.btnDetalle.TabIndex = 33;
@@ -284,14 +298,17 @@
             // 
             // cmbNumAvion
             // 
+            this.cmbNumAvion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNumAvion.FormattingEnabled = true;
             this.cmbNumAvion.Location = new System.Drawing.Point(92, 249);
             this.cmbNumAvion.Name = "cmbNumAvion";
-            this.cmbNumAvion.Size = new System.Drawing.Size(102, 21);
+            this.cmbNumAvion.Size = new System.Drawing.Size(133, 21);
             this.cmbNumAvion.TabIndex = 34;
+            this.cmbNumAvion.SelectedIndexChanged += new System.EventHandler(this.cmbNumAvion_SelectedIndexChanged);
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(91, 354);
             this.cmbEstado.Name = "cmbEstado";
