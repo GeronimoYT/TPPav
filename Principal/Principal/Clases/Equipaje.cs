@@ -11,7 +11,7 @@ namespace Principal.Clases
     {
         public Equipaje() { }
         
-        public Equipaje(int numero, int tipo, string descripcion, int tipoDNI, int DNI) 
+        public Equipaje(int numero, int tipo, string descripcion, string tipoDNI, string DNI) 
         {
             this.numero = numero;
             this.tipo = tipo;
@@ -23,7 +23,7 @@ namespace Principal.Clases
         public int numero { get; set; }
         public int tipo { get; set; }
         public string descripcion { get; set; }
-        public int tipoDNI { get; set; }
-        public int DNI { get; set; }
+        public string tipoDNI { get; set; }
+        public string DNI { get; set; }
     }
 }

@@ -32,3 +32,39 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.Detalle_Tipo.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.FormTipos.resources
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.ModificacionTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.formEmbarque.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.FormAviones.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Baja_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasaje.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasajero.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formBajaPasajero.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditarPasajero.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajeros.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajes.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Buscar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.AltaTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.BajaTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.Detalle_Tipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.FormTipos.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.ModificacionTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.formEquipajes.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.AltaEquipaje.resources

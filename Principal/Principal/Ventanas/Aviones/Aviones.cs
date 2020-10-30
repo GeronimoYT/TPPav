@@ -36,7 +36,7 @@ namespace Principal.Ventanas
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
             if (txtBuscar.Text != "") 
             {
                 int numero = Convert.ToInt32(txtBuscar.Text);
@@ -51,7 +51,7 @@ namespace Principal.Ventanas
             Cargar_Grilla(aviones);
 
             TiposAvionRepositorio RepTipo = new TiposAvionRepositorio();
-            List<TipoAvion> tipos = RepTipo.ObtenerTipos();
+            List<TipoEquipaje> tipos = RepTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
             FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
@@ -76,7 +76,7 @@ namespace Principal.Ventanas
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
             List<Avion> aviones = avionesRep.ObtenerAviones(tipoSeleccionado.id);
             Cargar_Grilla(aviones);
         }

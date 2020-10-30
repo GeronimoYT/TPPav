@@ -8,13 +8,18 @@ namespace Principal.Clases
 {
     class TipoEquipaje
     {
-        public TipoEquipaje(int id, int peso)
+        public TipoEquipaje() { }
+        public TipoEquipaje(int id, int minimo, int maximo)
         {
             this.id = id;
-            this.peso = peso;
+            this.pesoMinimo = minimo;
+            this.pesoMaximo = maximo;
+            this.categoria = $"{this.pesoMinimo.ToString()}kg a {this.pesoMaximo.ToString()}kg";
         }
 
         public int id { get; set; }
-        public int peso { get; set; }
+        public int pesoMinimo { get; set; }
+        public int pesoMaximo { get; set; }
+        public string categoria { get; set; }
     }
 }

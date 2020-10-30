@@ -62,7 +62,7 @@ namespace Principal.Ventanas.TiposAvion
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            TipoAvion tipoSelecionado = (TipoAvion)lboxTipos.SelectedItem;
+            TipoEquipaje tipoSelecionado = (TipoEquipaje)lboxTipos.SelectedItem;
             BajaTipo bajaTipo = new BajaTipo(this, tipoSelecionado);
             bajaTipo.Show();
             this.Hide();

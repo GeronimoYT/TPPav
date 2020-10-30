@@ -35,7 +35,7 @@ namespace Principal.Ventanas.Aviones
             txtCategoria.Text = avion.idTipo.ToString();
             rTxtDescripcion.Text = avion.descripcion;
         
-            List<TipoAvion> tipos = _repTipo.ObtenerTipos();
+            List<TipoEquipaje> tipos = _repTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
             FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
@@ -54,7 +54,7 @@ namespace Principal.Ventanas.Aviones
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
             avion.idTipo = tipoSeleccionado.id;
             avion.descripcion = rTxtNuevaDescripcion.Text;
 

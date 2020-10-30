@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Principal.Ventanas.TiposAvion;
+using Principal.Transacciones;
 
 namespace Principal.Ventanas
 {
@@ -57,6 +58,12 @@ namespace Principal.Ventanas
         {
             FormTipos ventanaTipoAvion = new FormTipos(this);
             ventanaTipoAvion.Show();
+        }
+
+        private void btnEquipaje_Click(object sender, EventArgs e)
+        {
+            formEquipajes ventanaEquipajes = new formEquipajes(this);
+            ventanaEquipajes.Show();
         }
     }
 }

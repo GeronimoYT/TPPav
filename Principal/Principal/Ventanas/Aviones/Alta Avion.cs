@@ -25,7 +25,7 @@ namespace Principal.Ventanas.Aviones
         private void Alta_Avion_Load(object sender, EventArgs e)
         {
             TiposAvionRepositorio RepTipo = new TiposAvionRepositorio();
-            List<TipoAvion> tipos = RepTipo.ObtenerTipos();
+            List<TipoEquipaje> tipos = RepTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
             CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
@@ -43,7 +43,7 @@ namespace Principal.Ventanas.Aviones
             try
             {
                 Avion avion = new Avion();
-                var avionSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+                var avionSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
                 avion.idTipo = avionSeleccionado.id;
                 avion.numero = Convert.ToInt32(txtBoxId.Text);
                 avion.descripcion = rTxtBoxDescripcion.Text;
