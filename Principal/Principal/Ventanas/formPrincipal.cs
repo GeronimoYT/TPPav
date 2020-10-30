@@ -73,10 +73,5 @@ namespace Principal.Ventanas
             ventana.ShowDialog();
         }
 
-        private void formPrincipal_Load(object sender, EventArgs e)
-        {
-            Aeropuerto ae = new Aeropuerto();
-            MessageBox.Show(ae.IdAeropuerto.ToString());
-        }
     }
 }

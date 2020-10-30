@@ -40,6 +40,7 @@ namespace Principal.Informes_y_Reportes
             var ds = new ReportDataSource("DatosAeropuertos", (DataTable)datos);
             rvAeropuerto.LocalReport.DataSources.Clear();
             rvAeropuerto.LocalReport.DataSources.Add(ds);
+            rvAeropuerto.LocalReport.ReportPath = "../../Informes y Reportes/InformeAeropuerto.rdlc";
             this.rvAeropuerto.LocalReport.Refresh();
         }
     }
