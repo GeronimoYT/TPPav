@@ -17,7 +17,12 @@ namespace Principal.Clases.Repositorio
             foreach (DataRow fila in tabla.Rows)
             {
                 var pasajero = new Pasajero();
-                pasajero.TipoDocumento = fila["TipoDNI"].ToString();
+                /*if (fila["tipoDocumento"].GetType() != typeof(DBNull))
+                    pasajero.TipoDocumento = new TipoDocumento()
+                    {
+                        Id = fila["tipoDocumento"].ToString(),
+                        Descripcion = fila["descripcion"].ToString()
+                    };*/
                 pasajero.NroDocumento = fila["NroDNI"].ToString();
                 pasajero.Nombre = fila["Nombre"].ToString();
                 pasajero.Apellido = fila["Apellido"].ToString();
@@ -29,15 +34,22 @@ namespace Principal.Clases.Repositorio
             return pasajeros;
 
         }
-        public List<Pasajero> ObtenerPasajeros(string nroDocumento, string apellido, string nombre, bool estado)
+        public List<Pasajero> ObtenerPasajeros(string tipoDocumento, string nroDocumento, string apellido, string nombre, bool estado)
         {
             List<Pasajero> pasajeros = new List<Pasajero>();
             var sentenciaSql = "SELECT * FROM Pasajero where";
+            if (!string.IsNullOrEmpty(tipoDocumento))
+            {
+                if (tipoDocumento == "Seleccionar") { sentenciaSql += $" TipoDNI like '%'"; }
+                else { sentenciaSql += $" TipoDNI like '{tipoDocumento}%'"; }
+            }
+            else { sentenciaSql += $" TipoDNI like '%'"; }
+
             if (!string.IsNullOrEmpty(nroDocumento))
             {
-                sentenciaSql += $" NroDNI like '{nroDocumento}%'";
+                sentenciaSql += $" and NroDNI like '%{nroDocumento}'";
             }
-            else { sentenciaSql += $" NroDNI like '%'"; }
+            else { sentenciaSql += $" and NroDNI like '%'"; }
             if (!string.IsNullOrEmpty(apellido))
             {
                 sentenciaSql += $" and Apellido like '{apellido}%'";
@@ -54,12 +66,19 @@ namespace Principal.Clases.Repositorio
             foreach (DataRow fila in tabla.Rows)
             {
                 var pasajero = new Pasajero();
-                pasajero.TipoDocumento = fila["TipoDNI"].ToString();
+                
                 pasajero.NroDocumento = fila["NroDNI"].ToString();
                 pasajero.Nombre = fila["Nombre"].ToString();
                 pasajero.Apellido = fila["Apellido"].ToString();
                 pasajero.Telefono = fila["Telefono"].ToString();
                 pasajero.Email = fila["Mail"].ToString();
+                pasajero.FechaNacimiento = Convert.ToDateTime(fila["FechaNacimiento"].ToString());
+                if (fila["TipoDNI"].GetType() != typeof(DBNull))
+                    pasajero.TipoDocumento = new TipoDocumento()
+                    {
+                        Id = fila["TipoDNI"].ToString(),
+                        Descripcion = fila["Descripcion"].ToString()
+                    };
 
                 pasajeros.Add(pasajero);
             }
@@ -68,16 +87,16 @@ namespace Principal.Clases.Repositorio
         public int RegistrarPasajero(Pasajero pasajero)
         {
             var sentenciaSql = $"INSERT INTO Pasajero (TipoDNI,NroDNI,Apellido,Nombre,Telefono,Mail,Estado)" +
-                $" VALUES('DNI', '{pasajero.NroDocumento}'," +
+                $" VALUES('{pasajero.TipoDocumento.Id}', '{pasajero.NroDocumento}'," +
                 $" '{pasajero.Apellido}', '{pasajero.Nombre}', '{pasajero.Telefono}', '{pasajero.Email}','S')";
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
             return filasAfectadas;
         }
 
-        public Pasajero ObtenerPasajero(string nroDoc)
+        public Pasajero ObtenerPasajero(string tipoDoc, string nroDoc)
         {
             Pasajero pasajeroResultado = null;
-            var sentenciaSql = $"SELECT * FROM Pasajero where NroDNI = '{nroDoc}'";
+            var sentenciaSql = $"SELECT * FROM Pasajero where NroDNI = '{nroDoc}' and TipoDNI = '{tipoDoc}'";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             if (tabla.Rows.Count == 1)
             {
@@ -85,12 +104,18 @@ namespace Principal.Clases.Repositorio
                 var pasajeroBD = new Pasajero();
                 var tipoDocumento = row["TipoDNI"];
                 var nrDocumento = row["NroDNI"];
-                pasajeroBD.TipoDocumento = tipoDocumento.ToString();
+                
                 pasajeroBD.NroDocumento = nrDocumento.ToString();
                 pasajeroBD.Apellido = row["Apellido"].ToString();
                 pasajeroBD.Nombre = row["Nombre"].ToString();
                 pasajeroBD.Telefono = row["Telefono"].ToString();
                 pasajeroBD.Email = row["Mail"].ToString();
+                pasajeroBD.FechaNacimiento = Convert.ToDateTime(row["FechaNacimiento"].ToString());
+
+                var _tipoDocumento = new TipoDocumento();
+                _tipoDocumento.Id = tipoDocumento.ToString();
+                _tipoDocumento.Descripcion = row["Descripcion"].ToString();
+                pasajeroBD.TipoDocumento = _tipoDocumento;
                 return pasajeroBD;
             }
             return pasajeroResultado;

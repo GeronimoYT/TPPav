@@ -50,11 +50,15 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
+    <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
+    <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Aeropuerto.cs" />
@@ -115,22 +119,22 @@
     <Compile Include="Ventanas\formAgregar.Designer.cs">
       <DependentUpon>formAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasaje.cs">
+    <Compile Include="Transacciones\Pasajes\formAltaPasaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasaje.Designer.cs">
+    <Compile Include="Transacciones\Pasajes\formAltaPasaje.Designer.cs">
       <DependentUpon>formAltaPasaje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasajero.cs">
+    <Compile Include="Ventanas\Pasajeros\formAltaPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasajero.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formAltaPasajero.Designer.cs">
       <DependentUpon>formAltaPasajero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formBajaPasajero.cs">
+    <Compile Include="Ventanas\Pasajeros\formBajaPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formBajaPasajero.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formBajaPasajero.Designer.cs">
       <DependentUpon>formBajaPasajero.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formEditar.cs">
@@ -139,22 +143,22 @@
     <Compile Include="Ventanas\formEditar.Designer.cs">
       <DependentUpon>formEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formEditarPasajero.cs">
+    <Compile Include="Ventanas\Pasajeros\formEditarPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formEditarPasajero.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formEditarPasajero.Designer.cs">
       <DependentUpon>formEditarPasajero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formPasajeros.cs">
+    <Compile Include="Ventanas\Pasajeros\formPasajeros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formPasajeros.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formPasajeros.Designer.cs">
       <DependentUpon>formPasajeros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formPasajes.cs">
+    <Compile Include="Transacciones\Pasajes\formPasajes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formPasajes.Designer.cs">
+    <Compile Include="Transacciones\Pasajes\formPasajes.Designer.cs">
       <DependentUpon>formPasajes.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formPrincipal.cs">
@@ -231,25 +235,25 @@
     <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
       <DependentUpon>Baja Avion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formAltaPasaje.resx">
+    <EmbeddedResource Include="Transacciones\Pasajes\formAltaPasaje.resx">
       <DependentUpon>formAltaPasaje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formAltaPasajero.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formAltaPasajero.resx">
       <DependentUpon>formAltaPasajero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formBajaPasajero.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formBajaPasajero.resx">
       <DependentUpon>formBajaPasajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formEditar.resx">
       <DependentUpon>formEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formEditarPasajero.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formEditarPasajero.resx">
       <DependentUpon>formEditarPasajero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formPasajeros.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formPasajeros.resx">
       <DependentUpon>formPasajeros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formPasajes.resx">
+    <EmbeddedResource Include="Transacciones\Pasajes\formPasajes.resx">
       <DependentUpon>formPasajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formPrincipal.resx">
