@@ -72,5 +72,11 @@ namespace Principal.Ventanas
             formReporte ventana = new formReporte();
             ventana.ShowDialog();
         }
+
+        private void formPrincipal_Load(object sender, EventArgs e)
+        {
+            Aeropuerto ae = new Aeropuerto();
+            MessageBox.Show(ae.IdAeropuerto.ToString());
+        }
     }
 }

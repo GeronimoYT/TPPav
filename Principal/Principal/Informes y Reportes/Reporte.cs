@@ -25,20 +25,22 @@ namespace Principal.Informes_y_Reportes
 
         private void formReporte_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'DataSet1.Aeropuerto' Puede moverla o quitarla según sea necesario.
+            this.AeropuertoTableAdapter.Fill(this.DataSet1.Aeropuerto);
             CargarReporte();
         }
 
         private void CargarReporte()
         {
             this.rvAeropuerto.RefreshReport();
-            var aeropuerto = new AeropuertoTableAdapter();
+            var adapter = new AeropuertoTableAdapter();
             var datos = new AeropuertoDataTable();
 
-            aeropuerto.Fill(datos);
-            var ds = new ReportDataSource("Listado de Aeropuertos: ", (DataTable)datos);
+            adapter.Fill(datos);
+            var ds = new ReportDataSource("DatosAeropuertos", (DataTable)datos);
             rvAeropuerto.LocalReport.DataSources.Clear();
             rvAeropuerto.LocalReport.DataSources.Add(ds);
-            rvAeropuerto.LocalReport.Refresh();
+            this.rvAeropuerto.LocalReport.Refresh();
         }
     }
 }
