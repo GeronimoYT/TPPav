@@ -110,5 +110,6 @@ namespace Principal.Ventanas
         {
             this.Close();
         }
+        
     }
 }

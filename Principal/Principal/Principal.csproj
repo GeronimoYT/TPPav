@@ -50,6 +50,7 @@
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\AvionesRepositorio.cs" />
     <Compile Include="Clases\DBHelper.cs" />
+    <Compile Include="Clases\Repositorio\VuelosRepositorio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Aeropuerto.cs" />
