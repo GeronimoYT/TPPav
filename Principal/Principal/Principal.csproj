@@ -67,23 +67,16 @@
   <ItemGroup>
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
-<<<<<<< HEAD
     <Compile Include="Clases\Equipaje.cs" />
     <Compile Include="Clases\ReporteAeropuerto.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
-    <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
-    <Compile Include="Clases\Usuario.cs" />
-=======
-    <Compile Include="Clases\AvionesRepositorio.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Repositorio\VuelosRepositorio.cs" />
-    <Compile Include="Clases\TipoAvion.cs" />
-    <Compile Include="Clases\TiposAvionRepositorio.cs" />
->>>>>>> Eliel2
     <Compile Include="Clases\Aeropuerto.cs" />
     <Compile Include="Clases\Embarque.cs" />
     <Compile Include="Clases\Pasaje.cs" />
@@ -97,7 +90,6 @@
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
     <Compile Include="Clases\TipoPasaje.cs" />
-<<<<<<< HEAD
     <Compile Include="Informes y Reportes\DatosAeropuerto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,9 +108,7 @@
     <Compile Include="Transacciones\formEmbarque.Designer.cs">
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </Compile>
-=======
     <Compile Include="Clases\Usuario.cs" />
->>>>>>> Eliel2
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
@@ -255,7 +245,6 @@
     <Compile Include="Ventanas\Vuelo.Designer.cs">
       <DependentUpon>Vuelo.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="_PAV_3K2_10_AEROLINEADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -271,8 +260,6 @@
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> Eliel2
     <EmbeddedResource Include="Ventanas\formAgregar.resx">
       <DependentUpon>formAgregar.cs</DependentUpon>
     </EmbeddedResource>

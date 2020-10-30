@@ -190,7 +190,6 @@ C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.exe
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.pdb
-C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
 >>>>>>> Eliel2
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources

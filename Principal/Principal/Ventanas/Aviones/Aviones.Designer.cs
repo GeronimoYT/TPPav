@@ -56,12 +56,10 @@
             this.Id,
             this.Categoria,
             this.Descripcion});
-<<<<<<< HEAD
+
             this.gridAviones.GridColor = System.Drawing.SystemColors.Control;
             this.gridAviones.Location = new System.Drawing.Point(11, 44);
-=======
             this.gridAviones.Location = new System.Drawing.Point(23, 24);
->>>>>>> Eliel2
             this.gridAviones.Margin = new System.Windows.Forms.Padding(2);
             this.gridAviones.Name = "gridAviones";
             this.gridAviones.ReadOnly = true;
@@ -96,11 +94,9 @@
             // 
             // btnAlta
             // 
-<<<<<<< HEAD
+
             this.btnAlta.Location = new System.Drawing.Point(504, 103);
-=======
             this.btnAlta.Location = new System.Drawing.Point(672, 127);
->>>>>>> Eliel2
             this.btnAlta.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(75, 19);
@@ -111,11 +107,8 @@
             // 
             // btnModificar
             // 
-<<<<<<< HEAD
             this.btnModificar.Location = new System.Drawing.Point(504, 134);
-=======
             this.btnModificar.Location = new System.Drawing.Point(672, 165);
->>>>>>> Eliel2
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 19);
@@ -126,11 +119,10 @@
             // 
             // btnBaja
             // 
-<<<<<<< HEAD
             this.btnBaja.Location = new System.Drawing.Point(504, 164);
-=======
+
             this.btnBaja.Location = new System.Drawing.Point(672, 202);
->>>>>>> Eliel2
+
             this.btnBaja.Margin = new System.Windows.Forms.Padding(2);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(75, 19);
@@ -141,11 +133,8 @@
             // 
             // btnBuscar
             // 
-<<<<<<< HEAD
             this.btnBuscar.Location = new System.Drawing.Point(172, 308);
-=======
             this.btnBuscar.Location = new System.Drawing.Point(184, 314);
->>>>>>> Eliel2
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(56, 19);
@@ -159,35 +148,28 @@
             this.comboCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCategorias.FormattingEnabled = true;
             this.comboCategorias.IntegralHeight = false;
-<<<<<<< HEAD
             this.comboCategorias.Location = new System.Drawing.Point(11, 337);
-=======
             this.comboCategorias.Location = new System.Drawing.Point(23, 349);
->>>>>>> Eliel2
             this.comboCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.comboCategorias.Name = "comboCategorias";
             this.comboCategorias.Size = new System.Drawing.Size(218, 21);
             this.comboCategorias.TabIndex = 5;
             this.comboCategorias.SelectedIndexChanged += new System.EventHandler(this.comboCategorias_SelectedIndexChanged);
             // 
-<<<<<<< HEAD
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(504, 284);
-=======
-            // picAvion
-            // 
+            /*this.btnAtras.Location = new System.Drawing.Point(504, 284);
             this.picAvion.Location = new System.Drawing.Point(672, 24);
             this.picAvion.Margin = new System.Windows.Forms.Padding(2);
             this.picAvion.Name = "picAvion";
             this.picAvion.Size = new System.Drawing.Size(75, 76);
             this.picAvion.TabIndex = 6;
-            this.picAvion.TabStop = false;
+            this.picAvion.TabStop = false;*/
             // 
             // btnAtras
             // 
             this.btnAtras.Location = new System.Drawing.Point(579, 350);
->>>>>>> Eliel2
+
             this.btnAtras.Margin = new System.Windows.Forms.Padding(2);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 19);
@@ -198,19 +180,16 @@
             // 
             // txtBuscar
             // 
-<<<<<<< HEAD
+
             this.txtBuscar.Location = new System.Drawing.Point(11, 307);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.MaxLength = 9;
-=======
             this.txtBuscar.Location = new System.Drawing.Point(23, 314);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBuscar.Mask = "99999";
->>>>>>> Eliel2
+            //this.txtBuscar.Mask = "99999";
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(157, 20);
             this.txtBuscar.TabIndex = 9;
-<<<<<<< HEAD
             this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeypressKeyPress);
             // 
             // label1
@@ -223,10 +202,8 @@
             this.label1.Size = new System.Drawing.Size(78, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "Aviones";
-=======
-            this.txtBuscar.ValidatingType = typeof(int);
+            //this.txtBuscar.ValidatingType = typeof(int);
             
->>>>>>> Eliel2
             // 
             // FormAviones
             // 

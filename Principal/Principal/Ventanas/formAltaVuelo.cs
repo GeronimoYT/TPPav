@@ -17,14 +17,14 @@ namespace Principal.Ventanas
     {
         public formPrincipal principal;
         private FormUtils formUtils;
-        private bool condicion = false;
+        //private bool condicion = false;
         
         public object Me { get; private set; }
 
         public formAltaVuelo()
         {
             InitializeComponent();
-            formUtils = new FormUtils();
+            formUtils = FormUtils.GetInstance;
         }
 
         private void formVuelo_Load(object sender, EventArgs e)

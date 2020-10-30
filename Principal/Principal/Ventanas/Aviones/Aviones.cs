@@ -103,14 +103,10 @@ namespace Principal.Ventanas
         {
             this.Close();
         }
-<<<<<<< HEAD
 
         private void txtBuscar_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
             FormUtils.GetInstance.KeypressKeyPress(sender, e);
         }
-=======
-        
->>>>>>> Eliel2
     }
 }
