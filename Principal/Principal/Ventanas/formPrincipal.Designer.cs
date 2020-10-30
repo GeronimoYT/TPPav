@@ -37,6 +37,7 @@
             this.pasajeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tipoAvionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.lblEmbarque = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -108,11 +109,12 @@
             this.pasajeToolStripMenuItem,
             this.avionToolStripMenuItem,
             this.pasajeroToolStripMenuItem,
-            this.tipoAvionToolStripMenuItem});
+            this.tipoAvionToolStripMenuItem,
+            this.reporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(418, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(534, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,21 +125,29 @@
             this.tipoAvionToolStripMenuItem.Text = "Tipo Avion";
             this.tipoAvionToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
+            // reporteToolStripMenuItem
+            // 
+            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reporteToolStripMenuItem.Text = "Reportes";
+            this.reporteToolStripMenuItem.Click += new System.EventHandler(this.reporteToolStripMenuItem_Click);
+            // 
             // btnEmbarque
             // 
             this.btnEmbarque.Image = ((System.Drawing.Image)(resources.GetObject("btnEmbarque.Image")));
-            this.btnEmbarque.Location = new System.Drawing.Point(70, 102);
-            this.btnEmbarque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmbarque.Location = new System.Drawing.Point(142, 105);
+            this.btnEmbarque.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmbarque.Name = "btnEmbarque";
             this.btnEmbarque.Size = new System.Drawing.Size(74, 72);
             this.btnEmbarque.TabIndex = 2;
             this.btnEmbarque.UseVisualStyleBackColor = true;
+            this.btnEmbarque.Click += new System.EventHandler(this.btnEmbarque_Click);
             // 
             // lblEmbarque
             // 
             this.lblEmbarque.AutoSize = true;
             this.lblEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmbarque.Location = new System.Drawing.Point(73, 87);
+            this.lblEmbarque.Location = new System.Drawing.Point(145, 90);
             this.lblEmbarque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmbarque.Name = "lblEmbarque";
             this.lblEmbarque.Size = new System.Drawing.Size(63, 13);
@@ -149,9 +159,9 @@
             this.groupBox1.Controls.Add(this.lblNombreUsuario);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(-4, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(316, 42);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -160,7 +170,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(288, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -171,7 +181,7 @@
             // 
             this.lblEquipaje.AutoSize = true;
             this.lblEquipaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipaje.Location = new System.Drawing.Point(271, 89);
+            this.lblEquipaje.Location = new System.Drawing.Point(343, 92);
             this.lblEquipaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipaje.Name = "lblEquipaje";
             this.lblEquipaje.Size = new System.Drawing.Size(56, 13);
@@ -181,8 +191,8 @@
             // btnEquipaje
             // 
             this.btnEquipaje.Image = ((System.Drawing.Image)(resources.GetObject("btnEquipaje.Image")));
-            this.btnEquipaje.Location = new System.Drawing.Point(257, 102);
-            this.btnEquipaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEquipaje.Location = new System.Drawing.Point(329, 105);
+            this.btnEquipaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnEquipaje.Name = "btnEquipaje";
             this.btnEquipaje.Size = new System.Drawing.Size(74, 72);
             this.btnEquipaje.TabIndex = 5;
@@ -192,7 +202,7 @@
             // 
             this.lblPasaje.AutoSize = true;
             this.lblPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasaje.Location = new System.Drawing.Point(91, 206);
+            this.lblPasaje.Location = new System.Drawing.Point(163, 209);
             this.lblPasaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasaje.Name = "lblPasaje";
             this.lblPasaje.Size = new System.Drawing.Size(45, 13);
@@ -202,8 +212,8 @@
             // btnPasaje
             // 
             this.btnPasaje.Image = ((System.Drawing.Image)(resources.GetObject("btnPasaje.Image")));
-            this.btnPasaje.Location = new System.Drawing.Point(70, 218);
-            this.btnPasaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPasaje.Location = new System.Drawing.Point(142, 221);
+            this.btnPasaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnPasaje.Name = "btnPasaje";
             this.btnPasaje.Size = new System.Drawing.Size(74, 72);
             this.btnPasaje.TabIndex = 7;
@@ -213,7 +223,7 @@
             // 
             this.lblVuelo.AutoSize = true;
             this.lblVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVuelo.Location = new System.Drawing.Point(281, 206);
+            this.lblVuelo.Location = new System.Drawing.Point(353, 209);
             this.lblVuelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVuelo.Name = "lblVuelo";
             this.lblVuelo.Size = new System.Drawing.Size(39, 13);
@@ -223,8 +233,8 @@
             // btnVuelo
             // 
             this.btnVuelo.Image = ((System.Drawing.Image)(resources.GetObject("btnVuelo.Image")));
-            this.btnVuelo.Location = new System.Drawing.Point(257, 218);
-            this.btnVuelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVuelo.Location = new System.Drawing.Point(329, 221);
+            this.btnVuelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnVuelo.Name = "btnVuelo";
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
@@ -234,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 331);
+            this.ClientSize = new System.Drawing.Size(534, 331);
             this.Controls.Add(this.lblVuelo);
             this.Controls.Add(this.btnVuelo);
             this.Controls.Add(this.lblPasaje);
@@ -282,6 +292,6 @@
         private System.Windows.Forms.Button btnPasaje;
         private System.Windows.Forms.Label lblVuelo;
         private System.Windows.Forms.Button btnVuelo;
-
+        private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
     }
 }
