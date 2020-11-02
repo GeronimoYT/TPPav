@@ -57,8 +57,7 @@ namespace Principal.Ventanas
 
         private void tipoAvionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTipos ventanaTipoAvion = new FormTipos(this);
-            ventanaTipoAvion.ShowDialog();
+           
         }
 
         private void btnEmbarque_Click(object sender, EventArgs e)
@@ -67,11 +66,16 @@ namespace Principal.Ventanas
             ventanaEmbarque.ShowDialog();
         }
 
-        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void estadisticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteEstadistica ventana = new ReporteEstadistica();
+            ventana.ShowDialog();
+        }
+
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formReporte ventana = new formReporte();
             ventana.ShowDialog();
         }
-
     }
 }

@@ -27,7 +27,6 @@ namespace Principal.Informes_y_Reportes
         {
             // TODO: esta línea de código carga datos en la tabla 'DataSet1.Aeropuerto' Puede moverla o quitarla según sea necesario.
             this.AeropuertoTableAdapter.Fill(this.DataSet1.Aeropuerto);
-            CargarReporte();
         }
 
         private void CargarReporte()
@@ -42,6 +41,11 @@ namespace Principal.Informes_y_Reportes
             rvAeropuerto.LocalReport.DataSources.Add(ds);
             rvAeropuerto.LocalReport.ReportPath = "../../Informes y Reportes/InformeAeropuerto.rdlc";
             this.rvAeropuerto.LocalReport.Refresh();
+        }
+
+        private void rvAeropuerto_Load(object sender, EventArgs e)
+        {
+            CargarReporte();
         }
     }
 }

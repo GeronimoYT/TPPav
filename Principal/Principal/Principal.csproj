@@ -95,6 +95,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosAeropuerto.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Informes y Reportes\DatosyEstadisticas.cs">
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informes y Reportes\DatosyEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Informes y Reportes\Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +216,12 @@
     <Compile Include="Ventanas\formAltaVuelo.Designer.cs">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\ReporteEstadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\ReporteEstadistica.Designer.cs">
+      <DependentUpon>ReporteEstadistica.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\TiposAvion\AltaTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +263,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_PAV_3K2_10_AEROLINEADataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Informes y Reportes\EstadisticaAvion.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\InformeAeropuerto.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
@@ -332,6 +347,9 @@
     <EmbeddedResource Include="Ventanas\formAltaVuelo.resx">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\ReporteEstadistica.resx">
+      <DependentUpon>ReporteEstadistica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\TiposAvion\AltaTipo.resx">
       <DependentUpon>AltaTipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +378,17 @@
     </None>
     <None Include="Informes y Reportes\DatosAeropuerto.xss">
       <DependentUpon>DatosAeropuerto.xsd</DependentUpon>
+    </None>
+    <None Include="Informes y Reportes\DatosyEstadisticas.xsc">
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Informes y Reportes\DatosyEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosyEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Informes y Reportes\DatosyEstadisticas.xss">
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
