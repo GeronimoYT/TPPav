@@ -17,7 +17,7 @@ namespace Principal.Ventanas
     {
         public formPrincipal principal;
         private FormUtils formUtils;
-        private bool condicion = false;
+        //private bool condicion = false;
         
         public object Me { get; private set; }
 
@@ -42,7 +42,12 @@ namespace Principal.Ventanas
                 List<Avion> aviones = _avionRepo.ObtenerAviones();
                 var conectorDeDatos = new BindingSource();
                 conectorDeDatos.DataSource = aviones;
-                formUtils.CargarCombo(ref cmbNumAvion, conectorDeDatos, "nroavion", "nroavion");
+                formUtils.CargarCombo(ref cmbNumAvion, conectorDeDatos, "NroAvion", "Descripcion");
+
+                /*string consulta1 = "SELECT * FROM AVION";
+                var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta1);
+                cmbNumAvion.DataSource = combo1;
+                cmbNumAvion.DisplayMember = "numavion"*/
 
                 string consulta2 = "SELECT * FROM Aeropuerto";
                 string consulta3 = "SELECT * FROM Estado";
@@ -181,9 +186,7 @@ namespace Principal.Ventanas
         {
             bool ae = false;
             if (cmbAeropuertoOrigen.Text.ToString() == cmbAeropuertoDestino.Text.ToString())
-            {
-                 ae = true;
-            }
+                {ae = true;}
             return ae;
         }
                      
@@ -216,9 +219,6 @@ namespace Principal.Ventanas
             cmbAeropuertoOrigen.SelectedIndex = -1;
             cmbAeropuertoDestino.SelectedIndex = -1;
             cmbEstado.SelectedIndex = -1;
-
         }
-
-
     }
 }
