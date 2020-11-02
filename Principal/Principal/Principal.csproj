@@ -72,12 +72,12 @@
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
-    <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
-    <Compile Include="Clases\Usuario.cs" />
-    <Compile Include="Clases\Aeropuerto.cs" />
     <Compile Include="Clases\DBHelper.cs" />
+    <Compile Include="Clases\Repositorio\VuelosRepositorio.cs" />
+    <Compile Include="Clases\Aeropuerto.cs" />
     <Compile Include="Clases\Embarque.cs" />
     <Compile Include="Clases\Pasaje.cs" />
     <Compile Include="Clases\Pasajero.cs" />
@@ -116,14 +116,9 @@
     <Compile Include="Transacciones\formEmbarque.Designer.cs">
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
-    <Compile Include="Ventanas\formAeropuerto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\formAeropuerto.Designer.cs">
-      <DependentUpon>formAeropuerto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +142,12 @@
     </Compile>
     <Compile Include="Ventanas\Aviones\Modificacion Avion.Designer.cs">
       <DependentUpon>Modificacion Avion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\formAeropuerto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\formAeropuerto.Designer.cs">
+      <DependentUpon>formAeropuerto.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formAgregar.cs">
       <SubType>Form</SubType>
