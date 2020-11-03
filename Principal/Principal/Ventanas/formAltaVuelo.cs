@@ -58,9 +58,11 @@ namespace Principal.Ventanas
                 cmbAeropuertoOrigen.DisplayMember = "domicilio";
                 cmbAeropuertoOrigen.ValueMember = "idAeropuerto";
                 cmbAeropuertoOrigen.SelectedIndex = -1;
+
                 cmbAeropuertoDestino.DisplayMember = "domicilio";
                 cmbAeropuertoDestino.ValueMember = "idAeropuerto";
                 cmbAeropuertoDestino.SelectedIndex = -1;
+
                 cmbEstado.DisplayMember = "NombreEstado";
                 cmbEstado.ValueMember = "IdEstado";
                 cmbEstado.SelectedIndex = -1;
@@ -104,7 +106,6 @@ namespace Principal.Ventanas
             else
             {
                 MessageBox.Show("No se selecciono ningun Numero de Avion");
-                //cmbNumAvion.Focus();
             }
         }
 
@@ -134,7 +135,7 @@ namespace Principal.Ventanas
 
                             //CARGA DE DATOS A BD
                             string consulta = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdAeropuertoDestino,Estado) " +
-                                              $"VALUES ({fechaHoraSalida.ToString()},{fechaHoraLlegada.ToString()},{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
+                                              $"VALUES ({fechaHoraSalida.ToString("dd-MM-yyyy")},{fechaHoraLlegada.ToString("dd-MM-yyyy")},{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
                             var carga = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                             MessageBox.Show("Los datos se cargaron correctamente!");
                             Vuelo ventanaVuelo = new Vuelo();
@@ -181,9 +182,7 @@ namespace Principal.Ventanas
         {
             bool ae = false;
             if (cmbAeropuertoOrigen.Text.ToString() == cmbAeropuertoDestino.Text.ToString())
-            {
-                 ae = true;
-            }
+                {ae = true;}
             return ae;
         }
                      

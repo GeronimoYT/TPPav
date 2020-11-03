@@ -24,7 +24,7 @@ namespace Principal.Ventanas
         {
             CargaGrilla();
             CargoFiltros();
-            dgvVuelos.ClearSelection();
+            //dgvVuelos.ClearSelection();
         }
 
         private void CargaGrilla()
@@ -34,11 +34,13 @@ namespace Principal.Ventanas
                 string consulta = $"SELECT * FROM Vuelo";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 dgvVuelos.DataSource = grilla;
+                dgvVuelos.ClearSelection();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
             }
+
             //select DescripcionTipo
             //from avion a join TipoAvion ta on a.NroAvion = ta.IdTipoAvion
 
@@ -56,9 +58,9 @@ namespace Principal.Ventanas
                 cmbE.DataSource = combo2;
 
                 cmbNA.DisplayMember = "nroavion";
-                //cmbFiltro1.ValueMember = "idavion";
+                cmbNA.ValueMember = "nroavion";
                 cmbNA.SelectedIndex = -1;
-                cmbNA.Text= "Seleccionar";
+
                 cmbE.DisplayMember = "nombreestado";
                 cmbE.ValueMember = "idestado";
                 cmbE.SelectedIndex = -1;
@@ -78,17 +80,16 @@ namespace Principal.Ventanas
             {
                 try
                 {
-                    if (dgvVuelos.CurrentRow == null)
-                        return;
-                    //ELSE ?
-                    dgvVuelos.Rows.Remove(dgvVuelos.CurrentRow);
+                    string consulta = $"DELETE FROM Vuelo WHERE NroVuelo LIKE '{dgvVuelos.CurrentRow.Cells["NroVuelo"].Value.ToString()}'";
+                    var eliminar = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                    MessageBox.Show("Se eliminó el Vuelo exitosamente");
+                    CargaGrilla();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("No se ha podido realizar la operación");
                 }
             }
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -127,6 +128,7 @@ namespace Principal.Ventanas
                 if (grilla.Rows.Count > 0)
                 {
                     dgvVuelos.DataSource = grilla;
+                    dgvVuelos.ClearSelection();
                 }
                 else
                 {
