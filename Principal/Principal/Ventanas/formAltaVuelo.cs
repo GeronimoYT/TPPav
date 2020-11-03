@@ -42,7 +42,7 @@ namespace Principal.Ventanas
                 List<Avion> aviones = _avionRepo.ObtenerAviones();
                 var conectorDeDatos = new BindingSource();
                 conectorDeDatos.DataSource = aviones;
-                formUtils.CargarCombo(ref cmbNumAvion, conectorDeDatos, "nroavion", "nroavion");
+                formUtils.CargarCombo(ref cmbNumAvion, conectorDeDatos, "numero", "numero");
 
                 string consulta2 = "SELECT * FROM Aeropuerto";
                 string consulta3 = "SELECT * FROM Estado";

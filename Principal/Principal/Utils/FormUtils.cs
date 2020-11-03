@@ -24,7 +24,13 @@ namespace Principal.Utils
         }
 
         //Recibe y setea una ComboBox, apartir de los parametros recibidos.
-        public static void CargarCombo(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
+        public void CargarCombo(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
+        {
+            combo.DataSource = conectorDeDatos.DataSource;
+            combo.DisplayMember = displayMember;
+            combo.ValueMember = valueMember;
+        }
+        public static void CargarComboV2(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
         {
             combo.DataSource = conectorDeDatos.DataSource;
             combo.DisplayMember = displayMember;

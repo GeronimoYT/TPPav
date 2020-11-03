@@ -56,7 +56,7 @@ namespace Principal.Ventanas
             var conector = new BindingSource();
             conector.DataSource = tipoDocumentos;
 
-            FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
+            FormUtils.CargarComboV2(ref cmbTipoDocumento, conector, "Id", "Id");
             var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
             cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;
 
@@ -72,7 +72,7 @@ namespace Principal.Ventanas
             var conector = new BindingSource();
             conector.DataSource = tipoPasajes;
 
-            FormUtils.CargarCombo(ref cmbTipoPasaje, conector, "Detalle", "Id");
+            FormUtils.CargarComboV2(ref cmbTipoPasaje, conector, "Detalle", "Id");
             var tipoPasajeSeleccionado = tipoPasajes.First(tp => tp.Detalle == "Seleccionar");
             cmbTipoPasaje.SelectedItem = tipoPasajeSeleccionado;
         }
