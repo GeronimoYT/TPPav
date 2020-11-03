@@ -45,6 +45,7 @@ namespace Principal.Ventanas
                 if (grilla.Rows.Count > 0)
                 {
                     dgvDatosAeropuerto.DataSource = grilla;
+                    
                 }
                 else MessageBox.Show("No se ha encontrado ningún aeropuerto con el Nombre " + txtBusquedaNombre.Text);
             }

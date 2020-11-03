@@ -172,7 +172,7 @@
             // btnBuscarAeropuerto
             // 
             this.btnBuscarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(268, 225);
+            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(268, 227);
             this.btnBuscarAeropuerto.Name = "btnBuscarAeropuerto";
             this.btnBuscarAeropuerto.Size = new System.Drawing.Size(75, 28);
             this.btnBuscarAeropuerto.TabIndex = 10;

@@ -1,5 +1,6 @@
 ﻿using Principal.Clases;
 using Principal.Clases.Servicios;
+using Principal.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,12 @@ namespace Principal.Ventanas
         private PasajerosServicio _pasajerosServicio;
         private formPasajeros _frmPasajeros;
         private Pasajero _pasajero;
-        public formBajaPasajero(formPasajeros formPasajeros, string nroDoc)
+        private TipoDocumentosServicio _tipoDocumentosServicio;
+        public formBajaPasajero(formPasajeros formPasajeros, string tipoDoc, string nroDoc)
         {
+            _tipoDocumentosServicio = new TipoDocumentosServicio();
             _pasajerosServicio = new PasajerosServicio();
-            _pasajero = _pasajerosServicio.ObtenerPasajero(nroDoc);
+            _pasajero = _pasajerosServicio.ObtenerPasajero(tipoDoc, nroDoc);
             _frmPasajeros = formPasajeros;
             InitializeComponent();
         }
@@ -28,23 +31,41 @@ namespace Principal.Ventanas
         private void formBajaPasajero_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            
+            CargarTipoDocumento();
+
+        }
+        private void CargarTipoDocumento()
+        {
+
+
+            var tipoDocumentos = _tipoDocumentosServicio.ObtenerTipoDocumentos();
+            tipoDocumentos.Add(new TipoDocumento
+            {
+                Id = "Seleccionar"
+            });
+            var conector = new BindingSource();
+            conector.DataSource = tipoDocumentos;
+            FormUtils.CargarComboV2(ref cmbTipoDocumento, conector, "Id", "Id");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == _pasajero.TipoDocumento.Id);
+            cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;
+
+
         }
         private void CargarDatos()
         {
-            
             txtNroDocumento.Text = _pasajero.NroDocumento;
             txtApellido.Text = _pasajero.Apellido;
             txtNombre.Text = _pasajero.Nombre;
             txtTelefono.Text = _pasajero.Telefono;
             txtEmail.Text = _pasajero.Email;
+            dtpFechaNacimiento.Value = _pasajero.FechaNacimiento;
             if (_pasajero.Estado)
                 rbActivo.Checked = true;
             else
                 rbInactivo.Checked = true;
 
         }
-        
+
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -75,6 +96,8 @@ namespace Principal.Ventanas
         {
             _pasajerosServicio.DarBajaPasajero(_pasajero);
             MessageBox.Show("La operación se realizó con éxito", "Información");
+            _frmPasajeros.Show();
+            this.Dispose();
         }
         private bool ConfirmarOperacion()
         {

@@ -16,9 +16,9 @@ namespace Principal.Clases.Servicios
             _repositorio = new TipoPasajesRepositorio();
         }
 
-        public List<TipoPasaje> ObtenerTipoDocumentos()
+        public List<TipoPasaje> ObtenerTipoPasajes()
         {
-            return _repositorio.ObtenerTipoDocumentos();
+            return _repositorio.ObtenerTipoPasajes();
         }
     }
 }

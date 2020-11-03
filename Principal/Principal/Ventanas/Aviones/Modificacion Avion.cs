@@ -38,7 +38,7 @@ namespace Principal.Ventanas.Aviones
             List<TipoEquipaje> tipos = _repTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
-            FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
+            //FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
         }
 
         private void CerrarFormuario()
