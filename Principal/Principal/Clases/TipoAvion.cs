@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Principal.Clases
 {
-   public class TipoAvion
+    public class TipoAvion
     {
         public TipoAvion()
         {
         }
 
-        public TipoAvion(int id, string descripcion, int equipaje, int pasajeros1, int pasajeros2, int emergencia, int longitud,int alcance)
+        public TipoAvion(int id, string descripcion, int equipaje, int pasajeros1, int pasajeros2, int emergencia, int longitud, int alcance)
         {
             this.id = id;
             this.descripcion = descripcion;

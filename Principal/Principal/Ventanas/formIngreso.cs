@@ -39,17 +39,5 @@ namespace Principal
             }
 
         }
-
-
-        private void formIngresar_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void FormIngresar_Load(object sender, EventArgs e)
-
-        {
-
-        }
-
-    }
+            }
 }
