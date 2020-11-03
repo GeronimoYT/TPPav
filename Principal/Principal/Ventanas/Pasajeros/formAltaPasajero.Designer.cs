@@ -89,6 +89,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(121, 20);
             this.txtTelefono.TabIndex = 58;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeypressKeyPress);
             // 
             // label6
             // 
@@ -151,6 +152,7 @@
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(121, 20);
             this.txtNroDocumento.TabIndex = 51;
+            this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeypressKeyPress);
             // 
             // label1
             // 
@@ -169,6 +171,7 @@
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoDocumento.TabIndex = 49;
+            this.cmbTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDocumento_SelectedIndexChanged);
             // 
             // btnGuardar
             // 
@@ -178,6 +181,7 @@
             this.btnGuardar.TabIndex = 48;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -187,6 +191,7 @@
             this.btnCancelar.TabIndex = 47;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // formAltaPasajero
             // 

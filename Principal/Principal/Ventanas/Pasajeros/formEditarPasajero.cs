@@ -54,7 +54,7 @@ namespace Principal.Ventanas
             var conector = new BindingSource();
             conector.DataSource = tipoDocumentos;
             FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
-            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == _pasajero.TipoDocumento.Id);
             cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;
            
         }
@@ -92,7 +92,7 @@ namespace Principal.Ventanas
         }
         private void ValidarPasajero()
         {
-            _pasajero.TipoDocumento = (TipoDocumento)cmbTipoDocumento.SelectedItem;
+            //_pasajero.TipoDocumento = (TipoDocumento)cmbTipoDocumento.SelectedItem;
             _pasajero.NroDocumento = txtNroDocumento.Text;
             _pasajero.Apellido = txtApellido.Text;
             _pasajero.Nombre = txtNombre.Text;

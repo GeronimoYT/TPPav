@@ -46,7 +46,7 @@ namespace Principal.Ventanas
             var conector = new BindingSource();
             conector.DataSource = tipoDocumentos;
             FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
-            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == _pasajero.TipoDocumento.Id);
             cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;
 
 
@@ -96,6 +96,8 @@ namespace Principal.Ventanas
         {
             _pasajerosServicio.DarBajaPasajero(_pasajero);
             MessageBox.Show("La operación se realizó con éxito", "Información");
+            _frmPasajeros.Show();
+            this.Dispose();
         }
         private bool ConfirmarOperacion()
         {

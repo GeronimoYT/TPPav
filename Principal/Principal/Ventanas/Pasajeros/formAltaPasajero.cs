@@ -43,8 +43,8 @@ namespace Principal.Ventanas
             });
             var conector = new BindingSource();
             conector.DataSource = tipoDocumentos;
-            FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Descripcion", "Id");
-            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Descripcion == "Seleccionar");
+            FormUtils.CargarCombo(ref cmbTipoDocumento, conector, "Id", "Id");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
             cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;
         }
 
@@ -75,7 +75,7 @@ namespace Principal.Ventanas
         }
         private bool ValidarPasajero()
         {
-            var tipoDocumento = ((TipoDocumento)cmbTipoDocumento.SelectedItem).Descripcion;
+            var tipoDocumento = ((TipoDocumento)cmbTipoDocumento.SelectedItem).Id;
             var nroDocumento = txtNroDocumento.Text;
             var apellido = txtApellido.Text;
             var nombre = txtNombre.Text;
@@ -84,7 +84,8 @@ namespace Principal.Ventanas
             var fechaNacimiento = dtpFechaNacimiento.Value;
             var pasajeroIngresado = new Pasajero();
             var tipoDocumentoIngresado = new TipoDocumento();
-            tipoDocumentoIngresado.Descripcion = tipoDocumento;
+            tipoDocumentoIngresado.Id = tipoDocumento;
+            pasajeroIngresado.TipoDocumento = tipoDocumentoIngresado;
             pasajeroIngresado.NroDocumento = nroDocumento;
             pasajeroIngresado.Apellido = apellido;
             pasajeroIngresado.Nombre = nombre;
@@ -125,10 +126,10 @@ namespace Principal.Ventanas
 
         private void txtNroDocumento_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cmbTipoDocumento.SelectedItem.ToString() == "Seleccionar") { txtNroDocumento.MaxLength = 9; }
+            if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "Seleccionar") { txtNroDocumento.MaxLength = 9; }
             else
             {
-                if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "1")
+                if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "DNI")
                 {
                     //Para obligar a que sólo se introduzcan números
                     txtNroDocumento.MaxLength = 8;
@@ -147,7 +148,7 @@ namespace Principal.Ventanas
                         e.Handled = true;
                     }
                 }
-                if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "2")
+                if ((((TipoDocumento)cmbTipoDocumento.SelectedItem).Id).ToString() == "Pasaporte")
                 {
                     txtNroDocumento.MaxLength = 9;
                     if (txtNroDocumento.TextLength < 3)

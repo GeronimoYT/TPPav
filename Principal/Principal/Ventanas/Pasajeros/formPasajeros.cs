@@ -33,6 +33,7 @@ namespace Principal.Ventanas
         {
             flag = true;
             CargarTipoDocumento();
+            ConsultarPasajeros();
         }
 
         private void CargarGrilla(List<Pasajero> pasajeros)
