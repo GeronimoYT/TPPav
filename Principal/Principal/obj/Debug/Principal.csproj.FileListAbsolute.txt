@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -95,3 +96,195 @@ C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\P
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CopyComplete
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Administrador\Desktop\Mis boludeces\PAV Aerolineas\TP\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+=======
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\EnvDTE.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\stdole.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\Microsoft.MSXML.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Informes_y_Reportes.formReporte.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.formEmbarque.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.FormAviones.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Baja_Avion.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasaje.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasajero.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formBajaPasajero.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditarPasajero.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajeros.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajes.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Buscar.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.ReporteEstadistica.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.AltaTipo.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.BajaTipo.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.Detalle_Tipo.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.FormTipos.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.ModificacionTipo.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CopyComplete
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\EnvDTE.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\stdole.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Microsoft.MSXML.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Informes_y_Reportes.formReporte.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.formEmbarque.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAeropuerto.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.FormAviones.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Baja_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasaje.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasajero.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formBajaPasajero.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditarPasajero.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajeros.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajes.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Buscar.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.ReporteEstadistica.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.AltaTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.BajaTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.Detalle_Tipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.FormTipos.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.TiposAvion.ModificacionTipo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CopyComplete
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.exe
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.exe
+C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+>>>>>>> ffd870ea64a8f538f707dd27797e743c415c2b05

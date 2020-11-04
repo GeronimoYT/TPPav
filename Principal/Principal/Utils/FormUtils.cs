@@ -30,6 +30,12 @@ namespace Principal.Utils
             combo.DisplayMember = displayMember;
             combo.ValueMember = valueMember;
         }
+        public static void CargarComboV2(ref ComboBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
+        {
+            combo.DataSource = conectorDeDatos.DataSource;
+            combo.DisplayMember = displayMember;
+            combo.ValueMember = valueMember;
+        }
 
         //Recibe y setea una ListBox, apartir de los parametros recibidos.
         public void CargarList(ref ListBox combo, BindingSource conectorDeDatos, string displayMember, string valueMember)
