@@ -31,9 +31,6 @@
             this.lblEmbarque = new System.Windows.Forms.Label();
             this.lblNroVuelo = new System.Windows.Forms.Label();
             this.cmbNroVuelo = new System.Windows.Forms.ComboBox();
-            this.lblHoraEmbarque = new System.Windows.Forms.Label();
-            this.txtHoraEmbarque = new System.Windows.Forms.TextBox();
-            this.txtFechaEmbarque = new System.Windows.Forms.TextBox();
             this.lblFechaEmbarque = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPuertaEmbarque = new System.Windows.Forms.Label();
@@ -47,6 +44,7 @@
             this.btnAceptarEdicion = new System.Windows.Forms.Button();
             this.btnEditarAeropuerto = new System.Windows.Forms.Button();
             this.cmbPuertaEmbarque = new System.Windows.Forms.ComboBox();
+            this.txtFechaEmbarque = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblEmbarque
@@ -79,41 +77,15 @@
             this.cmbNroVuelo.TabIndex = 64;
             this.cmbNroVuelo.SelectedIndexChanged += new System.EventHandler(this.cmbNroVuelo_SelectedIndexChanged);
             // 
-            // lblHoraEmbarque
-            // 
-            this.lblHoraEmbarque.AutoSize = true;
-            this.lblHoraEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoraEmbarque.Location = new System.Drawing.Point(347, 69);
-            this.lblHoraEmbarque.Name = "lblHoraEmbarque";
-            this.lblHoraEmbarque.Size = new System.Drawing.Size(132, 17);
-            this.lblHoraEmbarque.TabIndex = 65;
-            this.lblHoraEmbarque.Text = "Hora de Embarque:";
-            // 
-            // txtHoraEmbarque
-            // 
-            this.txtHoraEmbarque.Enabled = false;
-            this.txtHoraEmbarque.Location = new System.Drawing.Point(545, 69);
-            this.txtHoraEmbarque.Name = "txtHoraEmbarque";
-            this.txtHoraEmbarque.Size = new System.Drawing.Size(60, 20);
-            this.txtHoraEmbarque.TabIndex = 66;
-            // 
-            // txtFechaEmbarque
-            // 
-            this.txtFechaEmbarque.Enabled = false;
-            this.txtFechaEmbarque.Location = new System.Drawing.Point(493, 44);
-            this.txtFechaEmbarque.Name = "txtFechaEmbarque";
-            this.txtFechaEmbarque.Size = new System.Drawing.Size(112, 20);
-            this.txtFechaEmbarque.TabIndex = 68;
-            // 
             // lblFechaEmbarque
             // 
             this.lblFechaEmbarque.AutoSize = true;
             this.lblFechaEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEmbarque.Location = new System.Drawing.Point(347, 45);
+            this.lblFechaEmbarque.Location = new System.Drawing.Point(301, 47);
             this.lblFechaEmbarque.Name = "lblFechaEmbarque";
-            this.lblFechaEmbarque.Size = new System.Drawing.Size(140, 17);
+            this.lblFechaEmbarque.Size = new System.Drawing.Size(186, 17);
             this.lblFechaEmbarque.TabIndex = 67;
-            this.lblFechaEmbarque.Text = "Fecha de Embarque:";
+            this.lblFechaEmbarque.Text = "Fecha y Hora de Embarque:";
             // 
             // label2
             // 
@@ -143,6 +115,7 @@
             this.cmbAeropuerto.Name = "cmbAeropuerto";
             this.cmbAeropuerto.Size = new System.Drawing.Size(70, 21);
             this.cmbAeropuerto.TabIndex = 73;
+            this.cmbAeropuerto.SelectedIndexChanged += new System.EventHandler(this.cmbAeropuerto_SelectedIndexChanged);
             // 
             // cmbTipoDoc
             // 
@@ -204,6 +177,7 @@
             // 
             // btnAceptarEdicion
             // 
+            this.btnAceptarEdicion.Enabled = false;
             this.btnAceptarEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptarEdicion.Location = new System.Drawing.Point(530, 345);
             this.btnAceptarEdicion.Name = "btnAceptarEdicion";
@@ -211,10 +185,10 @@
             this.btnAceptarEdicion.TabIndex = 83;
             this.btnAceptarEdicion.Text = "Aceptar";
             this.btnAceptarEdicion.UseVisualStyleBackColor = true;
+            this.btnAceptarEdicion.Click += new System.EventHandler(this.btnAceptarEdicion_Click);
             // 
             // btnEditarAeropuerto
             // 
-            this.btnEditarAeropuerto.Enabled = false;
             this.btnEditarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAeropuerto.Location = new System.Drawing.Point(432, 345);
             this.btnEditarAeropuerto.Name = "btnEditarAeropuerto";
@@ -232,11 +206,21 @@
             this.cmbPuertaEmbarque.Size = new System.Drawing.Size(70, 21);
             this.cmbPuertaEmbarque.TabIndex = 84;
             // 
+            // txtFechaEmbarque
+            // 
+            this.txtFechaEmbarque.Location = new System.Drawing.Point(493, 46);
+            this.txtFechaEmbarque.Mask = "00/00/0000 00:00";
+            this.txtFechaEmbarque.Name = "txtFechaEmbarque";
+            this.txtFechaEmbarque.Size = new System.Drawing.Size(112, 20);
+            this.txtFechaEmbarque.TabIndex = 85;
+            this.txtFechaEmbarque.ValidatingType = typeof(System.DateTime);
+            // 
             // formEmbarque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 385);
+            this.Controls.Add(this.txtFechaEmbarque);
             this.Controls.Add(this.cmbPuertaEmbarque);
             this.Controls.Add(this.btnAceptarEdicion);
             this.Controls.Add(this.btnEditarAeropuerto);
@@ -249,10 +233,7 @@
             this.Controls.Add(this.cmbAeropuerto);
             this.Controls.Add(this.lblPuertaEmbarque);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtFechaEmbarque);
             this.Controls.Add(this.lblFechaEmbarque);
-            this.Controls.Add(this.txtHoraEmbarque);
-            this.Controls.Add(this.lblHoraEmbarque);
             this.Controls.Add(this.cmbNroVuelo);
             this.Controls.Add(this.lblNroVuelo);
             this.Controls.Add(this.lblEmbarque);
@@ -269,9 +250,6 @@
         private System.Windows.Forms.Label lblEmbarque;
         private System.Windows.Forms.Label lblNroVuelo;
         private System.Windows.Forms.ComboBox cmbNroVuelo;
-        private System.Windows.Forms.Label lblHoraEmbarque;
-        private System.Windows.Forms.TextBox txtHoraEmbarque;
-        private System.Windows.Forms.TextBox txtFechaEmbarque;
         private System.Windows.Forms.Label lblFechaEmbarque;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPuertaEmbarque;
@@ -285,5 +263,6 @@
         private System.Windows.Forms.Button btnAceptarEdicion;
         private System.Windows.Forms.Button btnEditarAeropuerto;
         private System.Windows.Forms.ComboBox cmbPuertaEmbarque;
+        private System.Windows.Forms.MaskedTextBox txtFechaEmbarque;
     }
 }
