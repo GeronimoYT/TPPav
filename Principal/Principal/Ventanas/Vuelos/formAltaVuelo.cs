@@ -17,8 +17,7 @@ namespace Principal.Ventanas
     {
         public formPrincipal principal;
         private FormUtils formUtils;
-        //private bool condicion = false;
-        
+                
         public object Me { get; private set; }
 
         public formAltaVuelo()
@@ -87,13 +86,23 @@ namespace Principal.Ventanas
             Avion avion = (Avion)cmbNumAvion.SelectedItem;
             if (cmbNumAvion.SelectedIndex != -1)
             {
+                /*string consultasql = $"SELECT DescripcionTipo FROM Avion a JOIN TipoAvion tp ON a.IdTipoAvion = ta.IdTipoAvion " +
+                                     $"WHERE a.NroAvion LIKE '{avion.idTipo.ToString()}'";
+                var res = DBHelper.GetDBHelper().ComandoSQL(consultasql);
+                
+                txtTipoAvion.Text = res.ToString();*/
                 txtTipoAvion.Text = avion.idTipo.ToString();
+
             }
             else
             {
                 txtTipoAvion.Text = "";
             }
         }
+
+        //select*
+        //from avion a join TipoAvion ta on a.IdTipoAvion = ta.IdTipoAvion
+        //where a.NroAvion like '1'
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
@@ -122,18 +131,20 @@ namespace Principal.Ventanas
                         try
                         {
 
-                            var fechaHoraSalida = calendarioSalida.SelectionStart.ToString("dd/MM/yyyy");// + ' ' + cmbHoraSalida.Text;
-                            var fechaHoraLlegada = calendarioLlegada.SelectionStart.ToString("dd/MM/yyyy");// + ' ' + cmbHoraLlegada.Text;
-                            
+                            var fechaHoraSalida = calendarioSalida.SelectionStart.ToString("dd/MM/yyyy")+ ' ' + cmbHoraSalida.Text;
+                            var fechaHoraLlegada = calendarioLlegada.SelectionStart.ToString("dd/MM/yyyy")+ ' ' + cmbHoraLlegada.Text;
+
                             var fechaHoraS = Convert.ToDateTime(fechaHoraSalida);
                             var fechaHoraL = Convert.ToDateTime(fechaHoraLlegada);
 
-                            //CARGA DE DATOS A BD SIN LA HORA
+                            //FORMATO bd yyyy-MM-dd HH:mm
+
+                            //CARGA DE DATOS A BD 
                             string consulta = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdAeropuertoDestino,Estado) " +
-                                              $"VALUES ({fechaHoraS},{fechaHoraL},{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
+                                              $"VALUES ('{fechaHoraS.ToString("dd-MM-yyyy HH:mm")}','{fechaHoraL.ToString("dd-MM-yyyy HH:mm")}',{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
                             var carga = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                             MessageBox.Show("Los datos se cargaron correctamente!");
-                            Vuelo ventanaVuelo = new Vuelo();
+                            formVuelo ventanaVuelo = new formVuelo();
                             ventanaVuelo.Show();
                             LimpiarCampos();
                             this.Close();
@@ -212,10 +223,6 @@ namespace Principal.Ventanas
             cmbEstado.SelectedIndex = -1;
 
         }
-     }
+
+    }
 }
-
-
-//string consulta = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdAeropuertoDestino,Estado) " +
-                                             // $"VALUES ({fechaHoraS.ToString("dd/MM/yyyy")},{fechaHoraL.ToString("dd/MM/yyyy")},{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
-//var carga = DBHelper.GetDBHelper().ConsultaSQL(consulta);

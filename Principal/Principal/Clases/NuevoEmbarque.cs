@@ -6,30 +6,29 @@ using System.Threading.Tasks;
 
 namespace Principal.Clases
 {
-    class Embarque
+    class NuevoEmbarque
     {
-
         private int nroVuelo;
         private DateTime fechaHoraEmbarque;
-        private int idAeropuerto;
+        private string aeropuerto;
         private string tipoDniPasajero;
         private string nroDniPasajero;
         private int puertaEmbarque;
-        private int idEstado;
+        private string estado;
 
-        public Embarque()
+        public NuevoEmbarque()
         {
 
         }
-        public Embarque(int nroVuelo, DateTime fechaHoraEmbarque, int idAeropuerto, string tipoDniPasajero, string nroDniPasajero, int puertaEmbarque, int idEstado)
+        public NuevoEmbarque(int nroVuelo, DateTime fechaHoraEmbarque, string aeropuerto, string tipoDniPasajero,string nroDniPasajero, int puertaEmbarque, string estado)
         {
             this.nroVuelo = nroVuelo;
             this.fechaHoraEmbarque = fechaHoraEmbarque;
-            this.idAeropuerto = idAeropuerto;
+            this.aeropuerto = aeropuerto;
             this.tipoDniPasajero = tipoDniPasajero;
             this.nroDniPasajero = nroDniPasajero;
             this.puertaEmbarque = puertaEmbarque;
-            this.idEstado = idEstado;
+            this.estado = estado;            
         }
 
         public int NroVuelo
@@ -44,10 +43,10 @@ namespace Principal.Clases
             set => fechaHoraEmbarque = value;
         }
 
-        public int Aeropuerto
+        public string Aeropuerto
         {
-            get => idAeropuerto;
-            set => idAeropuerto = value;
+            get => aeropuerto;
+            set => aeropuerto = value;
         }
 
         public string TipoDniPasajero
@@ -60,17 +59,18 @@ namespace Principal.Clases
             get => nroDniPasajero;
             set => nroDniPasajero = value;
         }
-
+        
         public int PuertaEmbarque
         {
             get => puertaEmbarque;
             set => puertaEmbarque = value;
         }
 
-        public int Estado
+        public string Estado
         {
-            get => idEstado;
-            set => idEstado = value;
+            get => estado;
+            set => estado = value;
         }
+
     }
 }

@@ -25,18 +25,6 @@ namespace Principal.Ventanas
             ventanaAeropuerto.ShowDialog();
         }
 
-        private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Vuelo ventanaVuelo = new Vuelo();
-            ventanaVuelo.ShowDialog();
-        }
-
-        private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formularioPasajes = new formPasajes(this);
-            formularioPasajes.ShowDialog();
-            //this.Hide();
-        }
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -59,7 +47,8 @@ namespace Principal.Ventanas
 
         private void tipoAvionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            FormTipos tipoAvion = new FormTipos(this);
+            tipoAvion.ShowDialog();
         }
 
         private void btnEmbarque_Click(object sender, EventArgs e)
@@ -85,5 +74,29 @@ namespace Principal.Ventanas
             formEquipajes ventanaEquipajes = new formEquipajes(this);
             ventanaEquipajes.Show();
         }
+        private void btnPasaje_Click(object sender, EventArgs e)
+        {
+            var formularioPasajes = new formPasajes(this);
+            formularioPasajes.ShowDialog();
+        }
+
+        private void btnVuelo_Click(object sender, EventArgs e)
+        {
+            formVuelo ventanaVuelo = new formVuelo();
+            ventanaVuelo.ShowDialog();
+        }
+
+        private void embarquesPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmbarquePorNroVuelo reporteEmbarque = new EmbarquePorNroVuelo();
+            reporteEmbarque.ShowDialog();
+        }
+
+        private void formPrincipal_Load(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+        }
+
     }
 }

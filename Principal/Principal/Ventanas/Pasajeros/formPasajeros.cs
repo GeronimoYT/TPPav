@@ -18,7 +18,9 @@ namespace Principal.Ventanas
         private PasajerosServicio _pasajerosServicio;
         private formPrincipal _frmPrincipal;
         private TipoDocumentosServicio _tipoDocumentosServicio;
+        private formAltaPasaje _frmAltaPasaje;
         private bool flag;
+        private bool flagPrincipal;
 
         public formPasajeros(formPrincipal principal)
         {
@@ -26,6 +28,16 @@ namespace Principal.Ventanas
             _pasajerosServicio = new PasajerosServicio();
             _tipoDocumentosServicio = new TipoDocumentosServicio();
             _frmPrincipal = principal;
+            flagPrincipal = true;
+            InitializeComponent();
+        }
+        public formPasajeros(formAltaPasaje altaPasaje)
+        {
+
+            _pasajerosServicio = new PasajerosServicio();
+            _tipoDocumentosServicio = new TipoDocumentosServicio();
+            _frmAltaPasaje = altaPasaje;
+            flagPrincipal = false;
             InitializeComponent();
         }
 
@@ -151,8 +163,15 @@ namespace Principal.Ventanas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            _frmPrincipal.Show();
-            this.Dispose();
+            if (flagPrincipal) {
+                _frmPrincipal.Show();
+                this.Dispose();
+            }
+            else {
+                _frmAltaPasaje.Show();
+                this.Dispose();
+            }
+            
         }
 
         private bool ControlEdad()

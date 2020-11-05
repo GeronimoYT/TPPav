@@ -68,6 +68,16 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
+
+    <Compile Include="Clases\Estado.cs" />
+    <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
+    <Compile Include="Clases\ReporteAeropuerto.cs" />
+    <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\Servicios\VuelosServicio.cs" />
+
     <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
@@ -88,11 +98,9 @@
     <Compile Include="Clases\Embarque.cs" />
     <Compile Include="Clases\Pasaje.cs" />
     <Compile Include="Clases\Pasajero.cs" />
-    <Compile Include="Clases\Repositorio\EmbarquesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\PasajerosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\PasajesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoPasajesRepositorio.cs" />
-    <Compile Include="Clases\Servicios\EmbarquesServicio.cs" />
     <Compile Include="Clases\Servicios\PasajerosServicio.cs" />
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
@@ -116,6 +124,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Informes y Reportes\EmbarquePorFecha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmbarquePorFecha.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Informes y Reportes\Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +143,12 @@
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Transacciones\Pasajes\formEditarPasaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Pasajes\formEditarPasaje.Designer.cs">
+      <DependentUpon>formEditarPasaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\AltaEquipaje.cs">
@@ -167,6 +186,12 @@
     </Compile>
     <Compile Include="Ventanas\Aviones\Modificacion Avion.Designer.cs">
       <DependentUpon>Modificacion Avion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\EmbarquePorFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\EmbarquePorFecha.Designer.cs">
+      <DependentUpon>EmbarquePorFecha.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formAeropuerto.cs">
       <SubType>Form</SubType>
@@ -236,10 +261,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanas\formAltaVuelo.cs">
+    <Compile Include="Ventanas\Vuelos\formAltaVuelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formAltaVuelo.Designer.cs">
+    <Compile Include="Ventanas\Vuelos\formAltaVuelo.Designer.cs">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\ModificacionEquipaje.cs">
@@ -284,17 +309,24 @@
     <Compile Include="Ventanas\TiposAvion\ModificacionTipo.Designer.cs">
       <DependentUpon>ModificacionTipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Vuelo.cs">
+    <Compile Include="Ventanas\Vuelos\formModificarVuelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Vuelo.Designer.cs">
-      <DependentUpon>Vuelo.cs</DependentUpon>
+    <Compile Include="Ventanas\Vuelos\formModificarVuelo.Designer.cs">
+      <DependentUpon>formModificarVuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Vuelos\formVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Vuelos\formVuelo.Designer.cs">
+      <DependentUpon>formVuelo.cs</DependentUpon>
     </Compile>
     <Compile Include="_PAV_3K2_10_AEROLINEADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_PAV_3K2_10_AEROLINEADataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Informes y Reportes\EmbarquePorFecha.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\EstadisticaAvion.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\InformeAeropuerto.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\Reporte.resx">
@@ -303,11 +335,20 @@
     <EmbeddedResource Include="Transacciones\formEmbarque.resx">
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Transacciones\formEquipajes.resx">
       <DependentUpon>formEquipajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\AltaEquipaje.resx">
       <DependentUpon>AltaEquipaje.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="Transacciones\Pasajes\formEditarPasaje.resx">
+      <DependentUpon>formEditarPasaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\EmbarquePorFecha.resx">
+      <DependentUpon>EmbarquePorFecha.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
@@ -385,7 +426,7 @@
     <EmbeddedResource Include="Ventanas\Pasajes\Pasajes.resx">
       <DependentUpon>Pasajes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formAltaVuelo.resx">
+    <EmbeddedResource Include="Ventanas\Vuelos\formAltaVuelo.resx">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\ReporteEstadistica.resx">
@@ -406,8 +447,11 @@
     <EmbeddedResource Include="Ventanas\TiposAvion\ModificacionTipo.resx">
       <DependentUpon>ModificacionTipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Vuelo.resx">
-      <DependentUpon>Vuelo.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Vuelos\formModificarVuelo.resx">
+      <DependentUpon>formModificarVuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Vuelos\formVuelo.resx">
+      <DependentUpon>formVuelo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Informes y Reportes\DatosAeropuerto.xsc">
       <DependentUpon>DatosAeropuerto.xsd</DependentUpon>
@@ -430,6 +474,17 @@
     </None>
     <None Include="Informes y Reportes\DatosyEstadisticas.xss">
       <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Informes y Reportes\EmbarquePorFecha.xsc">
+      <DependentUpon>EmbarquePorFecha.xsd</DependentUpon>
+    </None>
+    <None Include="Informes y Reportes\EmbarquePorFecha.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmbarquePorFecha.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Informes y Reportes\EmbarquePorFecha.xss">
+      <DependentUpon>EmbarquePorFecha.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
