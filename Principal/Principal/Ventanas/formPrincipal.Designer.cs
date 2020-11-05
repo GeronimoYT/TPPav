@@ -48,6 +48,7 @@
             this.btnPasaje = new System.Windows.Forms.Button();
             this.lblVuelo = new System.Windows.Forms.Label();
             this.btnVuelo = new System.Windows.Forms.Button();
+            this.embarquesPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,24 +114,25 @@
             // 
             this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.estadisticasToolStripMenuItem,
-            this.salidasToolStripMenuItem});
+            this.salidasToolStripMenuItem,
+            this.embarquesPorFechaToolStripMenuItem});
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.reporteToolStripMenuItem.Text = "Reportes";
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.reporteToolStripMenuItem.Text = "Salidas";
             this.reporteToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
             // estadisticasToolStripMenuItem
             // 
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.estadisticasToolStripMenuItem.Text = "Cant Aviones por Tipo";
             this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.estadisticasToolStripMenuItem_Click);
             // 
             // salidasToolStripMenuItem
             // 
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.salidasToolStripMenuItem.Text = "Salidas";
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salidasToolStripMenuItem.Text = "Reportes";
             this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
             // 
             // btnEmbarque
@@ -244,6 +246,13 @@
             this.btnVuelo.UseVisualStyleBackColor = true;
             this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             // 
+            // embarquesPorFechaToolStripMenuItem
+            // 
+            this.embarquesPorFechaToolStripMenuItem.Name = "embarquesPorFechaToolStripMenuItem";
+            this.embarquesPorFechaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.embarquesPorFechaToolStripMenuItem.Text = "Embarques por Nro Vuelo";
+            this.embarquesPorFechaToolStripMenuItem.Click += new System.EventHandler(this.embarquesPorFechaToolStripMenuItem_Click);
+            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,5 +306,6 @@
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem embarquesPorFechaToolStripMenuItem;
     }
 }

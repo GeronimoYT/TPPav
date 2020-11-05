@@ -91,5 +91,11 @@ namespace Principal.Ventanas
         {
 
         }
+
+        private void embarquesPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmbarquePorNroVuelo reporteEmbarque = new EmbarquePorNroVuelo();
+            reporteEmbarque.ShowDialog();
+        }
     }
 }
