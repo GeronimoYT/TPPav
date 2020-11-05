@@ -77,5 +77,11 @@ namespace Principal.Ventanas
             formReporte ventana = new formReporte();
             ventana.ShowDialog();
         }
+
+        private void btnPasaje_Click(object sender, EventArgs e)
+        {
+            var formularioPasajes = new formPasajes(this);
+            formularioPasajes.ShowDialog();
+        }
     }
 }

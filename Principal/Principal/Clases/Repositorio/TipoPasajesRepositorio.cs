@@ -18,7 +18,7 @@ namespace Principal.Clases.Repositorio
             {
                 var tipoPasaje = new TipoPasaje();
                 tipoPasaje.Id = Convert.ToInt32(fila["IdTipoPasaje"].ToString());
-                tipoPasaje.Detalle = fila["Desripcion"].ToString();
+                tipoPasaje.Detalle = fila["Descripcion"].ToString();
 
                 tipoPasajes.Add(tipoPasaje);
 

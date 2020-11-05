@@ -68,7 +68,6 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
-
     <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
@@ -78,10 +77,7 @@
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
-
     <Compile Include="Clases\ReporteAeropuerto.cs" />
-    
-
     <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Repositorio\VuelosRepositorio.cs" />
@@ -125,6 +121,12 @@
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Transacciones\Pasajes\formEditarPasaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Pasajes\formEditarPasaje.Designer.cs">
+      <DependentUpon>formEditarPasaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
@@ -279,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\formEmbarque.resx">
       <DependentUpon>formEmbarque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Pasajes\formEditarPasaje.resx">
+      <DependentUpon>formEditarPasaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>

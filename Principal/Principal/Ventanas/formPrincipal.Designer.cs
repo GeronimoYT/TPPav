@@ -38,6 +38,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tipoAvionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.lblEmbarque = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,8 +50,6 @@
             this.btnPasaje = new System.Windows.Forms.Button();
             this.lblVuelo = new System.Windows.Forms.Label();
             this.btnVuelo = new System.Windows.Forms.Button();
-            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -123,7 +123,7 @@
             // tipoAvionToolStripMenuItem
             // 
             this.tipoAvionToolStripMenuItem.Name = "tipoAvionToolStripMenuItem";
-            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.tipoAvionToolStripMenuItem.Text = "Tipo Avion";
             this.tipoAvionToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
@@ -136,6 +136,20 @@
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reporteToolStripMenuItem.Text = "Reportes";
             this.reporteToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
+            // 
+            // estadisticasToolStripMenuItem
+            // 
+            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
+            this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.estadisticasToolStripMenuItem_Click);
+            // 
+            // salidasToolStripMenuItem
+            // 
+            this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.salidasToolStripMenuItem.Text = "Salidas";
+            this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
             // 
             // btnEmbarque
             // 
@@ -223,6 +237,7 @@
             this.btnPasaje.Size = new System.Drawing.Size(74, 72);
             this.btnPasaje.TabIndex = 7;
             this.btnPasaje.UseVisualStyleBackColor = true;
+            this.btnPasaje.Click += new System.EventHandler(this.btnPasaje_Click);
             // 
             // lblVuelo
             // 
@@ -244,20 +259,6 @@
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
-            // 
-            // estadisticasToolStripMenuItem
-            // 
-            this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.estadisticasToolStripMenuItem.Text = "Estadisticas";
-            this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.estadisticasToolStripMenuItem_Click);
-            // 
-            // salidasToolStripMenuItem
-            // 
-            this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salidasToolStripMenuItem.Text = "Salidas";
-            this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
             // 
             // formPrincipal
             // 

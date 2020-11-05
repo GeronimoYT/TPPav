@@ -93,3 +93,4 @@ C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CopyComplete
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+C:\Users\ariel\Visual Studio 2019\PAV 1\tp 2020 3\TPPav\Principal\Principal\obj\Debug\Principal.Transacciones.Pasajes.formEditarPasaje.resources

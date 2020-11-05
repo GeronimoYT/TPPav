@@ -23,5 +23,20 @@ namespace Principal.Clases.Servicios
             return _repositorio.ObtenerPasajes(filtros);
 
         }
+        public void RegistrarPasaje(Pasaje _pasaje)
+        {
+            _repositorio.Registrar(_pasaje);
+        }
+
+        public Pasaje ObtenerPasaje(PasajesFiltros filtros)
+        {
+            var pasaje = _repositorio.ObtenerPasaje(filtros);
+            return pasaje;
+        }
+        public void ActualizarPasaje(Pasaje _pasaje)
+        {
+            _repositorio.ActualizarPasaje(_pasaje);
+        }
+
     }
 }

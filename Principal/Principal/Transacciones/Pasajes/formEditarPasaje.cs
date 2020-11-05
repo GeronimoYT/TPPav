@@ -2,6 +2,7 @@
 using Principal.Clases.Filtros;
 using Principal.Clases.Servicios;
 using Principal.Utils;
+using Principal.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Principal.Ventanas
+namespace Principal.Transacciones.Pasajes
 {
-    public partial class formAltaPasaje : Form
+    public partial class formEditarPasaje : Form
     {
         private PasajesServicio _pasajesServicio;
         private PasajerosServicio _pasajerosServicio;
@@ -22,29 +23,34 @@ namespace Principal.Ventanas
         private TipoDocumentosServicio _tipoDocumentosServicio;
         private TipoPasajesServicio _tipoPasajesServicio;
         private Pasaje _pasaje;
-        private bool flagCargado = false;
-        private bool flagPrueba = false;
-
-        public formAltaPasaje(formPasajes frmPasajes)
+        public formEditarPasaje(formPasajes frmPasajes, PasajesFiltros f)
         {
             _pasajerosServicio = new PasajerosServicio();
             _pasajesServicio = new PasajesServicio();
+            //_pasajero = new Pasajero();
+            _frmPasajes = frmPasajes;
             _tipoDocumentosServicio = new TipoDocumentosServicio();
             _tipoPasajesServicio = new TipoPasajesServicio();
-            _frmPasajes = frmPasajes;
+            _pasaje = _pasajesServicio.ObtenerPasaje(f);
             InitializeComponent();
         }
-
-        private void formAltaPasaje_Load(object sender, EventArgs e)
+        private void formEditarPasaje_Load(object sender, EventArgs e)
         {
+            CargarDatos();
             CargarTipoDocumento();
             CargarTipoPasaje();
             CargarNroDocumento();
             
-            if (((TipoDocumento)cmbTipoDocumento.SelectedItem).Id == "Seleccionar") { cmbNroDocumento.Enabled = false; }
-            flagCargado = true;
-            /*if (((Pasajero)cmbNroDocumento.SelectedItem).NroDocumento != "Seleccionar" &&
-                flagCargado && ((TipoDocumento)cmbTipoDocumento.SelectedItem).Id != "Seleccionar") { CargarPasajero(); }*/
+        }
+        private void CargarDatos()
+        {
+            //cmbTipoDocumento.Text = _pasajero.TipoDocumento;
+            txtNroPasaje.Text = _pasaje.Id.ToString();
+            /*txtApellido.Text = _pasajero.Apellido;
+            txtNombre.Text = _pasajero.Nombre;
+            txtTelefono.Text = _pasajero.Telefono;
+            txtEmail.Text = _pasajero.Email;
+            dtpFechaNacimiento.Value = _pasajero.FechaNacimiento;*/
         }
         private void CargarTipoDocumento()
         {
@@ -57,13 +63,13 @@ namespace Principal.Ventanas
             conector.DataSource = tipoDocumentos;
 
             FormUtils.CargarComboV2(ref cmbTipoDocumento, conector, "Id", "Id");
-            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == "Seleccionar");
+            var tipoDocumentoSeleccionado = tipoDocumentos.First(tp => tp.Id == _pasaje.TipoDocumento.Id);
             cmbTipoDocumento.SelectedItem = tipoDocumentoSeleccionado;
 
         }
         private void CargarTipoPasaje()
         {
-            var tipoPasajes = _tipoPasajesServicio.ObtenerTipoPasajes();            
+            var tipoPasajes = _tipoPasajesServicio.ObtenerTipoPasajes();
             var tipoPasajesSeleccionar = new TipoPasaje();
             tipoPasajesSeleccionar.Detalle = "Seleccionar";
             tipoPasajes.Add(tipoPasajesSeleccionar);
@@ -72,7 +78,7 @@ namespace Principal.Ventanas
             conector.DataSource = tipoPasajes;
 
             FormUtils.CargarComboV2(ref cmbTipoPasaje, conector, "Detalle", "Id");
-            var tipoPasajeSeleccionado = tipoPasajes.First(tp => tp.Detalle == "Seleccionar");
+            var tipoPasajeSeleccionado = tipoPasajes.First(tp => tp.Detalle == _pasaje.IdTipoPasaje.Detalle);
             cmbTipoPasaje.SelectedItem = tipoPasajeSeleccionado;
         }
         private void CargarNroDocumento()
@@ -87,40 +93,24 @@ namespace Principal.Ventanas
             conector.DataSource = nroDocumentos;
 
             FormUtils.CargarComboV2(ref cmbNroDocumento, conector, "NroDocumento", "TipoDocumento");
-            var nroDocumentosSeleccionado = nroDocumentos.First(tp => tp.NroDocumento == "Seleccionar");
+            var nroDocumentosSeleccionado = nroDocumentos.First(tp => tp.NroDocumento == _pasaje.NroDocumento.NroDocumento);
             cmbNroDocumento.SelectedItem = nroDocumentosSeleccionado;
-            if (flagCargado) { flagPrueba = true; }
-            
+
         }
-        public void CargarPasajero()
-        {
-            //Pasajero pasajero = new Pasajero();
-            Pasajero pasajero =_pasajerosServicio.ObtenerPasajero(((TipoDocumento)cmbTipoDocumento.SelectedItem).Id,
-                ((Pasajero) cmbNroDocumento.SelectedItem).NroDocumento);
-            
-            txtApellidoPasajero.Text = pasajero.Apellido;
-            txtNombrePasajero.Text = pasajero.Nombre;
-        }
-
-
-
-
-        private void button2_Click(object sender, EventArgs e)
+        public void CerrarVentana()
         {
             _frmPasajes.Show();
+            _frmPasajes.Consultar(new PasajesFiltros());
             this.Dispose();
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (!ConfirmarOperacion()) return;
+                if (!ConfirmarOperacion()) { return; }
                 ValidarPasaje();
-                //if (!ValidarPasaje()) return;
-
                 RegistrarPasaje(_pasaje);
-                //CerrarForm();
+
             }
             catch (ApplicationException aex)
             {
@@ -141,6 +131,7 @@ namespace Principal.Ventanas
         {
             var pasaje = new Pasaje()
             {
+                Id = _pasaje.Id,
                 TipoDocumento = ((TipoDocumento)cmbTipoDocumento.SelectedItem).Id == "Seleccionar" ? null : (TipoDocumento)cmbTipoDocumento.SelectedItem,
                 IdTipoPasaje = ((TipoPasaje)cmbTipoPasaje.SelectedItem).Id == 0 ? null : (TipoPasaje)cmbTipoPasaje.SelectedItem,
                 NroDocumento = ((Pasajero)cmbNroDocumento.SelectedItem).NroDocumento == "Seleccionar" ? null : (Pasajero)cmbNroDocumento.SelectedItem
@@ -150,55 +141,20 @@ namespace Principal.Ventanas
         }
         private void RegistrarPasaje(Pasaje pasajero)
         {
-            _pasajesServicio.RegistrarPasaje(_pasaje);
+            _pasajesServicio.ActualizarPasaje(_pasaje);
             MessageBox.Show("La operación se realizó con éxito");
-            CerrarForm();
-        }
-        private void CerrarForm()
-        {
-            _frmPasajes.Show();
-            _frmPasajes.Consultar(new PasajesFiltros());
-            this.Dispose();
-        }
+            CerrarVentana();
 
-
-        private void cmbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (((TipoDocumento)cmbTipoDocumento.SelectedItem).Id == "Seleccionar") 
-            { 
-                cmbNroDocumento.Enabled = false;
-                txtApellidoPasajero.Text = "";
-                txtNombrePasajero.Text = "";
-                flagCargado = false;
-            }
-            else {
-                cmbNroDocumento.Enabled = true;
-                flagCargado = true;
-                CargarNroDocumento();               
-            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            CerrarForm();
+            CerrarVentana();
         }
 
-        private void cmbNroDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(flagPrueba && flagCargado && ((TipoDocumento)cmbTipoDocumento.SelectedItem).Id != "Seleccionar") { 
-                if(((Pasajero)cmbNroDocumento.SelectedItem).NroDocumento != "Seleccionar") { CargarPasajero(); }
-                 }
-            if(((Pasajero)cmbNroDocumento.SelectedItem).NroDocumento == "Seleccionar")
-            {
-                txtApellidoPasajero.Text = "";
-                txtNombrePasajero.Text = "";
-            }
-        }
-
-        private void btnDetalle_Click(object sender, EventArgs e)
-        {
-            var formularioPasajeros = new formPasajeros(this);
-            formularioPasajeros.ShowDialog();
+            
         }
     }
 }
