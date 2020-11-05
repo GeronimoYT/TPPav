@@ -120,7 +120,6 @@
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.reporteToolStripMenuItem.Text = "Salidas";
-            this.reporteToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
             // estadisticasToolStripMenuItem
             // 

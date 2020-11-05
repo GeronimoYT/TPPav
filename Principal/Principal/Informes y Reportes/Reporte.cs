@@ -27,6 +27,7 @@ namespace Principal.Informes_y_Reportes
         {
             // TODO: esta línea de código carga datos en la tabla 'DataSet1.Aeropuerto' Puede moverla o quitarla según sea necesario.
             this.AeropuertoTableAdapter.Fill(this.DataSet1.Aeropuerto);
+            this.rvAeropuerto.RefreshReport();
         }
 
         private void CargarReporte()
@@ -46,6 +47,7 @@ namespace Principal.Informes_y_Reportes
         private void rvAeropuerto_Load(object sender, EventArgs e)
         {
             CargarReporte();
+            this.rvAeropuerto.RefreshReport();
         }
     }
 }

@@ -34,7 +34,6 @@
             this.lblFechaEmbarque = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPuertaEmbarque = new System.Windows.Forms.Label();
-            this.cmbAeropuerto = new System.Windows.Forms.ComboBox();
             this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblTipoDoc = new System.Windows.Forms.Label();
             this.cmbNroDoc = new System.Windows.Forms.ComboBox();
@@ -45,6 +44,7 @@
             this.btnEditarAeropuerto = new System.Windows.Forms.Button();
             this.cmbPuertaEmbarque = new System.Windows.Forms.ComboBox();
             this.txtFechaEmbarque = new System.Windows.Forms.MaskedTextBox();
+            this.txtAeropuerto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblEmbarque
@@ -106,16 +106,6 @@
             this.lblPuertaEmbarque.Size = new System.Drawing.Size(143, 17);
             this.lblPuertaEmbarque.TabIndex = 71;
             this.lblPuertaEmbarque.Text = "Puerta de Embarque:";
-            // 
-            // cmbAeropuerto
-            // 
-            this.cmbAeropuerto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAeropuerto.FormattingEnabled = true;
-            this.cmbAeropuerto.Location = new System.Drawing.Point(205, 144);
-            this.cmbAeropuerto.Name = "cmbAeropuerto";
-            this.cmbAeropuerto.Size = new System.Drawing.Size(70, 21);
-            this.cmbAeropuerto.TabIndex = 73;
-            this.cmbAeropuerto.SelectedIndexChanged += new System.EventHandler(this.cmbAeropuerto_SelectedIndexChanged);
             // 
             // cmbTipoDoc
             // 
@@ -216,11 +206,22 @@
             this.txtFechaEmbarque.TabIndex = 85;
             this.txtFechaEmbarque.ValidatingType = typeof(System.DateTime);
             // 
+            // txtAeropuerto
+            // 
+            this.txtAeropuerto.Enabled = false;
+            this.txtAeropuerto.Location = new System.Drawing.Point(205, 143);
+            this.txtAeropuerto.Name = "txtAeropuerto";
+            this.txtAeropuerto.ReadOnly = true;
+            this.txtAeropuerto.Size = new System.Drawing.Size(132, 20);
+            this.txtAeropuerto.TabIndex = 86;
+            this.txtAeropuerto.TextChanged += new System.EventHandler(this.txtAeropuerto_TextChanged);
+            // 
             // formEmbarque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 385);
+            this.Controls.Add(this.txtAeropuerto);
             this.Controls.Add(this.txtFechaEmbarque);
             this.Controls.Add(this.cmbPuertaEmbarque);
             this.Controls.Add(this.btnAceptarEdicion);
@@ -231,7 +232,6 @@
             this.Controls.Add(this.lblNroDoc);
             this.Controls.Add(this.cmbTipoDoc);
             this.Controls.Add(this.lblTipoDoc);
-            this.Controls.Add(this.cmbAeropuerto);
             this.Controls.Add(this.lblPuertaEmbarque);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFechaEmbarque);
@@ -254,7 +254,6 @@
         private System.Windows.Forms.Label lblFechaEmbarque;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPuertaEmbarque;
-        private System.Windows.Forms.ComboBox cmbAeropuerto;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
         private System.Windows.Forms.Label lblTipoDoc;
         private System.Windows.Forms.ComboBox cmbNroDoc;
@@ -265,5 +264,6 @@
         private System.Windows.Forms.Button btnEditarAeropuerto;
         private System.Windows.Forms.ComboBox cmbPuertaEmbarque;
         private System.Windows.Forms.MaskedTextBox txtFechaEmbarque;
+        private System.Windows.Forms.TextBox txtAeropuerto;
     }
 }

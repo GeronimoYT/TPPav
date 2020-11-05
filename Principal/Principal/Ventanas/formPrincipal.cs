@@ -45,7 +45,8 @@ namespace Principal.Ventanas
 
         private void tipoAvionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            FormTipos tipoAvion = new FormTipos(this);
+            tipoAvion.ShowDialog();
         }
 
         private void btnEmbarque_Click(object sender, EventArgs e)

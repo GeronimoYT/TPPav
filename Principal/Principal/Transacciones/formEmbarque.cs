@@ -18,7 +18,7 @@ namespace Principal.Transacciones
         {
             InitializeComponent();
             CargarEmbarque();
-            cmbAeropuerto.SelectedIndex = -1;
+            //cmbAeropuerto.SelectedIndex = -1;
             cmbTipoDoc.SelectedIndex = -1;
             cmbNroDoc.SelectedIndex = -1;
         }
@@ -47,10 +47,8 @@ namespace Principal.Transacciones
             if(cmbNroVuelo.SelectedIndex != -1) { 
                 try
                 {
-                    string consultaAeropuerto = $"SELECT Nombre FROM Aeropuerto";
-                    var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consultaAeropuerto);
-                    cmbAeropuerto.DataSource = combo2;
-                    cmbAeropuerto.DisplayMember = "Nombre";
+                    string consultaAeropuerto = $"SELECT Nombre FROM Aeropuerto a JOIN Vuelo v ON a.IdAeropuerto = v.IdAeropuerto WHERE NroVuelo = {nroVuelo}";
+                    txtAeropuerto.Text = LeerTexto(consultaAeropuerto);
 
 
 
@@ -104,7 +102,7 @@ namespace Principal.Transacciones
         private string ObtenerIdAeropuerto()
         {
             try { 
-                string consulta = $"SELECT IdAeropuerto FROM Aeropuerto WHERE Nombre LIKE '{cmbAeropuerto.Text}'";
+                string consulta = $"SELECT IdAeropuerto FROM Aeropuerto WHERE Nombre LIKE '{txtAeropuerto.Text}'";
                 string idAeropuerto = LeerTexto(consulta);
                 return idAeropuerto;
             }
@@ -154,7 +152,7 @@ namespace Principal.Transacciones
         private void ActualizarCantPuertas()
         {
             try {
-                string consultaCantPEmb = $"SELECT CantPuertasEmbarque FROM Aeropuerto WHERE Nombre = '{cmbAeropuerto.Text}'";
+                string consultaCantPEmb = $"SELECT CantPuertasEmbarque FROM Aeropuerto WHERE Nombre = '{txtAeropuerto.Text}'";
                 var comboCantPuertas = DBHelper.GetDBHelper().ConsultaSQL(consultaCantPEmb);
                 cmbPuertaEmbarque.DataSource = comboCantPuertas;
                 cmbPuertaEmbarque.DisplayMember = "CantPuertasEmbarque";
@@ -169,11 +167,6 @@ namespace Principal.Transacciones
                 cmbPuertaEmbarque.DataSource = cant;
             }
             catch (Exception ex) { }
-        }
-
-        private void cmbAeropuerto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ActualizarCantPuertas();
         }
 
         private void btnAceptarEdicion_Click(object sender, EventArgs e)
@@ -243,6 +236,7 @@ namespace Principal.Transacciones
 
                 cmd.ExecuteNonQuery();
 
+
                 objTransaccion.Commit();
 
                 MessageBox.Show("Transacción Realizada con éxito!");
@@ -287,6 +281,11 @@ namespace Principal.Transacciones
         private void btnEditarAeropuerto_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtAeropuerto_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarCantPuertas();
         }
     }
 }
