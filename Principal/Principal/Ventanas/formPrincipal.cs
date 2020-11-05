@@ -23,15 +23,6 @@ namespace Principal.Ventanas
             ventanaAeropuerto.ShowDialog();
         }
 
-        private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -87,15 +78,15 @@ namespace Principal.Ventanas
             ventanaVuelo.ShowDialog();
         }
 
-        private void btnEquipaje_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void embarquesPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EmbarquePorNroVuelo reporteEmbarque = new EmbarquePorNroVuelo();
             reporteEmbarque.ShowDialog();
+        }
+
+        private void formPrincipal_Load(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
         }
     }
 }

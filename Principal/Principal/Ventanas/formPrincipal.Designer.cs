@@ -38,17 +38,18 @@
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.embarquesPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.lblEmbarque = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblEquipaje = new System.Windows.Forms.Label();
-            this.btnEquipaje = new System.Windows.Forms.Button();
             this.lblPasaje = new System.Windows.Forms.Label();
             this.btnPasaje = new System.Windows.Forms.Button();
             this.lblVuelo = new System.Windows.Forms.Label();
             this.btnVuelo = new System.Windows.Forms.Button();
-            this.embarquesPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblEquipaje = new System.Windows.Forms.Label();
+            this.btnEquipaje = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -124,16 +125,23 @@
             // estadisticasToolStripMenuItem
             // 
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.estadisticasToolStripMenuItem.Text = "Cant Aviones por Tipo";
             this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.estadisticasToolStripMenuItem_Click);
             // 
             // salidasToolStripMenuItem
             // 
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
-            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.salidasToolStripMenuItem.Text = "Reportes";
             this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
+            // 
+            // embarquesPorFechaToolStripMenuItem
+            // 
+            this.embarquesPorFechaToolStripMenuItem.Name = "embarquesPorFechaToolStripMenuItem";
+            this.embarquesPorFechaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.embarquesPorFechaToolStripMenuItem.Text = "Embarques por Nro Vuelo";
+            this.embarquesPorFechaToolStripMenuItem.Click += new System.EventHandler(this.embarquesPorFechaToolStripMenuItem_Click);
             // 
             // btnEmbarque
             // 
@@ -180,33 +188,11 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // lblEquipaje
-            // 
-            this.lblEquipaje.AutoSize = true;
-            this.lblEquipaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipaje.Location = new System.Drawing.Point(336, 90);
-            this.lblEquipaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEquipaje.Name = "lblEquipaje";
-            this.lblEquipaje.Size = new System.Drawing.Size(56, 13);
-            this.lblEquipaje.TabIndex = 6;
-            this.lblEquipaje.Text = "Equipaje";
-            // 
-            // btnEquipaje
-            // 
-            this.btnEquipaje.Image = ((System.Drawing.Image)(resources.GetObject("btnEquipaje.Image")));
-            this.btnEquipaje.Location = new System.Drawing.Point(329, 105);
-            this.btnEquipaje.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEquipaje.Name = "btnEquipaje";
-            this.btnEquipaje.Size = new System.Drawing.Size(74, 72);
-            this.btnEquipaje.TabIndex = 5;
-            this.btnEquipaje.UseVisualStyleBackColor = true;
-            this.btnEquipaje.Click += new System.EventHandler(this.btnEquipaje_Click);
-            // 
             // lblPasaje
             // 
             this.lblPasaje.AutoSize = true;
             this.lblPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasaje.Location = new System.Drawing.Point(154, 206);
+            this.lblPasaje.Location = new System.Drawing.Point(154, 205);
             this.lblPasaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasaje.Name = "lblPasaje";
             this.lblPasaje.Size = new System.Drawing.Size(45, 13);
@@ -216,7 +202,7 @@
             // btnPasaje
             // 
             this.btnPasaje.Image = ((System.Drawing.Image)(resources.GetObject("btnPasaje.Image")));
-            this.btnPasaje.Location = new System.Drawing.Point(142, 221);
+            this.btnPasaje.Location = new System.Drawing.Point(142, 220);
             this.btnPasaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnPasaje.Name = "btnPasaje";
             this.btnPasaje.Size = new System.Drawing.Size(74, 72);
@@ -228,7 +214,7 @@
             // 
             this.lblVuelo.AutoSize = true;
             this.lblVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVuelo.Location = new System.Drawing.Point(348, 206);
+            this.lblVuelo.Location = new System.Drawing.Point(337, 205);
             this.lblVuelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVuelo.Name = "lblVuelo";
             this.lblVuelo.Size = new System.Drawing.Size(39, 13);
@@ -238,7 +224,7 @@
             // btnVuelo
             // 
             this.btnVuelo.Image = ((System.Drawing.Image)(resources.GetObject("btnVuelo.Image")));
-            this.btnVuelo.Location = new System.Drawing.Point(329, 221);
+            this.btnVuelo.Location = new System.Drawing.Point(318, 220);
             this.btnVuelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnVuelo.Name = "btnVuelo";
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
@@ -246,24 +232,48 @@
             this.btnVuelo.UseVisualStyleBackColor = true;
             this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             // 
-            // embarquesPorFechaToolStripMenuItem
+            // lblFecha
             // 
-            this.embarquesPorFechaToolStripMenuItem.Name = "embarquesPorFechaToolStripMenuItem";
-            this.embarquesPorFechaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.embarquesPorFechaToolStripMenuItem.Text = "Embarques por Nro Vuelo";
-            this.embarquesPorFechaToolStripMenuItem.Click += new System.EventHandler(this.embarquesPorFechaToolStripMenuItem_Click);
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(392, 7);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(0, 13);
+            this.lblFecha.TabIndex = 11;
+            // 
+            // lblEquipaje
+            // 
+            this.lblEquipaje.AutoSize = true;
+            this.lblEquipaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipaje.Location = new System.Drawing.Point(327, 90);
+            this.lblEquipaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEquipaje.Name = "lblEquipaje";
+            this.lblEquipaje.Size = new System.Drawing.Size(56, 13);
+            this.lblEquipaje.TabIndex = 13;
+            this.lblEquipaje.Text = "Equipaje";
+            // 
+            // btnEquipaje
+            // 
+            this.btnEquipaje.Image = ((System.Drawing.Image)(resources.GetObject("btnEquipaje.Image")));
+            this.btnEquipaje.Location = new System.Drawing.Point(318, 105);
+            this.btnEquipaje.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEquipaje.Name = "btnEquipaje";
+            this.btnEquipaje.Size = new System.Drawing.Size(74, 72);
+            this.btnEquipaje.TabIndex = 12;
+            this.btnEquipaje.UseVisualStyleBackColor = true;
             // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 331);
+            this.Controls.Add(this.lblEquipaje);
+            this.Controls.Add(this.btnEquipaje);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblVuelo);
             this.Controls.Add(this.btnVuelo);
             this.Controls.Add(this.lblPasaje);
             this.Controls.Add(this.btnPasaje);
-            this.Controls.Add(this.lblEquipaje);
-            this.Controls.Add(this.btnEquipaje);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblEmbarque);
             this.Controls.Add(this.btnEmbarque);
@@ -273,6 +283,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.formPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -297,8 +308,6 @@
         private System.Windows.Forms.Label lblEmbarque;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblEquipaje;
-        private System.Windows.Forms.Button btnEquipaje;
         private System.Windows.Forms.Label lblPasaje;
         private System.Windows.Forms.Button btnPasaje;
         private System.Windows.Forms.Label lblVuelo;
@@ -307,5 +316,8 @@
         private System.Windows.Forms.ToolStripMenuItem estadisticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem embarquesPorFechaToolStripMenuItem;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblEquipaje;
+        private System.Windows.Forms.Button btnEquipaje;
     }
 }
