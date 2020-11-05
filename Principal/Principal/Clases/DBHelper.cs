@@ -40,6 +40,7 @@ namespace Principal.Clases
             return tabla;
         }
 
+
         public void ComandoSQL(string strSql)
         {
             SqlConnection conn = new SqlConnection();

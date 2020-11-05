@@ -196,6 +196,7 @@
             this.btnEditarAeropuerto.TabIndex = 82;
             this.btnEditarAeropuerto.Text = "Cancelar";
             this.btnEditarAeropuerto.UseVisualStyleBackColor = true;
+            this.btnEditarAeropuerto.Click += new System.EventHandler(this.btnEditarAeropuerto_Click);
             // 
             // cmbPuertaEmbarque
             // 

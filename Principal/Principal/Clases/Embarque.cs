@@ -11,25 +11,25 @@ namespace Principal.Clases
 
         private int nroVuelo;
         private DateTime fechaHoraEmbarque;
-        private string aeropuerto;
+        private int idAeropuerto;
         private string tipoDniPasajero;
         private string nroDniPasajero;
         private int puertaEmbarque;
-        private string estado;
+        private int idEstado;
 
         public Embarque()
         {
 
         }
-        public Embarque(int nroVuelo, DateTime fechaHoraEmbarque, string aeropuerto, string tipoDniPasajero, string nroDniPasajero, int puertaEmbarque, string estado)
+        public Embarque(int nroVuelo, DateTime fechaHoraEmbarque, int idAeropuerto, string tipoDniPasajero, string nroDniPasajero, int puertaEmbarque, int idEstado)
         {
             this.nroVuelo = nroVuelo;
             this.fechaHoraEmbarque = fechaHoraEmbarque;
-            this.aeropuerto = aeropuerto;
+            this.idAeropuerto = idAeropuerto;
             this.tipoDniPasajero = tipoDniPasajero;
             this.nroDniPasajero = nroDniPasajero;
             this.puertaEmbarque = puertaEmbarque;
-            this.estado = estado;
+            this.idEstado = idEstado;
         }
 
         public int NroVuelo
@@ -44,10 +44,10 @@ namespace Principal.Clases
             set => fechaHoraEmbarque = value;
         }
 
-        public string Aeropuerto
+        public int Aeropuerto
         {
-            get => aeropuerto;
-            set => aeropuerto = value;
+            get => idAeropuerto;
+            set => idAeropuerto = value;
         }
 
         public string TipoDniPasajero
@@ -67,10 +67,10 @@ namespace Principal.Clases
             set => puertaEmbarque = value;
         }
 
-        public string Estado
+        public int Estado
         {
-            get => estado;
-            set => estado = value;
+            get => idEstado;
+            set => idEstado = value;
         }
     }
 }
