@@ -25,15 +25,12 @@ namespace Principal.Ventanas
 
         private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formVuelo ventanaVuelo = new formVuelo();
-            ventanaVuelo.ShowDialog();
+            
         }
 
         private void pasajeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formularioPasajes = new formPasajes(this);
-            formularioPasajes.ShowDialog();
-            //this.Hide();
+            
         }
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -82,6 +79,17 @@ namespace Principal.Ventanas
         {
             var formularioPasajes = new formPasajes(this);
             formularioPasajes.ShowDialog();
+        }
+
+        private void btnVuelo_Click(object sender, EventArgs e)
+        {
+            formVuelo ventanaVuelo = new formVuelo();
+            ventanaVuelo.ShowDialog();
+        }
+
+        private void btnEquipaje_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

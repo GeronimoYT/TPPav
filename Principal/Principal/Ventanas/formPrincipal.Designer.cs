@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPrincipal));
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.aeropuertoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vueloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasajeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.avionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasajeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -74,20 +72,6 @@
             this.aeropuertoToolStripMenuItem.Text = "Aeropuerto";
             this.aeropuertoToolStripMenuItem.Click += new System.EventHandler(this.aeropuertoToolStripMenuItem_Click);
             // 
-            // vueloToolStripMenuItem
-            // 
-            this.vueloToolStripMenuItem.Name = "vueloToolStripMenuItem";
-            this.vueloToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.vueloToolStripMenuItem.Text = "Vuelo";
-            this.vueloToolStripMenuItem.Click += new System.EventHandler(this.vueloToolStripMenuItem_Click);
-            // 
-            // pasajeToolStripMenuItem
-            // 
-            this.pasajeToolStripMenuItem.Name = "pasajeToolStripMenuItem";
-            this.pasajeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.pasajeToolStripMenuItem.Text = "Pasaje";
-            this.pasajeToolStripMenuItem.Click += new System.EventHandler(this.pasajeToolStripMenuItem_Click);
-            // 
             // avionToolStripMenuItem
             // 
             this.avionToolStripMenuItem.Name = "avionToolStripMenuItem";
@@ -107,8 +91,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aeropuertoToolStripMenuItem,
-            this.vueloToolStripMenuItem,
-            this.pasajeToolStripMenuItem,
             this.avionToolStripMenuItem,
             this.pasajeroToolStripMenuItem,
             this.tipoAvionToolStripMenuItem,
@@ -123,7 +105,7 @@
             // tipoAvionToolStripMenuItem
             // 
             this.tipoAvionToolStripMenuItem.Name = "tipoAvionToolStripMenuItem";
-            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tipoAvionToolStripMenuItem.Text = "Tipo Avion";
             this.tipoAvionToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
@@ -200,7 +182,7 @@
             // 
             this.lblEquipaje.AutoSize = true;
             this.lblEquipaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipaje.Location = new System.Drawing.Point(343, 92);
+            this.lblEquipaje.Location = new System.Drawing.Point(336, 90);
             this.lblEquipaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEquipaje.Name = "lblEquipaje";
             this.lblEquipaje.Size = new System.Drawing.Size(56, 13);
@@ -216,12 +198,13 @@
             this.btnEquipaje.Size = new System.Drawing.Size(74, 72);
             this.btnEquipaje.TabIndex = 5;
             this.btnEquipaje.UseVisualStyleBackColor = true;
+            this.btnEquipaje.Click += new System.EventHandler(this.btnEquipaje_Click);
             // 
             // lblPasaje
             // 
             this.lblPasaje.AutoSize = true;
             this.lblPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasaje.Location = new System.Drawing.Point(163, 209);
+            this.lblPasaje.Location = new System.Drawing.Point(154, 206);
             this.lblPasaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPasaje.Name = "lblPasaje";
             this.lblPasaje.Size = new System.Drawing.Size(45, 13);
@@ -243,7 +226,7 @@
             // 
             this.lblVuelo.AutoSize = true;
             this.lblVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVuelo.Location = new System.Drawing.Point(353, 209);
+            this.lblVuelo.Location = new System.Drawing.Point(348, 206);
             this.lblVuelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVuelo.Name = "lblVuelo";
             this.lblVuelo.Size = new System.Drawing.Size(39, 13);
@@ -259,6 +242,7 @@
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
+            this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             // 
             // formPrincipal
             // 
@@ -294,8 +278,6 @@
 
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.ToolStripMenuItem aeropuertoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vueloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasajeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem avionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasajeroToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
