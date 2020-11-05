@@ -44,40 +44,45 @@ namespace Principal.Transacciones
 
         public void CargarDatos(string nroVuelo)
         {
-            try
-            {
-                string consultaAeropuerto = $"SELECT Nombre FROM Aeropuerto";
-                var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consultaAeropuerto);
-                cmbAeropuerto.DataSource = combo2;
-                cmbAeropuerto.DisplayMember = "Nombre";
+            if(cmbNroVuelo.SelectedIndex != -1) { 
+                try
+                {
+                    string consultaAeropuerto = $"SELECT Nombre FROM Aeropuerto";
+                    var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consultaAeropuerto);
+                    cmbAeropuerto.DataSource = combo2;
+                    cmbAeropuerto.DisplayMember = "Nombre";
 
 
 
-                string consultaTipoDNI = $"SELECT DISTINCT TipoDNI FROM TipoDocumento";
-                var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consultaTipoDNI);
-                cmbTipoDoc.DataSource = combo3;
-                cmbTipoDoc.DisplayMember = "TipoDNI";
+                    string consultaTipoDNI = $"SELECT DISTINCT TipoDNI FROM TipoDocumento";
+                    var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consultaTipoDNI);
+                    cmbTipoDoc.DataSource = combo3;
+                    cmbTipoDoc.DisplayMember = "TipoDNI";
 
 
-                string consultaEstado = $"SELECT DISTINCT es.NombreEstado FROM Estado es, Embarque e WHERE es.Ambito = 2";
-                //string consultaEstadoActual = $"SELECT es.NombreEstado FROM Estado es, Embarque e WHERE es.Ambito = 2 AND e.IdEstado = es.IdEstado";
-                var combo5 = DBHelper.GetDBHelper().ConsultaSQL(consultaEstado);
-                //var consultaActual = DBHelper.GetDBHelper().ConsultaSQL(consultaEstadoActual);
-                cmbEstado.DataSource = combo5;
-                cmbEstado.DisplayMember = "NombreEstado";
+                    string consultaEstado = $"SELECT DISTINCT es.NombreEstado FROM Estado es, Embarque e WHERE es.Ambito = 2";
+                    //string consultaEstadoActual = $"SELECT es.NombreEstado FROM Estado es, Embarque e WHERE es.Ambito = 2 AND e.IdEstado = es.IdEstado";
+                    var combo5 = DBHelper.GetDBHelper().ConsultaSQL(consultaEstado);
+                    //var consultaActual = DBHelper.GetDBHelper().ConsultaSQL(consultaEstadoActual);
+                    cmbEstado.DataSource = combo5;
+                    cmbEstado.DisplayMember = "NombreEstado";
 
 
 
-                string consultaFecha = $"SELECT DISTINCT FechaHoraEmbarque FROM Embarque WHERE NroVuelo LIKE {nroVuelo}";
-                txtFechaEmbarque.Text = LeerTexto(consultaFecha);
+                    string consultaFecha = $"SELECT DISTINCT FechaHoraEmbarque FROM Embarque WHERE NroVuelo LIKE {nroVuelo}";
+                    if(LeerTexto(consultaFecha) != null)
+                        txtFechaEmbarque.Text = DateTime.Parse(LeerTexto(consultaFecha)).ToString("dd/MM/yyyy HH:mm");
+                    else
+                        txtFechaEmbarque.Text = LeerTexto(consultaFecha);
+                    //MessageBox.Show(DateTime.Parse(txtFechaEmbarque.Text).ToString("dd/MM/yyyy HH:mm"));
 
-                //txtFechaEmbarque.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
 
 
-            }
-            catch (SqlException ex)
-            {
+                }
+                catch (SqlException ex)
+                {
                 
+                }
             }
 
         }
@@ -131,12 +136,12 @@ namespace Principal.Transacciones
         }
 
         private void cmbNroVuelo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ObtenerIdAeropuerto();
-
-             CargarDatos(cmbNroVuelo.Text.ToString());
-            if (cmbNroVuelo.SelectedIndex != -1)
+        {            
+            if (cmbNroVuelo.SelectedIndex != -1) { 
+                ObtenerIdAeropuerto();
+                CargarDatos(cmbNroVuelo.Text.ToString());
                 btnAceptarEdicion.Enabled = true;
+            }
             else
                 btnAceptarEdicion.Enabled = false;
         }
@@ -175,6 +180,7 @@ namespace Principal.Transacciones
         {
             //NuevoEmbarque nvEmbarque = new NuevoEmbarque(int.Parse(cmbNroVuelo.Text),DateTime.Parse(txtFechaEmbarque.Text),int.Parse(cmbAeropuerto.Text),cmbTipoDoc.Text,cmbNroDoc.Text,int.Parse(cmbPuertaEmbarque.Text),cmbEstado.Text);
             CargarNuevoEmbarque();
+            
         }
 
         private void CargarNuevoEmbarque() {
@@ -240,6 +246,8 @@ namespace Principal.Transacciones
                 objTransaccion.Commit();
 
                 MessageBox.Show("Transacción Realizada con éxito!");
+
+                this.Close();
 
                 return true;
             }
