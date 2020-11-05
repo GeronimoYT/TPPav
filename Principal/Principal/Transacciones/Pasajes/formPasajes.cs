@@ -18,7 +18,7 @@ namespace Principal.Ventanas
     public partial class formPasajes : Form
     {
         private PasajesServicio _pasajesServicio;
-        private EmbarquesServicio _embarquesServicio;
+        //private EmbarquesServicio _embarquesServicio;
         private PasajerosServicio _pasajerosServicio;
         private TipoPasajesServicio _tipoPasajesServicio;
         private TipoDocumentosServicio _tipoDocumentosServicio;
@@ -27,7 +27,7 @@ namespace Principal.Ventanas
         public formPasajes(formPrincipal principal)
         {
             _pasajesServicio = new PasajesServicio();
-            _embarquesServicio = new EmbarquesServicio();
+            //_embarquesServicio = new EmbarquesServicio();
             _pasajerosServicio = new PasajerosServicio();
             _tipoPasajesServicio = new TipoPasajesServicio();
             _tipoDocumentosServicio = new TipoDocumentosServicio();
