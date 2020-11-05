@@ -25,7 +25,7 @@ namespace Principal.Ventanas
 
         private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Vuelo ventanaVuelo = new Vuelo();
+            formVuelo ventanaVuelo = new formVuelo();
             ventanaVuelo.ShowDialog();
         }
 

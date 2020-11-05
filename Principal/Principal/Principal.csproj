@@ -68,11 +68,14 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
+    <Compile Include="Clases\Estado.cs" />
+    <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
     <Compile Include="Clases\ReporteAeropuerto.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\Servicios\VuelosServicio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\DBHelper.cs" />
@@ -203,10 +206,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanas\formAltaVuelo.cs">
+    <Compile Include="Ventanas\Vuelos\formAltaVuelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formAltaVuelo.Designer.cs">
+    <Compile Include="Ventanas\Vuelos\formAltaVuelo.Designer.cs">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\TiposAvion\AltaTipo.cs">
@@ -239,11 +242,17 @@
     <Compile Include="Ventanas\TiposAvion\ModificacionTipo.Designer.cs">
       <DependentUpon>ModificacionTipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Vuelo.cs">
+    <Compile Include="Ventanas\Vuelos\formModificarVuelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Vuelo.Designer.cs">
-      <DependentUpon>Vuelo.cs</DependentUpon>
+    <Compile Include="Ventanas\Vuelos\formModificarVuelo.Designer.cs">
+      <DependentUpon>formModificarVuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Vuelos\formVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Vuelos\formVuelo.Designer.cs">
+      <DependentUpon>formVuelo.cs</DependentUpon>
     </Compile>
     <Compile Include="_PAV_3K2_10_AEROLINEADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -330,7 +339,7 @@
     <EmbeddedResource Include="Ventanas\Pasajes\Pasajes.resx">
       <DependentUpon>Pasajes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formAltaVuelo.resx">
+    <EmbeddedResource Include="Ventanas\Vuelos\formAltaVuelo.resx">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\TiposAvion\AltaTipo.resx">
@@ -348,8 +357,11 @@
     <EmbeddedResource Include="Ventanas\TiposAvion\ModificacionTipo.resx">
       <DependentUpon>ModificacionTipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Vuelo.resx">
-      <DependentUpon>Vuelo.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Vuelos\formModificarVuelo.resx">
+      <DependentUpon>formModificarVuelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Vuelos\formVuelo.resx">
+      <DependentUpon>formVuelo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Informes y Reportes\DatosAeropuerto.xsc">
       <DependentUpon>DatosAeropuerto.xsd</DependentUpon>
