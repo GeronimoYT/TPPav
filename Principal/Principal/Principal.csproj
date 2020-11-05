@@ -85,11 +85,9 @@
     <Compile Include="Clases\Embarque.cs" />
     <Compile Include="Clases\Pasaje.cs" />
     <Compile Include="Clases\Pasajero.cs" />
-    <Compile Include="Clases\Repositorio\EmbarquesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\PasajerosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\PasajesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoPasajesRepositorio.cs" />
-    <Compile Include="Clases\Servicios\EmbarquesServicio.cs" />
     <Compile Include="Clases\Servicios\PasajerosServicio.cs" />
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
