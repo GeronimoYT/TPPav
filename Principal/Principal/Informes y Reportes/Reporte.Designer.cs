@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rvAeropuerto = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSet1 = new Principal.Informes_y_Reportes.DataSet1();
             this.AeropuertoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new Principal.Informes_y_Reportes.DataSet1();
+            this.rvAeropuerto = new Microsoft.Reporting.WinForms.ReportViewer();
             this.AeropuertoTableAdapter = new Principal.Informes_y_Reportes.DataSet1TableAdapters.AeropuertoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AeropuertoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AeropuertoBindingSource
+            // 
+            this.AeropuertoBindingSource.DataMember = "Aeropuerto";
+            this.AeropuertoBindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rvAeropuerto
             // 
@@ -50,16 +60,7 @@
             this.rvAeropuerto.ServerReport.BearerToken = null;
             this.rvAeropuerto.Size = new System.Drawing.Size(469, 394);
             this.rvAeropuerto.TabIndex = 0;
-            // 
-            // DataSet1
-            // 
-            this.DataSet1.DataSetName = "DataSet1";
-            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // AeropuertoBindingSource
-            // 
-            this.AeropuertoBindingSource.DataMember = "Aeropuerto";
-            this.AeropuertoBindingSource.DataSource = this.DataSet1;
+            this.rvAeropuerto.Load += new System.EventHandler(this.rvAeropuerto_Load);
             // 
             // AeropuertoTableAdapter
             // 
@@ -75,8 +76,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte";
             this.Load += new System.EventHandler(this.formReporte_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AeropuertoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

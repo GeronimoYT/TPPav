@@ -68,6 +68,7 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
+<<<<<<< HEAD
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
     <Compile Include="Clases\ReporteAeropuerto.cs" />
@@ -76,7 +77,18 @@
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Servicios\VuelosServicio.cs" />
+=======
+    <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
+    <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
+    <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
+>>>>>>> dbaac909e91d181f78e85ae68f54d10002fab9c0
     <Compile Include="Clases\TipoAvion.cs" />
+    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+    <Compile Include="Clases\TipoDocumento.cs" />
+    <Compile Include="Clases\ReporteAeropuerto.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Repositorio\VuelosRepositorio.cs" />
@@ -84,11 +96,9 @@
     <Compile Include="Clases\Embarque.cs" />
     <Compile Include="Clases\Pasaje.cs" />
     <Compile Include="Clases\Pasajero.cs" />
-    <Compile Include="Clases\Repositorio\EmbarquesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\PasajerosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\PasajesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoPasajesRepositorio.cs" />
-    <Compile Include="Clases\Servicios\EmbarquesServicio.cs" />
     <Compile Include="Clases\Servicios\PasajerosServicio.cs" />
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
@@ -97,6 +107,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatosAeropuerto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informes y Reportes\DatosyEstadisticas.cs">
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Informes y Reportes\DatosyEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Informes y Reportes\Reporte.cs">
       <SubType>Form</SubType>
@@ -112,6 +130,12 @@
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Transacciones\Pasajes\formEditarPasaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Pasajes\formEditarPasaje.Designer.cs">
+      <DependentUpon>formEditarPasaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Clases\Vuelo.cs" />
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
@@ -150,22 +174,22 @@
     <Compile Include="Ventanas\formAgregar.Designer.cs">
       <DependentUpon>formAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasaje.cs">
+    <Compile Include="Transacciones\Pasajes\formAltaPasaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasaje.Designer.cs">
+    <Compile Include="Transacciones\Pasajes\formAltaPasaje.Designer.cs">
       <DependentUpon>formAltaPasaje.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasajero.cs">
+    <Compile Include="Ventanas\Pasajeros\formAltaPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formAltaPasajero.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formAltaPasajero.Designer.cs">
       <DependentUpon>formAltaPasajero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formBajaPasajero.cs">
+    <Compile Include="Ventanas\Pasajeros\formBajaPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formBajaPasajero.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formBajaPasajero.Designer.cs">
       <DependentUpon>formBajaPasajero.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formEditar.cs">
@@ -174,22 +198,22 @@
     <Compile Include="Ventanas\formEditar.Designer.cs">
       <DependentUpon>formEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formEditarPasajero.cs">
+    <Compile Include="Ventanas\Pasajeros\formEditarPasajero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formEditarPasajero.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formEditarPasajero.Designer.cs">
       <DependentUpon>formEditarPasajero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formPasajeros.cs">
+    <Compile Include="Ventanas\Pasajeros\formPasajeros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formPasajeros.Designer.cs">
+    <Compile Include="Ventanas\Pasajeros\formPasajeros.Designer.cs">
       <DependentUpon>formPasajeros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formPasajes.cs">
+    <Compile Include="Transacciones\Pasajes\formPasajes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\formPasajes.Designer.cs">
+    <Compile Include="Transacciones\Pasajes\formPasajes.Designer.cs">
       <DependentUpon>formPasajes.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\formPrincipal.cs">
@@ -211,6 +235,12 @@
     </Compile>
     <Compile Include="Ventanas\Vuelos\formAltaVuelo.Designer.cs">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\ReporteEstadistica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\ReporteEstadistica.Designer.cs">
+      <DependentUpon>ReporteEstadistica.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\TiposAvion\AltaTipo.cs">
       <SubType>Form</SubType>
@@ -259,12 +289,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_PAV_3K2_10_AEROLINEADataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Informes y Reportes\EstadisticaAvion.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\InformeAeropuerto.rdlc" />
     <EmbeddedResource Include="Informes y Reportes\Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\formEmbarque.resx">
       <DependentUpon>formEmbarque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Pasajes\formEditarPasaje.resx">
+      <DependentUpon>formEditarPasaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
@@ -281,25 +315,25 @@
     <EmbeddedResource Include="Ventanas\Aviones\Baja Avion.resx">
       <DependentUpon>Baja Avion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formAltaPasaje.resx">
+    <EmbeddedResource Include="Transacciones\Pasajes\formAltaPasaje.resx">
       <DependentUpon>formAltaPasaje.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formAltaPasajero.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formAltaPasajero.resx">
       <DependentUpon>formAltaPasajero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formBajaPasajero.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formBajaPasajero.resx">
       <DependentUpon>formBajaPasajero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formEditar.resx">
       <DependentUpon>formEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formEditarPasajero.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formEditarPasajero.resx">
       <DependentUpon>formEditarPasajero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formPasajeros.resx">
+    <EmbeddedResource Include="Ventanas\Pasajeros\formPasajeros.resx">
       <DependentUpon>formPasajeros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\formPasajes.resx">
+    <EmbeddedResource Include="Transacciones\Pasajes\formPasajes.resx">
       <DependentUpon>formPasajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formPrincipal.resx">
@@ -342,6 +376,9 @@
     <EmbeddedResource Include="Ventanas\Vuelos\formAltaVuelo.resx">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\ReporteEstadistica.resx">
+      <DependentUpon>ReporteEstadistica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\TiposAvion\AltaTipo.resx">
       <DependentUpon>AltaTipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +410,17 @@
     </None>
     <None Include="Informes y Reportes\DatosAeropuerto.xss">
       <DependentUpon>DatosAeropuerto.xsd</DependentUpon>
+    </None>
+    <None Include="Informes y Reportes\DatosyEstadisticas.xsc">
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="Informes y Reportes\DatosyEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatosyEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Informes y Reportes\DatosyEstadisticas.xss">
+      <DependentUpon>DatosyEstadisticas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

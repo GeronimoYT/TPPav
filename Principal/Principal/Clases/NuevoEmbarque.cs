@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Principal.Clases
 {
-    class Embarque
+    class NuevoEmbarque
     {
-
         private int nroVuelo;
         private DateTime fechaHoraEmbarque;
         private string aeropuerto;
@@ -17,11 +16,11 @@ namespace Principal.Clases
         private int puertaEmbarque;
         private string estado;
 
-        public Embarque()
+        public NuevoEmbarque()
         {
 
         }
-        public Embarque(int nroVuelo, DateTime fechaHoraEmbarque, string aeropuerto, string tipoDniPasajero, string nroDniPasajero, int puertaEmbarque, string estado)
+        public NuevoEmbarque(int nroVuelo, DateTime fechaHoraEmbarque, string aeropuerto, string tipoDniPasajero,string nroDniPasajero, int puertaEmbarque, string estado)
         {
             this.nroVuelo = nroVuelo;
             this.fechaHoraEmbarque = fechaHoraEmbarque;
@@ -29,7 +28,7 @@ namespace Principal.Clases
             this.tipoDniPasajero = tipoDniPasajero;
             this.nroDniPasajero = nroDniPasajero;
             this.puertaEmbarque = puertaEmbarque;
-            this.estado = estado;
+            this.estado = estado;            
         }
 
         public int NroVuelo
@@ -60,7 +59,7 @@ namespace Principal.Clases
             get => nroDniPasajero;
             set => nroDniPasajero = value;
         }
-
+        
         public int PuertaEmbarque
         {
             get => puertaEmbarque;
@@ -72,5 +71,6 @@ namespace Principal.Clases
             get => estado;
             set => estado = value;
         }
+
     }
 }

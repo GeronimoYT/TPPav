@@ -1,4 +1,5 @@
-﻿using Principal.Clases.Repositorio;
+﻿using Principal.Clases.Filtros;
+using Principal.Clases.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,26 @@ namespace Principal.Clases.Servicios
             _repositorio = new PasajesRepositorio();
         }
 
-        public List<Pasaje> ObtenerPasajes()
+        public List<Pasaje> ObtenerPasajes(PasajesFiltros filtros)
         {
-            return _repositorio.ObtenerPasajes();
+
+            return _repositorio.ObtenerPasajes(filtros);
+
         }
+        public void RegistrarPasaje(Pasaje _pasaje)
+        {
+            _repositorio.Registrar(_pasaje);
+        }
+
+        public Pasaje ObtenerPasaje(PasajesFiltros filtros)
+        {
+            var pasaje = _repositorio.ObtenerPasaje(filtros);
+            return pasaje;
+        }
+        public void ActualizarPasaje(Pasaje _pasaje)
+        {
+            _repositorio.ActualizarPasaje(_pasaje);
+        }
+
     }
 }
