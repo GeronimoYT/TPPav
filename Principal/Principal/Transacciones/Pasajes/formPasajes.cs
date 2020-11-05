@@ -1,6 +1,7 @@
 ﻿using Principal.Clases;
 using Principal.Clases.Filtros;
 using Principal.Clases.Servicios;
+using Principal.Transacciones.Pasajes;
 using Principal.Utils;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Principal.Ventanas
     public partial class formPasajes : Form
     {
         private PasajesServicio _pasajesServicio;
-       //private EmbarquesServicio _embarquesServicio;
+
         private PasajerosServicio _pasajerosServicio;
         private TipoPasajesServicio _tipoPasajesServicio;
         private TipoDocumentosServicio _tipoDocumentosServicio;
@@ -99,18 +100,22 @@ namespace Principal.Ventanas
             _frmPrincipal.Show();
             this.Dispose();
         }
-        
+
         private void CargarGrilla(List<Pasaje> pasajes)
         {
             dgvPasajes.Rows.Clear();
             foreach (var pasaje in pasajes)
             {
-                var fila = new String[] {
-                pasaje.Id.ToString(),
-                pasaje.Precio.ToString(),
-                ///pasaje.Descripcion
+                var fila = new string[] {
+                    pasaje.Id.ToString(),
+                    pasaje.IdTipoPasaje.Id.ToString(),
+                    pasaje.IdTipoPasaje.Detalle,
+                    pasaje.TipoDocumento.Id,
+                    pasaje.NroDocumento.NroDocumento,
+
                 };
                 dgvPasajes.Rows.Add(fila);
+
             }
         }
 
@@ -129,6 +134,24 @@ namespace Principal.Ventanas
 
             };
             Consultar(filtros);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dgvPasajes.SelectedRows.Count == 1)
+            {
+                var filtros = new PasajesFiltros
+                {
+                    Id = Convert.ToInt32(dgvPasajes.SelectedRows[0].Cells["idPasaje"].Value.ToString()),
+                    TipoDocumento = dgvPasajes.SelectedRows[0].Cells["tipoDocumento"].Value.ToString(),
+                    NroDocumento = dgvPasajes.SelectedRows[0].Cells["nroDocumento"].Value.ToString(),
+
+                };
+                new formEditarPasaje(this, filtros).Show();
+                this.Hide();
+            }
+            else
+            { MessageBox.Show("Debe seleccionar solo una fila", "Información"); }
         }
     }
 }

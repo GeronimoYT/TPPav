@@ -1,4 +1,6 @@
 ﻿using Principal.Clases;
+using Principal.Clases.Filtros;
+using Principal.Clases.Servicios;
 using Principal.Utils;
 using System;
 using System.Collections.Generic;
@@ -13,18 +15,19 @@ using System.Windows.Forms;
 
 namespace Principal.Ventanas
 {
-    public partial class Vuelo : Form
+    public partial class formVuelo : Form
     {
-        public Vuelo()
+
+        private VuelosServicio _vuelosServicio;
+        public formVuelo()
         {
             InitializeComponent();
         }
 
         private void Vuelo_Load(object sender, EventArgs e)
         {
-            CargaGrilla();
             CargoFiltros();
-            //dgvVuelos.ClearSelection();
+            CargaGrilla();
         }
 
         private void CargaGrilla()
@@ -40,22 +43,32 @@ namespace Principal.Ventanas
             {
                 MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
             }
-
-            //select DescripcionTipo
-            //from avion a join TipoAvion ta on a.NroAvion = ta.IdTipoAvion
-
         }
 
         public void CargoFiltros()
         {
             try
             {
+                string consulta = "SELECT * FROM Aeropuerto";
                 string consulta1 = "SELECT * FROM Avion";
                 string consulta2 = "SELECT * FROM Estado";
+                
+                var combo0 = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta1);
                 var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
+
+                cmbAO.DataSource = combo0;
+                cmbAD.DataSource = combo0;
                 cmbNA.DataSource = combo1;
                 cmbE.DataSource = combo2;
+
+                cmbAO.DisplayMember = "domicilio";
+                cmbAO.ValueMember = "idAeropuerto";
+                cmbAO.SelectedIndex = -1;
+
+                cmbAD.DisplayMember = "domicilio";
+                cmbAD.ValueMember = "idAeropuerto";
+                cmbAD.SelectedIndex = -1;
 
                 cmbNA.DisplayMember = "nroavion";
                 cmbNA.ValueMember = "nroavion";
@@ -113,10 +126,55 @@ namespace Principal.Ventanas
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            busquedaVuelo();
+            try
+            {
+                var filtros = new VuelosFiltros
+                {
+                    FechaDesde = filtroFS.Value,
+                    FechaHasta = filtroFL.Value,
+                    IdAeropuerto = ((Aeropuerto)cmbAO.SelectedItem).IdAeropuerto,
+                    IdAeropuertoDestino = ((Aeropuerto)cmbAD.SelectedItem).IdAeropuerto,
+                    NroAvion = ((Avion)cmbNA.SelectedItem).numero,
+                    IdEstado = ((Estado)cmbE.SelectedItem).IdEstado
+                };
+                Consultar(filtros);
+            }
+            catch (ApplicationException aex)
+            {
+                MessageBox.Show(aex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un problema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void busquedaVuelo()
+        public void Consultar(VuelosFiltros filtros)
+        {
+            var vuelos = _vuelosServicio.Obtener(filtros);
+            CargarGrilla(vuelos);
+        }
+
+        private void CargarGrilla(List<Vuelo> vuelos)
+        {
+            dgvVuelos.Rows.Clear();
+            foreach (var v in vuelos)
+            {
+                var fila = new string[] {
+                    v.NroVuelo.ToString(),
+                    v.FechaHoraSalida.ToString("dd/MM/yyyy HH:mm"),
+                    v.FechaHoraLlegada.ToString("dd/MM/yyyy HH:mm"),
+                    v.Avion?.descripcion,
+                    v.TipoAvion.ToString(),
+                    v.Aeropuerto?.Domicilio,
+                    v.AeropuertoDestino?.Domicilio,
+                    v.Estado?.NombreEstado
+                };
+                dgvVuelos.Rows.Add(fila);
+            }
+        }
+
+        /*private void busquedaVuelo()
         {
 
             try
@@ -163,7 +221,7 @@ namespace Principal.Ventanas
             {
                 MessageBox.Show("La consulta ejecutada es incorrecta");
             }
-        }
+        }*/
 
         private void dgvVuelos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -174,50 +232,5 @@ namespace Principal.Ventanas
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* private Vuelo cargarVuelo()
-          {
-              Vuelo vv = new Vuelo();
-              vv.NroVuelo = Int32.Parse(dgvVuelos.CurrentRow.Cells[0].Value.ToString());
-              vv.FechaHoraSalida = dgvVuelos.CurrentRow.Cells[1].Value.ToString();
-              //vv.FechaHoraLlegada = ;
-              //vv.NroAvion = ;
-              //vv.IdTipoAvion = ;
-              //vv.IdAeropuerto = ;
-              //vv.IdAeropuertoDestino = ;
-              //vv.Estado = ;
-
-              return vv;
-          }*/
-
-    /*
-        Aeropuerto ae = new Aeropuerto();
-        ae.IdAeropuerto = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[0].Value.ToString());
-        ae.Domicilio = dgvDatosAeropuerto.CurrentRow.Cells[1].Value.ToString();
-        ae.Telefono = dgvDatosAeropuerto.CurrentRow.Cells[2].Value.ToString();
-        ae.Descripcion = dgvDatosAeropuerto.CurrentRow.Cells[3].Value.ToString();
-        ae.CantPuertasEmbarque = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[4].Value.ToString());
-        ae.CantMangasVuelo = Int32.Parse(dgvDatosAeropuerto.CurrentRow.Cells[5].Value.ToString());
-        ae.Nombre = dgvDatosAeropuerto.CurrentRow.Cells[6].Value.ToString();
-
-        return ae;
-    }*/
-
 
 }

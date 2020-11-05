@@ -117,6 +117,35 @@ namespace Principal.Clases.Repositorio
             }
             return pasajeroResultado;
         }
+        public List<Pasajero> ObtenerPasajeros(string tipoDoc)
+        {
+            List<Pasajero> pasajeros = new List<Pasajero>();
+
+            var sentenciaSql = $"SELECT * FROM Pasajero p JOIN TipoDocumento tp On p.TipoDNI=tp.TipoDNI";
+            if (tipoDoc != "Seleccionar") sentenciaSql += $" where p.TipoDNI = '{tipoDoc}'";
+
+            var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+            foreach (DataRow fila in tabla.Rows)
+            {
+                var pasajero = new Pasajero();
+
+                pasajero.NroDocumento = fila["NroDNI"].ToString();
+                pasajero.Apellido = fila["Apellido"].ToString();
+                pasajero.Nombre = fila["Nombre"].ToString();
+                pasajero.Telefono = fila["Telefono"].ToString();
+                pasajero.Email = fila["Mail"].ToString();
+                pasajero.FechaNacimiento = Convert.ToDateTime(fila["FechaNacimiento"].ToString());
+                if (fila["TipoDNI"].GetType() != typeof(DBNull))
+                    pasajero.TipoDocumento = new TipoDocumento()
+                    {
+                        Id = fila["TipoDNI"].ToString(),
+                        //Descripcion = fila["descripcion"].ToString()
+                    };
+                
+                pasajeros.Add(pasajero);
+            }
+            return pasajeros;
+        }
         public int ActualizarPasajero(Pasajero _pasajero)
         {
             var sentenciaSql = $"UPDATE Pasajero SET Nombre='{_pasajero.Nombre}', Apellido='{_pasajero.Apellido}', Telefono='{_pasajero.Telefono}'," +
