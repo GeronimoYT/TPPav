@@ -25,5 +25,15 @@ namespace Principal.Clases
         public string descripcion { get; set; }
         public string tipoDNI { get; set; }
         public string DNI { get; set; }
+
+        public override string ToString()
+        {
+            string cadena = $"Datos Equipaje\n" +
+                            $"Pertenece a: {tipoDNI} {DNI}\n" +
+                            $"Numero = {numero}\n" +
+                            $"Descripcion = {descripcion}";
+                
+            return cadena;
+        }
     }
 }

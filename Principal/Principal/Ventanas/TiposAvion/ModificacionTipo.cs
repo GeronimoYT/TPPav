@@ -76,32 +76,32 @@ namespace Principal.Ventanas.TiposAvion
 
         private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void txtLongitud_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void txtAlcance_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void txtClase1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void txtClaseTurista_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void txtEquipaje_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void txtSalidas_TextChanged(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace Principal.Ventanas.TiposAvion
 
         private void txtSalidas_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
     }
 }

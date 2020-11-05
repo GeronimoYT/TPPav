@@ -37,10 +37,9 @@
             this.pasajeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tipoAvionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-<<<<<<< HEAD
-=======
+
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> master
+
             this.btnEmbarque = new System.Windows.Forms.Button();
             this.lblEmbarque = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,11 +50,11 @@
             this.btnPasaje = new System.Windows.Forms.Button();
             this.lblVuelo = new System.Windows.Forms.Label();
             this.btnVuelo = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
+
+
             this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> master
+
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,12 +64,12 @@
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
+
             this.lblNombreUsuario.Location = new System.Drawing.Point(188, 16);
             this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-=======
+
             this.lblNombreUsuario.Location = new System.Drawing.Point(30, 11);
->>>>>>> master
+
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNombreUsuario.Size = new System.Drawing.Size(0, 25);
@@ -126,12 +125,12 @@
             this.reporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-<<<<<<< HEAD
+
             this.menuStrip1.Size = new System.Drawing.Size(538, 28);
-=======
+
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(534, 24);
->>>>>>> master
+
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -141,8 +140,7 @@
             this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tipoAvionToolStripMenuItem.Text = "Tipo Avion";
             this.tipoAvionToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
-<<<<<<< HEAD
-=======
+
             // 
             // reporteToolStripMenuItem
             // 
@@ -153,7 +151,7 @@
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reporteToolStripMenuItem.Text = "Reportes";
             this.reporteToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
->>>>>>> master
+
             // 
             // btnEmbarque
             // 
@@ -179,15 +177,15 @@
             // 
             // groupBox1
             // 
-<<<<<<< HEAD
+
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(-176, 27);
-=======
+
             this.groupBox1.Controls.Add(this.lblNombreUsuario);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(-4, 33);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
->>>>>>> master
+
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(316, 42);
@@ -268,8 +266,7 @@
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
-=======
+
             // 
             // estadisticasToolStripMenuItem
             // 
@@ -284,18 +281,18 @@
             this.salidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salidasToolStripMenuItem.Text = "Salidas";
             this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
->>>>>>> master
+
             // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(538, 351);
             this.Controls.Add(this.lblNombreUsuario);
-=======
+
             this.ClientSize = new System.Drawing.Size(534, 331);
->>>>>>> master
+
             this.Controls.Add(this.lblVuelo);
             this.Controls.Add(this.btnVuelo);
             this.Controls.Add(this.lblPasaje);
@@ -307,10 +304,9 @@
             this.Controls.Add(this.btnEmbarque);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-<<<<<<< HEAD
+
             this.Margin = new System.Windows.Forms.Padding(4);
-=======
->>>>>>> master
+
             this.Name = "formPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";

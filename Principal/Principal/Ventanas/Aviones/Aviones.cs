@@ -17,9 +17,11 @@ namespace Principal.Ventanas
     public partial class FormAviones : Form
     {
         private AvionesRepositorio avionesRep;
+        TiposAvionRepositorio RepTipo;
         public FormAviones()
         {
             avionesRep = new AvionesRepositorio();
+            RepTipo = new TiposAvionRepositorio();
             InitializeComponent();
         }
 
@@ -36,7 +38,7 @@ namespace Principal.Ventanas
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
+            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
             if (txtBuscar.Text != "") 
             {
                 int numero = Convert.ToInt32(txtBuscar.Text);
@@ -50,11 +52,11 @@ namespace Principal.Ventanas
             List<Avion> aviones = avionesRep.ObtenerAviones();
             Cargar_Grilla(aviones);
 
-            TiposAvionRepositorio RepTipo = new TiposAvionRepositorio();
-            List<TipoEquipaje> tipos = RepTipo.ObtenerTipos();
+           
+            List<TipoAvion> tipos = RepTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
-            //FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
+            FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
 
         }
 
@@ -76,8 +78,9 @@ namespace Principal.Ventanas
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
+            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
             List<Avion> aviones = avionesRep.ObtenerAviones(tipoSeleccionado.id);
+            txtBuscar.Clear();
             Cargar_Grilla(aviones);
         }
 
@@ -106,7 +109,13 @@ namespace Principal.Ventanas
 
         private void txtBuscar_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
+        }
+        public void RefrescarFormulario()
+        {
+            List<Avion> aviones = avionesRep.ObtenerAviones();
+            Cargar_Grilla(aviones);
+            txtBuscar.Clear();
         }
     }
 }

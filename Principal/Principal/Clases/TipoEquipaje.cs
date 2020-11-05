@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Principal.Clases
+﻿namespace Principal.Clases
 {
     class TipoEquipaje
     {
@@ -14,12 +8,16 @@ namespace Principal.Clases
             this.id = id;
             this.pesoMinimo = minimo;
             this.pesoMaximo = maximo;
-            this.categoria = $"{this.pesoMinimo.ToString()}kg a {this.pesoMaximo.ToString()}kg";
         }
 
         public int id { get; set; }
         public int pesoMinimo { get; set; }
         public int pesoMaximo { get; set; }
         public string categoria { get; set; }
+
+        public void SetCategoria()
+        {
+            this.categoria = $"Desde {this.pesoMinimo}kg hasta {this.pesoMaximo}kg";
+        }
     }
 }

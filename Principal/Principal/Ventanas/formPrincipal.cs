@@ -3,10 +3,9 @@ using System;
 using System.Windows.Forms;
 using Principal.Ventanas.TiposAvion;
 using Principal.Transacciones;
-<<<<<<< HEAD
-=======
+
 using Principal.Informes_y_Reportes;
->>>>>>> master
+
 
 namespace Principal.Ventanas
 {

@@ -18,43 +18,70 @@ namespace Principal.Transacciones
     {
         Form _formPrincipal;
         EquipajeRepositorio _equipajeRepositorio;
+        TipoEquipajeRepositorio _tiposRepositorio;
+        PasajerosRepositorio _pasajerosRepo;
+
         public formEquipajes(Form anterior)
         {
             _formPrincipal = anterior;
             _equipajeRepositorio = new EquipajeRepositorio();
+            _tiposRepositorio = new TipoEquipajeRepositorio();
+            _pasajerosRepo = new PasajerosRepositorio();
             InitializeComponent();
         }
 
         private void BuscarEquipajesPasajero()
         {
-            PasajerosRepositorio pasajerosRepo = new PasajerosRepositorio();
-            if (pasajerosRepo.ObtenerPasajero(txtBusqueda.Text) != null)
+
+            string numero = txtBusqueda.Text;
+
+            string tipo = comboBusqueda.Text;
+
+            Pasajero pasajeroBusqueda = _pasajerosRepo.ObtenerPasajero(tipo, numero);
+
+            bool habilitado = _pasajerosRepo.PasajeroHablitado(tipo, numero);
+
+            if (pasajeroBusqueda != null)
             {
-                List<Equipaje> equipajes = _equipajeRepositorio.ObtenerEquipajesPasajero(pasajerosRepo.ObtenerPasajero(txtBusqueda.Text));
-                var conectorDeDatos = new BindingSource();
-                conectorDeDatos.DataSource = equipajes;
-                FormUtils.GetInstance.CargarList(ref lboxEquipaje, conectorDeDatos, "numero", "numero");
+                if (chboxBusqueda.Checked || habilitado)
+                {
+                    List<Equipaje> equipajes = _equipajeRepositorio.ObtenerEquipajesPasajero(pasajeroBusqueda);
+                    cargarEquipajes(equipajes);
+                }
+                else
+                { 
+                    MessageBox.Show($"No se ha encontrado un pasajero con el Documento: {numero}");
+                    RefrescarFormulario();
+                }
+                
+            }
+            else 
+            {
+                MessageBox.Show($"No se ha encontrado un pasajero con el Documento: {numero}");
+                RefrescarFormulario();
             }
         }
 
+
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            if (txtBusqueda.Text != "") { BuscarEquipajesPasajero(); }
-            else { MessageBox.Show("Por favor, ingrese un numero de documento."); }
+            if (txtBusqueda.Text.Length > 7) { BuscarEquipajesPasajero(); }
+            else { MessageBox.Show("Por favor, ingrese un numero de documento valido."); }
         }
 
         private void lboxEquipaje_SelectedIndexChanged(object sender, EventArgs e)
         {
             Equipaje equipajeSelecionado = (Equipaje)lboxEquipaje.SelectedItem;
             txtNumero.Text = equipajeSelecionado.numero.ToString();
-            //Implementar busqueda de tipos de equipaje en la base de datos
-            txtNumero.Text = equipajeSelecionado.tipo.ToString();
+
+            TipoEquipaje tipoEquipaje = _tiposRepositorio.ObtenerTipo(equipajeSelecionado.tipo);
+            txtCategoria.Text = tipoEquipaje.categoria;
 
             txtTipoDocumento.Text = equipajeSelecionado.tipoDNI.ToString();
             txtNroDocumento.Text = equipajeSelecionado.DNI.ToString();
             txtDescripcion.Text = equipajeSelecionado.descripcion;
         }
-       
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             CerrarFormuario();
@@ -68,7 +95,14 @@ namespace Principal.Transacciones
 
         private void formEquipajes_Load(object sender, EventArgs e)
         {
-            
+            TipoDocumentosRepositorio tipoRepo = new TipoDocumentosRepositorio();
+            List<TipoDocumento> tiposDocumentos = tipoRepo.ObtenerTipoDocumentos();
+            var conectorDeDatos = new BindingSource();
+            conectorDeDatos.DataSource = tiposDocumentos;
+            FormUtils.GetInstance.CargarCombo(ref comboBusqueda, conectorDeDatos, "Id", "Id");
+
+            List<Equipaje> equipajes = _equipajeRepositorio.ObtenerEquipajesPasajerosActivos();
+            cargarEquipajes(equipajes);
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -85,7 +119,54 @@ namespace Principal.Transacciones
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
                 _equipajeRepositorio.BajaEquipaje((Equipaje)lboxEquipaje.SelectedItem);
+                RefrescarFormulario();
             }
         }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            FormUtils.GetInstance.KeypressDocumento(comboBusqueda.Text, txtBusqueda.Text, sender, e);
+        }
+
+        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtBusqueda.Clear();
+        }
+
+        
+
+        private void chboxBusqueda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text.Length > 7)
+            {
+                BuscarEquipajesPasajero();
+            }
+            else 
+            {
+
+                List<Equipaje> equipajes;
+                if (chboxBusqueda.Checked) { equipajes = _equipajeRepositorio.ObtenerEquipajes(); }
+                else { equipajes = _equipajeRepositorio.ObtenerEquipajesPasajerosActivos(); }
+                cargarEquipajes(equipajes); 
+            }
+        }
+
+        public void RefrescarFormulario()
+        {
+            txtBusqueda.Clear();
+            chboxBusqueda.Checked = false;
+
+            List<Equipaje> equipajes = _equipajeRepositorio.ObtenerEquipajesPasajerosActivos();
+            cargarEquipajes(equipajes);
+        }
+
+        private void cargarEquipajes(List<Equipaje> equipajes)
+        {
+            var conectorDeDatos = new BindingSource();
+            conectorDeDatos.DataSource = equipajes;
+            FormUtils.GetInstance.CargarList(ref lboxEquipaje, conectorDeDatos, "numero", "numero");
+
+        }
+
     }
 }

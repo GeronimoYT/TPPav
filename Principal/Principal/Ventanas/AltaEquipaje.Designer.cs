@@ -48,7 +48,7 @@
             // 
             this.txtNroDocumento.Location = new System.Drawing.Point(250, 84);
             this.txtNroDocumento.Name = "txtNroDocumento";
-            this.txtNroDocumento.Size = new System.Drawing.Size(69, 22);
+            this.txtNroDocumento.Size = new System.Drawing.Size(94, 22);
             this.txtNroDocumento.TabIndex = 29;
             this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeyPress);
             // 
@@ -56,7 +56,7 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(144, 254);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(175, 61);
+            this.txtDescripcion.Size = new System.Drawing.Size(200, 61);
             this.txtDescripcion.TabIndex = 28;
             this.txtDescripcion.Text = "";
             // 
@@ -83,9 +83,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(58, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Categoria";
+            this.label4.Text = "Peso";
             // 
             // label3
             // 
@@ -99,24 +99,29 @@
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(144, 168);
+            this.txtNumero.MaxLength = 9;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(175, 22);
+            this.txtNumero.Size = new System.Drawing.Size(200, 22);
             this.txtNumero.TabIndex = 21;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // comboTipoDocumento
             // 
+            this.comboTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipoDocumento.FormattingEnabled = true;
             this.comboTipoDocumento.Location = new System.Drawing.Point(144, 82);
             this.comboTipoDocumento.Name = "comboTipoDocumento";
             this.comboTipoDocumento.Size = new System.Drawing.Size(100, 24);
             this.comboTipoDocumento.TabIndex = 30;
+            this.comboTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.comboTipoDocumento_SelectedIndexChanged);
             // 
             // comboCategoria
             // 
+            this.comboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCategoria.FormattingEnabled = true;
             this.comboCategoria.Location = new System.Drawing.Point(144, 211);
             this.comboCategoria.Name = "comboCategoria";
-            this.comboCategoria.Size = new System.Drawing.Size(175, 24);
+            this.comboCategoria.Size = new System.Drawing.Size(200, 24);
             this.comboCategoria.TabIndex = 31;
             // 
             // label1
@@ -131,9 +136,9 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(244, 338);
+            this.btnAceptar.Location = new System.Drawing.Point(261, 341);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.Size = new System.Drawing.Size(83, 26);
             this.btnAceptar.TabIndex = 33;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -141,9 +146,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(148, 338);
+            this.btnCancelar.Location = new System.Drawing.Point(165, 341);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(83, 26);
             this.btnCancelar.TabIndex = 34;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -171,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 379);
+            this.ClientSize = new System.Drawing.Size(383, 379);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);

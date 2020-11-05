@@ -25,7 +25,7 @@ namespace Principal.Ventanas.Aviones
         private void Alta_Avion_Load(object sender, EventArgs e)
         {
             TiposAvionRepositorio RepTipo = new TiposAvionRepositorio();
-            List<TipoEquipaje> tipos = RepTipo.ObtenerTipos();
+            List<TipoAvion> tipos = RepTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
             CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
@@ -69,7 +69,7 @@ namespace Principal.Ventanas.Aviones
 
         private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)

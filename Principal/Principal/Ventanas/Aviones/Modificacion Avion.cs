@@ -35,7 +35,7 @@ namespace Principal.Ventanas.Aviones
             txtCategoria.Text = avion.idTipo.ToString();
             rTxtDescripcion.Text = avion.descripcion;
         
-            List<TipoEquipaje> tipos = _repTipo.ObtenerTipos();
+            List<TipoAvion> tipos = _repTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
             //FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
@@ -69,7 +69,7 @@ namespace Principal.Ventanas.Aviones
 
         private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
     }
 }
