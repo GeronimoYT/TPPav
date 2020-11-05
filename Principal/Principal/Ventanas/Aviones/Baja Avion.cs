@@ -34,6 +34,7 @@ namespace Principal.Ventanas.Aviones
 
         private void button1_Click(object sender, EventArgs e)
         {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult resultado = MessageBox.Show("Está seguro que desea eliminar este Avion?", "Eliminar Avion", buttons);
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
