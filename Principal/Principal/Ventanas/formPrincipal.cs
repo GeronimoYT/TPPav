@@ -3,7 +3,9 @@ using System;
 using System.Windows.Forms;
 using Principal.Ventanas.TiposAvion;
 using Principal.Transacciones;
+
 using Principal.Informes_y_Reportes;
+
 
 namespace Principal.Ventanas
 {
@@ -67,6 +69,11 @@ namespace Principal.Ventanas
             ventana.ShowDialog();
         }
 
+        private void btnEquipaje_Click(object sender, EventArgs e)
+        {
+            formEquipajes ventanaEquipajes = new formEquipajes(this);
+            ventanaEquipajes.Show();
+        }
         private void btnPasaje_Click(object sender, EventArgs e)
         {
             var formularioPasajes = new formPasajes(this);
@@ -88,6 +95,8 @@ namespace Principal.Ventanas
         private void formPrincipal_Load(object sender, EventArgs e)
         {
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
         }
+
     }
 }

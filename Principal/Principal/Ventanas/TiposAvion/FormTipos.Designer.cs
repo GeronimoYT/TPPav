@@ -326,7 +326,6 @@
             this.Name = "FormTipos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipos";
-            this.Load += new System.EventHandler(this.Tipos_Load);
             this.VisibleChanged += new System.EventHandler(this.FormTipos_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();

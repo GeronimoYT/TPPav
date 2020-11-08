@@ -16,7 +16,7 @@ namespace Principal.Ventanas.Aviones
 {
     public partial class Baja_Avion : Form
     {
-        private Form _formAviones;
+        private FormAviones _formAviones;
         private Avion avion;
         private AvionesRepositorio _avionesRep;
         public Baja_Avion(FormAviones formAviones, Avion avionBaja)
@@ -34,7 +34,12 @@ namespace Principal.Ventanas.Aviones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _avionesRep.BajaAvion(avion);
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult resultado = MessageBox.Show("Está seguro que desea eliminar este Avion?", "Eliminar Avion", buttons);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                _avionesRep.BajaAvion(avion);
+            }
             CerrarFormuario();
         }
 
@@ -57,6 +62,7 @@ namespace Principal.Ventanas.Aviones
 
         private void CerrarFormuario()
         {
+            _formAviones.RefrescarFormulario();
             _formAviones.Show();
             this.Close();
         }

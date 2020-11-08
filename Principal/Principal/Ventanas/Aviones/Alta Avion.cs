@@ -43,7 +43,7 @@ namespace Principal.Ventanas.Aviones
             try
             {
                 Avion avion = new Avion();
-                var avionSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+                var avionSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
                 avion.idTipo = avionSeleccionado.id;
                 avion.numero = Convert.ToInt32(txtBoxId.Text);
                 avion.descripcion = rTxtBoxDescripcion.Text;
@@ -69,7 +69,7 @@ namespace Principal.Ventanas.Aviones
 
         private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)

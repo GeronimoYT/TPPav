@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 //Añadidos
 using System.Windows.Forms;
+using System.IO;
 
 namespace Principal.Utils
 {
@@ -54,22 +55,59 @@ namespace Principal.Utils
             return valor;
         }
 
-        public void KeypressKeyPress(object sender, KeyPressEventArgs e)
+        public void KeypressNumeros(object sender, KeyPressEventArgs e)
         {
-            //Para obligar a que sólo se introduzcan números
-            if (Char.IsDigit(e.KeyChar))
+            if (char.IsDigit(e.KeyChar)) { e.Handled = false; } // Permitir Numeros
+            else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }//Permitit teclas de control
+            else { e.Handled = true; } //Desactiva el resto de teclas
+ 
+        }
+
+        public void KeypressLetras(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar)) { e.Handled = false; } // Permitir letras
+            else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }//Permitit teclas de control
+            else { e.Handled = true; } //Desactiva el resto de teclas
+        }
+
+        public void KeypressDocumento(string tipo, string documento, object sender, KeyPressEventArgs e)
+        {
+            //Si es pasaporte solo permite 3 letras al principio seguidas de 7 numeros
+            if (tipo == "Pasaporte")
             {
-                e.Handled = false;
+                if (documento.Length < 3) { KeypressLetras(sender, e); } //Permite solo letras
+                else if (documento.Length >= 3 && documento.Length < 10 ) { KeypressNumeros(sender, e); } //Permite solo numeros
+                else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }//Permitit teclas de control
+                else { e.Handled = true; } //No permite nada
             }
-            else
-              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            
+            //Si es DNI solo se permiten numeros
+            else if (tipo == "DNI")
             {
-                e.Handled = false;
+                if (documento.Length < 8) { KeypressNumeros(sender, e); } //Permite solo numeros
+                else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }//Permitit teclas de control
+                else { e.Handled = true; }//No permite nada
             }
-            else
+        }
+        public void GenerarTXT(string texto)
+        {
+            string rutaCompleta = @" C:\mi archivo.txt";
+
+            using (StreamWriter mylogs = File.AppendText(rutaCompleta))         //se crea el archivo
             {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
+
+                //se adiciona alguna información y la fecha
+
+
+                DateTime dateTime = new DateTime();
+                dateTime = DateTime.Now;
+                string strDate = Convert.ToDateTime(dateTime).ToString("yyMMdd");
+
+                mylogs.WriteLine(texto + strDate);
+
+                mylogs.Close();
+
+
             }
         }
     }
