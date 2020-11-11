@@ -54,7 +54,7 @@ namespace Principal.Ventanas.Aviones
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
             avion.idTipo = tipoSeleccionado.id;
             avion.descripcion = rTxtNuevaDescripcion.Text;
 
@@ -69,7 +69,7 @@ namespace Principal.Ventanas.Aviones
 
         private void txtNumero_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressKeyPress(sender, e);
+            FormUtils.GetInstance.KeypressNumeros(sender, e);
         }
     }
 }

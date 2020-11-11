@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Principal.Clases
+﻿namespace Principal.Clases
 {
     class TipoEquipaje
     {
-        public TipoEquipaje(int id, int peso)
+        public TipoEquipaje() { }
+        public TipoEquipaje(int id, int minimo, int maximo)
         {
             this.id = id;
-            this.peso = peso;
+            this.pesoMinimo = minimo;
+            this.pesoMaximo = maximo;
         }
 
         public int id { get; set; }
-        public int peso { get; set; }
+        public int pesoMinimo { get; set; }
+        public int pesoMaximo { get; set; }
+        public string categoria { get; set; }
+
+        public void SetCategoria()
+        {
+            this.categoria = $"Desde {this.pesoMinimo}kg hasta {this.pesoMaximo}kg";
+        }
     }
 }

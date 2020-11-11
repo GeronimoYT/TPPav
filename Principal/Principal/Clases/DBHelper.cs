@@ -13,9 +13,15 @@ namespace Principal.Clases
         private string cadenaDeConexion;
         private static DBHelper instancia = new DBHelper();
 
+<<<<<<< HEAD
 
         //private string string_conexion;
         //private static DBHelper instance = new DBHelper();
+=======
+        private string string_conexion;
+        private static DBHelper instance = new DBHelper();
+
+>>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
 
         //declaro variable que almacerá un objeto <cmd> del tipo <SqlConnection>
         private SqlConnection _conexion;
@@ -52,6 +58,7 @@ namespace Principal.Clases
             this.CloseConnection(conn);
             return tabla;
         }
+
 
         public void ComandoSQL(string strSql)
         {
@@ -101,13 +108,22 @@ namespace Principal.Clases
             return afectadas;
         }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
         public void Conectar()
         {
             _conexion = new SqlConnection();
             _cmd = new SqlCommand();
             //asigan al objeto <conexion> la cadena de conexion
 
+<<<<<<< HEAD
             //_conexion.ConnectionString = string_conexion;
+=======
+            _conexion.ConnectionString = string_conexion;
+>>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
 
             _conexion.ConnectionString = cadenaDeConexion;
 
@@ -119,6 +135,10 @@ namespace Principal.Clases
             _cmd.CommandType = CommandType.Text;
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
         public SqlTransaction IniciarTransaccion()
         {
             Conectar();

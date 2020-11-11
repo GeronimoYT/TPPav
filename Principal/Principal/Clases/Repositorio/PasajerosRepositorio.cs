@@ -160,5 +160,18 @@ namespace Principal.Clases.Repositorio
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
             return filasAfectadas;
         }
+        public bool PasajeroHablitado(string tipoDNI, string numeroDNI)
+        {
+            var sentenciaSql =  $"SELECT Estado FROM Pasajero " +
+                                $"WHERE TipoDNI = '{tipoDNI}' AND NroDNI = '{numeroDNI}'";
+            var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+            string celda = "";
+            foreach(DataRow fila in tabla.Rows)
+            {
+                celda = fila["Estado"].ToString();
+            }
+            if (celda == "S") { return true; }
+            else { return false; }
+        }
     }
 }

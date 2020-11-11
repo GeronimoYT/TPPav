@@ -3,7 +3,9 @@ using System;
 using System.Windows.Forms;
 using Principal.Ventanas.TiposAvion;
 using Principal.Transacciones;
+
 using Principal.Informes_y_Reportes;
+
 
 namespace Principal.Ventanas
 {
@@ -23,6 +25,7 @@ namespace Principal.Ventanas
             ventanaAeropuerto.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void vueloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formVuelo ventanaVuelo = new formVuelo();
@@ -36,6 +39,8 @@ namespace Principal.Ventanas
             formularioPasajes.ShowDialog();
             //this.Hide();
         }
+=======
+>>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -58,7 +63,8 @@ namespace Principal.Ventanas
 
         private void tipoAvionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            FormTipos tipoAvion = new FormTipos(this);
+            tipoAvion.ShowDialog();
         }
 
         private void btnEmbarque_Click(object sender, EventArgs e)
@@ -79,6 +85,11 @@ namespace Principal.Ventanas
             ventana.ShowDialog();
         }
 
+        private void btnEquipaje_Click(object sender, EventArgs e)
+        {
+            formEquipajes ventanaEquipajes = new formEquipajes(this);
+            ventanaEquipajes.Show();
+        }
         private void btnPasaje_Click(object sender, EventArgs e)
         {
             var formularioPasajes = new formPasajes(this);
@@ -90,5 +101,21 @@ namespace Principal.Ventanas
             formVuelo ventanaVuelo = new formVuelo();
             ventanaVuelo.ShowDialog();
         }
+<<<<<<< HEAD
+=======
+
+        private void embarquesPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmbarquePorNroVuelo reporteEmbarque = new EmbarquePorNroVuelo();
+            reporteEmbarque.ShowDialog();
+        }
+
+        private void formPrincipal_Load(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+
+        }
+
+>>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
     }
 }

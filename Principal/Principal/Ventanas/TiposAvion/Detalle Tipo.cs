@@ -16,8 +16,7 @@ namespace Principal.Ventanas.TiposAvion
     {
         Form _form;
         TipoAvion tipo;
-        public Detalle_Tipo(Form form, TipoAvion tipoAvion
-            )
+        public Detalle_Tipo(Form form, TipoAvion tipoAvion)
         {
             _form = form;
             tipo = tipoAvion;
