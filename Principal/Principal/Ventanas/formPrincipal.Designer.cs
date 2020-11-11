@@ -285,10 +285,7 @@
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
-=======
-
             this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             // 
             // lblFecha
@@ -326,8 +323,6 @@
             this.btnEquipaje.Size = new System.Drawing.Size(74, 72);
             this.btnEquipaje.TabIndex = 12;
             this.btnEquipaje.UseVisualStyleBackColor = true;
-
->>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
             // 
             // formPrincipal
             // 

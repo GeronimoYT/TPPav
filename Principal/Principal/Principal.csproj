@@ -79,15 +79,11 @@
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoEquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
-    <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
-<<<<<<< HEAD
 
-=======
->>>>>>> ad2dd6d4c7e10423be71e9f31e02e812c09247e1
+
     <Compile Include="Clases\TipoAvion.cs" />
-    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\ReporteAeropuerto.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
@@ -162,6 +158,7 @@
     <Compile Include="Ventanas\formAeropuerto.Designer.cs">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
     </Compile>
+	
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,12 +189,7 @@
     <Compile Include="Ventanas\EmbarquePorFecha.Designer.cs">
       <DependentUpon>EmbarquePorFecha.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\formAeropuerto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\formAeropuerto.Designer.cs">
-      <DependentUpon>formAeropuerto.cs</DependentUpon>
-    </Compile>
+    
     <Compile Include="Ventanas\formAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
