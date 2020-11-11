@@ -65,7 +65,7 @@
             this.dgvDatosAeropuerto.Location = new System.Drawing.Point(16, 83);
             this.dgvDatosAeropuerto.Name = "dgvDatosAeropuerto";
             this.dgvDatosAeropuerto.ReadOnly = true;
-            this.dgvDatosAeropuerto.Size = new System.Drawing.Size(573, 113);
+            this.dgvDatosAeropuerto.Size = new System.Drawing.Size(573, 212);
             this.dgvDatosAeropuerto.TabIndex = 2;
             this.dgvDatosAeropuerto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosAeropuerto_CellContentClick);
             // 
@@ -133,7 +133,7 @@
             // 
             this.btnEditarAeropuerto.Enabled = false;
             this.btnEditarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarAeropuerto.Location = new System.Drawing.Point(416, 225);
+            this.btnEditarAeropuerto.Location = new System.Drawing.Point(416, 317);
             this.btnEditarAeropuerto.Name = "btnEditarAeropuerto";
             this.btnEditarAeropuerto.Size = new System.Drawing.Size(75, 28);
             this.btnEditarAeropuerto.TabIndex = 4;
@@ -144,7 +144,7 @@
             // btnAceptarEdicion
             // 
             this.btnAceptarEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarEdicion.Location = new System.Drawing.Point(514, 225);
+            this.btnAceptarEdicion.Location = new System.Drawing.Point(514, 317);
             this.btnAceptarEdicion.Name = "btnAceptarEdicion";
             this.btnAceptarEdicion.Size = new System.Drawing.Size(75, 28);
             this.btnAceptarEdicion.TabIndex = 5;
@@ -165,14 +165,14 @@
             this.groupAeropuerto.Controls.Add(this.dgvDatosAeropuerto);
             this.groupAeropuerto.Location = new System.Drawing.Point(36, 20);
             this.groupAeropuerto.Name = "groupAeropuerto";
-            this.groupAeropuerto.Size = new System.Drawing.Size(602, 259);
+            this.groupAeropuerto.Size = new System.Drawing.Size(602, 360);
             this.groupAeropuerto.TabIndex = 7;
             this.groupAeropuerto.TabStop = false;
             // 
             // btnBuscarAeropuerto
             // 
             this.btnBuscarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(268, 227);
+            this.btnBuscarAeropuerto.Location = new System.Drawing.Point(268, 319);
             this.btnBuscarAeropuerto.Name = "btnBuscarAeropuerto";
             this.btnBuscarAeropuerto.Size = new System.Drawing.Size(75, 28);
             this.btnBuscarAeropuerto.TabIndex = 10;
@@ -184,7 +184,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 230);
+            this.label1.Location = new System.Drawing.Point(6, 322);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 20);
             this.label1.TabIndex = 9;
@@ -193,7 +193,7 @@
             // txtBusquedaNombre
             // 
             this.txtBusquedaNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusquedaNombre.Location = new System.Drawing.Point(163, 227);
+            this.txtBusquedaNombre.Location = new System.Drawing.Point(163, 319);
             this.txtBusquedaNombre.MaxLength = 37284;
             this.txtBusquedaNombre.Name = "txtBusquedaNombre";
             this.txtBusquedaNombre.Size = new System.Drawing.Size(99, 26);
@@ -226,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 302);
+            this.ClientSize = new System.Drawing.Size(674, 409);
             this.Controls.Add(this.groupAeropuerto);
             this.Name = "formAeropuerto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

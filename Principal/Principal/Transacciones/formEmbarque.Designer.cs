@@ -45,6 +45,15 @@
             this.cmbPuertaEmbarque = new System.Windows.Forms.ComboBox();
             this.txtFechaEmbarque = new System.Windows.Forms.MaskedTextBox();
             this.txtAeropuerto = new System.Windows.Forms.TextBox();
+            this.btnPasajero = new System.Windows.Forms.Button();
+            this.gbEmbarque = new System.Windows.Forms.GroupBox();
+            this.dgvVuelo = new System.Windows.Forms.DataGridView();
+            this.FechaHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AeropuertoSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AeropuertoLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.gbEmbarque.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVuelo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmbarque
@@ -61,17 +70,17 @@
             // 
             this.lblNroVuelo.AutoSize = true;
             this.lblNroVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroVuelo.Location = new System.Drawing.Point(27, 47);
+            this.lblNroVuelo.Location = new System.Drawing.Point(16, 17);
             this.lblNroVuelo.Name = "lblNroVuelo";
             this.lblNroVuelo.Size = new System.Drawing.Size(127, 17);
             this.lblNroVuelo.TabIndex = 1;
-            this.lblNroVuelo.Text = "*Número de Vuelo:";
+            this.lblNroVuelo.Text = "Número de Vuelo*:";
             // 
             // cmbNroVuelo
             // 
             this.cmbNroVuelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNroVuelo.FormattingEnabled = true;
-            this.cmbNroVuelo.Location = new System.Drawing.Point(205, 46);
+            this.cmbNroVuelo.Location = new System.Drawing.Point(194, 16);
             this.cmbNroVuelo.Name = "cmbNroVuelo";
             this.cmbNroVuelo.Size = new System.Drawing.Size(70, 21);
             this.cmbNroVuelo.TabIndex = 64;
@@ -81,7 +90,7 @@
             // 
             this.lblFechaEmbarque.AutoSize = true;
             this.lblFechaEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEmbarque.Location = new System.Drawing.Point(301, 47);
+            this.lblFechaEmbarque.Location = new System.Drawing.Point(415, 123);
             this.lblFechaEmbarque.Name = "lblFechaEmbarque";
             this.lblFechaEmbarque.Size = new System.Drawing.Size(186, 17);
             this.lblFechaEmbarque.TabIndex = 67;
@@ -91,7 +100,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 144);
+            this.label2.Location = new System.Drawing.Point(16, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 17);
             this.label2.TabIndex = 69;
@@ -101,7 +110,7 @@
             // 
             this.lblPuertaEmbarque.AutoSize = true;
             this.lblPuertaEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPuertaEmbarque.Location = new System.Drawing.Point(347, 144);
+            this.lblPuertaEmbarque.Location = new System.Drawing.Point(415, 198);
             this.lblPuertaEmbarque.Name = "lblPuertaEmbarque";
             this.lblPuertaEmbarque.Size = new System.Drawing.Size(143, 17);
             this.lblPuertaEmbarque.TabIndex = 71;
@@ -111,7 +120,7 @@
             // 
             this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Location = new System.Drawing.Point(166, 212);
+            this.cmbTipoDoc.Location = new System.Drawing.Point(194, 194);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(109, 21);
             this.cmbTipoDoc.TabIndex = 75;
@@ -121,7 +130,7 @@
             // 
             this.lblTipoDoc.AutoSize = true;
             this.lblTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoDoc.Location = new System.Drawing.Point(27, 213);
+            this.lblTipoDoc.Location = new System.Drawing.Point(27, 198);
             this.lblTipoDoc.Name = "lblTipoDoc";
             this.lblTipoDoc.Size = new System.Drawing.Size(116, 17);
             this.lblTipoDoc.TabIndex = 74;
@@ -131,16 +140,16 @@
             // 
             this.cmbNroDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNroDoc.FormattingEnabled = true;
-            this.cmbNroDoc.Location = new System.Drawing.Point(191, 273);
+            this.cmbNroDoc.Location = new System.Drawing.Point(194, 272);
             this.cmbNroDoc.Name = "cmbNroDoc";
-            this.cmbNroDoc.Size = new System.Drawing.Size(84, 21);
+            this.cmbNroDoc.Size = new System.Drawing.Size(109, 21);
             this.cmbNroDoc.TabIndex = 77;
             // 
             // lblNroDoc
             // 
             this.lblNroDoc.AutoSize = true;
             this.lblNroDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroDoc.Location = new System.Drawing.Point(27, 274);
+            this.lblNroDoc.Location = new System.Drawing.Point(27, 272);
             this.lblNroDoc.Name = "lblNroDoc";
             this.lblNroDoc.Size = new System.Drawing.Size(158, 17);
             this.lblNroDoc.TabIndex = 76;
@@ -150,16 +159,16 @@
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(493, 272);
+            this.cmbEstado.Location = new System.Drawing.Point(607, 268);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(112, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(109, 21);
             this.cmbEstado.TabIndex = 79;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(347, 273);
+            this.label1.Location = new System.Drawing.Point(415, 272);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 78;
@@ -169,18 +178,18 @@
             // 
             this.btnAceptarEdicion.Enabled = false;
             this.btnAceptarEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarEdicion.Location = new System.Drawing.Point(530, 345);
+            this.btnAceptarEdicion.Location = new System.Drawing.Point(674, 377);
             this.btnAceptarEdicion.Name = "btnAceptarEdicion";
             this.btnAceptarEdicion.Size = new System.Drawing.Size(75, 28);
             this.btnAceptarEdicion.TabIndex = 83;
-            this.btnAceptarEdicion.Text = "Aceptar";
+            this.btnAceptarEdicion.Text = "Cargar";
             this.btnAceptarEdicion.UseVisualStyleBackColor = true;
             this.btnAceptarEdicion.Click += new System.EventHandler(this.btnAceptarEdicion_Click);
             // 
             // btnEditarAeropuerto
             // 
             this.btnEditarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarAeropuerto.Location = new System.Drawing.Point(432, 345);
+            this.btnEditarAeropuerto.Location = new System.Drawing.Point(576, 377);
             this.btnEditarAeropuerto.Name = "btnEditarAeropuerto";
             this.btnEditarAeropuerto.Size = new System.Drawing.Size(75, 28);
             this.btnEditarAeropuerto.TabIndex = 82;
@@ -192,14 +201,14 @@
             // 
             this.cmbPuertaEmbarque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPuertaEmbarque.FormattingEnabled = true;
-            this.cmbPuertaEmbarque.Location = new System.Drawing.Point(535, 143);
+            this.cmbPuertaEmbarque.Location = new System.Drawing.Point(607, 194);
             this.cmbPuertaEmbarque.Name = "cmbPuertaEmbarque";
             this.cmbPuertaEmbarque.Size = new System.Drawing.Size(70, 21);
             this.cmbPuertaEmbarque.TabIndex = 84;
             // 
             // txtFechaEmbarque
             // 
-            this.txtFechaEmbarque.Location = new System.Drawing.Point(493, 46);
+            this.txtFechaEmbarque.Location = new System.Drawing.Point(607, 122);
             this.txtFechaEmbarque.Mask = "00/00/0000 00:00";
             this.txtFechaEmbarque.Name = "txtFechaEmbarque";
             this.txtFechaEmbarque.Size = new System.Drawing.Size(112, 20);
@@ -209,38 +218,110 @@
             // txtAeropuerto
             // 
             this.txtAeropuerto.Enabled = false;
-            this.txtAeropuerto.Location = new System.Drawing.Point(205, 143);
+            this.txtAeropuerto.Location = new System.Drawing.Point(194, 122);
             this.txtAeropuerto.Name = "txtAeropuerto";
             this.txtAeropuerto.ReadOnly = true;
             this.txtAeropuerto.Size = new System.Drawing.Size(132, 20);
             this.txtAeropuerto.TabIndex = 86;
             this.txtAeropuerto.TextChanged += new System.EventHandler(this.txtAeropuerto_TextChanged);
             // 
+            // btnPasajero
+            // 
+            this.btnPasajero.Location = new System.Drawing.Point(194, 299);
+            this.btnPasajero.Name = "btnPasajero";
+            this.btnPasajero.Size = new System.Drawing.Size(75, 23);
+            this.btnPasajero.TabIndex = 89;
+            this.btnPasajero.Text = "Agregar";
+            this.btnPasajero.UseVisualStyleBackColor = true;
+            // 
+            // gbEmbarque
+            // 
+            this.gbEmbarque.Controls.Add(this.btnConsulta);
+            this.gbEmbarque.Controls.Add(this.dgvVuelo);
+            this.gbEmbarque.Controls.Add(this.btnPasajero);
+            this.gbEmbarque.Controls.Add(this.lblNroVuelo);
+            this.gbEmbarque.Controls.Add(this.cmbNroVuelo);
+            this.gbEmbarque.Controls.Add(this.txtAeropuerto);
+            this.gbEmbarque.Controls.Add(this.lblFechaEmbarque);
+            this.gbEmbarque.Controls.Add(this.txtFechaEmbarque);
+            this.gbEmbarque.Controls.Add(this.label2);
+            this.gbEmbarque.Controls.Add(this.cmbPuertaEmbarque);
+            this.gbEmbarque.Controls.Add(this.lblPuertaEmbarque);
+            this.gbEmbarque.Controls.Add(this.lblTipoDoc);
+            this.gbEmbarque.Controls.Add(this.cmbTipoDoc);
+            this.gbEmbarque.Controls.Add(this.cmbEstado);
+            this.gbEmbarque.Controls.Add(this.lblNroDoc);
+            this.gbEmbarque.Controls.Add(this.label1);
+            this.gbEmbarque.Controls.Add(this.cmbNroDoc);
+            this.gbEmbarque.Location = new System.Drawing.Point(12, 27);
+            this.gbEmbarque.Name = "gbEmbarque";
+            this.gbEmbarque.Size = new System.Drawing.Size(737, 344);
+            this.gbEmbarque.TabIndex = 90;
+            this.gbEmbarque.TabStop = false;
+            // 
+            // dgvVuelo
+            // 
+            this.dgvVuelo.AllowUserToAddRows = false;
+            this.dgvVuelo.AllowUserToDeleteRows = false;
+            this.dgvVuelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVuelo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FechaHoraSalida,
+            this.AeropuertoSalida,
+            this.AeropuertoLlegada});
+            this.dgvVuelo.Location = new System.Drawing.Point(389, 14);
+            this.dgvVuelo.Name = "dgvVuelo";
+            this.dgvVuelo.ReadOnly = true;
+            this.dgvVuelo.Size = new System.Drawing.Size(330, 102);
+            this.dgvVuelo.TabIndex = 90;
+            // 
+            // FechaHoraSalida
+            // 
+            this.FechaHoraSalida.DataPropertyName = "FechaHoraSalida";
+            this.FechaHoraSalida.HeaderText = "Fecha Hora Salida";
+            this.FechaHoraSalida.Name = "FechaHoraSalida";
+            this.FechaHoraSalida.ReadOnly = true;
+            // 
+            // AeropuertoSalida
+            // 
+            this.AeropuertoSalida.DataPropertyName = "AeropuertoSalida";
+            this.AeropuertoSalida.HeaderText = "Aeropuerto Salida";
+            this.AeropuertoSalida.Name = "AeropuertoSalida";
+            this.AeropuertoSalida.ReadOnly = true;
+            // 
+            // AeropuertoLlegada
+            // 
+            this.AeropuertoLlegada.DataPropertyName = "AeropuertoLlegada";
+            this.AeropuertoLlegada.HeaderText = "Aeropuerto Llegada";
+            this.AeropuertoLlegada.Name = "AeropuertoLlegada";
+            this.AeropuertoLlegada.ReadOnly = true;
+            this.AeropuertoLlegada.Width = 85;
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Enabled = false;
+            this.btnConsulta.Location = new System.Drawing.Point(281, 14);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnConsulta.TabIndex = 91;
+            this.btnConsulta.Text = "Consultar";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.button1_Click);
+            // 
             // formEmbarque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 385);
-            this.Controls.Add(this.txtAeropuerto);
-            this.Controls.Add(this.txtFechaEmbarque);
-            this.Controls.Add(this.cmbPuertaEmbarque);
+            this.ClientSize = new System.Drawing.Size(761, 417);
             this.Controls.Add(this.btnAceptarEdicion);
             this.Controls.Add(this.btnEditarAeropuerto);
-            this.Controls.Add(this.cmbEstado);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbNroDoc);
-            this.Controls.Add(this.lblNroDoc);
-            this.Controls.Add(this.cmbTipoDoc);
-            this.Controls.Add(this.lblTipoDoc);
-            this.Controls.Add(this.lblPuertaEmbarque);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblFechaEmbarque);
-            this.Controls.Add(this.cmbNroVuelo);
-            this.Controls.Add(this.lblNroVuelo);
             this.Controls.Add(this.lblEmbarque);
+            this.Controls.Add(this.gbEmbarque);
             this.Name = "formEmbarque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Embarque";
+            this.gbEmbarque.ResumeLayout(false);
+            this.gbEmbarque.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVuelo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +346,12 @@
         private System.Windows.Forms.ComboBox cmbPuertaEmbarque;
         private System.Windows.Forms.MaskedTextBox txtFechaEmbarque;
         private System.Windows.Forms.TextBox txtAeropuerto;
+        private System.Windows.Forms.Button btnPasajero;
+        private System.Windows.Forms.GroupBox gbEmbarque;
+        private System.Windows.Forms.DataGridView dgvVuelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHoraSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AeropuertoSalida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AeropuertoLlegada;
+        private System.Windows.Forms.Button btnConsulta;
     }
 }

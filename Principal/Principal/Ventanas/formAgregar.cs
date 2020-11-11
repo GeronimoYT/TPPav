@@ -59,7 +59,7 @@ namespace Principal.Ventanas
                     LimpiarCampos();
                 }catch(SqlException ex)
                 {
-                    MessageBox.Show("Error al realizar la consulta a la Base de Datos ");
+                    MessageBox.Show("Error al Cargar el Aeropuerto");
                 }
             }
             

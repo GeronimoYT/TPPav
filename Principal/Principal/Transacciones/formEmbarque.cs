@@ -23,7 +23,37 @@ namespace Principal.Transacciones
             cmbNroDoc.SelectedIndex = -1;
         }
 
-        
+
+        private Vuelo CargarVuelo()
+        {
+
+            Vuelo vuelo = new Vuelo();
+            vuelo.FechaHoraSalida = DateTime.Parse(dgvVuelo.CurrentRow.Cells[0].Value.ToString());
+            vuelo.Aeropuerto = (Aeropuerto) dgvVuelo.CurrentRow.Cells[1].Value;
+            vuelo.AeropuertoDestino = (Aeropuerto) dgvVuelo.CurrentRow.Cells[2].Value;
+
+            return vuelo;
+        }
+
+        private void CargaGrilla(string nroVuelo)
+        {
+
+            try
+            {
+                string consulta = $"SELECT v.FechaHoraSalida, a.Nombre as AeropuertoSalida, al.Nombre as AeropuertoLlegada FROM Vuelo v JOIN Aeropuerto a ON v.IdAeropuerto = a.IdAeropuerto JOIN Aeropuerto al ON v.IdAeropuertoDestino = al.IdAeropuerto WHERE v.NroVuelo = {nroVuelo}";
+                var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                if (grilla.Rows.Count > 0)
+                {
+                    dgvVuelo.DataSource = grilla;
+
+                }
+            }
+            catch (SqlException ex)
+            {
+            }
+        }
+
+
 
         public void CargarEmbarque()
         {            
@@ -44,11 +74,13 @@ namespace Principal.Transacciones
 
         public void CargarDatos(string nroVuelo)
         {
-            if(cmbNroVuelo.SelectedIndex != -1) { 
+            if(cmbNroVuelo.SelectedIndex >= 0) { 
                 try
                 {
+                    //string consultaVuelo = ;
                     string consultaAeropuerto = $"SELECT Nombre FROM Aeropuerto a JOIN Vuelo v ON a.IdAeropuerto = v.IdAeropuerto WHERE NroVuelo = {nroVuelo}";
                     txtAeropuerto.Text = LeerTexto(consultaAeropuerto);
+                    //MessageBox.Show(LeerTexto(consultaVuelo));
 
 
 
@@ -73,13 +105,9 @@ namespace Principal.Transacciones
                     else
                         txtFechaEmbarque.Text = LeerTexto(consultaFecha);
                     //MessageBox.Show(DateTime.Parse(txtFechaEmbarque.Text).ToString("dd/MM/yyyy HH:mm"));
-
-
-
                 }
                 catch (SqlException ex)
                 {
-                
                 }
             }
 
@@ -135,10 +163,9 @@ namespace Principal.Transacciones
 
         private void cmbNroVuelo_SelectedIndexChanged(object sender, EventArgs e)
         {            
-            if (cmbNroVuelo.SelectedIndex != -1) { 
-                ObtenerIdAeropuerto();
-                CargarDatos(cmbNroVuelo.Text.ToString());
+            if (cmbNroVuelo.SelectedIndex >= 0) { 
                 btnAceptarEdicion.Enabled = true;
+                btnConsulta.Enabled = true;
             }
             else
                 btnAceptarEdicion.Enabled = false;
@@ -239,7 +266,7 @@ namespace Principal.Transacciones
 
                 objTransaccion.Commit();
 
-                MessageBox.Show("Transacción Realizada con éxito!");
+                MessageBox.Show("Embarque cargado con éxito!");
 
                 this.Close();
 
@@ -286,6 +313,14 @@ namespace Principal.Transacciones
         private void txtAeropuerto_TextChanged(object sender, EventArgs e)
         {
             ActualizarCantPuertas();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ObtenerIdAeropuerto();
+            ObtenerIdEstado();
+            CargarDatos(cmbNroVuelo.Text.ToString());
+            CargaGrilla(cmbNroVuelo.Text.ToString());
         }
     }
 }

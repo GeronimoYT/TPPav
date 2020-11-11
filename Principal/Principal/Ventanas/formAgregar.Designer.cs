@@ -77,6 +77,7 @@
             // txtNuevoDomicilio
             // 
             this.txtNuevoDomicilio.Location = new System.Drawing.Point(154, 51);
+            this.txtNuevoDomicilio.MaxLength = 20;
             this.txtNuevoDomicilio.Name = "txtNuevoDomicilio";
             this.txtNuevoDomicilio.Size = new System.Drawing.Size(155, 20);
             this.txtNuevoDomicilio.TabIndex = 2;
@@ -94,6 +95,7 @@
             // txtNuevaDescripcion
             // 
             this.txtNuevaDescripcion.Location = new System.Drawing.Point(154, 192);
+            this.txtNuevaDescripcion.MaxLength = 30;
             this.txtNuevaDescripcion.Multiline = true;
             this.txtNuevaDescripcion.Name = "txtNuevaDescripcion";
             this.txtNuevaDescripcion.Size = new System.Drawing.Size(155, 44);
@@ -223,6 +225,7 @@
             // txtNuevoNombre
             // 
             this.txtNuevoNombre.Location = new System.Drawing.Point(154, 98);
+            this.txtNuevoNombre.MaxLength = 20;
             this.txtNuevoNombre.Name = "txtNuevoNombre";
             this.txtNuevoNombre.Size = new System.Drawing.Size(155, 20);
             this.txtNuevoNombre.TabIndex = 33;
