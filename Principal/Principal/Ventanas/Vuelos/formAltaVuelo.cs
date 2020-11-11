@@ -28,9 +28,16 @@ namespace Principal.Ventanas
 
         private void formVuelo_Load(object sender, EventArgs e)
         {
+            IniciarCalendarios();
             CargaHoras();
             CargoCombo();
             LimpiarCampos();
+        }
+
+        private void IniciarCalendarios()
+        {
+            calendarioSalida.MinDate = DateTime.Today;
+            calendarioLlegada.MinDate = DateTime.Today;
         }
 
         private void CargoCombo()
@@ -44,7 +51,7 @@ namespace Principal.Ventanas
                 formUtils.CargarCombo(ref cmbNumAvion, conectorDeDatos, "numero", "numero");
 
                 string consulta2 = "SELECT * FROM Aeropuerto";
-                string consulta3 = "SELECT * FROM Estado";
+                string consulta3 = "SELECT * FROM Estado WHERE AMBITO = 1";
 
                 var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
                 var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
@@ -84,15 +91,27 @@ namespace Principal.Ventanas
         private void cmbNumAvion_SelectedIndexChanged(object sender, EventArgs e)
         {
             Avion avion = (Avion)cmbNumAvion.SelectedItem;
+            
             if (cmbNumAvion.SelectedIndex != -1)
             {
-                /*string consultasql = $"SELECT DescripcionTipo FROM Avion a JOIN TipoAvion tp ON a.IdTipoAvion = ta.IdTipoAvion " +
-                                     $"WHERE a.NroAvion LIKE '{avion.idTipo.ToString()}'";
-                var res = DBHelper.GetDBHelper().ComandoSQL(consultasql);
-                
-                txtTipoAvion.Text = res.ToString();*/
-                txtTipoAvion.Text = avion.idTipo.ToString();
+                try
+                {
+                    /*string consultasql = $"SELECT DescripcionTipo FROM Avion a JOIN TipoAvion tp ON a.IdTipoAvion = tp.IdTipoAvion " +
+                                         $"WHERE a.NroAvion LIKE {avion.idTipo.ToString()}";
 
+                    var res = DBHelper.GetDBHelper().ComandoSQL(consultasql);
+                    txtTipoAvion.Text = res;*/
+
+                    /*string consulta = $"SELECT DescripcionTipo FROM TipoAvion WHERE IdTipoAvion LIKE {avion.idTipo}";
+                    var res = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                    cmbNumAvion.DataSource = res;
+                    txtTipoAvion.Text= res.ToString();*/
+                    txtTipoAvion.Text = avion.idTipo.ToString();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("La consulta ejecutada es incorrecta");
+                }
             }
             else
             {
@@ -103,6 +122,15 @@ namespace Principal.Ventanas
         //select*
         //from avion a join TipoAvion ta on a.IdTipoAvion = ta.IdTipoAvion
         //where a.NroAvion like '1'
+
+        //select v.NroVuelo, v.FechaHoraSalida, v.FechaHoraLlegada, a.Descripcion,
+        //ta.DescripcionTipo, ao.Domicilio, ad.Domicilio, e.NombreEstado
+        //from vuelo v
+        //join avion a on v.NroAvion = a.NroAvion
+        //join tipoavion ta on v.idtipoavion = ta.IdTipoAvion
+        //join aeropuerto ao on v.IdAeropuerto = ao.IdAeropuerto
+        //join aeropuerto ad on v.IdAeropuertoDestino = ad.IdAeropuerto
+        //join estado e on v.Estado = e.IdEstado
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {

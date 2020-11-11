@@ -68,23 +68,18 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
-<<<<<<< HEAD
+
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
-    <Compile Include="Clases\ReporteAeropuerto.cs" />
-    <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
-    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
-    <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
-    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Servicios\VuelosServicio.cs" />
-=======
+
     <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
->>>>>>> dbaac909e91d181f78e85ae68f54d10002fab9c0
+
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />

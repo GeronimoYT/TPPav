@@ -2,6 +2,7 @@
 using Principal.Clases.Filtros;
 using Principal.Clases.Servicios;
 using Principal.Utils;
+using Principal.Ventanas.Vuelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,23 +27,15 @@ namespace Principal.Ventanas
 
         private void Vuelo_Load(object sender, EventArgs e)
         {
+            iniciarCalendarios();
             CargoFiltros();
             CargaGrilla();
         }
 
-        private void CargaGrilla()
+        public void iniciarCalendarios()
         {
-            try
-            {
-                string consulta = $"SELECT * FROM Vuelo";
-                var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                dgvVuelos.DataSource = grilla;
-                dgvVuelos.ClearSelection();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
-            }
+            filtroFS.Value = DateTime.Today;
+            filtroFL.Value = DateTime.Today;
         }
 
         public void CargoFiltros()
@@ -51,14 +44,15 @@ namespace Principal.Ventanas
             {
                 string consulta = "SELECT * FROM Aeropuerto";
                 string consulta1 = "SELECT * FROM Avion";
-                string consulta2 = "SELECT * FROM Estado";
-                
-                var combo0 = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                string consulta2 = "SELECT * FROM Estado WHERE AMBITO = 1";
+
+                var comboAO = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                var comboAD = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 var combo1 = DBHelper.GetDBHelper().ConsultaSQL(consulta1);
                 var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
 
-                cmbAO.DataSource = combo0;
-                cmbAD.DataSource = combo0;
+                cmbAO.DataSource = comboAO;
+                cmbAD.DataSource = comboAD;
                 cmbNA.DataSource = combo1;
                 cmbE.DataSource = combo2;
 
@@ -84,6 +78,44 @@ namespace Principal.Ventanas
                 MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente");
             }
         }
+
+        private void CargaGrilla()
+        {
+            //dgvVuelos.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            //dgvVuelos.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            try
+            {
+                string consulta = $"select v.NroVuelo,v.FechaHoraSalida,v.FechaHoraLlegada,a.Descripcion as NroAvion,"+
+                "ta.DescripcionTipo as IdTipoAvion,ao.Domicilio as IdAeropuerto,ad.Domicilio as IdAeropuertoDestino,e.NombreEstado as Estado"+
+                " from vuelo v"+
+                " join avion a on v.NroAvion = a.NroAvion"+
+                " join tipoavion ta on v.idtipoavion = ta.IdTipoAvion"+
+                " join aeropuerto ao on v.IdAeropuerto = ao.IdAeropuerto"+
+                " join aeropuerto ad on v.IdAeropuertoDestino = ad.IdAeropuerto"+
+                " join estado e on v.Estado = e.IdEstado";
+                var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                dgvVuelos.DataSource = grilla;
+                dgvVuelos.ClearSelection();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("La consulta ejecutada es incorrecta, por favor revise nuevamente ");
+            }
+        }
+
+        //select*
+        //from avion a join TipoAvion ta on a.IdTipoAvion = ta.IdTipoAvion
+        //where a.NroAvion like '1'
+        //select v.NroVuelo, v.FechaHoraSalida, v.FechaHoraLlegada, a.Descripcion,
+        //ta.DescripcionTipo, ao.Domicilio, ad.Domicilio, e.NombreEstado
+        //from vuelo v
+        //join avion a on v.NroAvion = a.NroAvion
+        //join tipoavion ta on v.idtipoavion = ta.IdTipoAvion
+        //join aeropuerto ao on v.IdAeropuerto = ao.IdAeropuerto
+        //join aeropuerto ad on v.IdAeropuertoDestino = ad.IdAeropuerto
+        //join estado e on v.Estado = e.IdEstado
+
+        
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
@@ -114,14 +146,24 @@ namespace Principal.Ventanas
         {
             formAltaVuelo _formAltaVuelo = new formAltaVuelo();
             _formAltaVuelo.Show();
-            this.Close();
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //formAltaVuelo editar = new formAltaVuelo();
-            //editar.Show();
-            //this.Close();
+            formModificarVuelo modificar = new formModificarVuelo(cargarVuelo());
+            modificar.Show();
+        }
+
+        private Vuelo cargarVuelo()
+        {
+            Vuelo v = new Vuelo();
+            v.Avion.numero = Int32.Parse(dgvVuelos.CurrentRow.Cells[3].Value.ToString());
+            v.Avion.idTipo = Int32.Parse(dgvVuelos.CurrentRow.Cells[4].Value.ToString());
+            v.Aeropuerto.IdAeropuerto = Int32.Parse(dgvVuelos.CurrentRow.Cells[5].Value.ToString());
+            v.AeropuertoDestino.IdAeropuerto = Int32.Parse(dgvVuelos.CurrentRow.Cells[6].Value.ToString());
+            v.Estado.IdEstado = Int32.Parse(dgvVuelos.CurrentRow.Cells[7].Value.ToString()); ;
+            return v;
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -132,10 +174,10 @@ namespace Principal.Ventanas
                 {
                     FechaDesde = filtroFS.Value,
                     FechaHasta = filtroFL.Value,
-                    IdAeropuerto = ((Aeropuerto)cmbAO.SelectedItem).IdAeropuerto,
-                    IdAeropuertoDestino = ((Aeropuerto)cmbAD.SelectedItem).IdAeropuerto,
-                    NroAvion = ((Avion)cmbNA.SelectedItem).numero,
-                    IdEstado = ((Estado)cmbE.SelectedItem).IdEstado
+                    //IdAeropuerto = ((Aeropuerto)cmbAO.SelectedItem).IdAeropuerto,
+                    //IdAeropuertoDestino = ((Aeropuerto)cmbAD.SelectedItem).IdAeropuerto,
+                    //NroAvion = ((Avion)cmbNA.SelectedItem).numero,
+                    //IdEstado = ((Estado)cmbE.SelectedItem).IdEstado
                 };
                 Consultar(filtros);
             }

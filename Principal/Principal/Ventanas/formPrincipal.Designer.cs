@@ -123,7 +123,7 @@
             // tipoAvionToolStripMenuItem
             // 
             this.tipoAvionToolStripMenuItem.Name = "tipoAvionToolStripMenuItem";
-            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tipoAvionToolStripMenuItem.Text = "Tipo Avion";
             this.tipoAvionToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
@@ -259,6 +259,7 @@
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
+            this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             // 
             // formPrincipal
             // 

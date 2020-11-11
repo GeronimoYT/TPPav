@@ -44,7 +44,7 @@ namespace Principal.Clases.Repositorio
                 "LEFT JOIN AeropuertoDestino aed ON v.idaeropuerto = ae.idaeropuerto " +
                 "LEFT JOIN Estado es ON v.idestado = es.idestado " +
                 "WHERE v.nrovuelo like '%%'"; /// ????? 
-            if (filtros.FechaDesde.HasValue)
+            if (filtros.FechaDesde.HasValue)//EL FORMATO DE LA FECHA ESTA BIEN ???
                 sentenciaSql += $" AND v.FechaHoraSalida > '{filtros.FechaDesde.Value.ToString("yyyy-MM-dd")}'";
             if (filtros.FechaHasta.HasValue)
                 sentenciaSql += $" AND v.FechaHoraLlegada < '{filtros.FechaHasta.Value.ToString("yyyy-MM-dd")}'";
@@ -52,7 +52,7 @@ namespace Principal.Clases.Repositorio
                 sentenciaSql += $" AND v.NroVuelo = {filtros.NroAvion}";
             if (filtros.IdAeropuerto != 0)
                 sentenciaSql += $" AND v.IdAeropuerto = {filtros.IdAeropuerto}";
-            if (filtros.IdAeropuertoDestino != 0)
+            if (filtros.IdAeropuertoDestino != 0)//ESTA BIEN ?
                 sentenciaSql += $" AND v.IdAeropuerto = {filtros.IdAeropuertoDestino}";
             if (filtros.IdEstado != 0)
                 sentenciaSql += $" AND v.IdEstado = {filtros.IdEstado}";
