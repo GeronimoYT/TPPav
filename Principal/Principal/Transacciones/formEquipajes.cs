@@ -62,13 +62,6 @@ namespace Principal.Transacciones
             }
         }
 
-
-        private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-            if (txtBusqueda.Text.Length > 7) { BuscarEquipajesPasajero(); }
-            else { MessageBox.Show("Por favor, ingrese un numero de documento valido."); }
-        }
-
         private void lboxEquipaje_SelectedIndexChanged(object sender, EventArgs e)
         {
             Equipaje equipajeSelecionado = (Equipaje)lboxEquipaje.SelectedItem;
@@ -123,17 +116,6 @@ namespace Principal.Transacciones
             }
         }
 
-        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            FormUtils.GetInstance.KeypressDocumento(comboBusqueda.Text, txtBusqueda.Text, sender, e);
-        }
-
-        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtBusqueda.Clear();
-        }
-
-        
 
         private void chboxBusqueda_CheckedChanged(object sender, EventArgs e)
         {
@@ -168,5 +150,10 @@ namespace Principal.Transacciones
 
         }
 
+        private void btnBuqueda_Click(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text.Length > 7) { BuscarEquipajesPasajero(); }
+            else { MessageBox.Show("Por favor, ingrese un numero de documento valido."); }
+        }
     }
 }

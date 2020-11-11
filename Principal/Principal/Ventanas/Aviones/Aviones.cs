@@ -18,70 +18,64 @@ namespace Principal.Ventanas
     {
         private AvionesRepositorio avionesRep;
         TiposAvionRepositorio RepTipo;
+        List<TipoAvion> _tipos = new List<TipoAvion>();
+        List<Avion> _aviones;
+
         public FormAviones()
         {
             avionesRep = new AvionesRepositorio();
             RepTipo = new TiposAvionRepositorio();
+            CargarTipos();
+            _aviones = avionesRep.ObtenerAvionesActivos();
             InitializeComponent();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Avion avion = new Avion();
-            avion.numero = Convert.ToInt32(FormUtils.GetInstance.GetValorCelda(gridAviones, 0));
-            avion.idTipo = Convert.ToInt32(FormUtils.GetInstance.GetValorCelda(gridAviones, 1));
-            avion.descripcion = FormUtils.GetInstance.GetValorCelda(gridAviones, 2);
-            Modificacion_Avion ventanaModificacion = new Modificacion_Avion(this, avion);
+            Modificacion_Avion ventanaModificacion = new Modificacion_Avion(this, AvionSeleccionado());
             ventanaModificacion.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
-            if (txtBuscar.Text != "") 
-            {
-                int numero = Convert.ToInt32(txtBuscar.Text);
-                List<Avion> aviones = avionesRep.ObtenerAviones(tipoSeleccionado.id, numero);
-                Cargar_Grilla(aviones);
-            }
+            List<Avion> avionesxDescripcion = FiltrarxDescripcion(Filtrarxtipo(_aviones));
+            List<Avion> avionesxNumero = FiltrarxNumero(avionesxDescripcion);
+
+            Cargar_Grilla(avionesxNumero);
         }
 
         private void Aviones_Load(object sender, EventArgs e)
         {
-            List<Avion> aviones = avionesRep.ObtenerAviones();
-            Cargar_Grilla(aviones);
-
-           
-            List<TipoAvion> tipos = RepTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
-            conectorDeDatos.DataSource = tipos;
+            conectorDeDatos.DataSource = _tipos;
             FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
 
+            Cargar_Grilla(_aviones);
         }
 
         private void Cargar_Grilla(List<Avion> aviones)
         {
             gridAviones.Rows.Clear();
 
-            foreach(var avion in aviones)
+            foreach (var avion in aviones)
             {
+                
                 var fila = new String[]
                 {
-                    avion.numero.ToString(),
-                    avion.idTipo.ToString(),
-                    avion.descripcion,
+                avion.numero.ToString(),
+                NumeroACategoria(avion.idTipo),
+                avion.descripcion,
                 };
                 gridAviones.Rows.Add(fila);
+
             }
         }
 
         private void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
-            List<Avion> aviones = avionesRep.ObtenerAviones(tipoSeleccionado.id);
-            txtBuscar.Clear();
-            Cargar_Grilla(aviones);
+            Cargar_Grilla(Filtrarxtipo(_aviones));
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -93,11 +87,7 @@ namespace Principal.Ventanas
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            Avion avion = new Avion();
-            avion.numero = Convert.ToInt32(FormUtils.GetInstance.GetValorCelda(gridAviones, 0));
-            avion.idTipo = Convert.ToInt32(FormUtils.GetInstance.GetValorCelda(gridAviones, 1));
-            avion.descripcion = FormUtils.GetInstance.GetValorCelda(gridAviones, 2);
-            Baja_Avion ventanaBaja = new Baja_Avion(this, avion);
+            Baja_Avion ventanaBaja = new Baja_Avion(this, AvionSeleccionado());
             ventanaBaja.Show();
             this.Hide();
         }
@@ -113,9 +103,99 @@ namespace Principal.Ventanas
         }
         public void RefrescarFormulario()
         {
-            List<Avion> aviones = avionesRep.ObtenerAviones();
-            Cargar_Grilla(aviones);
-            txtBuscar.Clear();
+            _aviones = avionesRep.ObtenerAvionesActivos();
+            chboxInactivos.Checked = false;
+            comboCategorias.SelectedIndex = 0;
+            txtNumero.Clear();
+            txtDescripcion.Clear();
+            Cargar_Grilla(_aviones);
+        }
+        private int CategoriaANumero(string tipoNombre)
+        {
+            int idTipo = -1;
+            foreach (var tipo in _tipos)
+            {
+                if (tipoNombre == tipo.descripcion) { idTipo = tipo.id; }
+            }
+            return idTipo;
+        }
+        public string NumeroACategoria(int idTipo)
+        {
+            string tipoNombre = "";
+            foreach (var tipo in _tipos)
+            {
+                if (tipo.id == idTipo) { tipoNombre = tipo.descripcion; }
+            }
+            return tipoNombre;
+        }
+
+        private void chboxInactivos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chboxInactivos.Checked) { _aviones = avionesRep.ObtenerAviones(); }
+            else { _aviones = avionesRep.ObtenerAvionesActivos(); }
+            
+            Cargar_Grilla(Filtrarxtipo(_aviones));         
+        }
+
+        private List<Avion> Filtrarxtipo(List<Avion> aviones)
+        {
+            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
+            List<Avion> avionesxCategoria = new List<Avion>();
+            if (tipoSeleccionado.id != -1)
+            {
+                foreach (Avion avion in aviones)
+                {
+                    if (avion.idTipo == tipoSeleccionado.id) { avionesxCategoria.Add(avion); }
+                }
+                return avionesxCategoria;
+            }
+            else { return _aviones; }
+        }
+        private List<Avion> FiltrarxDescripcion(List<Avion> aviones)
+        {
+            List<Avion> avionesxDescripcion = new List<Avion>();
+            if (txtDescripcion.Text != "")
+            {
+                foreach (Avion avion in aviones)
+                {
+                    if (avion.descripcion.Contains(txtDescripcion.Text)) {avionesxDescripcion.Add(avion); }
+                }
+                return avionesxDescripcion;
+            }
+            else { return aviones; }
+        }
+
+        private List<Avion> FiltrarxNumero(List<Avion> aviones)
+        {
+            List<Avion> avionesxNumero = new List<Avion>();
+            if (txtNumero.Text != "")
+            {
+                foreach (Avion avion in aviones)
+                {
+                    if (avion.numero == Convert.ToInt32(txtNumero.Text)) { avionesxNumero.Add(avion); }
+                }
+                return avionesxNumero;
+            }
+            else { return aviones; }
+        }
+
+        private void CargarTipos()
+        {
+            _tipos.Add(new TipoAvion(-1, "--Todos los Aviones--", 0, 0, 0, 0, 0, 0));
+            foreach(TipoAvion tipo in RepTipo.ObtenerTipos())
+            {
+                _tipos.Add(tipo);
+            }
+        }
+        private Avion AvionSeleccionado()
+        {
+            foreach(Avion avion in _aviones)
+            {
+                int numero = Convert.ToInt32(FormUtils.GetInstance.GetValorCelda(gridAviones, 0));
+                int idTipo = CategoriaANumero(FormUtils.GetInstance.GetValorCelda(gridAviones, 1));
+                if (avion.numero == numero && avion.idTipo == idTipo) { return avion; }
+            }
+            return new Avion();
         }
     }
 }

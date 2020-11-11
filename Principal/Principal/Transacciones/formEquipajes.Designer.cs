@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEquipajes));
             this.lboxEquipaje = new System.Windows.Forms.ListBox();
             this.comboBusqueda = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnBusqueda = new System.Windows.Forms.Button();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnAlta = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.chboxBusqueda = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnBuqueda = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lboxEquipaje
@@ -72,7 +73,6 @@
             this.comboBusqueda.Name = "comboBusqueda";
             this.comboBusqueda.Size = new System.Drawing.Size(96, 24);
             this.comboBusqueda.TabIndex = 1;
-            this.comboBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBusqueda_SelectedIndexChanged);
             // 
             // txtBusqueda
             // 
@@ -80,7 +80,6 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(127, 22);
             this.txtBusqueda.TabIndex = 21;
-            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // txtNumero
             // 
@@ -152,33 +151,24 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Documento";
             // 
-            // btnBusqueda
-            // 
-            this.btnBusqueda.Location = new System.Drawing.Point(247, 52);
-            this.btnBusqueda.Name = "btnBusqueda";
-            this.btnBusqueda.Size = new System.Drawing.Size(26, 24);
-            this.btnBusqueda.TabIndex = 14;
-            this.btnBusqueda.Text = "B";
-            this.btnBusqueda.UseVisualStyleBackColor = true;
-            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
-            // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(199, 402);
+            this.btnBaja.Image = ((System.Drawing.Image)(resources.GetObject("btnBaja.Image")));
+            this.btnBaja.Location = new System.Drawing.Point(199, 393);
             this.btnBaja.Name = "btnBaja";
-            this.btnBaja.Size = new System.Drawing.Size(30, 30);
+            this.btnBaja.Size = new System.Drawing.Size(42, 40);
             this.btnBaja.TabIndex = 15;
-            this.btnBaja.Text = "-";
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnAlta
             // 
-            this.btnAlta.Location = new System.Drawing.Point(199, 357);
+            this.btnAlta.FlatAppearance.BorderSize = 0;
+            this.btnAlta.Image = ((System.Drawing.Image)(resources.GetObject("btnAlta.Image")));
+            this.btnAlta.Location = new System.Drawing.Point(201, 347);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(30, 30);
+            this.btnAlta.Size = new System.Drawing.Size(40, 40);
             this.btnAlta.TabIndex = 16;
-            this.btnAlta.Text = "+";
             this.btnAlta.UseVisualStyleBackColor = true;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
             // 
@@ -248,11 +238,23 @@
             this.label8.TabIndex = 24;
             this.label8.Text = "Datos equipaje seleccionado";
             // 
+            // btnBuqueda
+            // 
+            this.btnBuqueda.Image = ((System.Drawing.Image)(resources.GetObject("btnBuqueda.Image")));
+            this.btnBuqueda.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnBuqueda.Location = new System.Drawing.Point(247, 46);
+            this.btnBuqueda.Name = "btnBuqueda";
+            this.btnBuqueda.Size = new System.Drawing.Size(45, 43);
+            this.btnBuqueda.TabIndex = 25;
+            this.btnBuqueda.UseVisualStyleBackColor = true;
+            this.btnBuqueda.Click += new System.EventHandler(this.btnBuqueda_Click);
+            // 
             // formEquipajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 444);
+            this.Controls.Add(this.btnBuqueda);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chboxBusqueda);
             this.Controls.Add(this.label6);
@@ -262,7 +264,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.btnBaja);
-            this.Controls.Add(this.btnBusqueda);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -295,7 +296,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.Button btnBaja;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Label label7;
@@ -305,5 +305,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chboxBusqueda;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnBuqueda;
     }
 }

@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,7 +69,6 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
-
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
     <Compile Include="Clases\ReporteAeropuerto.cs" />
@@ -77,20 +77,13 @@
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Servicios\VuelosServicio.cs" />
-
     <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
-    <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
-    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoEquipajeRepositorio.cs" />
-    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
-    <Compile Include="Clases\TipoAvion.cs" />
-    <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
-    <Compile Include="Clases\ReporteAeropuerto.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\DBHelper.cs" />
     <Compile Include="Clases\Repositorio\VuelosRepositorio.cs" />
@@ -335,20 +328,17 @@
     <EmbeddedResource Include="Transacciones\formEmbarque.resx">
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Transacciones\formEquipajes.resx">
       <DependentUpon>formEquipajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\AltaEquipaje.resx">
       <DependentUpon>AltaEquipaje.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Transacciones\Pasajes\formEditarPasaje.resx">
       <DependentUpon>formEditarPasaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\EmbarquePorFecha.resx">
       <DependentUpon>EmbarquePorFecha.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
@@ -511,11 +501,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Recursos\Imagenes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Recursos\Imagenes\alta.ico" />
+    <Content Include="Recursos\Imagenes\baja.ico" />
+    <Content Include="Recursos\Imagenes\busqueda.png" />
+    <Content Include="Recursos\Imagenes\modificacion.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -97,6 +97,5 @@ namespace Principal.Ventanas
             lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
 
         }
-
     }
 }

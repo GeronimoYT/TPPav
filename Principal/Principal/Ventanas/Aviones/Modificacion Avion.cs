@@ -15,7 +15,7 @@ namespace Principal.Ventanas.Aviones
 {
     public partial class Modificacion_Avion : Form
     {
-        private Form _formAviones;
+        private FormAviones _formAviones;
         private Avion avion;
         private AvionesRepositorio _avionesRep;
         private TiposAvionRepositorio _repTipo;
@@ -32,18 +32,20 @@ namespace Principal.Ventanas.Aviones
         private void Modificacion_Avion_Load(object sender, EventArgs e)
         {
             txtNumero.Text = avion.numero.ToString();
-            txtCategoria.Text = avion.idTipo.ToString();
+            txtNuevoNumero.Text = avion.numero.ToString();
+            txtCategoria.Text = _formAviones.NumeroACategoria(avion.idTipo);
             rTxtDescripcion.Text = avion.descripcion;
         
             List<TipoAvion> tipos = _repTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
             conectorDeDatos.DataSource = tipos;
-            //FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
+            FormUtils.GetInstance.CargarCombo(ref comboCategorias, conectorDeDatos, "descripcion", "id");
         }
 
         private void CerrarFormuario()
         {
             _formAviones.Show();
+            _formAviones.RefrescarFormulario();
             this.Close();
         }
 
@@ -54,7 +56,7 @@ namespace Principal.Ventanas.Aviones
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            TipoEquipaje tipoSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
+            TipoAvion tipoSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
             avion.idTipo = tipoSeleccionado.id;
             avion.descripcion = rTxtNuevaDescripcion.Text;
 

@@ -106,8 +106,6 @@ namespace Principal.Utils
                 mylogs.WriteLine(texto + strDate);
 
                 mylogs.Close();
-
-
             }
         }
     }

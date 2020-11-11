@@ -116,7 +116,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Name = "Alta_Avion";
-            this.Text = "Alta_Avion";
+            this.Text = "Nuevo Avion";
             this.Load += new System.EventHandler(this.Alta_Avion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
