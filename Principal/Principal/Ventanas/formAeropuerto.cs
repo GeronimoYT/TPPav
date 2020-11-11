@@ -95,9 +95,11 @@ namespace Principal.Ventanas
                     string consulta = $"DELETE FROM Aeropuerto WHERE IdAeropuerto LIKE '{dgvDatosAeropuerto.CurrentRow.Cells["IdAeropuerto"].Value.ToString()}'";
                     var eliminar = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                     MessageBox.Show("Se eliminó el aeropuerto exitosamente");
+                    CargaGrilla();
                 }
-                catch(Exception ex) {
-                    MessageBox.Show("No se ha podido realizar la operación"); 
+                catch (Exception ex) {
+
+                    MessageBox.Show("No se ha podido realizar la operación, ya que existen vuelos programados en este Aeropuerto", "Error al eliminar Aeropuerto", MessageBoxButtons.OK,MessageBoxIcon.Error); 
                 }
             }
 
