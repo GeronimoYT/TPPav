@@ -25,3 +25,30 @@ C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.exe
 C:\Users\Leandro\Desktop\2020 FACU\PAV\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.pdb
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.exe.config
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.exe
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\bin\Debug\Principal.pdb
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.csprojAssemblyReference.cache
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAgregar.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Alta_Avion.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.FormAviones.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Baja_Avion.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasaje.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaPasajero.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formBajaPasajero.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditar.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formEditarPasajero.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajeros.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPasajes.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formPrincipal.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Buscar.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Vuelo.resources
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.csproj.GenerateResource.cache
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.csproj.CoreCompileInputs.cache
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.exe
+M:\FUCK ULTAD\PAV 2020\TP PAV ORIGINAL\TPPav\Principal\Principal\obj\Debug\Principal.pdb
