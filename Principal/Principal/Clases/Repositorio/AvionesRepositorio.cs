@@ -38,7 +38,7 @@ namespace Principal.Clases
         }
 
 
-        private Avion ObtenerAvion(DataRow fila) 
+        private Avion ObtenerAvion(DataRow fila)
         {
             var avion = new Avion();
             avion.numero = Convert.ToInt32(fila["NroAvion"].ToString());
@@ -61,9 +61,10 @@ namespace Principal.Clases
                 DBHelper.GetDBHelper().ComandoSQL(sentenciaSql);
                 MessageBox.Show("Alta Exitosa");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                if (ex.HResult.ToString() == "-2146232060") { MessageBox.Show($"Error, ya existe un avion con este nro y tipo de avion."); }
+                else { MessageBox.Show($"Error: {ex.HResult} = {ex.Message}"); }
             }
         }
 
@@ -103,3 +104,4 @@ namespace Principal.Clases
 
     }
 }
+

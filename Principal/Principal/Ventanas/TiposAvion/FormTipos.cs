@@ -85,6 +85,8 @@ namespace Principal.Ventanas.TiposAvion
         private void RefrescarFormulario()
         {
             chkboxInactivos.Checked = false;
+            labelActivo.Visible = false;
+            txtActivo.Visible = false;
             RefrescarList();
 
         }
@@ -102,10 +104,6 @@ namespace Principal.Ventanas.TiposAvion
             this.Hide();
         }
 
-        private void FormTipos_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
