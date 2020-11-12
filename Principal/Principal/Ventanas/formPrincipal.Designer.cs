@@ -51,10 +51,6 @@
             this.lblVuelo = new System.Windows.Forms.Label();
             this.btnVuelo = new System.Windows.Forms.Button();
 
-
-            this.estadisticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblEquipaje = new System.Windows.Forms.Label();
             this.btnEquipaje = new System.Windows.Forms.Button();
@@ -285,7 +281,6 @@
             this.btnVuelo.Size = new System.Drawing.Size(74, 72);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
-            this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
             // 
             // lblFecha

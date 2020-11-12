@@ -106,8 +106,6 @@ namespace Principal.Clases
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
-
-
-
+                
     }
 }

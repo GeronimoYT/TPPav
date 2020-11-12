@@ -17,7 +17,7 @@ namespace Principal.Clases.Servicios
             _vuelosRepositorio = new VuelosRepositorio();
         }
 
-        public List<Vuelo> Obtener(VuelosFiltros filtros) // VERIFICAR QUE SEA MAYOR A 2010 ???
+        public List<Vuelo> Obtener(VuelosFiltros filtros)
         {
             if (filtros.FechaDesde.HasValue)
                 filtros.FechaDesde = new DateTime(filtros.FechaDesde.Value.Year,
@@ -51,10 +51,10 @@ namespace Principal.Clases.Servicios
 
     
        
-        public void Registrar(Vuelo v)
+        /*public void Registrar(Vuelo v)
         {
             _vuelosRepositorio.Registrar(v);
-        }
+        }*/
 
         public Vuelo Obtener(long id)
         {

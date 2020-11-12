@@ -20,10 +20,10 @@ namespace Principal.Ventanas.Vuelos
         public formModificarVuelo(Vuelo v)
         {
             InitializeComponent();
-            cmbNuevoA.SelectedValue = v.Avion.numero;
-            cmbNuevoAO.SelectedValue = v.Aeropuerto.IdAeropuerto;
-            cmbNuevoAD.SelectedValue = v.AeropuertoDestino.IdAeropuerto;
-            cmbNuevoEstado.SelectedValue = v.Estado.IdEstado;
+            cmbNuevoA.SelectedValue = v.NroAvion;
+            cmbNuevoAO.SelectedValue = v.IdAeropuerto;
+            cmbNuevoAD.SelectedValue = v.IdAeropuerto;
+            cmbNuevoEstado.SelectedValue = v.Estado;
         }
 
         private void formModificarVuelo_Load(object sender, EventArgs e)
@@ -39,11 +39,19 @@ namespace Principal.Ventanas.Vuelos
             NuevaFechaS.Value = DateTime.Today;
             NuevaFechaL.Value = DateTime.Today;
 
-            cmbHoraSalida.Items.Add("00:00"); cmbHoraSalida.Items.Add("01:00"); cmbHoraSalida.Items.Add("02:00"); cmbHoraSalida.Items.Add("03:00"); cmbHoraSalida.Items.Add("04:00"); cmbHoraSalida.Items.Add("05:00"); cmbHoraSalida.Items.Add("06:00"); cmbHoraSalida.Items.Add("07:00"); cmbHoraSalida.Items.Add("08:00"); cmbHoraSalida.Items.Add("09:00"); cmbHoraSalida.Items.Add("10:00"); cmbHoraSalida.Items.Add("11:00");
-            cmbHoraSalida.Items.Add("12:00"); cmbHoraSalida.Items.Add("13:00"); cmbHoraSalida.Items.Add("14:00"); cmbHoraSalida.Items.Add("15:00"); cmbHoraSalida.Items.Add("16:00"); cmbHoraSalida.Items.Add("17:00"); cmbHoraSalida.Items.Add("18:00"); cmbHoraSalida.Items.Add("19:00"); cmbHoraSalida.Items.Add("20:00"); cmbHoraSalida.Items.Add("21:00"); cmbHoraSalida.Items.Add("22:00"); cmbHoraSalida.Items.Add("23:00");
-
-            cmbHoraLlegada.Items.Add("00:00"); cmbHoraLlegada.Items.Add("01:00"); cmbHoraLlegada.Items.Add("02:00"); cmbHoraLlegada.Items.Add("03:00"); cmbHoraLlegada.Items.Add("04:00"); cmbHoraLlegada.Items.Add("05:00"); cmbHoraLlegada.Items.Add("06:00"); cmbHoraLlegada.Items.Add("07:00"); cmbHoraLlegada.Items.Add("08:00"); cmbHoraLlegada.Items.Add("09:00"); cmbHoraLlegada.Items.Add("10:00"); cmbHoraLlegada.Items.Add("11:00");
-            cmbHoraLlegada.Items.Add("12:00"); cmbHoraLlegada.Items.Add("13:00"); cmbHoraLlegada.Items.Add("14:00"); cmbHoraLlegada.Items.Add("15:00"); cmbHoraLlegada.Items.Add("16:00"); cmbHoraLlegada.Items.Add("17:00"); cmbHoraLlegada.Items.Add("18:00"); cmbHoraLlegada.Items.Add("19:00"); cmbHoraLlegada.Items.Add("20:00"); cmbHoraLlegada.Items.Add("21:00"); cmbHoraLlegada.Items.Add("22:00"); cmbHoraLlegada.Items.Add("23:00");
+            for (int i = 00; i <= 23; i++)
+            {
+                if (i < 10)
+                {
+                    cmbHoraSalida.Items.Add("0" + i + ":00");
+                    cmbHoraLlegada.Items.Add("0" + i + ":00");
+                }
+                else
+                {
+                    cmbHoraSalida.Items.Add(i + ":00");
+                    cmbHoraLlegada.Items.Add(i + ":00");
+                }
+            }
         }
 
         private void cargaAviones()
@@ -88,6 +96,37 @@ namespace Principal.Ventanas.Vuelos
 
         private void btnConfirmarVuelo_Click(object sender, EventArgs e)
         {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea actualizar los datos del Vuelo?", "VUELO", buttons);
+            if (resultado == System.Windows.Forms.DialogResult.Yes)
+            {
+                try
+                {
+                    var fechaHoraSalida = NuevaFechaS.Value.ToString("dd/MM/yyyy") + ' ' + cmbHoraSalida.Text;
+                    var fechaHoraLlegada = NuevaFechaL.Value.ToString("dd/MM/yyyy") + ' ' + cmbHoraLlegada.Text;
+                    
+                    var fechaHoraS = Convert.ToDateTime(fechaHoraSalida);
+                    var fechaHoraL = Convert.ToDateTime(fechaHoraLlegada);
+
+                    //ACTUALIZO DATOS DE BS SEGUN QUE DATO ???
+                    string consulta = $"UPDATE Vuelo SET FechaHoraSalida = '{fechaHoraS.ToString("dd-MM-yyyy HH:mm")}', FechaHoraLlegada = '{fechaHoraL.ToString("dd-MM-yyyy HH:mm")}', " +
+                                      $"NroAvion = '{cmbNuevoA.SelectedValue.ToString()}', IdTipoAvion = {txtNuevoTA.Text}, IdAeropuerto = '{cmbNuevoAO.SelectedValue.ToString()}'," +
+                                      $" IdAeropuertoDestino = '{cmbNuevoAD.SelectedValue.ToString()}', Estado = '{cmbNuevoEstado.SelectedValue.ToString()})";
+                    var carga = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                    MessageBox.Show("Se modificaron los datos del Vuelo!");
+                    //LimpiarCampos();
+                    formVuelo ventanaVuelo = new formVuelo();
+                    ventanaVuelo.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se ha podido Registrar el Vuelo");
+                }
+            }
+            else
+            { this.Close(); }
+
 
         }
 
@@ -97,6 +136,37 @@ namespace Principal.Ventanas.Vuelos
         }
 
         private void cmbNuevoA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Avion avion = (Avion)cmbNuevoA.SelectedItem;
+
+            if (cmbNuevoA.SelectedIndex != -1)
+            {
+                try
+                {
+                    /*string consultasql = $"SELECT DescripcionTipo FROM Avion a JOIN TipoAvion tp ON a.IdTipoAvion = tp.IdTipoAvion " +
+                                         $"WHERE a.NroAvion LIKE {avion.idTipo.ToString()}";
+
+                    var res = DBHelper.GetDBHelper().ComandoSQL(consultasql);
+                    txtTipoAvion.Text = res;*/
+
+                    /*string consulta = $"SELECT DescripcionTipo FROM TipoAvion WHERE IdTipoAvion LIKE {avion.idTipo}";
+                    var res = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                    cmbNumAvion.DataSource = res;
+                    txtTipoAvion.Text= res.ToString();*/
+                    txtNuevoTA.Text = avion.idTipo.ToString();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("La consulta ejecutada es incorrecta");
+                }
+            }
+            else
+            {
+                txtNuevoTA.Text = "";
+            }
+        }
+
+        private void btnConfirmarVuelo_Click_1(object sender, EventArgs e)
         {
 
         }
