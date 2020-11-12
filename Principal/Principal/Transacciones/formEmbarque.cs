@@ -51,6 +51,7 @@ namespace Principal.Transacciones
             }
             catch (SqlException ex)
             {
+                MessageBox.Show("No se ha podido Cargar la grilla");
             }
         }
 
@@ -84,7 +85,6 @@ namespace Principal.Transacciones
                     //MessageBox.Show(LeerTexto(consultaVuelo));
 
 
-
                     string consultaTipoDNI = $"SELECT DISTINCT TipoDNI FROM TipoDocumento";
                     var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consultaTipoDNI);
                     cmbTipoDoc.DataSource = combo3;
@@ -100,18 +100,42 @@ namespace Principal.Transacciones
 
 
 
-                    string consultaFecha = $"SELECT DISTINCT FechaHoraEmbarque FROM Embarque WHERE NroVuelo LIKE {nroVuelo}";
-                    if(LeerTexto(consultaFecha) != null)
-                        txtFechaEmbarque.Text = DateTime.Parse(LeerTexto(consultaFecha)).ToString("dd/MM/yyyy HH:mm");
+                    string consultaFecha = $"SELECT DISTINCT FechaHoraSalida FROM Vuelo WHERE NroVuelo LIKE {nroVuelo}";
+                    if(LeerTexto(consultaFecha) != null) {
+                        int horaSalida = int.Parse(validarFecha(nroVuelo).ToString("HH"));
+                        int horaEmbarque = horaSalida - 3;
+                        DateTime fechaEmbarque = DateTime.Parse(validarFecha(nroVuelo).ToString($"dd/MM/yyyy {horaEmbarque}:mm"));
+                        fechaEmbarque = DateTime.Parse(fechaEmbarque.ToString("dd / MM / yyyy HH: mm"));
+                        txtFechaEmbarque.Text = fechaEmbarque.ToString();
+                    }
                     else
                         txtFechaEmbarque.Text = LeerTexto(consultaFecha);
-                    //MessageBox.Show(DateTime.Parse(txtFechaEmbarque.Text).ToString("dd/MM/yyyy HH:mm"));
+
+
                 }
                 catch (SqlException ex)
                 {
                 }
             }
 
+        }
+
+
+        private void CargarGrillaEmbarque() {
+            try
+            {
+                string consulta = $"SELECT FechaHoraEmbarque, NroDNIPasajero FROM Embarque";
+                var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                if (grilla.Rows.Count > 0)
+                {
+                    dgvDatosEmbarques.DataSource = grilla;
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("No se ha podido cargar la Grilla");
+            }
         }
 
         private void ActualizarTipoDoc(string nroVuelo) {
@@ -215,6 +239,17 @@ namespace Principal.Transacciones
                 MessageBox.Show("Complete todos los campos para poder realizar la carga del Embarque");
         }
 
+
+        private DateTime validarFecha(string nroVuelo)
+        {
+            string consultaFecha = $"SELECT FechaHoraSalida FROM Vuelo WHERE NroVuelo = {nroVuelo}";
+            DateTime fechaSalida = DateTime.Parse(LeerTexto(consultaFecha));
+
+            DateTime conversion = DateTime.Parse(fechaSalida.ToString("dd / MM / yyyy HH: mm"));
+
+            return conversion;
+        }
+
         private void CargarNuevoEmbarque() {
 
             Embarque nvEmbarque = new Embarque();
@@ -223,41 +258,50 @@ namespace Principal.Transacciones
             try
             {
                 if (txtFechaEmbarque.MaskCompleted) {
-                    if (DateTime.Parse(txtFechaEmbarque.Text) > DateTime.Now) {
-                        if ((DateTime.Parse(txtFechaEmbarque.Text).Hour < 23 || DateTime.Parse(txtFechaEmbarque.Text).Hour > 0) && (DateTime.Parse(txtFechaEmbarque.Text).Minute % 30) == 0)
+                    if (validarFecha(nvEmbarque.NroVuelo.ToString()) > DateTime.Now)
+                    {
+                        if (DateTime.Parse(txtFechaEmbarque.Text) >= DateTime.Now && DateTime.Parse(txtFechaEmbarque.Text) <= validarFecha(nvEmbarque.NroVuelo.ToString()))
                         {
-                            nvEmbarque.FechaHoraEmbarque = DateTime.Parse(txtFechaEmbarque.Text);
+                            if ((DateTime.Parse(txtFechaEmbarque.Text).Hour < 23 || DateTime.Parse(txtFechaEmbarque.Text).Hour > 0) && (DateTime.Parse(txtFechaEmbarque.Text).Minute % 30) == 0)
+                            {
+                                nvEmbarque.FechaHoraEmbarque = DateTime.Parse(txtFechaEmbarque.Text);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Porfavor ingrese valores de Hora y Minutos válidos(0 a 23 y 0 - 30min)");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Porfavor ingrese valores de Hora y Minutos válidos(0 a 23 y 0 - 30min)");
+                            MessageBox.Show("Porfavor ingrese una fecha válida!");
                         }
+
                     }
-                    else {
-                        MessageBox.Show("Porfavor ingrese una fecha válida!");
-                    }
-                    
-                }
+                    else
+                        MessageBox.Show("El Embarque no se puede modificar ya que este vuelo ha finalizado");
+                } else
+                    MessageBox.Show("Por favor complete todos los datos");
             }
             catch(Exception ex) { 
                     MessageBox.Show("Porfavor ingrese valores de Hora y Minutos válidos (0 a 23 y 0-30min)");
             }
 
-            if (txtNvoNroDoc.Enabled == false)
-            {
-                nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
-                nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
-                nvEmbarque.NroDniPasajero = cmbNroDoc.Text;
-                nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
-                nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
-            }
-            else {
-                nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
-                nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
-                nvEmbarque.NroDniPasajero = txtNvoNroDoc.Text;
-                nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
-                nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
-            }
+                if (txtNvoNroDoc.Enabled == false)
+                {
+                    nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
+                    nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
+                    nvEmbarque.NroDniPasajero = cmbNroDoc.Text;
+                    nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
+                    nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
+                }
+                else {
+                    nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
+                    nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
+                    nvEmbarque.NroDniPasajero = txtNvoNroDoc.Text;
+                    nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
+                    nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
+                }
+            
             NuevoEmbarque(nvEmbarque);
         }
 
@@ -268,29 +312,66 @@ namespace Principal.Transacciones
             SqlConnection cn = new SqlConnection(cadenaDeConexion);
             try
             {
-                SqlCommand cmd = new SqlCommand();
+                if (txtNvoNroDoc.Enabled)
+                {
 
-                string insert = $"INSERT INTO Embarque VALUES ('{embarque.NroVuelo}','{embarque.FechaHoraEmbarque.ToString("dd-MM-yyyy HH:mm")}','{embarque.Aeropuerto}','{embarque.TipoDniPasajero}','{embarque.NroDniPasajero}','{embarque.PuertaEmbarque}','{embarque.Estado}')";
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = insert;
-                
+                    SqlCommand cmd = new SqlCommand();
 
-                cn.Open();
-
-                objTransaccion = cn.BeginTransaction("NuevoEmbarque");
-
-                cmd.Transaction = objTransaccion;
-
-                cmd.Connection = cn;
-
-                cmd.ExecuteNonQuery();
+                    string insertPasajero = $"INSERT INTO Pasajero(TipoDNI, NroDNI, Apellido,Nombre,Estado,FechaNacimiento) VALUES ('{cmbTipoDoc.Text}','{txtNvoNroDoc.Text}','Apellido','Nombre','S','{DateTime.Now}')";
+                    
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = insertPasajero;
 
 
-                objTransaccion.Commit();
+                    cn.Open();
 
-                MessageBox.Show("Embarque cargado con éxito!");
+                    objTransaccion = cn.BeginTransaction("NuevoEmbarque");
 
-                this.Close();
+                    cmd.Transaction = objTransaccion;
+
+                    cmd.Connection = cn;
+
+                    cmd.ExecuteNonQuery();
+
+                    string insert = $"INSERT INTO Embarque VALUES ('{embarque.NroVuelo}','{embarque.FechaHoraEmbarque.ToString("dd-MM-yyyy HH:mm")}','{embarque.Aeropuerto}','{embarque.TipoDniPasajero}','{embarque.NroDniPasajero}','{embarque.PuertaEmbarque}','{embarque.Estado}')";
+                    cmd.CommandText = insert;
+
+                    cmd.ExecuteNonQuery();
+
+
+
+                    objTransaccion.Commit();
+
+                    MessageBox.Show("Embarque cargado con éxito!");
+
+                    this.Close();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand();
+
+                    string insert = $"INSERT INTO Embarque VALUES ('{embarque.NroVuelo}','{embarque.FechaHoraEmbarque.ToString("dd-MM-yyyy HH:mm")}','{embarque.Aeropuerto}','{embarque.TipoDniPasajero}','{embarque.NroDniPasajero}','{embarque.PuertaEmbarque}','{embarque.Estado}')";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = insert;
+
+
+                    cn.Open();
+
+                    objTransaccion = cn.BeginTransaction("NuevoEmbarque");
+
+                    cmd.Transaction = objTransaccion;
+
+                    cmd.Connection = cn;
+
+
+                    cmd.ExecuteNonQuery();
+
+                    objTransaccion.Commit();
+
+                    MessageBox.Show("Embarque cargado con éxito!");
+
+                    this.Close();
+                }
 
                 return true;
             }
@@ -425,6 +506,11 @@ namespace Principal.Transacciones
                         }
                     }
                 }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CargarGrillaEmbarque();
         }
     }
 }
