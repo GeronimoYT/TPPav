@@ -144,13 +144,20 @@ namespace Principal.Ventanas
         {
             formAltaVuelo _formAltaVuelo = new formAltaVuelo();
             _formAltaVuelo.Show();
-         }
+        }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var E = dgvVuelos.CurrentRow.Cells[7].Value.ToString();
-            formModificarVuelo modificar = new formModificarVuelo(cargarVuelo());
-            modificar.Show();
+            string E = dgvVuelos.CurrentRow.Cells[7].Value.ToString();
+            if (E != "Finalizado")
+            {
+                formModificarVuelo modificar = new formModificarVuelo(cargarVuelo());
+                modificar.Show();
+            }
+            else
+            {
+                MessageBox.Show("No se puede Modificar datos de un Vuelo ya finalizado");
+            }
         }
 
         private Vuelo cargarVuelo()
