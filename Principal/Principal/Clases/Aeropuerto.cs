@@ -30,6 +30,11 @@ namespace Principal.Clases
             this.cantPuertasEmbarque = cantPuertasEmbarque;
             this.cantMangasVuelo = cantMangasVuelo;
         }
+        //agregue este para formAltaPasaje
+        public Aeropuerto(int idAeropuerto)
+        {
+            this.idAeropuerto = idAeropuerto;
+        }
 
         public int IdAeropuerto
         {

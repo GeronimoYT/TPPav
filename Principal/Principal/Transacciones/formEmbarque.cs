@@ -523,6 +523,11 @@ namespace Principal.Transacciones
         {
             CargarGrillaEmbarque();
         }
+
+        private void formEmbarque_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

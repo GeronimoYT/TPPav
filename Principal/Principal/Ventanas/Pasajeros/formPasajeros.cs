@@ -1,5 +1,6 @@
 ﻿using Principal.Clases;
 using Principal.Clases.Servicios;
+using Principal.Transacciones.Pasajes;
 using Principal.Utils;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,10 @@ namespace Principal.Ventanas
         private formPrincipal _frmPrincipal;
         private TipoDocumentosServicio _tipoDocumentosServicio;
         private formAltaPasaje _frmAltaPasaje;
+        private formEditarPasaje _frmEditarPasaje;
         private bool flag;
         private bool flagPrincipal;
+        private string flagPasaje;
 
         public formPasajeros(formPrincipal principal)
         {
@@ -38,6 +41,17 @@ namespace Principal.Ventanas
             _tipoDocumentosServicio = new TipoDocumentosServicio();
             _frmAltaPasaje = altaPasaje;
             flagPrincipal = false;
+            flagPasaje = "alta";
+            InitializeComponent();
+        }
+        public formPasajeros(formEditarPasaje editarPasaje)
+        {
+
+            _pasajerosServicio = new PasajerosServicio();
+            _tipoDocumentosServicio = new TipoDocumentosServicio();
+            _frmEditarPasaje = editarPasaje;
+            flagPrincipal = false;
+            flagPasaje = "editar";
             InitializeComponent();
         }
 
@@ -90,7 +104,9 @@ namespace Principal.Ventanas
             }
             if (!flag)
             {
+
                 flag = true; txtEdadDesde.Text = null; txtEdadHasta.Text = null;
+                
             }
         }
         public void ConsultarPasajeros()
@@ -103,7 +119,20 @@ namespace Principal.Ventanas
             var incluirEnBaja = ckIncluirEnBaja.Checked;
 
             var pasajeros = _pasajerosServicio.ObtenerPasajeros(tipoDocumentoIngresado, nroDocumentoIngresado, apellidoIngresado, nombreIngresado, incluirEnBaja);
-            CargarGrilla(pasajeros);
+            
+            if (!string.IsNullOrEmpty(txtEdadDesde.Text.ToString()) && !string.IsNullOrEmpty(txtEdadHasta.Text.ToString()))
+            {
+                if (Convert.ToInt32(txtEdadDesde.Text) > Convert.ToInt32(txtEdadHasta.Text))
+                {
+                    MessageBox.Show("el valor 'Edad Desde' es mayor a 'Edad Hasta'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    CargarGrilla(pasajeros);
+                }
+            }
+            else { CargarGrilla(pasajeros); }
+
         }
         private void CargarTipoDocumento()
         {
@@ -168,8 +197,16 @@ namespace Principal.Ventanas
                 this.Dispose();
             }
             else {
-                _frmAltaPasaje.Show();
-                this.Dispose();
+                if (flagPasaje == "alta") {
+                    _frmAltaPasaje.Show();
+                    this.Dispose();
+                }
+                if (flagPasaje == "editar")
+                {
+                    _frmEditarPasaje.Show();
+                    this.Dispose();
+                }
+
             }
             
         }
@@ -181,7 +218,7 @@ namespace Principal.Ventanas
             {
                 if (Convert.ToInt32(txtEdadDesde.Text) > Convert.ToInt32(txtEdadHasta.Text))
                 {
-
+                    //MessageBox.Show("el valor 'Edad Desde' es mayor a 'Edad Hasta'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     flag = false;
                     return false;
                 }
@@ -201,13 +238,13 @@ namespace Principal.Ventanas
                     txtEdadDesde.Text = "0";
                     return true;
                 }
-                return false;
+                //return false;
             }
-            if (string.IsNullOrEmpty(txtEdadDesde.Text.ToString()) && string.IsNullOrEmpty(txtEdadHasta.Text.ToString()))
+            /*if (string.IsNullOrEmpty(txtEdadDesde.Text.ToString()) && string.IsNullOrEmpty(txtEdadHasta.Text.ToString()))
             {
-
+                flag = false;
                 return false;
-            }
+            }*/
 
             flag = false;
             return false;
@@ -216,23 +253,14 @@ namespace Principal.Ventanas
 
         private void txtEdadDesde_KeypressKeyPress(object sender, KeyPressEventArgs e)
         {
-            //Para obligar a que sólo se introduzcan números
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
+            EscribirSoloNumeros(e);
         }
         private void txtEdadHasta_KeypressKeyPress(object sender, KeyPressEventArgs e)
+        {
+            EscribirSoloNumeros(e);
+            
+        }
+        public void EscribirSoloNumeros(KeyPressEventArgs e)
         {
             //Para obligar a que sólo se introduzcan números
             if (Char.IsDigit(e.KeyChar))

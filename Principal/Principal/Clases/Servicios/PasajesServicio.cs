@@ -37,6 +37,16 @@ namespace Principal.Clases.Servicios
         {
             _repositorio.ActualizarPasaje(_pasaje);
         }
+        public Pasaje ValidarPasaje(Pasaje _pasaje)
+        {
+            
+            _pasaje.ValidarTipoDocumento();
+            _pasaje.ValidarNroDocumento();
+            _pasaje.ValidarTipoClase();
+            _pasaje.CalcularPrecio();
+            return _pasaje;
+        }
+        
 
     }
 }

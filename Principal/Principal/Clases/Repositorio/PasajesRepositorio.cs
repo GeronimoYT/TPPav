@@ -15,14 +15,29 @@ namespace Principal.Clases.Repositorio
             List<Pasaje> pasajes = new List<Pasaje>();
 
 
-            var sentenciaSql = "SELECT pa.NroPasaje,pa.MotivoViaje,p.*, tp.*" +
-                "FROM Pasajero p join TipoDocumento td on p.TipoDNI=td.TipoDNI," +
-                " Pasaje pa join TipoPasaje tp on tp.IdTipoPasaje = pa.TipoPasaje " +
-                "where(pa.NroDNI = p.NroDNI and pa.TipoDNI = p.TipoDNI) and NroPasaje like '%%' ";
-            if (f.TipoDocumento != "Seleccionar") { sentenciaSql += $" and p.TipoDNI like '{f.TipoDocumento}%'"; }
+            
+            var sentenciaSql = "select DISTINCT pa.NroPasaje,pa.MotivoViaje,pa.Precio,tp.*,p.*," +
+               "v.NroVuelo,ao.Domicilio Origen,ao.Nombre as AeropuertoOrigen,ao.IdAeropuerto as IdAeropuertoOrigen," +
+               "ad.Domicilio as Destino,ad.Nombre as AeropuertoDestino,ad.IdAeropuerto as IdAeropuertoDestino," +
+               "av.Descripcion as NombreAvion, ta.DescripcionTipo " +
+               "from Pasaje pa join Pasajero p on (pa.NroDNI=p.NroDNI and pa.TipoDNI=p.TipoDNI) " +
+               "join TipoDocumento td on p.TipoDNI=td.TipoDNI " +
+               "join TipoPasaje tp on tp.IdTipoPasaje=pa.TipoPasaje " +
+               "join Vuelo v on (pa.NroVuelo=v.NroVuelo) " +
+               "join Aeropuerto ao on (v.IdAeropuerto=ao.IdAeropuerto) " +
+               "join Aeropuerto ad on (v.IdAeropuertoDestino=ad.IdAeropuerto)  " +
+               "join Avion av on (v.IdTipoAvion=av.IdTipoAvion and v.NroAvion=av.NroAvion) " +
+               "join TipoAvion ta on (av.IdTipoAvion=ta.IdTipoAvion) " +
+               "where NroPasaje like '%%'";
+            
+            if (f.TipoDocumento != "Seleccionar") { sentenciaSql += $" and pa.TipoDNI like '{f.TipoDocumento}%'"; }
             if (f.TipoPasajeId != 0) { sentenciaSql += $" AND pa.TipoPasaje = {f.TipoPasajeId}"; }
-            if (!string.IsNullOrEmpty(f.NroDocumento)) { sentenciaSql += $" and p.NroDNI like '%{f.NroDocumento}%'"; }
-
+            if (!string.IsNullOrEmpty(f.NroDocumento)) { sentenciaSql += $" and pa.NroDNI like '%{f.NroDocumento}%'"; }
+            if(f.IdAeropuertoOrigen != 0) { sentenciaSql += $" and ao.IdAeropuerto like '%{f.IdAeropuertoOrigen}%'"; }
+            if (f.IdAeropuertoDestino != 0) { sentenciaSql += $" and ad.IdAeropuerto like '%{f.IdAeropuertoDestino}%'"; }
+            if (f.Origen != "Seleccionar") { sentenciaSql += $" and ao.Domicilio like '%{f.Origen}%'"; }
+            if (f.Destino != "Seleccionar") { sentenciaSql += $" and ad.Domicilio like '%{f.Destino}%'"; }
+            //if (f.PuertaEmbarque!=0) { sentenciaSql += $" and e.PuertaEmbarque like '%{f.PuertaEmbarque}%'"; }
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             foreach (DataRow fila in tabla.Rows)
             {
@@ -37,7 +52,10 @@ namespace Principal.Clases.Repositorio
             var pasaje = new Pasaje();
             pasaje.Id = Convert.ToInt32(fila["NroPasaje"].ToString());
             pasaje.Motivo = fila["MotivoViaje"].ToString();
-            //pasaje.Precio = Convert.ToInt32(fila["Precio"].ToString());
+            if(fila["Precio"].ToString() != null)
+            {
+                pasaje.Precio = Convert.ToInt32(fila["Precio"].ToString());
+            }
             pasaje.NroDocumento = new Pasajero()
             {
                 NroDocumento = fila["NroDNI"].ToString(),
@@ -58,8 +76,22 @@ namespace Principal.Clases.Repositorio
                 Id = Convert.ToInt32(fila["IdTipoPasaje"].ToString()),
                 Detalle = fila["Descripcion"].ToString()
             };
+            pasaje.AeropuertoOrigen = new Aeropuerto();
+            pasaje.AeropuertoOrigen.IdAeropuerto = Convert.ToInt32(fila["IdAeropuertoOrigen"].ToString());
+            pasaje.AeropuertoOrigen.Nombre = fila["AeropuertoOrigen"].ToString();
+            pasaje.AeropuertoOrigen.Domicilio = fila["Origen"].ToString();
+            pasaje.AeropuertoDestino = new Aeropuerto();
+            pasaje.AeropuertoDestino.IdAeropuerto = Convert.ToInt32(fila["IdAeropuertoDestino"].ToString());
+            pasaje.AeropuertoDestino.Nombre = fila["AeropuertoDestino"].ToString();
+            pasaje.AeropuertoDestino.Domicilio = fila["Destino"].ToString();
+            /*pasaje.Vuelo = new VueloV2();
+            pasaje.Vuelo.Estado = new Estado();
+            pasaje.Vuelo.Estado.IdEstado = Convert.ToInt32(fila["Estado"].ToString());*/
+            /*pasaje.Embarque = new EmbarqueV2();
+            pasaje.Embarque.PuertaEmbarque = Convert.ToInt32(fila["PuertaEmbarque"].ToString());*/
             return pasaje;
         }
+       
         public void Registrar(Pasaje p)
         {
             using (var tx = DBHelper.GetDBHelper().IniciarTransaccion())
@@ -71,27 +103,18 @@ namespace Principal.Clases.Repositorio
                         sql += ", Precio";
                     if (p.TieneMotivo())
                         sql += ", MotivoViaje";
-                    sql += $") VALUES({p.IdTipoPasaje.Id}, '{p.TipoDocumento.Id}', '{p.NroDocumento.NroDocumento}'";
+                    sql += $",NroVuelo,FechaHoraSalida,FechaHoraLlegada,IdAeropuertoSalida) " +
+                        $"VALUES({p.IdTipoPasaje.Id}, '{p.TipoDocumento.Id}', '{p.NroDocumento.NroDocumento}'";
                     if (p.TienePrecio())
                         sql += $", {p.Precio}";
                     if (p.TieneMotivo())
-                        sql += $", {p.Motivo}";
-                    sql += ")";
+                        sql += $", '{p.Motivo}'";
+                    sql += $",{p.Vuelo.NroVuelo},'{p.Vuelo.FechaHoraSalida}','{p.Vuelo.FechaHoraLlegada}',{p.AeropuertoOrigen.IdAeropuerto})";
                     p.Id = DBHelper.GetDBHelper().EjecutarTransaccionSQL(sql);
-                    /*
-                    sql = $"INSERT INTO BugsHistorico (fecha_historico, titulo, descripcion, id_bug, id_usuario_responsable, id_producto, id_estado";
-                    if (b.TienePrioridad())
-                        sql += ", id_prioridad";
-                    if (b.TieneCriticidad())
-                        sql += ", id_criticidad";
-                    sql += $") VALUES('{DateTime.Today.ToString("yyyy-MM-dd")}', '{b.Titulo}', '{b.Descripcion}', {b.Id}, " +
-                       $"{b.UsuarioResponsable.Id}, {b.Producto.Id},  {b.Estado.Id}";
-                    if (b.TienePrioridad())
-                        sql += $", {b.Prioridad.Id}";
-                    if (b.TieneCriticidad())
-                        sql += $", {b.Criticidad.Id}";
-                    sql += ")";
-                    DBHelper.GetDBHelper().EjecutarTransaccionSQL(sql);*/
+                    
+                    
+
+                    
                     tx.Commit();
                 }
                 catch (Exception ex)
@@ -110,12 +133,23 @@ namespace Principal.Clases.Repositorio
         public Pasaje ObtenerPasaje(PasajesFiltros f)
         {
             Pasaje pasajeResultado = null;
-
-            var sentenciaSql = "SELECT pa.NroPasaje,pa.MotivoViaje,p.*, tp.*" +
-                "FROM Pasajero p join TipoDocumento td on p.TipoDNI=td.TipoDNI," +
-                " Pasaje pa join TipoPasaje tp on tp.IdTipoPasaje = pa.TipoPasaje " +
-                "where(pa.NroDNI = p.NroDNI and pa.TipoDNI = p.TipoDNI)" +
-                $" and pa.NroPasaje = {f.Id}  and pa.TipoDNI = '{f.TipoDocumento}' and pa.NroDNI = '{f.NroDocumento}'";
+            var sentenciaSql = " Select pa.NroPasaje,pa.MotivoViaje,pa.precio,tp.*,p.*, " +
+                "v.NroVuelo,v.FechaHoraSalida,v.FechaHoraLlegada," +
+                "datediff(MINUTE, v.FechaHoraSalida, v.FechaHoraLlegada) as CantidadMinutos," +
+                "ao.Nombre as AeropuertoOrigen,ao.Domicilio as Origen,ao.IdAeropuerto as IdAeropuertoOrigen ," +
+                "ad.Nombre as AeropuertoDestino,ad.Domicilio as Destino,ad.IdAeropuerto as IdAeropuertoDestino," +
+                "ev.IdEstado as IdEstadoVuelo, ev.NombreEstado as EstadoVuelo , v.NroAvion,v.IdTipoAvion " +
+                "from Pasaje pa join Pasajero p on (pa.NroDNI=p.NroDNI and pa.TipoDNI=p.TipoDNI) " +
+                "join TipoDocumento td on p.TipoDNI=td.TipoDNI " +
+                "join TipoPasaje tp on tp.IdTipoPasaje=pa.TipoPasaje " +
+                "join Vuelo v on (v.NroVuelo=pa.NroVuelo) " +
+                "join Estado ev on (v.Estado=ev.IdEstado) " +
+                "join Ambito am on ev.Ambito=am.IdAmbito " +
+                "join Aeropuerto ao on (v.IdAeropuerto=ao.IdAeropuerto) " +
+                "join Aeropuerto ad on (v.IdAeropuertoDestino=ad.IdAeropuerto) " +
+                "join Avion av on (v.IdTipoAvion=av.IdTipoAvion and v.NroAvion=av.NroAvion) " +
+                "join TipoAvion ta on (av.IdTipoAvion=ta.IdTipoAvion) " +
+                $" where pa.NroPasaje = {f.Id}  and pa.TipoDNI = '{f.TipoDocumento}' and pa.NroDNI = '{f.NroDocumento}'";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             if (tabla.Rows.Count == 1)
             {
@@ -146,6 +180,19 @@ namespace Principal.Clases.Repositorio
                     Id = Convert.ToInt32(row["IdTipoPasaje"].ToString()),
                     Detalle = row["Descripcion"].ToString()
                 };
+                pasajeBD.AeropuertoOrigen = new Aeropuerto();
+                pasajeBD.AeropuertoOrigen.IdAeropuerto = Convert.ToInt32(row["IdAeropuertoOrigen"].ToString());
+                pasajeBD.AeropuertoOrigen.Nombre = row["AeropuertoOrigen"].ToString();
+                pasajeBD.AeropuertoOrigen.Domicilio = row["Origen"].ToString();
+                pasajeBD.AeropuertoDestino= new Aeropuerto();
+                pasajeBD.AeropuertoDestino.IdAeropuerto = Convert.ToInt32(row["IdAeropuertoDestino"].ToString());
+                pasajeBD.AeropuertoDestino.Nombre = row["AeropuertoDestino"].ToString();
+                pasajeBD.AeropuertoDestino.Domicilio = row["Destino"].ToString();
+                pasajeBD.Vuelo = new VueloV2();
+                pasajeBD.Vuelo.Estado = new Estado();
+                pasajeBD.Vuelo.Estado.IdEstado = Convert.ToInt32(row["IdEstadoVuelo"].ToString());
+
+
                 return pasajeBD;
             }
             return pasajeResultado;
@@ -153,19 +200,21 @@ namespace Principal.Clases.Repositorio
 
         public void ActualizarPasaje(Pasaje p)
         {
-            /*var sentenciaSql = $"UPDATE Pasajero SET apellido='{_pasajero.Apellido}',nombre='{_pasajero.Nombre}',telefono='{_pasajero.Telefono}'," +
-                $" email='{_pasajero.Email}' WHERE tipoDocumento='{_pasajero.TipoDocumento.Id}'" +
-                $" and nroDocumento='{_pasajero.NroDocumento}' and fechaNacimiento='{_pasajero.FechaNacimiento}'";
-            var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
-            return filasAfectadas;*/
+            
             using (var tx = DBHelper.GetDBHelper().IniciarTransaccion())
             {
                 try
                 {
                     var sql = $"UPDATE Pasaje SET TipoDNI = '{p.TipoDocumento.Id}', NroDNI = '{p.NroDocumento.NroDocumento}'," +
-                        $" TipoPasaje = {p.IdTipoPasaje.Id} where NroPasaje = {p.Id}";
-
+                        $" TipoPasaje = {p.IdTipoPasaje.Id},NroVuelo = {p.Vuelo.NroVuelo}, FechaHoraSalida = '{p.Vuelo.FechaHoraSalida}'" +
+                        $",FechaHoraLlegada ='{p.Vuelo.FechaHoraLlegada}',IdAeropuertoSalida = {p.AeropuertoOrigen.IdAeropuerto} ";
+                    if (p.TieneMotivo())
+                        sql += $", MotivoViaje ='{p.Motivo}'";
+                    if (p.TienePrecio())
+                        sql += $", Precio={p.Precio}"; 
+                    sql += $" where NroPasaje = {p.Id}";
                     DBHelper.GetDBHelper().EjecutarUpdateTransaccionSQL(sql);
+                    
                     /*
                     sql = $"INSERT INTO BugsHistorico (fecha_historico, titulo, descripcion, id_bug, id_usuario_responsable, id_producto, id_estado";
                     if (b.TienePrioridad())
@@ -194,6 +243,31 @@ namespace Principal.Clases.Repositorio
                     DBHelper.GetDBHelper().CloseConnection();
                 }
             }
+
         }
+
+        /*public void ConsultarPasaje(PasajesFiltros f)
+        {
+            Pasaje pasajeResultado = null;
+            var sentenciaSql = " Select pa.NroPasaje,pa.MotivoViaje,pa.precio,tp.*,p.*, " +
+                "v.NroVuelo,v.FechaHoraSalida,v.FechaHoraLlegada," +
+                "datediff(MINUTE, v.FechaHoraSalida, v.FechaHoraLlegada) as CantidadMinutos," +
+                "ao.Nombre as AeropuertoOrigen,ao.Domicilio as Origen,ao.IdAeropuerto as IdAeropuertoOrigen ," +
+                "ad.Nombre as AeropuertoDestino,ad.Domicilio as Destino,ad.IdAeropuerto as IdAeropuertoDestino," +
+                "ev.IdEstado as IdEstadoVuelo, ev.NombreEstado as EstadoVuelo , v.NroAvion,v.IdTipoAvion " +
+                "from Pasaje pa join Pasajero p on (pa.NroDNI=p.NroDNI and pa.TipoDNI=p.TipoDNI) " +
+                "join TipoDocumento td on p.TipoDNI=td.TipoDNI " +
+                "join TipoPasaje tp on tp.IdTipoPasaje=pa.TipoPasaje " +
+                "join Vuelo v on (v.NroVuelo=pa.NroVuelo) " +
+                "join Estado ev on (v.Estado=ev.IdEstado) " +
+                "join Ambito am on ev.Ambito=am.IdAmbito " +
+                "join Aeropuerto ao on (v.IdAeropuerto=ao.IdAeropuerto) " +
+                "join Aeropuerto ad on (v.IdAeropuertoDestino=ad.IdAeropuerto) " +
+                "join Avion av on (v.IdTipoAvion=av.IdTipoAvion and v.NroAvion=av.NroAvion) " +
+                "join TipoAvion ta on (av.IdTipoAvion=ta.IdTipoAvion) ";
+            sentenciaSql += $"where pa.NroPasaje={f.Id} and pa.TipoDNI='{f.TipoDocumento}' and pa.NroDNI='{f.NroDocumento}" +
+                $"and ev.IdEstado !=11'";
+
+        }*/
     }
 }

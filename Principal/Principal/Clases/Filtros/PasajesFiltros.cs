@@ -16,5 +16,14 @@ namespace Principal.Clases.Filtros
 
         public int TipoPasajeId { get; set; }
 
+        public int IdAeropuertoOrigen { get; set; }
+        public int IdAeropuertoDestino { get; set; }
+        
+        //cuidado cambie Orifen y Destino de tipo int a  string
+        public string Origen { get; set; }
+        public string Destino { get; set; }
+
+        public int PuertaEmbarque { get; set; }
+
     }
 }

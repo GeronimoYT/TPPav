@@ -408,10 +408,14 @@
             this.Name = "formEmbarque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Embarque";
+
             this.gbEmbarque.ResumeLayout(false);
             this.gbEmbarque.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmbarques)).EndInit();
+
+            this.Load += new System.EventHandler(this.formEmbarque_Load);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

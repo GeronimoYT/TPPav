@@ -68,8 +68,11 @@
   <ItemGroup>
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
+    <Compile Include="Clases\AvionV2.cs" />
+    <Compile Include="Clases\EmbarqueV2.cs" />
     <Compile Include="Clases\Equipaje.cs" />
     <Compile Include="Clases\Estado.cs" />
+
     <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Servicios\VuelosServicio.cs" />
@@ -77,7 +80,19 @@
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoEquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
+
+    <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
+    <Compile Include="Clases\Repositorio\AeropuertosRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\EmbarquesRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
+    <Compile Include="Clases\Repositorio\EstadosRepositorio.cs" />
+
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
+    <Compile Include="Clases\Servicios\AeropuertosServicio.cs" />
+    <Compile Include="Clases\Servicios\EmbarquesServicio.cs" />
+    <Compile Include="Clases\Servicios\EstadosServicio.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
@@ -97,12 +112,16 @@
     <Compile Include="Clases\Servicios\PasajesServicio.cs" />
     <Compile Include="Clases\Servicios\TipoPasajesServicio.cs" />
     <Compile Include="Clases\TipoPasaje.cs" />
+
     <Compile Include="Transacciones\formEquipajes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transacciones\formEquipajes.Designer.cs">
       <DependentUpon>formEquipajes.cs</DependentUpon>
     </Compile>
+
+    <Compile Include="Clases\VueloV2.cs" />
+
     <Compile Include="Informes y Reportes\DatosAeropuerto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

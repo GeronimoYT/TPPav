@@ -164,7 +164,7 @@
             this.groupBox1.Size = new System.Drawing.Size(268, 272);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
+            this.groupBox1.Text = "Filtros Pasajero";
             // 
             // groupBox2
             // 
@@ -211,9 +211,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(7, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Edad Entre:";
+            this.label5.Text = "Edad Desde:";
             // 
             // txtNroDocumento
             // 
@@ -357,7 +357,7 @@
             this.Controls.Add(this.btnCerrar);
             this.Name = "formPasajeros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formPasajeros";
+            this.Text = "Pasajeros";
             this.Load += new System.EventHandler(this.formPasajeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).EndInit();
             this.groupBox1.ResumeLayout(false);

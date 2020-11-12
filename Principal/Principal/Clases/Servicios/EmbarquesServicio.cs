@@ -20,5 +20,9 @@ namespace Principal.Clases.Servicios
         {
             return _repositorio.ObtenerEmbarques();
         }
+        public List<EmbarqueV2> ObtenerEmbarques(string Origen, string Destino)
+        {
+            return _repositorio.ObtenerEmbarquesV2(Origen,Destino);
+        }
     }
 }

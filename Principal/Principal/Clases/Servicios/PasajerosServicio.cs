@@ -24,9 +24,9 @@ namespace Principal.Clases.Servicios
         {
             return _repositorio.ObtenerPasajeros(tipoDocumento, nroDocumento, apellido, nombre, estado);
         }
-        public List<Pasajero> ObtenerPasajeros(string tipoDocumento)
+        public List<Pasajero> ObtenerPasajeros(string tipoDocumento,bool registro)
         {
-            return _repositorio.ObtenerPasajeros(tipoDocumento);
+            return _repositorio.ObtenerPasajeros(tipoDocumento,registro);
 
         }
 
