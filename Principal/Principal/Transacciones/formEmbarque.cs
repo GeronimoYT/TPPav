@@ -25,7 +25,7 @@ namespace Principal.Transacciones
         }
 
 
-        private Vuelo CargarVuelo()
+        /*private Vuelo CargarVuelo()
         {
 
             Vuelo vuelo = new Vuelo();
@@ -34,7 +34,7 @@ namespace Principal.Transacciones
             vuelo.AeropuertoDestino = (Aeropuerto) dgvVuelo.CurrentRow.Cells[2].Value;
 
             return vuelo;
-        }
+        }*/
 
         private void CargaGrilla(string nroVuelo)
         {
