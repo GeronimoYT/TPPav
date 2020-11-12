@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
             this.comboTipoDocumento = new System.Windows.Forms.ComboBox();
             this.comboCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,28 +41,32 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureDocumento = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDocumento)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(250, 84);
+            this.txtNroDocumento.Location = new System.Drawing.Point(261, 84);
             this.txtNroDocumento.Name = "txtNroDocumento";
-            this.txtNroDocumento.Size = new System.Drawing.Size(94, 22);
+            this.txtNroDocumento.Size = new System.Drawing.Size(103, 22);
             this.txtNroDocumento.TabIndex = 29;
+            this.txtNroDocumento.TextChanged += new System.EventHandler(this.txtNroDocumento_TextChanged);
             this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeyPress);
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(144, 254);
+            this.txtDescripcion.Location = new System.Drawing.Point(144, 221);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(200, 61);
+            this.txtDescripcion.Size = new System.Drawing.Size(250, 61);
             this.txtDescripcion.TabIndex = 28;
             this.txtDescripcion.Text = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 254);
+            this.label7.Location = new System.Drawing.Point(44, 221);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 17);
             this.label7.TabIndex = 27;
@@ -72,38 +75,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 87);
+            this.label5.Location = new System.Drawing.Point(44, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 17);
+            this.label5.Size = new System.Drawing.Size(85, 17);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Documento";
+            this.label5.Text = "Documento*";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 214);
+            this.label4.Location = new System.Drawing.Point(44, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.Size = new System.Drawing.Size(45, 17);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Peso";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Numero";
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(144, 168);
-            this.txtNumero.MaxLength = 9;
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(200, 22);
-            this.txtNumero.TabIndex = 21;
-            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            this.label4.Text = "Peso*";
             // 
             // comboTipoDocumento
             // 
@@ -119,9 +104,9 @@
             // 
             this.comboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboCategoria.FormattingEnabled = true;
-            this.comboCategoria.Location = new System.Drawing.Point(144, 211);
+            this.comboCategoria.Location = new System.Drawing.Point(144, 178);
             this.comboCategoria.Name = "comboCategoria";
-            this.comboCategoria.Size = new System.Drawing.Size(200, 24);
+            this.comboCategoria.Size = new System.Drawing.Size(250, 24);
             this.comboCategoria.TabIndex = 31;
             // 
             // label1
@@ -136,7 +121,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(261, 341);
+            this.btnAceptar.Location = new System.Drawing.Point(311, 301);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(83, 26);
             this.btnAceptar.TabIndex = 33;
@@ -146,7 +131,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(165, 341);
+            this.btnCancelar.Location = new System.Drawing.Point(215, 301);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(83, 26);
             this.btnCancelar.TabIndex = 34;
@@ -172,11 +157,21 @@
             this.label6.TabIndex = 36;
             this.label6.Text = "Datos Equipaje:";
             // 
+            // pictureDocumento
+            // 
+            this.pictureDocumento.Location = new System.Drawing.Point(370, 84);
+            this.pictureDocumento.Name = "pictureDocumento";
+            this.pictureDocumento.Size = new System.Drawing.Size(24, 22);
+            this.pictureDocumento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureDocumento.TabIndex = 37;
+            this.pictureDocumento.TabStop = false;
+            // 
             // AltaEquipaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 379);
+            this.ClientSize = new System.Drawing.Size(406, 339);
+            this.Controls.Add(this.pictureDocumento);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
@@ -189,11 +184,10 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNumero);
             this.Name = "AltaEquipaje";
-            this.Text = "AltaEquipaje";
+            this.Text = "Nuevo Equipaje";
             this.Load += new System.EventHandler(this.AltaEquipaje_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDocumento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,8 +200,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.ComboBox comboTipoDocumento;
         private System.Windows.Forms.ComboBox comboCategoria;
         private System.Windows.Forms.Label label1;
@@ -215,5 +207,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureDocumento;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

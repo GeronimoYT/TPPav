@@ -64,6 +64,7 @@
             this.label13.Size = new System.Drawing.Size(118, 50);
             this.label13.TabIndex = 75;
             this.label13.Text = "Inserte \r\nUna Imagen";
+            this.label13.Visible = false;
             // 
             // btnQuitarImagen
             // 
@@ -73,6 +74,7 @@
             this.btnQuitarImagen.TabIndex = 72;
             this.btnQuitarImagen.Text = "x";
             this.btnQuitarImagen.UseVisualStyleBackColor = true;
+            this.btnQuitarImagen.Visible = false;
             // 
             // label1
             // 
@@ -86,7 +88,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(478, 406);
+            this.btnGuardar.Location = new System.Drawing.Point(351, 411);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(105, 36);
             this.btnGuardar.TabIndex = 70;
@@ -96,7 +98,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(334, 406);
+            this.btnCancelar.Location = new System.Drawing.Point(207, 411);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(105, 36);
             this.btnCancelar.TabIndex = 69;
@@ -112,6 +114,7 @@
             this.btnAgregarImagen.TabIndex = 68;
             this.btnAgregarImagen.Text = "+";
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Visible = false;
             // 
             // pboxImagen
             // 
@@ -120,6 +123,7 @@
             this.pboxImagen.Size = new System.Drawing.Size(180, 178);
             this.pboxImagen.TabIndex = 67;
             this.pboxImagen.TabStop = false;
+            this.pboxImagen.Visible = false;
             // 
             // label12
             // 
@@ -278,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 459);
+            this.ClientSize = new System.Drawing.Size(478, 459);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnQuitarImagen);
             this.Controls.Add(this.label1);
@@ -304,7 +308,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "ModificacionTipo";
-            this.Text = "ModificacionTipo";
+            this.Text = "Modificar Tipo de Avion";
             this.Load += new System.EventHandler(this.ModificacionTipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagen)).EndInit();
             this.ResumeLayout(false);

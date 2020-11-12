@@ -24,43 +24,31 @@ namespace Principal.Clases
             return aviones;
         }
 
-        public List<Avion> ObtenerAviones(int categoria)
+        public List<Avion> ObtenerAvionesActivos()
         {
             List<Avion> aviones = new List<Avion>();
-            var sentenciaSql = "SELECT * FROM Avion";
+            var sentenciaSql = "SELECT * FROM Avion WHERE Estado = 'S'";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             foreach (DataRow fila in tabla.Rows)
             {
-                if (Convert.ToInt32(fila["IdTipoAvion"].ToString()) == categoria)
-                {
-                    Avion avion = ObtenerAvion(fila);
-                    aviones.Add(avion);
-                }               
+                Avion avion = ObtenerAvion(fila);
+                aviones.Add(avion);
             }
             return aviones;
         }
 
-        public List<Avion> ObtenerAviones(int categoria, int numero)
-        {
-            List<Avion> aviones = new List<Avion>();
-            var sentenciaSql = "SELECT * FROM Avion";
-            var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
-            foreach (DataRow fila in tabla.Rows)
-            {
-                if (Convert.ToInt32(fila["IdTipoAvion"].ToString()) == categoria && Convert.ToInt32(fila["NroAvion"].ToString()) == numero)
-                {
-                    Avion avion = ObtenerAvion(fila);
-                    aviones.Add(avion);
-                }
-            }
-            return aviones;
-        }
+
         private Avion ObtenerAvion(DataRow fila) 
         {
             var avion = new Avion();
             avion.numero = Convert.ToInt32(fila["NroAvion"].ToString());
             avion.idTipo = Convert.ToInt32(fila["IdTipoAvion"].ToString());
             avion.descripcion = fila["descripcion"].ToString();
+
+            string estado = fila["Estado"].ToString();
+            if (estado == "S") { avion.estado = true; }
+            else { avion.estado = false; }
+
             return avion;
         }
 
@@ -83,13 +71,16 @@ namespace Principal.Clases
         {
             try
             {
-                var sentenciaSql = $"Delete from avion where NroAvion = '{avion.numero}'";
+                string estado = "";
+                if (avion.estado) { estado = "S"; }
+                else { estado = "N"; }
+                var sentenciaSql = $"UPDATE Avion SET Estado = '{estado}' WHERE NroAvion = '{avion.numero}' AND IdTipoAvion = '{avion.idTipo}'";
                 DBHelper.GetDBHelper().ComandoSQL(sentenciaSql);
-                MessageBox.Show("Baja Exitosa");
+                MessageBox.Show("Estado actualizado con exito");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.HResult} = {ex.Message}");
             }
         }
 
@@ -103,7 +94,8 @@ namespace Principal.Clases
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                if (ex.HResult.ToString() == "-2146232060") { MessageBox.Show($"Error, no se puede modificar la categoria mientras el avion este asignado a un vuelo."); }
+                else { MessageBox.Show($"Error: {ex.HResult} = {ex.Message}"); }
             }
         }
 

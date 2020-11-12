@@ -59,11 +59,16 @@
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.lblNombreUsuario.Location = new System.Drawing.Point(17, 11);
             this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+
+            this.lblNombreUsuario.Location = new System.Drawing.Point(34, 14);
+            this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblNombreUsuario.Size = new System.Drawing.Size(0, 25);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(0, 29);
             this.lblNombreUsuario.TabIndex = 0;
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNombreUsuario.Visible = false;
@@ -71,21 +76,21 @@
             // aeropuertoToolStripMenuItem
             // 
             this.aeropuertoToolStripMenuItem.Name = "aeropuertoToolStripMenuItem";
-            this.aeropuertoToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.aeropuertoToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.aeropuertoToolStripMenuItem.Text = "Aeropuerto";
             this.aeropuertoToolStripMenuItem.Click += new System.EventHandler(this.aeropuertoToolStripMenuItem_Click);
             // 
             // avionToolStripMenuItem
             // 
             this.avionToolStripMenuItem.Name = "avionToolStripMenuItem";
-            this.avionToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.avionToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
             this.avionToolStripMenuItem.Text = "Avion";
             this.avionToolStripMenuItem.Click += new System.EventHandler(this.avionToolStripMenuItem_Click);
             // 
             // pasajeroToolStripMenuItem
             // 
             this.pasajeroToolStripMenuItem.Name = "pasajeroToolStripMenuItem";
-            this.pasajeroToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.pasajeroToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
             this.pasajeroToolStripMenuItem.Text = "Pasajero";
             this.pasajeroToolStripMenuItem.Click += new System.EventHandler(this.pasajeroToolStripMenuItem_Click);
             // 
@@ -100,15 +105,20 @@
             this.reporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(534, 24);
+
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(712, 28);
+
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // tipoAvionToolStripMenuItem
             // 
             this.tipoAvionToolStripMenuItem.Name = "tipoAvionToolStripMenuItem";
-            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.tipoAvionToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.tipoAvionToolStripMenuItem.Text = "Tipo Avion";
             this.tipoAvionToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
@@ -119,37 +129,46 @@
             this.salidasToolStripMenuItem,
             this.embarquesPorFechaToolStripMenuItem});
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
+
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+
+            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+
             this.reporteToolStripMenuItem.Text = "Salidas";
+            this.reporteToolStripMenuItem.Click += new System.EventHandler(this.tipoAvionToolStripMenuItem_Click);
             // 
             // estadisticasToolStripMenuItem
             // 
             this.estadisticasToolStripMenuItem.Name = "estadisticasToolStripMenuItem";
-            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.estadisticasToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.estadisticasToolStripMenuItem.Text = "Cant Aviones por Tipo";
             this.estadisticasToolStripMenuItem.Click += new System.EventHandler(this.estadisticasToolStripMenuItem_Click);
             // 
             // salidasToolStripMenuItem
             // 
             this.salidasToolStripMenuItem.Name = "salidasToolStripMenuItem";
+
             this.salidasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+
+            this.salidasToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+
             this.salidasToolStripMenuItem.Text = "Salidas";
             this.salidasToolStripMenuItem.Click += new System.EventHandler(this.salidasToolStripMenuItem_Click);
             // 
             // embarquesPorFechaToolStripMenuItem
             // 
             this.embarquesPorFechaToolStripMenuItem.Name = "embarquesPorFechaToolStripMenuItem";
-            this.embarquesPorFechaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.embarquesPorFechaToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.embarquesPorFechaToolStripMenuItem.Text = "Embarques por Nro Vuelo";
             this.embarquesPorFechaToolStripMenuItem.Click += new System.EventHandler(this.embarquesPorFechaToolStripMenuItem_Click);
             // 
             // btnEmbarque
             // 
             this.btnEmbarque.Image = ((System.Drawing.Image)(resources.GetObject("btnEmbarque.Image")));
-            this.btnEmbarque.Location = new System.Drawing.Point(142, 105);
-            this.btnEmbarque.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEmbarque.Location = new System.Drawing.Point(189, 129);
+            this.btnEmbarque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEmbarque.Name = "btnEmbarque";
-            this.btnEmbarque.Size = new System.Drawing.Size(74, 72);
+            this.btnEmbarque.Size = new System.Drawing.Size(99, 89);
             this.btnEmbarque.TabIndex = 2;
             this.btnEmbarque.UseVisualStyleBackColor = true;
             this.btnEmbarque.Click += new System.EventHandler(this.btnEmbarque_Click);
@@ -158,8 +177,7 @@
             // 
             this.lblEmbarque.AutoSize = true;
             this.lblEmbarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmbarque.Location = new System.Drawing.Point(145, 90);
-            this.lblEmbarque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmbarque.Location = new System.Drawing.Point(193, 111);
             this.lblEmbarque.Name = "lblEmbarque";
             this.lblEmbarque.Size = new System.Drawing.Size(63, 13);
             this.lblEmbarque.TabIndex = 3;
@@ -169,21 +187,26 @@
             // 
             this.groupBox1.Controls.Add(this.lblNombreUsuario);
             this.groupBox1.Controls.Add(this.pictureBox1);
+
             this.groupBox1.Location = new System.Drawing.Point(-4, 33);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+
+            this.groupBox1.Location = new System.Drawing.Point(-5, 41);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(316, 42);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(421, 52);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(288, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(384, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -192,8 +215,7 @@
             // 
             this.lblPasaje.AutoSize = true;
             this.lblPasaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasaje.Location = new System.Drawing.Point(154, 205);
-            this.lblPasaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPasaje.Location = new System.Drawing.Point(205, 252);
             this.lblPasaje.Name = "lblPasaje";
             this.lblPasaje.Size = new System.Drawing.Size(45, 13);
             this.lblPasaje.TabIndex = 8;
@@ -202,10 +224,10 @@
             // btnPasaje
             // 
             this.btnPasaje.Image = ((System.Drawing.Image)(resources.GetObject("btnPasaje.Image")));
-            this.btnPasaje.Location = new System.Drawing.Point(142, 220);
-            this.btnPasaje.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPasaje.Location = new System.Drawing.Point(189, 271);
+            this.btnPasaje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPasaje.Name = "btnPasaje";
-            this.btnPasaje.Size = new System.Drawing.Size(74, 72);
+            this.btnPasaje.Size = new System.Drawing.Size(99, 89);
             this.btnPasaje.TabIndex = 7;
             this.btnPasaje.UseVisualStyleBackColor = true;
             this.btnPasaje.Click += new System.EventHandler(this.btnPasaje_Click);
@@ -214,8 +236,7 @@
             // 
             this.lblVuelo.AutoSize = true;
             this.lblVuelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVuelo.Location = new System.Drawing.Point(337, 205);
-            this.lblVuelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVuelo.Location = new System.Drawing.Point(449, 252);
             this.lblVuelo.Name = "lblVuelo";
             this.lblVuelo.Size = new System.Drawing.Size(39, 13);
             this.lblVuelo.TabIndex = 10;
@@ -224,10 +245,10 @@
             // btnVuelo
             // 
             this.btnVuelo.Image = ((System.Drawing.Image)(resources.GetObject("btnVuelo.Image")));
-            this.btnVuelo.Location = new System.Drawing.Point(318, 220);
-            this.btnVuelo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVuelo.Location = new System.Drawing.Point(424, 271);
+            this.btnVuelo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVuelo.Name = "btnVuelo";
-            this.btnVuelo.Size = new System.Drawing.Size(74, 72);
+            this.btnVuelo.Size = new System.Drawing.Size(99, 89);
             this.btnVuelo.TabIndex = 9;
             this.btnVuelo.UseVisualStyleBackColor = true;
             this.btnVuelo.Click += new System.EventHandler(this.btnVuelo_Click);
@@ -236,38 +257,42 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(392, 7);
+            this.lblFecha.Location = new System.Drawing.Point(523, 9);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(0, 13);
+            this.lblFecha.Size = new System.Drawing.Size(0, 17);
             this.lblFecha.TabIndex = 11;
             // 
             // lblEquipaje
             // 
             this.lblEquipaje.AutoSize = true;
             this.lblEquipaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipaje.Location = new System.Drawing.Point(327, 90);
-            this.lblEquipaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEquipaje.Location = new System.Drawing.Point(436, 111);
             this.lblEquipaje.Name = "lblEquipaje";
-            this.lblEquipaje.Size = new System.Drawing.Size(56, 13);
+            this.lblEquipaje.Size = new System.Drawing.Size(71, 17);
             this.lblEquipaje.TabIndex = 13;
             this.lblEquipaje.Text = "Equipaje";
             // 
             // btnEquipaje
             // 
             this.btnEquipaje.Image = ((System.Drawing.Image)(resources.GetObject("btnEquipaje.Image")));
-            this.btnEquipaje.Location = new System.Drawing.Point(318, 105);
-            this.btnEquipaje.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEquipaje.Location = new System.Drawing.Point(424, 129);
+            this.btnEquipaje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEquipaje.Name = "btnEquipaje";
-            this.btnEquipaje.Size = new System.Drawing.Size(74, 72);
+            this.btnEquipaje.Size = new System.Drawing.Size(99, 89);
             this.btnEquipaje.TabIndex = 12;
             this.btnEquipaje.UseVisualStyleBackColor = true;
             this.btnEquipaje.Click += new System.EventHandler(this.btnEquipaje_Click);
             // 
             // formPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(534, 331);
+
+            this.ClientSize = new System.Drawing.Size(712, 407);
+
             this.Controls.Add(this.lblEquipaje);
             this.Controls.Add(this.btnEquipaje);
             this.Controls.Add(this.lblFecha);
@@ -280,7 +305,11 @@
             this.Controls.Add(this.btnEmbarque);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+
             this.Margin = new System.Windows.Forms.Padding(4);
+
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+
             this.Name = "formPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";

@@ -51,7 +51,8 @@ namespace Principal.Ventanas.TiposAvion
             modificarTipo.capacidadEquipaje = Convert.ToInt32(txtEquipaje.Text);
             modificarTipo.salidasEmergencia = Convert.ToInt32(txtSalidas.Text);
 
-            //modificarTipo.id = Convert.ToInt32(txtId.Text);
+            modificarTipo.estado = tipoModificacion.estado;
+            modificarTipo.id = tipoModificacion.id;
             
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operación?", "Modificar Tipo Avion", buttons);

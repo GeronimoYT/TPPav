@@ -89,7 +89,7 @@ namespace Principal.Utils
                 else { e.Handled = true; }//No permite nada
             }
         }
-        public void GenerarTXT(string texto)
+        public void GenerarTXT(string texto) //SIEMPRE USA LA MISMA RUTA, NO FUNCIONA
         {
             string rutaCompleta = @" C:\mi archivo.txt";
 
@@ -106,8 +106,6 @@ namespace Principal.Utils
                 mylogs.WriteLine(texto + strDate);
 
                 mylogs.Close();
-
-
             }
         }
     }

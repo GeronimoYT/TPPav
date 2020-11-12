@@ -43,7 +43,7 @@ namespace Principal.Ventanas.Aviones
             try
             {
                 Avion avion = new Avion();
-                var avionSeleccionado = (TipoEquipaje)comboCategorias.SelectedItem;
+                var avionSeleccionado = (TipoAvion)comboCategorias.SelectedItem;
                 avion.idTipo = avionSeleccionado.id;
                 avion.numero = Convert.ToInt32(txtBoxId.Text);
                 avion.descripcion = rTxtBoxDescripcion.Text;
@@ -51,7 +51,8 @@ namespace Principal.Ventanas.Aviones
                 avionesRep.AltaAvion(avion);
                 CerrarFormuario();
             }
-            catch (Exception ex) {
+            catch (Exception ex) 
+            {
                 MessageBox.Show("No se ha podido realizar la operación");
             }
         }

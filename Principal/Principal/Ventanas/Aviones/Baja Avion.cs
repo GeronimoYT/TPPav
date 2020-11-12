@@ -27,17 +27,14 @@ namespace Principal.Ventanas.Aviones
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult resultado = MessageBox.Show("Está seguro que desea eliminar este Avion?", "Eliminar Avion", buttons);
+            DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operacion?", "Confirmar Operacion", buttons);
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
+                if (radioActivo.Checked) { avion.estado = true; }
+                else { avion.estado = false; }
                 _avionesRep.BajaAvion(avion);
             }
             CerrarFormuario();
@@ -56,8 +53,10 @@ namespace Principal.Ventanas.Aviones
         private void Baja_Avion_Load(object sender, EventArgs e)
         {
             txtNumero.Text = avion.numero.ToString();
-            txtCategoria.Text = avion.idTipo.ToString();
+            txtCategoria.Text = _formAviones.NumeroACategoria(avion.idTipo);
             txtDescripcion.Text = avion.descripcion;
+            if (avion.estado) { radioActivo.Checked = true; }
+            else { radioInactivo.Checked = true; }
         }
 
         private void CerrarFormuario()

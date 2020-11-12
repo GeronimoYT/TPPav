@@ -89,7 +89,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(462, 188);
+            this.btnCancelar.Location = new System.Drawing.Point(466, 212);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 11;
@@ -99,7 +99,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(295, 188);
+            this.btnConfirmar.Location = new System.Drawing.Point(299, 212);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(140, 35);
             this.btnConfirmar.TabIndex = 10;
@@ -157,6 +157,7 @@
             this.txtNuevoNumero.Location = new System.Drawing.Point(360, 44);
             this.txtNuevoNumero.MaxLength = 9;
             this.txtNuevoNumero.Name = "txtNuevoNumero";
+            this.txtNuevoNumero.ReadOnly = true;
             this.txtNuevoNumero.Size = new System.Drawing.Size(202, 22);
             this.txtNuevoNumero.TabIndex = 20;
             this.txtNuevoNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeypressKeyPress);
@@ -180,7 +181,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Name = "Modificacion_Avion";
-            this.Text = "Modificacion_Avion";
+            this.Text = "Modificar Avion";
             this.Load += new System.EventHandler(this.Modificacion_Avion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

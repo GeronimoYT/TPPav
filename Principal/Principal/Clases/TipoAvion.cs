@@ -12,7 +12,7 @@ namespace Principal.Clases
         {
         }
 
-        public TipoAvion(int id, string descripcion, int equipaje, int pasajeros1, int pasajeros2, int emergencia, int longitud, int alcance)
+        public TipoAvion(int id, string descripcion, int equipaje, int pasajeros1, int pasajeros2, int emergencia, int longitud, int alcance, string estado)
         {
             this.id = id;
             this.descripcion = descripcion;
@@ -22,6 +22,7 @@ namespace Principal.Clases
             this.salidasEmergencia = emergencia;
             this.longitud = longitud;
             this.alcance = alcance;
+            this.estado = estado;
         }
 
         public int id { get; set; }
@@ -32,5 +33,12 @@ namespace Principal.Clases
         public int salidasEmergencia { get; set; }
         public float longitud { get; set; }
         public int alcance { get; set; }
+        public string estado { get; set; }
+
+        public bool EstaActivo()
+        {
+            if (this.estado == "S") return true;
+            else return false;
+        }
     }
 }

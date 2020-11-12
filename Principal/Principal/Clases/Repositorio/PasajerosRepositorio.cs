@@ -162,16 +162,18 @@ namespace Principal.Clases.Repositorio
         }
         public bool PasajeroHablitado(string tipoDNI, string numeroDNI)
         {
-            var sentenciaSql =  $"SELECT Estado FROM Pasajero " +
-                                $"WHERE TipoDNI = '{tipoDNI}' AND NroDNI = '{numeroDNI}'";
+            var sentenciaSql = $"SELECT COUNT(*) AS Cantidad FROM Pasajero WHERE TipoDNI = '{tipoDNI}' AND NroDNI = '{numeroDNI}' AND Estado = 'S'";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             string celda = "";
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
-                celda = fila["Estado"].ToString();
+                celda = fila["Cantidad"].ToString();
             }
-            if (celda == "S") { return true; }
-            else { return false; }
+            if (celda == "0") { return false; }
+            else
+            {
+                return true;
+            }
         }
     }
 }

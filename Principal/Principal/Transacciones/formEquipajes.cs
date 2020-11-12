@@ -62,13 +62,6 @@ namespace Principal.Transacciones
             }
         }
 
-
-        private void btnBusqueda_Click(object sender, EventArgs e)
-        {
-            if (txtBusqueda.Text.Length > 7) { BuscarEquipajesPasajero(); }
-            else { MessageBox.Show("Por favor, ingrese un numero de documento valido."); }
-        }
-
         private void lboxEquipaje_SelectedIndexChanged(object sender, EventArgs e)
         {
             Equipaje equipajeSelecionado = (Equipaje)lboxEquipaje.SelectedItem;
@@ -118,22 +111,12 @@ namespace Principal.Transacciones
             DialogResult resultado = MessageBox.Show("Está seguro que desea eliminar este equipaje?", "Eliminar Equipaje", buttons);
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
-                _equipajeRepositorio.BajaEquipaje((Equipaje)lboxEquipaje.SelectedItem);
+                Equipaje equipajeBaja = (Equipaje)lboxEquipaje.SelectedItem;
+                equipajeBaja.estado = "N";
+                _equipajeRepositorio.BajaEquipaje(equipajeBaja);
                 RefrescarFormulario();
             }
         }
-
-        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            FormUtils.GetInstance.KeypressDocumento(comboBusqueda.Text, txtBusqueda.Text, sender, e);
-        }
-
-        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtBusqueda.Clear();
-        }
-
-        
 
         private void chboxBusqueda_CheckedChanged(object sender, EventArgs e)
         {
@@ -168,5 +151,21 @@ namespace Principal.Transacciones
 
         }
 
+        private void btnBuqueda_Click(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text.Length > 7) { BuscarEquipajesPasajero(); }
+            else { MessageBox.Show("Por favor, ingrese un numero de documento valido."); }
+        }
+
+        private void comboBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Equipaje> equipajes = _equipajeRepositorio.ObtenerEquipajesTipoDocumento((TipoDocumento)comboBusqueda.SelectedItem);
+            cargarEquipajes(equipajes);
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            RefrescarFormulario();
+        }
     }
 }

@@ -11,10 +11,17 @@ namespace Principal.Clases.Repositorio
 {
     class EquipajeRepositorio
     {
+
+
         public List<Equipaje> ObtenerEquipajes()
         {
+            string sentencia = "SELECT * FROM Equipaje";
+            return Equipajes(sentencia);
+        }
+        public List<Equipaje> Equipajes(string sentencia)
+        {
+            var sentenciaSql = sentencia;
             List<Equipaje> equipajes = new List<Equipaje>();
-            var sentenciaSql = "SELECT * FROM Equipaje";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             foreach (DataRow fila in tabla.Rows)
             {
@@ -24,59 +31,41 @@ namespace Principal.Clases.Repositorio
                 equipaje.tipo = Convert.ToInt32(fila["TipoEquipaje"].ToString());
                 equipaje.tipoDNI = fila["TipoDNIPasajero"].ToString();
                 equipaje.DNI = fila["NroDNIPasajero"].ToString();
+                equipaje.estado = fila["Estado"].ToString();
                 equipajes.Add(equipaje);
             }
             return equipajes;
         }
-
+        public List<Equipaje> ObtenerEquipajesTipoDocumento(TipoDocumento tipo)
+        {
+            string sentencia = $"SELECT * FROM Equipaje " +
+                               $"WHERE TipoDNIPasajero = '{tipo.Id}'";
+            return Equipajes(sentencia);
+        }
         public List<Equipaje> ObtenerEquipajesPasajero(Pasajero pasajero)
         {
-            List<Equipaje> equipajes = new List<Equipaje>();
-            var sentenciaSql =  $"SELECT * FROM Equipaje " +
+            string sentencia =  $"SELECT * FROM Equipaje " +
                                 $"WHERE TipoDNIPasajero = '{pasajero.TipoDocumento.Id}' " +
                                 $"AND NroDNIPasajero = '{pasajero.NroDocumento}'";
-            var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
-            foreach (DataRow fila in tabla.Rows)
-            {
-                var equipaje = new Equipaje();
-                equipaje.numero = Convert.ToInt32(fila["NroEquipaje"].ToString());
-                equipaje.descripcion = fila["Descripción"].ToString();
-                equipaje.tipo = Convert.ToInt32(fila["TipoEquipaje"].ToString());
-                equipaje.tipoDNI = fila["TipoDNIPasajero"].ToString();
-                equipaje.DNI = fila["NroDNIPasajero"].ToString();
-                equipajes.Add(equipaje);
-            }
-            return equipajes;
+            return Equipajes(sentencia);
         }
 
         public List<Equipaje> ObtenerEquipajesPasajerosActivos()
         {
             List<Equipaje> equipajes = new List<Equipaje>();
-            var sentenciaSql = "SELECT E.* " +
+            string sentencia = "SELECT E.* " +
                                "FROM Equipaje E INNER JOIN Pasajero P " +
                                "ON P.NroDNI = E.NroDNIPasajero AND P.TipoDNI = E.TipoDNIPasajero " +
                                "WHERE P.Estado = 'S'";
-
-            var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
-            foreach (DataRow fila in tabla.Rows)
-            {
-                var equipaje = new Equipaje();
-                equipaje.numero = Convert.ToInt32(fila["NroEquipaje"].ToString());
-                equipaje.descripcion = fila["Descripción"].ToString();
-                equipaje.tipo = Convert.ToInt32(fila["TipoEquipaje"].ToString());
-                equipaje.tipoDNI = fila["TipoDNIPasajero"].ToString();
-                equipaje.DNI = fila["NroDNIPasajero"].ToString();
-                equipajes.Add(equipaje);
-            }
-            return equipajes;
+             return Equipajes(sentencia);
         }
 
         public void Altaequipaje(Equipaje equipaje)
         {
             try
             {
-                var sentenciaSql = $"INSERT INTO Equipaje (NroEquipaje, TipoEquipaje, Descripción, TipoDNIPasajero, NroDNIPasajero) " +
-                                  $"VALUES ({equipaje.numero}, {equipaje.tipo}, '{equipaje.descripcion}', '{equipaje.tipoDNI}', '{equipaje.DNI}' )";
+                var sentenciaSql = $"INSERT INTO Equipaje (TipoEquipaje, Descripción, TipoDNIPasajero, NroDNIPasajero) " +
+                                  $"VALUES ({equipaje.tipo}, '{equipaje.descripcion}', '{equipaje.tipoDNI}', '{equipaje.DNI}' )";
                 DBHelper.GetDBHelper().ComandoSQL(sentenciaSql);
                 MessageBox.Show("Equipaje Registrado Exitosamente");
             }
@@ -91,7 +80,7 @@ namespace Principal.Clases.Repositorio
         {
             try
             {
-                var sentenciaSql = $"DELETE FROM Equipaje WHERE NroEquipaje = {equipaje.numero}";
+                var sentenciaSql = $"UPDATE Equipaje SET Estado = {equipaje.estado} WHERE NroEquipaje = {equipaje.numero}";
                 DBHelper.GetDBHelper().ComandoSQL(sentenciaSql);
                 MessageBox.Show("Eliminacion Exitosa");
             }
