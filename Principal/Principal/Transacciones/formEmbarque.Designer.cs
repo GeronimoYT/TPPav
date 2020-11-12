@@ -240,6 +240,7 @@
             this.Name = "formEmbarque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Embarque";
+            this.Load += new System.EventHandler(this.formEmbarque_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

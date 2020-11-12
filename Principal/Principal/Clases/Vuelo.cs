@@ -16,6 +16,10 @@ namespace Principal.Clases
         public int IdAeropuerto { get; set; }
         public int IdAeropuertoDestino { get; set; }
         public int Estado { get; set; }
+
+        //Cree otros atibutos para poder usarlos en el pasaje en VueloV2
+
+        
     }
 
 }

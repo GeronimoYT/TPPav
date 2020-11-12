@@ -18,20 +18,26 @@ namespace Principal.Ventanas
     public partial class formPasajes : Form
     {
         private PasajesServicio _pasajesServicio;
-        //private EmbarquesServicio _embarquesServicio;
+        private EmbarquesServicio _embarquesServicio;
         private PasajerosServicio _pasajerosServicio;
         private TipoPasajesServicio _tipoPasajesServicio;
         private TipoDocumentosServicio _tipoDocumentosServicio;
         private formPrincipal _frmPrincipal;
 
+        private AeropuertosServicio _aeropuertosServicioOrigen;
+        private AeropuertosServicio _aeropuertosServicioDestino;
+
+
         public formPasajes(formPrincipal principal)
         {
             _pasajesServicio = new PasajesServicio();
-            //_embarquesServicio = new EmbarquesServicio();
+            _embarquesServicio = new EmbarquesServicio();
             _pasajerosServicio = new PasajerosServicio();
             _tipoPasajesServicio = new TipoPasajesServicio();
             _tipoDocumentosServicio = new TipoDocumentosServicio();
             _frmPrincipal = principal;
+            _aeropuertosServicioOrigen = new AeropuertosServicio();
+            _aeropuertosServicioDestino = new AeropuertosServicio();
             InitializeComponent();
         }
 
@@ -45,6 +51,12 @@ namespace Principal.Ventanas
         {
             CargarTipoDocumento();
             CargarTipoPasaje();
+            CargarAeropuertoOrigen();
+            CargarAeropuertoDestino();
+            CargarOrigen();
+            CargarDestino();
+            //CargarEmbarque();
+
             Consultar(new PasajesFiltros());
         }
         private void CargarTipoDocumento()
@@ -77,6 +89,72 @@ namespace Principal.Ventanas
             var tipoPasajeSeleccionado = tipoPasajes.First(tp => tp.Detalle == "Seleccionar");
             cmbTipoPasaje.SelectedItem = tipoPasajeSeleccionado;
         }
+        public void CargarAeropuertoOrigen()
+        {
+            var aeropuertos = _aeropuertosServicioOrigen.ObtenerAeropuertos();
+            var aeropuertosSeleccionar = new Aeropuerto();
+
+            aeropuertosSeleccionar.Nombre = "Seleccionar";
+            aeropuertos.Add(aeropuertosSeleccionar);
+            var conector = new BindingSource();
+            conector.DataSource = aeropuertos;
+            FormUtils.CargarComboV2(ref cmbAeropuertoOrigen, conector, "Nombre", "IdAeropuerto");
+            var aeropuertoSeleccionado = aeropuertos.First(tp => tp.Nombre == "Seleccionar");
+            cmbAeropuertoOrigen.SelectedItem = aeropuertoSeleccionado;
+        }
+
+        public void CargarAeropuertoDestino()
+        {
+            var aeropuertos = _aeropuertosServicioDestino.ObtenerAeropuertos();
+            var aeropuertosSeleccionar = new Aeropuerto();
+
+            aeropuertosSeleccionar.Nombre = "Seleccionar";
+            aeropuertos.Add(aeropuertosSeleccionar);
+            var conector = new BindingSource();
+            conector.DataSource = aeropuertos;
+            FormUtils.CargarComboV2(ref cmbAeropuertoDestino, conector, "Nombre", "IdAeropuerto");
+            var aeropuertoSeleccionado = aeropuertos.First(tp => tp.Nombre == "Seleccionar");
+            cmbAeropuertoDestino.SelectedItem = aeropuertoSeleccionado;
+        }
+        public void CargarOrigen()
+        {
+            var aeropuertos = _aeropuertosServicioOrigen.ObtenerAeropuertos();
+            var aeropuertosSeleccionar = new Aeropuerto();
+
+            aeropuertosSeleccionar.Domicilio = "Seleccionar";
+            aeropuertos.Add(aeropuertosSeleccionar);
+            var conector = new BindingSource();
+            conector.DataSource = aeropuertos;
+            FormUtils.CargarComboV2(ref cmbOrigen, conector, "Domicilio", "Domicilio");
+            var aeropuertoSeleccionado = aeropuertos.First(tp => tp.Domicilio == "Seleccionar");
+            cmbOrigen.SelectedItem = aeropuertoSeleccionado;
+        }
+        public void CargarDestino()
+        {
+            var aeropuertos = _aeropuertosServicioDestino.ObtenerAeropuertos();
+            var aeropuertosSeleccionar = new Aeropuerto();
+
+            aeropuertosSeleccionar.Domicilio = "Seleccionar";
+            aeropuertos.Add(aeropuertosSeleccionar);
+            var conector = new BindingSource();
+            conector.DataSource = aeropuertos;
+            FormUtils.CargarComboV2(ref cmbDestino, conector, "Domicilio", "Domicilio");
+            var aeropuertoSeleccionado = aeropuertos.First(tp => tp.Domicilio == "Seleccionar");
+            cmbDestino.SelectedItem = aeropuertoSeleccionado;
+        }
+        /*public void CargarEmbarque() 
+        {
+            var embarques = _embarquesServicio.ObtenerEmbarques();
+            var embarquesSeleccionar = new Embarque();
+            embarquesSeleccionar.PuertaEmbarque = 0;
+            embarques.Add(embarquesSeleccionar);
+            var conector = new BindingSource();
+            conector.DataSource = embarques;
+            FormUtils.CargarComboV2(ref cmbEmbarque, conector, "PuertaEmbarque", "PuertaEmbarque");
+            var embarqueSeleccionado = embarques.First(tp => tp.PuertaEmbarque == 0);
+            cmbEmbarque.SelectedItem = embarqueSeleccionado;
+        }*/
+
         public void Consultar(PasajesFiltros pasajesFiltros)
         {
             try
@@ -107,11 +185,20 @@ namespace Principal.Ventanas
             foreach (var pasaje in pasajes)
             {
                 var fila = new string[] {
+                    
                     pasaje.Id.ToString(),
                     pasaje.IdTipoPasaje.Id.ToString(),
                     pasaje.IdTipoPasaje.Detalle,
                     pasaje.TipoDocumento.Id,
                     pasaje.NroDocumento.NroDocumento,
+                    pasaje.AeropuertoOrigen.IdAeropuerto.ToString(),
+                    pasaje.AeropuertoOrigen.Nombre,
+                    pasaje.AeropuertoOrigen.Domicilio,
+                    pasaje.AeropuertoDestino.IdAeropuerto.ToString(),
+                    pasaje.AeropuertoDestino.Nombre,
+                    pasaje.AeropuertoDestino.Domicilio,
+                    pasaje.Precio.ToString(),
+                    //pasaje.Embarque.PuertaEmbarque.ToString(),
 
                 };
                 dgvPasajes.Rows.Add(fila);
@@ -131,6 +218,12 @@ namespace Principal.Ventanas
                 NroDocumento = (txtNroDocumento.Text).ToString(),
                 TipoDocumento = ((TipoDocumento)cmbTipoDocumento.SelectedItem).Id,
                 TipoPasajeId = ((TipoPasaje)cmbTipoPasaje.SelectedItem).Id,
+                IdAeropuertoOrigen = ((Aeropuerto)cmbAeropuertoOrigen.SelectedItem).IdAeropuerto,
+                IdAeropuertoDestino = ((Aeropuerto)cmbAeropuertoDestino.SelectedItem).IdAeropuerto,
+                Origen = ((Aeropuerto)cmbOrigen.SelectedItem).Domicilio,
+                Destino = ((Aeropuerto)cmbDestino.SelectedItem).Domicilio,
+                //PuertaEmbarque = ((Embarque)cmbEmbarque.SelectedItem).PuertaEmbarque,
+
 
             };
             Consultar(filtros);
@@ -147,8 +240,19 @@ namespace Principal.Ventanas
                     NroDocumento = dgvPasajes.SelectedRows[0].Cells["nroDocumento"].Value.ToString(),
 
                 };
-                new formEditarPasaje(this, filtros).Show();
-                this.Hide();
+
+                Pasaje pasaje = _pasajesServicio.ObtenerPasaje(filtros);
+                if (pasaje.Vuelo.Estado.IdEstado != 11) {
+                    new formEditarPasaje(this, filtros).Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("El pasaje seleccionado es de un vuelo ya finalizado", "Información");
+                }
+
+
+                
             }
             else
             { MessageBox.Show("Debe seleccionar solo una fila", "Información"); }

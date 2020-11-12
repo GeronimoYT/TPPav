@@ -157,5 +157,10 @@ namespace Principal.Transacciones
 
             MessageBox.Show(nvEmbarque.FechaHoraEmbarque.ToString());
         }
+
+        private void formEmbarque_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

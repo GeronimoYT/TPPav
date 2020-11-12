@@ -76,8 +76,8 @@ namespace Principal.Clases
             if (string.IsNullOrEmpty(this.Telefono))
                 throw new ApplicationException("El telefono es requerido");
             //return "El telefono es requerido";
-            if (!string.IsNullOrEmpty(this.Telefono) && this.Telefono.Length > 20)
-                throw new ApplicationException("Telefono inválido. El nombre no debe superar los 20 caracteres");
+            if (!string.IsNullOrEmpty(this.Telefono) && this.Telefono.Length > 10)
+                throw new ApplicationException("Telefono inválido. El nombre no debe superar los 10 caracteres");
             /*return "Telefono inválido. El nombre no debe superar los 20 caracteres";
         return null;*/
         }

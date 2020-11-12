@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Principal._PAV_3K2_10_AEROLINEADataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -9,31 +10,34 @@ namespace Principal.Clases.Repositorio
 {
     class PasajerosRepositorio
     {
+        //yo no la utilizo no sé si se utiliza en Embarque o Equipaje
         public List<Pasajero> ObtenerPasajeros()
         {
             List<Pasajero> pasajeros = new List<Pasajero>();
-            var sentenciaSql = "SELECT * FROM Pasajero";
+            var sentenciaSql = "SELECT * FROM Pasajero where Estado like 'S'";
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             foreach (DataRow fila in tabla.Rows)
             {
                 var pasajero = new Pasajero();
-                /*if (fila["tipoDocumento"].GetType() != typeof(DBNull))
+                if (fila["tipoDocumento"].GetType() != typeof(DBNull))
                     pasajero.TipoDocumento = new TipoDocumento()
                     {
                         Id = fila["tipoDocumento"].ToString(),
-                        Descripcion = fila["descripcion"].ToString()
-                    };*/
+                        //Descripcion = fila["descripcion"].ToString()
+                    };
                 pasajero.NroDocumento = fila["NroDNI"].ToString();
                 pasajero.Nombre = fila["Nombre"].ToString();
                 pasajero.Apellido = fila["Apellido"].ToString();
                 pasajero.Telefono = fila["Telefono"].ToString();
                 pasajero.Email = fila["Mail"].ToString();
-
+                pasajero.FechaNacimiento = Convert.ToDateTime(fila["FechaNacimiento"].ToString());
+                
                 pasajeros.Add(pasajero);
             }
             return pasajeros;
 
         }
+        //se utliza en el formPasajeros
         public List<Pasajero> ObtenerPasajeros(string tipoDocumento, string nroDocumento, string apellido, string nombre, bool estado)
         {
             List<Pasajero> pasajeros = new List<Pasajero>();
@@ -89,7 +93,7 @@ namespace Principal.Clases.Repositorio
             var filasAfectadas = DBHelper.GetDBHelper().EjecutarSQL(sentenciaSql);
             return filasAfectadas;
         }
-
+        //Se usa en formEditarPasajero y formBajaPasajero
         public Pasajero ObtenerPasajero(string tipoDoc, string nroDoc)
         {
             Pasajero pasajeroResultado = null;
@@ -108,6 +112,7 @@ namespace Principal.Clases.Repositorio
                 pasajeroBD.Telefono = row["Telefono"].ToString();
                 pasajeroBD.Email = row["Mail"].ToString();
                 pasajeroBD.FechaNacimiento = Convert.ToDateTime(row["FechaNacimiento"].ToString());
+                //pasajeroBD.Estado = Convert.ToBoolean(row["Estado"].ToString());
 
                 var _tipoDocumento = new TipoDocumento();
                 _tipoDocumento.Id = tipoDocumento.ToString();
@@ -117,12 +122,16 @@ namespace Principal.Clases.Repositorio
             }
             return pasajeroResultado;
         }
-        public List<Pasajero> ObtenerPasajeros(string tipoDoc)
+        //se utiliza en el formAltaPasaje
+        public List<Pasajero> ObtenerPasajeros(string tipoDoc, bool registro)
         {
             List<Pasajero> pasajeros = new List<Pasajero>();
 
-            var sentenciaSql = $"SELECT * FROM Pasajero p JOIN TipoDocumento tp On p.TipoDNI=tp.TipoDNI";
-            if (tipoDoc != "Seleccionar") sentenciaSql += $" where p.TipoDNI = '{tipoDoc}'";
+            var sentenciaSql = $"SELECT * FROM Pasajero p JOIN TipoDocumento tp On p.TipoDNI=tp.TipoDNI" +
+                $" where  ";
+            if (registro) { sentenciaSql += $"Estado like 'S'"; } else { sentenciaSql += "Estado like '%%'"; }
+            if (tipoDoc != "Seleccionar") sentenciaSql += $" and p.TipoDNI = '{tipoDoc}'";
+                  
 
             var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
             foreach (DataRow fila in tabla.Rows)

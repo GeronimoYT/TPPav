@@ -28,22 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dgvPasajes = new System.Windows.Forms.DataGridView();
-            this.idPasaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTipoPasaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoPasaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AsignadoA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Criticidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbAeropuertoDestino = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbAeropuertoOrigen = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbTipoPasaje = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,19 +45,27 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbDestino = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbOrigen = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.idPasaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTipoPasaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoPasaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAeropuertoOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aeropuertoOrigen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAeropuertoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aeropuertoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Location = new System.Drawing.Point(618, 210);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(75, 23);
-            this.btnBorrar.TabIndex = 54;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
@@ -117,10 +119,14 @@
             this.tipoPasaje,
             this.tipoDocumento,
             this.nroDocumento,
-            this.FechaCreacion,
-            this.Estado,
-            this.AsignadoA,
-            this.Criticidad});
+            this.idAeropuertoOrigen,
+            this.aeropuertoOrigen,
+            this.Origen,
+            this.idAeropuertoDestino,
+            this.aeropuertoDestino,
+            this.Destino,
+            this.Precio,
+            this.Estado});
             this.dgvPasajes.Location = new System.Drawing.Point(11, 238);
             this.dgvPasajes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPasajes.MultiSelect = false;
@@ -131,78 +137,18 @@
             this.dgvPasajes.Size = new System.Drawing.Size(697, 233);
             this.dgvPasajes.TabIndex = 71;
             // 
-            // idPasaje
-            // 
-            this.idPasaje.HeaderText = "# Pasaje";
-            this.idPasaje.MinimumWidth = 6;
-            this.idPasaje.Name = "idPasaje";
-            this.idPasaje.ReadOnly = true;
-            this.idPasaje.Width = 125;
-            // 
-            // idTipoPasaje
-            // 
-            this.idTipoPasaje.HeaderText = "Id Tipo Pasaje";
-            this.idTipoPasaje.Name = "idTipoPasaje";
-            this.idTipoPasaje.Visible = false;
-            // 
-            // tipoPasaje
-            // 
-            this.tipoPasaje.HeaderText = "Tipo Pasaje";
-            this.tipoPasaje.MinimumWidth = 6;
-            this.tipoPasaje.Name = "tipoPasaje";
-            this.tipoPasaje.ReadOnly = true;
-            this.tipoPasaje.Width = 125;
-            // 
-            // tipoDocumento
-            // 
-            this.tipoDocumento.HeaderText = "Tipo Documento";
-            this.tipoDocumento.MinimumWidth = 6;
-            this.tipoDocumento.Name = "tipoDocumento";
-            this.tipoDocumento.ReadOnly = true;
-            this.tipoDocumento.Width = 125;
-            // 
-            // nroDocumento
-            // 
-            this.nroDocumento.HeaderText = "Nro Documento";
-            this.nroDocumento.MinimumWidth = 6;
-            this.nroDocumento.Name = "nroDocumento";
-            this.nroDocumento.ReadOnly = true;
-            this.nroDocumento.Width = 125;
-            // 
-            // FechaCreacion
-            // 
-            this.FechaCreacion.HeaderText = "Fecha de creacion";
-            this.FechaCreacion.MinimumWidth = 6;
-            this.FechaCreacion.Name = "FechaCreacion";
-            this.FechaCreacion.ReadOnly = true;
-            this.FechaCreacion.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
-            // 
-            // AsignadoA
-            // 
-            this.AsignadoA.HeaderText = "Asignado a";
-            this.AsignadoA.MinimumWidth = 6;
-            this.AsignadoA.Name = "AsignadoA";
-            this.AsignadoA.ReadOnly = true;
-            this.AsignadoA.Width = 125;
-            // 
-            // Criticidad
-            // 
-            this.Criticidad.HeaderText = "Criticidad";
-            this.Criticidad.MinimumWidth = 6;
-            this.Criticidad.Name = "Criticidad";
-            this.Criticidad.ReadOnly = true;
-            this.Criticidad.Width = 125;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbTipoPasaje);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cmbDestino);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cmbOrigen);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmbAeropuertoDestino);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.cmbAeropuertoOrigen);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnConsultar);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -213,17 +159,55 @@
             this.groupBox1.Text = "Filtros Pasaje";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cmbAeropuertoDestino
+            // 
+            this.cmbAeropuertoDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAeropuertoDestino.FormattingEnabled = true;
+            this.cmbAeropuertoDestino.Location = new System.Drawing.Point(552, 25);
+            this.cmbAeropuertoDestino.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbAeropuertoDestino.Name = "cmbAeropuertoDestino";
+            this.cmbAeropuertoDestino.Size = new System.Drawing.Size(89, 21);
+            this.cmbAeropuertoDestino.TabIndex = 79;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(452, 33);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "Aeropuerto Destino:";
+            // 
+            // cmbAeropuertoOrigen
+            // 
+            this.cmbAeropuertoOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAeropuertoOrigen.FormattingEnabled = true;
+            this.cmbAeropuertoOrigen.Location = new System.Drawing.Point(359, 25);
+            this.cmbAeropuertoOrigen.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbAeropuertoOrigen.Name = "cmbAeropuertoOrigen";
+            this.cmbAeropuertoOrigen.Size = new System.Drawing.Size(89, 21);
+            this.cmbAeropuertoOrigen.TabIndex = 75;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(259, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Aeropuerto Origen:";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cmbTipoPasaje);
-            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtNroDocumento);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbTipoDocumento);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(22, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 91);
+            this.groupBox2.Size = new System.Drawing.Size(228, 91);
             this.groupBox2.TabIndex = 73;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Filtro Pasajero";
@@ -232,7 +216,7 @@
             // 
             this.cmbTipoPasaje.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPasaje.FormattingEnabled = true;
-            this.cmbTipoPasaje.Location = new System.Drawing.Point(282, 27);
+            this.cmbTipoPasaje.Location = new System.Drawing.Point(103, 115);
             this.cmbTipoPasaje.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoPasaje.Name = "cmbTipoPasaje";
             this.cmbTipoPasaje.Size = new System.Drawing.Size(105, 21);
@@ -241,7 +225,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(212, 33);
+            this.label1.Location = new System.Drawing.Point(33, 121);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -284,6 +268,136 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Tipo Documento:";
             // 
+            // cmbDestino
+            // 
+            this.cmbDestino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDestino.FormattingEnabled = true;
+            this.cmbDestino.Location = new System.Drawing.Point(552, 64);
+            this.cmbDestino.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbDestino.Name = "cmbDestino";
+            this.cmbDestino.Size = new System.Drawing.Size(89, 21);
+            this.cmbDestino.TabIndex = 83;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(502, 67);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "Destino:";
+            // 
+            // cmbOrigen
+            // 
+            this.cmbOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOrigen.FormattingEnabled = true;
+            this.cmbOrigen.Location = new System.Drawing.Point(359, 64);
+            this.cmbOrigen.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbOrigen.Name = "cmbOrigen";
+            this.cmbOrigen.Size = new System.Drawing.Size(89, 21);
+            this.cmbOrigen.TabIndex = 81;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(314, 67);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 80;
+            this.label6.Text = "Origen:";
+            // 
+            // idPasaje
+            // 
+            this.idPasaje.HeaderText = "# Pasaje";
+            this.idPasaje.MinimumWidth = 6;
+            this.idPasaje.Name = "idPasaje";
+            this.idPasaje.ReadOnly = true;
+            this.idPasaje.Width = 125;
+            // 
+            // idTipoPasaje
+            // 
+            this.idTipoPasaje.HeaderText = "Id Tipo Pasaje";
+            this.idTipoPasaje.Name = "idTipoPasaje";
+            this.idTipoPasaje.Visible = false;
+            // 
+            // tipoPasaje
+            // 
+            this.tipoPasaje.HeaderText = "Tipo Pasaje";
+            this.tipoPasaje.MinimumWidth = 6;
+            this.tipoPasaje.Name = "tipoPasaje";
+            this.tipoPasaje.ReadOnly = true;
+            this.tipoPasaje.Width = 125;
+            // 
+            // tipoDocumento
+            // 
+            this.tipoDocumento.HeaderText = "Tipo Documento";
+            this.tipoDocumento.MinimumWidth = 6;
+            this.tipoDocumento.Name = "tipoDocumento";
+            this.tipoDocumento.ReadOnly = true;
+            this.tipoDocumento.Width = 125;
+            // 
+            // nroDocumento
+            // 
+            this.nroDocumento.HeaderText = "Nro Documento";
+            this.nroDocumento.MinimumWidth = 6;
+            this.nroDocumento.Name = "nroDocumento";
+            this.nroDocumento.ReadOnly = true;
+            this.nroDocumento.Width = 125;
+            // 
+            // idAeropuertoOrigen
+            // 
+            this.idAeropuertoOrigen.HeaderText = "IdAeropuertoOrigen";
+            this.idAeropuertoOrigen.Name = "idAeropuertoOrigen";
+            this.idAeropuertoOrigen.Visible = false;
+            // 
+            // aeropuertoOrigen
+            // 
+            this.aeropuertoOrigen.HeaderText = "Aeropuerto Origen";
+            this.aeropuertoOrigen.MinimumWidth = 6;
+            this.aeropuertoOrigen.Name = "aeropuertoOrigen";
+            this.aeropuertoOrigen.ReadOnly = true;
+            this.aeropuertoOrigen.Width = 125;
+            // 
+            // Origen
+            // 
+            this.Origen.HeaderText = "Origen";
+            this.Origen.Name = "Origen";
+            // 
+            // idAeropuertoDestino
+            // 
+            this.idAeropuertoDestino.HeaderText = "IdAeropuertoDestino";
+            this.idAeropuertoDestino.Name = "idAeropuertoDestino";
+            this.idAeropuertoDestino.Visible = false;
+            // 
+            // aeropuertoDestino
+            // 
+            this.aeropuertoDestino.HeaderText = "Aeropuerto Destino";
+            this.aeropuertoDestino.MinimumWidth = 6;
+            this.aeropuertoDestino.Name = "aeropuertoDestino";
+            this.aeropuertoDestino.ReadOnly = true;
+            this.aeropuertoDestino.Width = 125;
+            // 
+            // Destino
+            // 
+            this.Destino.HeaderText = "Destino";
+            this.Destino.Name = "Destino";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            this.Estado.Width = 125;
+            // 
             // formPasajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,7 +406,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvPasajes);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnRegistrar);
             this.Name = "formPasajes";
@@ -301,6 +414,7 @@
             this.Load += new System.EventHandler(this.formPasajes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajes)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -308,21 +422,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridView dgvPasajes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPasaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTipoPasaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPasaje;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocumento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AsignadoA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Criticidad;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbTipoPasaje;
@@ -331,5 +435,26 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbTipoDocumento;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbAeropuertoOrigen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbAeropuertoDestino;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbDestino;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbOrigen;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPasaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTipoPasaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPasaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroDocumento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAeropuertoOrigen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aeropuertoOrigen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Origen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAeropuertoDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aeropuertoDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Destino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
