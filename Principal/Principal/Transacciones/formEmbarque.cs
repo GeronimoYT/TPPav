@@ -201,8 +201,14 @@ namespace Principal.Transacciones
         private void btnAceptarEdicion_Click(object sender, EventArgs e)
         {
             //NuevoEmbarque nvEmbarque = new NuevoEmbarque(int.Parse(cmbNroVuelo.Text),DateTime.Parse(txtFechaEmbarque.Text),int.Parse(cmbAeropuerto.Text),cmbTipoDoc.Text,cmbNroDoc.Text,int.Parse(cmbPuertaEmbarque.Text),cmbEstado.Text);
-            if (cmbNroDoc.SelectedIndex != -1)
-                CargarNuevoEmbarque();
+            if (cmbNroDoc.Enabled) { 
+                if (cmbNroDoc.SelectedIndex != -1)
+                    CargarNuevoEmbarque();
+            }else if (!cmbNroDoc.Enabled)
+            {
+                if(txtNvoNroDoc.TextLength >= 8)
+                    CargarNuevoEmbarque();
+            }
             else
                 MessageBox.Show("Complete todos los campos para poder realizar la carga del Embarque");
         }
