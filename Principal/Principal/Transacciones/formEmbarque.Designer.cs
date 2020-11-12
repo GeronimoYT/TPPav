@@ -54,9 +54,11 @@
             this.AeropuertoSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AeropuertoLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvDatosEmbarques = new System.Windows.Forms.DataGridView();
-            this.FechaHoraEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NroDNIPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.NroVuelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHoraEmbarque = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoDNIPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroDNIPasajero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbEmbarque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosEmbarques)).BeginInit();
@@ -339,32 +341,20 @@
             this.dgvDatosEmbarques.AllowUserToDeleteRows = false;
             this.dgvDatosEmbarques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosEmbarques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NroVuelo,
             this.FechaHoraEmbarque,
+            this.TipoDNIPasajero,
             this.NroDNIPasajero});
             this.dgvDatosEmbarques.Location = new System.Drawing.Point(775, 41);
             this.dgvDatosEmbarques.Name = "dgvDatosEmbarques";
             this.dgvDatosEmbarques.ReadOnly = true;
-            this.dgvDatosEmbarques.Size = new System.Drawing.Size(249, 275);
+            this.dgvDatosEmbarques.Size = new System.Drawing.Size(344, 275);
             this.dgvDatosEmbarques.TabIndex = 91;
-            // 
-            // FechaHoraEmbarque
-            // 
-            this.FechaHoraEmbarque.DataPropertyName = "FechaHoraEmbarque";
-            this.FechaHoraEmbarque.HeaderText = "Fecha Hora Embarque";
-            this.FechaHoraEmbarque.Name = "FechaHoraEmbarque";
-            this.FechaHoraEmbarque.ReadOnly = true;
-            // 
-            // NroDNIPasajero
-            // 
-            this.NroDNIPasajero.DataPropertyName = "NroDNIPasajero";
-            this.NroDNIPasajero.HeaderText = "Nro DNI Pasajero";
-            this.NroDNIPasajero.Name = "NroDNIPasajero";
-            this.NroDNIPasajero.ReadOnly = true;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(949, 392);
+            this.button1.Location = new System.Drawing.Point(1044, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 92;
@@ -372,11 +362,43 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // NroVuelo
+            // 
+            this.NroVuelo.DataPropertyName = "NroVuelo";
+            this.NroVuelo.HeaderText = "Nro Vuelo";
+            this.NroVuelo.Name = "NroVuelo";
+            this.NroVuelo.ReadOnly = true;
+            this.NroVuelo.Width = 50;
+            // 
+            // FechaHoraEmbarque
+            // 
+            this.FechaHoraEmbarque.DataPropertyName = "FechaHoraEmbarque";
+            this.FechaHoraEmbarque.HeaderText = "Fecha Hora Embarque";
+            this.FechaHoraEmbarque.Name = "FechaHoraEmbarque";
+            this.FechaHoraEmbarque.ReadOnly = true;
+            this.FechaHoraEmbarque.Width = 95;
+            // 
+            // TipoDNIPasajero
+            // 
+            this.TipoDNIPasajero.DataPropertyName = "TipoDNIPasajero";
+            this.TipoDNIPasajero.HeaderText = "Tipo Doc Pasajero";
+            this.TipoDNIPasajero.Name = "TipoDNIPasajero";
+            this.TipoDNIPasajero.ReadOnly = true;
+            this.TipoDNIPasajero.Width = 75;
+            // 
+            // NroDNIPasajero
+            // 
+            this.NroDNIPasajero.DataPropertyName = "NroDNIPasajero";
+            this.NroDNIPasajero.HeaderText = "Nro Doc Pasajero";
+            this.NroDNIPasajero.Name = "NroDNIPasajero";
+            this.NroDNIPasajero.ReadOnly = true;
+            this.NroDNIPasajero.Width = 80;
+            // 
             // formEmbarque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 432);
+            this.ClientSize = new System.Drawing.Size(1127, 432);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvDatosEmbarques);
             this.Controls.Add(this.btnAceptarEdicion);
@@ -423,8 +445,10 @@
         private System.Windows.Forms.Button btnConsulta;
         private System.Windows.Forms.TextBox txtNvoNroDoc;
         private System.Windows.Forms.DataGridView dgvDatosEmbarques;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHoraEmbarque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NroDNIPasajero;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroVuelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHoraEmbarque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoDNIPasajero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroDNIPasajero;
     }
 }

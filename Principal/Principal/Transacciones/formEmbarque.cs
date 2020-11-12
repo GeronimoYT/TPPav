@@ -91,7 +91,7 @@ namespace Principal.Transacciones
                     cmbTipoDoc.DisplayMember = "TipoDNI";
 
 
-                    string consultaEstado = $"SELECT DISTINCT es.NombreEstado FROM Estado es, Embarque e WHERE es.Ambito = 2";
+                    string consultaEstado = $"SELECT DISTINCT NombreEstado FROM Estado WHERE Ambito = 2";
                     //string consultaEstadoActual = $"SELECT es.NombreEstado FROM Estado es, Embarque e WHERE es.Ambito = 2 AND e.IdEstado = es.IdEstado";
                     var combo5 = DBHelper.GetDBHelper().ConsultaSQL(consultaEstado);
                     //var consultaActual = DBHelper.GetDBHelper().ConsultaSQL(consultaEstadoActual);
@@ -124,7 +124,7 @@ namespace Principal.Transacciones
         private void CargarGrillaEmbarque() {
             try
             {
-                string consulta = $"SELECT FechaHoraEmbarque, NroDNIPasajero FROM Embarque";
+                string consulta = $"SELECT NroVuelo, FechaHoraEmbarque, TipoDNIPasajero, NroDNIPasajero FROM Embarque";
                 var grilla = DBHelper.GetDBHelper().ConsultaSQL(consulta);
                 if (grilla.Rows.Count > 0)
                 {
@@ -318,7 +318,7 @@ namespace Principal.Transacciones
                     SqlCommand cmd = new SqlCommand();
 
                     string insertPasajero = $"INSERT INTO Pasajero(TipoDNI, NroDNI, Apellido,Nombre,Estado,FechaNacimiento) VALUES ('{cmbTipoDoc.Text}','{txtNvoNroDoc.Text}','Apellido','Nombre','S','{DateTime.Now}')";
-                    
+
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = insertPasajero;
 
@@ -335,6 +335,20 @@ namespace Principal.Transacciones
 
                     string insert = $"INSERT INTO Embarque VALUES ('{embarque.NroVuelo}','{embarque.FechaHoraEmbarque.ToString("dd-MM-yyyy HH:mm")}','{embarque.Aeropuerto}','{embarque.TipoDniPasajero}','{embarque.NroDniPasajero}','{embarque.PuertaEmbarque}','{embarque.Estado}')";
                     cmd.CommandText = insert;
+
+                    cmd.ExecuteNonQuery();
+
+                    string consultaSalida = $"SELECT FechaHoraSalida FROM Vuelo WHERE NroVuelo = {cmbNroVuelo.Text}";
+                    DateTime fechaSalida = DateTime.Parse(LeerTexto(consultaSalida));
+
+                    int idAir = int.Parse(ObtenerIdAeropuerto());
+
+                    string consultaNroAvion = $"SELECT NroAvion FROM Vuelo WHERE NroVuelo = {cmbNroVuelo.Text}";
+                    int nroAvion = int.Parse(LeerTexto(consultaNroAvion));
+
+
+                    string insertPasaje = $"INSERT INTO Pasaje(TipoDNI,NroDNI,NroVuelo,FechaHoraSalida,NroAvion,IdAeropuertoSalida) VALUES ('{cmbTipoDoc.Text}','{txtNvoNroDoc.Text}','{cmbNroVuelo.Text}','{fechaSalida}','{nroAvion}','{idAir}')";
+                    cmd.CommandText = insertPasaje;
 
                     cmd.ExecuteNonQuery();
 
@@ -438,10 +452,7 @@ namespace Principal.Transacciones
             txtNvoNroDoc.Enabled = true;
         }
 
-        public void AgregarACombo(string nroDoc)
-        {
-            cmbNroDoc.Items.Add(nroDoc);
-        }
+
 
         private void txtNvoNroDoc_KeyPress(object sender, KeyPressEventArgs e)
         {
