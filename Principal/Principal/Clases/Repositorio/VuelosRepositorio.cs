@@ -114,7 +114,7 @@ namespace Principal.Clases.Repositorio
         }
 
 
-        public void Registrar(Vuelo v)
+        /*public void Registrar(Vuelo v)
         {
             using (var tx = DBHelper.GetDBHelper().IniciarTransaccion())
             {
@@ -136,7 +136,7 @@ namespace Principal.Clases.Repositorio
                     DBHelper.GetDBHelper().CloseConnection();
                 }
             }
-        }
+        }*/
 
 
     }

@@ -71,20 +71,18 @@
     <Compile Include="Clases\Equipaje.cs" />
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
+    <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
     <Compile Include="Clases\Servicios\VuelosServicio.cs" />
     <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
     <Compile Include="Clases\Repositorio\EquipajeRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoEquipajeRepositorio.cs" />
-
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
     <Compile Include="Clases\TipoAvion.cs" />
-
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
-
     <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\TipoEquipaje.cs" />
     <Compile Include="Clases\DBHelper.cs" />

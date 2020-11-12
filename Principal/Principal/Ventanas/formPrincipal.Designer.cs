@@ -47,6 +47,7 @@
             this.btnPasaje = new System.Windows.Forms.Button();
             this.lblVuelo = new System.Windows.Forms.Label();
             this.btnVuelo = new System.Windows.Forms.Button();
+
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblEquipaje = new System.Windows.Forms.Label();
             this.btnEquipaje = new System.Windows.Forms.Button();

@@ -51,7 +51,7 @@ namespace Principal.Ventanas
                 formUtils.CargarCombo(ref cmbNumAvion, conectorDeDatos, "numero", "numero");
 
                 string consulta2 = "SELECT * FROM Aeropuerto";
-                string consulta3 = "SELECT * FROM Estado WHERE AMBITO = 1";
+                string consulta3 = "SELECT * FROM Estado  WHERE IDESTADO !=12 AND AMBITO = 1";
 
                 var combo2 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
                 var combo3 = DBHelper.GetDBHelper().ConsultaSQL(consulta2);
@@ -82,11 +82,20 @@ namespace Principal.Ventanas
 
         public void CargaHoras()
         {
-            cmbHoraSalida.Items.Add("00:00"); cmbHoraSalida.Items.Add("01:00"); cmbHoraSalida.Items.Add("02:00"); cmbHoraSalida.Items.Add("03:00"); cmbHoraSalida.Items.Add("04:00"); cmbHoraSalida.Items.Add("05:00"); cmbHoraSalida.Items.Add("06:00"); cmbHoraSalida.Items.Add("07:00"); cmbHoraSalida.Items.Add("08:00"); cmbHoraSalida.Items.Add("09:00"); cmbHoraSalida.Items.Add("10:00"); cmbHoraSalida.Items.Add("11:00");
-            cmbHoraSalida.Items.Add("12:00"); cmbHoraSalida.Items.Add("13:00"); cmbHoraSalida.Items.Add("14:00"); cmbHoraSalida.Items.Add("15:00"); cmbHoraSalida.Items.Add("16:00"); cmbHoraSalida.Items.Add("17:00"); cmbHoraSalida.Items.Add("18:00"); cmbHoraSalida.Items.Add("19:00"); cmbHoraSalida.Items.Add("20:00"); cmbHoraSalida.Items.Add("21:00"); cmbHoraSalida.Items.Add("22:00"); cmbHoraSalida.Items.Add("23:00");
-            cmbHoraLlegada.Items.Add("00:00"); cmbHoraLlegada.Items.Add("01:00"); cmbHoraLlegada.Items.Add("02:00"); cmbHoraLlegada.Items.Add("03:00"); cmbHoraLlegada.Items.Add("04:00"); cmbHoraLlegada.Items.Add("05:00"); cmbHoraLlegada.Items.Add("06:00"); cmbHoraLlegada.Items.Add("07:00"); cmbHoraLlegada.Items.Add("08:00"); cmbHoraLlegada.Items.Add("09:00"); cmbHoraLlegada.Items.Add("10:00"); cmbHoraLlegada.Items.Add("11:00");
-            cmbHoraLlegada.Items.Add("12:00"); cmbHoraLlegada.Items.Add("13:00"); cmbHoraLlegada.Items.Add("14:00"); cmbHoraLlegada.Items.Add("15:00"); cmbHoraLlegada.Items.Add("16:00"); cmbHoraLlegada.Items.Add("17:00"); cmbHoraLlegada.Items.Add("18:00"); cmbHoraLlegada.Items.Add("19:00"); cmbHoraLlegada.Items.Add("20:00"); cmbHoraLlegada.Items.Add("21:00"); cmbHoraLlegada.Items.Add("22:00"); cmbHoraLlegada.Items.Add("23:00");
-        }
+            for (int i = 00; i <= 23; i++)
+            {
+                if (i < 10)
+                {
+                    cmbHoraSalida.Items.Add("0" + i + ":00");
+                    cmbHoraLlegada.Items.Add("0" + i + ":00");
+                }
+                else
+                {
+                    cmbHoraSalida.Items.Add(i + ":00");
+                    cmbHoraLlegada.Items.Add(i + ":00");
+                }
+            }
+         }
 
         private void cmbNumAvion_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -96,7 +105,7 @@ namespace Principal.Ventanas
             {
                 try
                 {
-                    /*string consultasql = $"SELECT DescripcionTipo FROM Avion a JOIN TipoAvion tp ON a.IdTipoAvion = tp.IdTipoAvion " +
+                   /*string consultasql = $"SELECT DescripcionTipo FROM Avion a JOIN TipoAvion tp ON a.IdTipoAvion = tp.IdTipoAvion " +
                                          $"WHERE a.NroAvion LIKE {avion.idTipo.ToString()}";
 
                     var res = DBHelper.GetDBHelper().ComandoSQL(consultasql);
@@ -148,52 +157,51 @@ namespace Principal.Ventanas
 
         private void btnConfirmarVuelo_Click(object sender, EventArgs e)
         {
-            if (Validaciones() == false)
+            if (ValidarCamposVacios() == false)
             {
-                if (ValidacionAeropuerto() == false)
-                {
-                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                    DialogResult resultado = MessageBox.Show("¿Está seguro que desea confirmar el Vuelo?", "VUELO", buttons);
-                    if (resultado == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        try
+                  if (validarFechaHora() == false)
+                  {
+                        if (ValidacionAeropuerto() == false)
                         {
+                            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                            DialogResult resultado = MessageBox.Show("¿Está seguro que desea confirmar el Vuelo?", "VUELO", buttons);
+                            if (resultado == System.Windows.Forms.DialogResult.Yes)
+                            {
+                                try
+                                {
+                                    var fechaHoraSalida = calendarioSalida.SelectionStart.ToString("dd/MM/yyyy")+ ' ' + cmbHoraSalida.Text;
+                                    var fechaHoraLlegada = calendarioLlegada.SelectionStart.ToString("dd/MM/yyyy")+ ' ' + cmbHoraLlegada.Text;
 
-                            var fechaHoraSalida = calendarioSalida.SelectionStart.ToString("dd/MM/yyyy")+ ' ' + cmbHoraSalida.Text;
-                            var fechaHoraLlegada = calendarioLlegada.SelectionStart.ToString("dd/MM/yyyy")+ ' ' + cmbHoraLlegada.Text;
+                                    var fechaHoraS = Convert.ToDateTime(fechaHoraSalida);
+                                    var fechaHoraL = Convert.ToDateTime(fechaHoraLlegada);
 
-                            var fechaHoraS = Convert.ToDateTime(fechaHoraSalida);
-                            var fechaHoraL = Convert.ToDateTime(fechaHoraLlegada);
-
-                            //FORMATO bd yyyy-MM-dd HH:mm
-
-                            //CARGA DE DATOS A BD 
-                            string consulta = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdAeropuertoDestino,Estado) " +
-                                              $"VALUES ('{fechaHoraS.ToString("dd-MM-yyyy HH:mm")}','{fechaHoraL.ToString("dd-MM-yyyy HH:mm")}',{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
-                            var carga = DBHelper.GetDBHelper().ConsultaSQL(consulta);
-                            MessageBox.Show("Los datos se cargaron correctamente!");
-                            formVuelo ventanaVuelo = new formVuelo();
-                            ventanaVuelo.Show();
-                            LimpiarCampos();
-                            this.Close();
+                                    //CARGA DE DATOS A BD 
+                                    string consulta = $"INSERT INTO Vuelo (FechaHoraSalida,FechaHoraLlegada,NroAvion,IdTipoAvion,IdAeropuerto,IdAeropuertoDestino,Estado) " +
+                                                      $"VALUES ('{fechaHoraS.ToString("dd-MM-yyyy HH:mm")}','{fechaHoraL.ToString("dd-MM-yyyy HH:mm")}',{cmbNumAvion.SelectedValue.ToString()},{txtTipoAvion.Text},{cmbAeropuertoOrigen.SelectedValue.ToString()},{cmbAeropuertoDestino.SelectedValue.ToString()},{cmbEstado.SelectedValue.ToString()})";
+                                    var carga = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+                                    MessageBox.Show("El Vuelo se cargo correctamente!");
+                                    formVuelo ventanaVuelo = new formVuelo();
+                                    ventanaVuelo.Show();
+                                    LimpiarCampos();
+                                    this.Close();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("No se ha podido Registrar el Vuelo");
+                                }
+                            }
+                            else
+                            { LimpiarCampos(); }
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("No se ha podido Registrar el Vuelo");
-                        }
-                    }
-                    else
-                    { LimpiarCampos(); }
-                }
-                else
-                { MessageBox.Show("Aeropuerto Origen no puede coincidir con Aeropuerto Destino"); }
+                        else
+                        { MessageBox.Show("Aeropuerto Origen no puede coincidir con Aeropuerto Destino"); }
+                  }
             }
             else
             { MessageBox.Show("Debe completar todos los campos para poder continuar!"); }
-
         }
 
-        public bool Validaciones()
+        public bool ValidarCamposVacios()
         {
             bool condicion = false;
             if (cmbHoraSalida.SelectedIndex == -1)
@@ -211,6 +219,31 @@ namespace Principal.Ventanas
 
             return condicion;
         }
+
+        public bool validarFechaHora()
+        {
+            bool condicionF = false;
+            if (DateTime.Compare(calendarioSalida.SelectionStart, calendarioLlegada.SelectionStart) > 0) //FechaSalida > FechaLlegada
+                { 
+                    MessageBox.Show("La Fecha de Salida no puede MAYOR a Fecha de Llegada");
+                    condicionF = true; 
+                }
+            if (DateTime.Compare(calendarioSalida.SelectionStart, calendarioLlegada.SelectionStart) == 0) //FechaSalida = FechaLlegada
+                {
+                var HS = Convert.ToDateTime(cmbHoraSalida.Text);
+                var H1 = Convert.ToInt32(HS.Hour);
+                var HL = Convert.ToDateTime(cmbHoraLlegada.Text);
+                var H2 = Convert.ToInt32(HL.Hour);
+                if (H1 >= H2)
+                {
+                    MessageBox.Show("Hora de Salida no puede ser igual o MAYOR a  Hora de Llegada");
+                    condicionF = true;
+                }
+            }
+            if (DateTime.Compare(calendarioSalida.SelectionStart, calendarioLlegada.SelectionStart) < 0)  // FechaSalida < FechaLlegada
+            { }
+            return condicionF;
+         }
 
         public bool ValidacionAeropuerto()
         {
@@ -242,8 +275,8 @@ namespace Principal.Ventanas
             var hoy = DateTime.Today;
             calendarioSalida.SelectionStart = hoy;
             calendarioLlegada.SelectionStart = hoy;
-            cmbHoraSalida.Text = "";
-            cmbHoraLlegada.Text = "";
+            cmbHoraSalida.SelectedIndex=-1;
+            cmbHoraLlegada.SelectedIndex=-1;
             cmbNumAvion.SelectedIndex = -1;
             txtTipoAvion.Text = "";
             cmbAeropuertoOrigen.SelectedIndex = -1;
