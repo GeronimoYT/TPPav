@@ -120,6 +120,7 @@
             // cmbTipoDoc
             // 
             this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoDoc.Enabled = false;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Location = new System.Drawing.Point(194, 194);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
@@ -141,6 +142,7 @@
             // 
             this.cmbNroDoc.DisplayMember = "123123123";
             this.cmbNroDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNroDoc.Enabled = false;
             this.cmbNroDoc.FormattingEnabled = true;
             this.cmbNroDoc.Location = new System.Drawing.Point(194, 272);
             this.cmbNroDoc.Name = "cmbNroDoc";
@@ -161,6 +163,7 @@
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Enabled = false;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(540, 268);
             this.cmbEstado.Name = "cmbEstado";
@@ -203,6 +206,7 @@
             // cmbPuertaEmbarque
             // 
             this.cmbPuertaEmbarque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuertaEmbarque.Enabled = false;
             this.cmbPuertaEmbarque.FormattingEnabled = true;
             this.cmbPuertaEmbarque.Location = new System.Drawing.Point(607, 194);
             this.cmbPuertaEmbarque.Name = "cmbPuertaEmbarque";
@@ -211,6 +215,7 @@
             // 
             // txtFechaEmbarque
             // 
+            this.txtFechaEmbarque.Enabled = false;
             this.txtFechaEmbarque.Location = new System.Drawing.Point(607, 122);
             this.txtFechaEmbarque.Mask = "00/00/0000 00:00";
             this.txtFechaEmbarque.Name = "txtFechaEmbarque";

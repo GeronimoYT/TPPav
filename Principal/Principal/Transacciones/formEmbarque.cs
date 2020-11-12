@@ -168,8 +168,10 @@ namespace Principal.Transacciones
                 btnAceptarEdicion.Enabled = true;
                 btnConsulta.Enabled = true;
             }
-            else
+            else { 
                 btnAceptarEdicion.Enabled = false;
+                btnConsulta.Enabled = false;
+            }
         }
 
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -342,6 +344,11 @@ namespace Principal.Transacciones
             CargarDatos(cmbNroVuelo.Text.ToString());
             CargaGrilla(cmbNroVuelo.Text.ToString());
             btnPasajero.Enabled = true;
+            cmbTipoDoc.Enabled = true;
+            cmbNroDoc.Enabled = true;
+            cmbPuertaEmbarque.Enabled = true;
+            cmbEstado.Enabled = true;
+            txtFechaEmbarque.Enabled = true;
         }
 
         private void btnPasajero_Click(object sender, EventArgs e)
