@@ -80,7 +80,7 @@ namespace Principal.Clases
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.HResult} = {ex.Message}");
             }
         }
 
@@ -94,7 +94,8 @@ namespace Principal.Clases
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                if (ex.HResult.ToString() == "-2146232060") { MessageBox.Show($"Error, no se puede modificar la categoria mientras el avion este asignado a un vuelo."); }
+                else { MessageBox.Show($"Error: {ex.HResult} = {ex.Message}"); }
             }
         }
 

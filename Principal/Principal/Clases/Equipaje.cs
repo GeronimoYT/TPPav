@@ -11,13 +11,14 @@ namespace Principal.Clases
     {
         public Equipaje() { }
         
-        public Equipaje(int numero, int tipo, string descripcion, string tipoDNI, string DNI) 
+        public Equipaje(int numero, int tipo, string descripcion, string tipoDNI, string DNI, string estado) 
         {
             this.numero = numero;
             this.tipo = tipo;
             this.descripcion = descripcion;
             this.tipoDNI = tipoDNI;
             this.DNI = DNI;
+            this.estado = estado;
         }
 
         public int numero { get; set; }
@@ -25,6 +26,7 @@ namespace Principal.Clases
         public string descripcion { get; set; }
         public string tipoDNI { get; set; }
         public string DNI { get; set; }
+        public string estado { get; set; }
 
         public override string ToString()
         {
@@ -34,6 +36,12 @@ namespace Principal.Clases
                             $"Descripcion = {descripcion}";
                 
             return cadena;
+        }
+
+        public bool EstaActivo()
+        {
+            if (this.estado == "S") return true;
+            else return false;
         }
     }
 }

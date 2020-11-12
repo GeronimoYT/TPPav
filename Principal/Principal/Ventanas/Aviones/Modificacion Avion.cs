@@ -35,6 +35,7 @@ namespace Principal.Ventanas.Aviones
             txtNuevoNumero.Text = avion.numero.ToString();
             txtCategoria.Text = _formAviones.NumeroACategoria(avion.idTipo);
             rTxtDescripcion.Text = avion.descripcion;
+            rTxtDescripcion.Text = avion.descripcion;
         
             List<TipoAvion> tipos = _repTipo.ObtenerTipos();
             var conectorDeDatos = new BindingSource();

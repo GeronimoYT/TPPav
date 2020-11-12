@@ -43,9 +43,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chboxInactivos = new System.Windows.Forms.CheckBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -218,6 +218,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Avion";
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(276, 30);
+            this.txtDescripcion.MaxLength = 255;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(187, 22);
+            this.txtDescripcion.TabIndex = 14;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -237,14 +245,6 @@
             this.chboxInactivos.Text = "Incluir aviones Fuera de servicio";
             this.chboxInactivos.UseVisualStyleBackColor = true;
             this.chboxInactivos.CheckedChanged += new System.EventHandler(this.chboxInactivos_CheckedChanged);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(276, 30);
-            this.txtDescripcion.MaxLength = 255;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(187, 22);
-            this.txtDescripcion.TabIndex = 14;
             // 
             // groupBox2
             // 

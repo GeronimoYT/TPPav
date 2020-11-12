@@ -48,9 +48,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 147);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 17);
+            this.label1.Size = new System.Drawing.Size(269, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Desea dar de baja este avion?";
+            this.label1.Text = "Desea modificar el estado de este avion?";
             // 
             // btnConfirmar
             // 
@@ -77,6 +77,7 @@
             this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(104, 102);
             this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ReadOnly = true;
             this.txtDescripcion.Size = new System.Drawing.Size(202, 22);
             this.txtDescripcion.TabIndex = 3;
             // 
@@ -85,6 +86,7 @@
             this.txtCategoria.Enabled = false;
             this.txtCategoria.Location = new System.Drawing.Point(104, 65);
             this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(202, 22);
             this.txtCategoria.TabIndex = 4;
             // 
@@ -93,6 +95,7 @@
             this.txtNumero.Enabled = false;
             this.txtNumero.Location = new System.Drawing.Point(104, 27);
             this.txtNumero.Name = "txtNumero";
+            this.txtNumero.ReadOnly = true;
             this.txtNumero.Size = new System.Drawing.Size(202, 22);
             this.txtNumero.TabIndex = 5;
             // 

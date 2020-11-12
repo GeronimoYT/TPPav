@@ -215,6 +215,7 @@
             this.pboxImagen.Size = new System.Drawing.Size(180, 178);
             this.pboxImagen.TabIndex = 41;
             this.pboxImagen.TabStop = false;
+            this.pboxImagen.Visible = false;
             // 
             // btnAgregarImagen
             // 
@@ -224,10 +225,11 @@
             this.btnAgregarImagen.TabIndex = 42;
             this.btnAgregarImagen.Text = "+";
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Visible = false;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(353, 411);
+            this.btnCancelar.Location = new System.Drawing.Point(230, 411);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(105, 36);
             this.btnCancelar.TabIndex = 43;
@@ -237,7 +239,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(497, 411);
+            this.btnAceptar.Location = new System.Drawing.Point(374, 411);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(105, 36);
             this.btnAceptar.TabIndex = 44;
@@ -263,6 +265,7 @@
             this.btnQuitarImagen.TabIndex = 46;
             this.btnQuitarImagen.Text = "x";
             this.btnQuitarImagen.UseVisualStyleBackColor = true;
+            this.btnQuitarImagen.Visible = false;
             // 
             // label13
             // 
@@ -273,12 +276,13 @@
             this.label13.Size = new System.Drawing.Size(118, 50);
             this.label13.TabIndex = 49;
             this.label13.Text = "Inserte \r\nUna Imagen";
+            this.label13.Visible = false;
             // 
             // AltaTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 459);
+            this.ClientSize = new System.Drawing.Size(499, 459);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnQuitarImagen);
             this.Controls.Add(this.label1);
@@ -304,7 +308,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "AltaTipo";
-            this.Text = "AltaTipo";
+            this.Text = "Nuevo Tipo de Avion";
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -22,17 +22,21 @@ namespace Principal.Ventanas
         EquipajeRepositorio _equipajeRepositorio;
         TipoEquipajeRepositorio _tiposRepositorio;
         TipoDocumentosRepositorio _tiposDocRepositorio;
+        PasajerosRepositorio _pasajerosRepositorio;
         public AltaEquipaje(formEquipajes anterior)
         {
             _formAnterior = anterior;
             _equipajeRepositorio = new EquipajeRepositorio();
             _tiposRepositorio = new TipoEquipajeRepositorio();
             _tiposDocRepositorio = new TipoDocumentosRepositorio();
+            _pasajerosRepositorio = new PasajerosRepositorio();
             InitializeComponent();
         }
 
         private void AltaEquipaje_Load(object sender, EventArgs e)
         {
+            btnAceptar.Enabled = false;
+
             //Carga las categorias o tipos de equipajes
             List<TipoEquipaje> tiposEquipaje = _tiposRepositorio.ObtenerTipos();
             var conectorDeDatos = new BindingSource();
@@ -49,44 +53,35 @@ namespace Principal.Ventanas
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtNumero.Text != "")
+            if (txtNroDocumento.Text != "")
             {
-                if (txtNroDocumento.Text != "")
-                {
-                    Equipaje equipajeAlta = new Equipaje();
-                    equipajeAlta.numero = Convert.ToInt32(txtNumero.Text);
+                Equipaje equipajeAlta = new Equipaje();
 
-                    TipoEquipaje tipo = (TipoEquipaje)comboCategoria.SelectedItem;
-                    equipajeAlta.tipo = tipo.id;
+                TipoEquipaje tipo = (TipoEquipaje)comboCategoria.SelectedItem;
+                equipajeAlta.tipo = tipo.id;
 
-                    TipoDocumento tipoDNI = (TipoDocumento)comboTipoDocumento.SelectedItem;
-                    equipajeAlta.tipoDNI = tipoDNI.Id;
+                TipoDocumento tipoDNI = (TipoDocumento)comboTipoDocumento.SelectedItem;
+                equipajeAlta.tipoDNI = tipoDNI.Id;
 
-                    equipajeAlta.DNI = txtNroDocumento.Text;
-                    equipajeAlta.descripcion = txtDescripcion.Text;
+                equipajeAlta.DNI = txtNroDocumento.Text;
+                equipajeAlta.descripcion = txtDescripcion.Text;
 
-                    _equipajeRepositorio.Altaequipaje(equipajeAlta);
-                    _formAnterior.RefrescarFormulario();
+                _equipajeRepositorio.Altaequipaje(equipajeAlta);
+                _formAnterior.RefrescarFormulario();
 
-                    FormUtils.GetInstance.GenerarTXT(equipajeAlta.ToString());
+                //FormUtils.GetInstance.GenerarTXT(equipajeAlta.ToString());
 
-                    CerrarFormuario();
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, ingrese un numero de documento");
-                }
+                CerrarFormuario();
             }
             else
             {
-                MessageBox.Show("Porfavor, ingrese un numero de equipaje");
+                MessageBox.Show("Por favor, ingrese un numero de documento");
             }
-
         }
 
         private void txtNroDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            FormUtils.GetInstance.KeypressDocumento(comboTipoDocumento.Text, txtNroDocumento.Text, sender, e);
+            FormUtils.GetInstance.KeypressDocumento(comboTipoDocumento.Text, txtNroDocumento.Text, sender, e);            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -109,6 +104,33 @@ namespace Principal.Ventanas
         private void comboTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtNroDocumento.Clear();
+        }
+
+        private void ValidarDocumento()
+        {
+            string nroDocumento = txtNroDocumento.Text;
+            TipoDocumento tipoDocumento = (TipoDocumento)comboTipoDocumento.SelectedItem;
+
+            string rutaCorrecto = @"C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\Recursos\Imagenes\correcto.png";
+            string rutaIncorrecto = @"C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\Recursos\Imagenes\incorrecto.png";
+
+            if (_pasajerosRepositorio.PasajeroHablitado(tipoDocumento.Id, nroDocumento))
+            {
+                toolTip.SetToolTip(pictureDocumento, "Pasajero encontrado");
+                pictureDocumento.ImageLocation = rutaCorrecto;
+                btnAceptar.Enabled = true;
+            }
+            else
+            {
+                toolTip.SetToolTip(pictureDocumento, "Este pasajero no existe o no esta habilitado.");
+                pictureDocumento.ImageLocation = rutaIncorrecto;
+                btnAceptar.Enabled = false;
+            }
+        }
+
+        private void txtNroDocumento_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDocumento();
         }
     }
 }

@@ -35,6 +35,10 @@ namespace Principal.Ventanas.TiposAvion
             txtEquipaje.Text = tipoBaja.capacidadEquipaje.ToString();
             txtSalidas.Text = tipoBaja.salidasEmergencia.ToString();
 
+            if (tipoBaja.EstaActivo()) { radioActivo.Checked = true; }
+            else { radioInactivo.Checked = true; }
+
+
             //txtId.Text = tipoBaja.id.ToString();
         }
 
@@ -44,6 +48,9 @@ namespace Principal.Ventanas.TiposAvion
             DialogResult resultado = MessageBox.Show("Está seguro que desea realizar esta operación?", "Eliminar Tipo Avion", buttons);
             if (resultado == System.Windows.Forms.DialogResult.Yes)
             {
+                if (radioActivo.Checked) { tipoBaja.estado = "S"; }
+                else { tipoBaja.estado = "N"; }
+
                 _tiposRepositorio.BajaTipo(tipoBaja);
             }
             CerrarFormuario();

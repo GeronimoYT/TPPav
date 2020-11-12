@@ -181,7 +181,7 @@ namespace Principal.Ventanas
 
         private void CargarTipos()
         {
-            _tipos.Add(new TipoAvion(-1, "--Todos los Aviones--", 0, 0, 0, 0, 0, 0));
+            _tipos.Add(new TipoAvion(-1, "--Todos los Aviones--", 0, 0, 0, 0, 0, 0, "S"));
             foreach(TipoAvion tipo in RepTipo.ObtenerTipos())
             {
                 _tipos.Add(tipo);
