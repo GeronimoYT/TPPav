@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Principal.Clases;
 
+
 namespace Principal.Transacciones
 {
     public partial class formEmbarque : Form
@@ -116,7 +117,7 @@ namespace Principal.Transacciones
         private void ActualizarTipoDoc(string nroVuelo) {
             try
             {
-                string consultaNroDNI = $"SELECT DISTINCT NroDNI FROM Pasajero WHERE TipoDNI LIKE '{cmbTipoDoc.Text.ToString()}'";
+                string consultaNroDNI = $"SELECT DISTINCT p.NroDNI FROM Pasajero p JOIN Pasaje pa ON p.NroDNI = pa.NroDNI WHERE p.TipoDNI LIKE '{cmbTipoDoc.Text.ToString()}' AND pa.NroVuelo = {nroVuelo}";
                 var combo6 = DBHelper.GetDBHelper().ConsultaSQL(consultaNroDNI);
                 cmbNroDoc.DataSource = combo6;
                 cmbNroDoc.DisplayMember = "NroDNI";
@@ -174,6 +175,7 @@ namespace Principal.Transacciones
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             ActualizarTipoDoc(cmbNroVuelo.Text.ToString());
+            txtNvoNroDoc.Clear();
         }
 
         private void ActualizarCantPuertas()
@@ -199,8 +201,10 @@ namespace Principal.Transacciones
         private void btnAceptarEdicion_Click(object sender, EventArgs e)
         {
             //NuevoEmbarque nvEmbarque = new NuevoEmbarque(int.Parse(cmbNroVuelo.Text),DateTime.Parse(txtFechaEmbarque.Text),int.Parse(cmbAeropuerto.Text),cmbTipoDoc.Text,cmbNroDoc.Text,int.Parse(cmbPuertaEmbarque.Text),cmbEstado.Text);
-            CargarNuevoEmbarque();
-            
+            if (cmbNroDoc.SelectedIndex != -1)
+                CargarNuevoEmbarque();
+            else
+                MessageBox.Show("Complete todos los campos para poder realizar la carga del Embarque");
         }
 
         private void CargarNuevoEmbarque() {
@@ -230,12 +234,22 @@ namespace Principal.Transacciones
             catch(Exception ex) { 
                     MessageBox.Show("Porfavor ingrese valores de Hora y Minutos válidos (0 a 23 y 0-30min)");
             }
-            nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
-            nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
-            nvEmbarque.NroDniPasajero = cmbNroDoc.Text;
-            nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
-            nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
 
+            if (txtNvoNroDoc.Enabled == false)
+            {
+                nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
+                nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
+                nvEmbarque.NroDniPasajero = cmbNroDoc.Text;
+                nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
+                nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
+            }
+            else {
+                nvEmbarque.Aeropuerto = int.Parse(ObtenerIdAeropuerto());
+                nvEmbarque.TipoDniPasajero = cmbTipoDoc.Text;
+                nvEmbarque.NroDniPasajero = txtNvoNroDoc.Text;
+                nvEmbarque.PuertaEmbarque = int.Parse(cmbPuertaEmbarque.Text);
+                nvEmbarque.Estado = int.Parse(ObtenerIdEstado());
+            }
             NuevoEmbarque(nvEmbarque);
         }
 
@@ -273,7 +287,7 @@ namespace Principal.Transacciones
                 return true;
             }
             catch (Exception ex) {
-                MessageBox.Show("No se ha podido ejecutar la transacción!");
+                MessageBox.Show("No se ha podido cargar el Embarque!");
                 objTransaccion.Rollback();
                 return false;
             }
@@ -321,6 +335,84 @@ namespace Principal.Transacciones
             ObtenerIdEstado();
             CargarDatos(cmbNroVuelo.Text.ToString());
             CargaGrilla(cmbNroVuelo.Text.ToString());
+            btnPasajero.Enabled = true;
+        }
+
+        private void btnPasajero_Click(object sender, EventArgs e)
+        {
+            cmbNroDoc.Enabled = false;
+            txtNvoNroDoc.Enabled = true;
+        }
+
+        public void AgregarACombo(string nroDoc)
+        {
+            cmbNroDoc.Items.Add(nroDoc);
+        }
+
+        private void txtNvoNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cmbTipoDoc.SelectedIndex == 0)
+                {
+                    //Para obligar a que sólo se introduzcan números
+                    txtNvoNroDoc.MaxLength = 8;
+                    if (Char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                      if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        //el resto de teclas pulsadas se desactivan
+                        e.Handled = true;
+                    }
+                }
+                if (cmbTipoDoc.SelectedIndex == 1)
+                {
+                    txtNvoNroDoc.MaxLength = 9;
+                    if (txtNvoNroDoc.TextLength < 3)
+                    {
+
+                        //Para obligar a que sólo se introduzcan letras
+                        if (Char.IsLetter(e.KeyChar))
+                        {
+                            e.Handled = false;
+                        }
+                        else
+                          if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                        {
+                            e.Handled = false;
+                        }
+                        else
+                        {
+                            //el resto de teclas pulsadas se desactivan
+                            e.Handled = true;
+                        }
+
+                    }
+                    else
+                    {
+                        //Para obligar a que sólo se introduzcan números
+                        if (Char.IsDigit(e.KeyChar))
+                        {
+                            e.Handled = false;
+                        }
+                        else
+                          if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                        {
+                            e.Handled = false;
+                        }
+                        else
+                        {
+                            //el resto de teclas pulsadas se desactivan
+                            e.Handled = true;
+                        }
+                    }
+                }
         }
     }
 }
+

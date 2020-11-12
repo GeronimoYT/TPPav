@@ -68,11 +68,9 @@
     <Compile Include="Clases\Asiento.cs" />
     <Compile Include="Clases\Avion.cs" />
     <Compile Include="Clases\Equipaje.cs" />
-
     <Compile Include="Clases\Estado.cs" />
     <Compile Include="Clases\Filtros\VuelosFiltros.cs" />
     <Compile Include="Clases\Servicios\VuelosServicio.cs" />
-
     <Compile Include="Clases\Filtros\PasajesFiltros.cs" />
     <Compile Include="Clases\Repositorio\AsientosRepositorio.cs" />
     <Compile Include="Clases\Repositorio\AvionesRepositorio.cs" />
@@ -81,8 +79,6 @@
     <Compile Include="Clases\Repositorio\TiposAvionRepositorio.cs" />
     <Compile Include="Clases\Repositorio\TipoDocumentosRepositorios.cs" />
     <Compile Include="Clases\Servicios\TipoDocumentosServicio.cs" />
-
-
     <Compile Include="Clases\TipoAvion.cs" />
     <Compile Include="Clases\TipoDocumento.cs" />
     <Compile Include="Clases\ReporteAeropuerto.cs" />
@@ -158,7 +154,6 @@
     <Compile Include="Ventanas\formAeropuerto.Designer.cs">
       <DependentUpon>formAeropuerto.cs</DependentUpon>
     </Compile>
-	
     <Compile Include="Ventanas\Aviones\Alta Avion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,7 +184,6 @@
     <Compile Include="Ventanas\EmbarquePorFecha.Designer.cs">
       <DependentUpon>EmbarquePorFecha.cs</DependentUpon>
     </Compile>
-    
     <Compile Include="Ventanas\formAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,20 +320,17 @@
     <EmbeddedResource Include="Transacciones\formEmbarque.resx">
       <DependentUpon>formEmbarque.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Transacciones\formEquipajes.resx">
       <DependentUpon>formEquipajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\AltaEquipaje.resx">
       <DependentUpon>AltaEquipaje.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Transacciones\Pasajes\formEditarPasaje.resx">
       <DependentUpon>formEditarPasaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\EmbarquePorFecha.resx">
       <DependentUpon>EmbarquePorFecha.cs</DependentUpon>
-
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\formAeropuerto.resx">
       <DependentUpon>formAeropuerto.cs</DependentUpon>

@@ -47,11 +47,12 @@
             this.txtAeropuerto = new System.Windows.Forms.TextBox();
             this.btnPasajero = new System.Windows.Forms.Button();
             this.gbEmbarque = new System.Windows.Forms.GroupBox();
+            this.txtNvoNroDoc = new System.Windows.Forms.TextBox();
+            this.btnConsulta = new System.Windows.Forms.Button();
             this.dgvVuelo = new System.Windows.Forms.DataGridView();
             this.FechaHoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AeropuertoSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AeropuertoLlegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnConsulta = new System.Windows.Forms.Button();
             this.gbEmbarque.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVuelo)).BeginInit();
             this.SuspendLayout();
@@ -138,12 +139,14 @@
             // 
             // cmbNroDoc
             // 
+            this.cmbNroDoc.DisplayMember = "123123123";
             this.cmbNroDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNroDoc.FormattingEnabled = true;
             this.cmbNroDoc.Location = new System.Drawing.Point(194, 272);
             this.cmbNroDoc.Name = "cmbNroDoc";
             this.cmbNroDoc.Size = new System.Drawing.Size(109, 21);
             this.cmbNroDoc.TabIndex = 77;
+            this.cmbNroDoc.ValueMember = "123123123";
             // 
             // lblNroDoc
             // 
@@ -159,9 +162,9 @@
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(607, 268);
+            this.cmbEstado.Location = new System.Drawing.Point(540, 268);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(109, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(176, 21);
             this.cmbEstado.TabIndex = 79;
             // 
             // label1
@@ -178,7 +181,7 @@
             // 
             this.btnAceptarEdicion.Enabled = false;
             this.btnAceptarEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarEdicion.Location = new System.Drawing.Point(674, 377);
+            this.btnAceptarEdicion.Location = new System.Drawing.Point(674, 392);
             this.btnAceptarEdicion.Name = "btnAceptarEdicion";
             this.btnAceptarEdicion.Size = new System.Drawing.Size(75, 28);
             this.btnAceptarEdicion.TabIndex = 83;
@@ -189,7 +192,7 @@
             // btnEditarAeropuerto
             // 
             this.btnEditarAeropuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarAeropuerto.Location = new System.Drawing.Point(576, 377);
+            this.btnEditarAeropuerto.Location = new System.Drawing.Point(576, 392);
             this.btnEditarAeropuerto.Name = "btnEditarAeropuerto";
             this.btnEditarAeropuerto.Size = new System.Drawing.Size(75, 28);
             this.btnEditarAeropuerto.TabIndex = 82;
@@ -227,15 +230,18 @@
             // 
             // btnPasajero
             // 
-            this.btnPasajero.Location = new System.Drawing.Point(194, 299);
+            this.btnPasajero.Enabled = false;
+            this.btnPasajero.Location = new System.Drawing.Point(194, 330);
             this.btnPasajero.Name = "btnPasajero";
             this.btnPasajero.Size = new System.Drawing.Size(75, 23);
             this.btnPasajero.TabIndex = 89;
             this.btnPasajero.Text = "Agregar";
             this.btnPasajero.UseVisualStyleBackColor = true;
+            this.btnPasajero.Click += new System.EventHandler(this.btnPasajero_Click);
             // 
             // gbEmbarque
             // 
+            this.gbEmbarque.Controls.Add(this.txtNvoNroDoc);
             this.gbEmbarque.Controls.Add(this.btnConsulta);
             this.gbEmbarque.Controls.Add(this.dgvVuelo);
             this.gbEmbarque.Controls.Add(this.btnPasajero);
@@ -255,9 +261,30 @@
             this.gbEmbarque.Controls.Add(this.cmbNroDoc);
             this.gbEmbarque.Location = new System.Drawing.Point(12, 27);
             this.gbEmbarque.Name = "gbEmbarque";
-            this.gbEmbarque.Size = new System.Drawing.Size(737, 344);
+            this.gbEmbarque.Size = new System.Drawing.Size(737, 359);
             this.gbEmbarque.TabIndex = 90;
             this.gbEmbarque.TabStop = false;
+            // 
+            // txtNvoNroDoc
+            // 
+            this.txtNvoNroDoc.Enabled = false;
+            this.txtNvoNroDoc.Location = new System.Drawing.Point(194, 304);
+            this.txtNvoNroDoc.MaxLength = 9;
+            this.txtNvoNroDoc.Name = "txtNvoNroDoc";
+            this.txtNvoNroDoc.Size = new System.Drawing.Size(109, 20);
+            this.txtNvoNroDoc.TabIndex = 92;
+            this.txtNvoNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNvoNroDoc_KeyPress);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Enabled = false;
+            this.btnConsulta.Location = new System.Drawing.Point(281, 14);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
+            this.btnConsulta.TabIndex = 91;
+            this.btnConsulta.Text = "Consultar";
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvVuelo
             // 
@@ -296,22 +323,11 @@
             this.AeropuertoLlegada.ReadOnly = true;
             this.AeropuertoLlegada.Width = 85;
             // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Enabled = false;
-            this.btnConsulta.Location = new System.Drawing.Point(281, 14);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(75, 23);
-            this.btnConsulta.TabIndex = 91;
-            this.btnConsulta.Text = "Consultar";
-            this.btnConsulta.UseVisualStyleBackColor = true;
-            this.btnConsulta.Click += new System.EventHandler(this.button1_Click);
-            // 
             // formEmbarque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 417);
+            this.ClientSize = new System.Drawing.Size(761, 432);
             this.Controls.Add(this.btnAceptarEdicion);
             this.Controls.Add(this.btnEditarAeropuerto);
             this.Controls.Add(this.lblEmbarque);
@@ -353,5 +369,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AeropuertoSalida;
         private System.Windows.Forms.DataGridViewTextBoxColumn AeropuertoLlegada;
         private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.TextBox txtNvoNroDoc;
     }
 }
