@@ -276,6 +276,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aviones";
             this.Load += new System.EventHandler(this.Aviones_Load);
+            this.VisibleChanged += new System.EventHandler(this.FormAviones_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.gridAviones)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

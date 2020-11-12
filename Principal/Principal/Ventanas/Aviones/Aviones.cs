@@ -197,5 +197,10 @@ namespace Principal.Ventanas
             }
             return new Avion();
         }
+
+        private void FormAviones_VisibleChanged(object sender, EventArgs e)
+        {
+            RefrescarFormulario();
+        }
     }
 }
