@@ -82,7 +82,6 @@ C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Pr
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Aviones.Modificacion_Avion.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.formIngresar.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Properties.Resources.resources
-C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.ModificacionEquipaje.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Buscar.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.Pasajes.Pasajes.resources
 C:\Users\mmoro\OneDrive\Escritorio\TP Pav\TPPav\Principal\Principal\obj\Debug\Principal.Ventanas.formAltaVuelo.resources

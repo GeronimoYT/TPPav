@@ -117,6 +117,16 @@ namespace Principal.Clases
             if (celda == "0") { return true; }
             else { return false; }
         }
-            
+        public TipoAvion ObtenerTiipoxAvion(Avion avion)
+        {
+            TipoAvion tipoAvion = new TipoAvion();
+            var sentenciaSql = $"SELECT * FROM TipoAvion WHERE IdTipoAvion = {avion.idTipo}";
+            var tabla = DBHelper.GetDBHelper().ConsultaSQL(sentenciaSql);
+            foreach (DataRow fila in tabla.Rows)
+            {
+                tipoAvion = ObtenerTipo(fila);
+            }
+            return tipoAvion;
+        }
     }
 }

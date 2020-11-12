@@ -260,12 +260,6 @@
     <Compile Include="Ventanas\Vuelos\formAltaVuelo.Designer.cs">
       <DependentUpon>formAltaVuelo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\ModificacionEquipaje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\ModificacionEquipaje.Designer.cs">
-      <DependentUpon>ModificacionEquipaje.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventanas\ReporteEstadistica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,9 +401,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ventanas\ModificacionEquipaje.resx">
-      <DependentUpon>ModificacionEquipaje.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Pasajes\Buscar Vuelo.resx">
       <DependentUpon>Buscar Vuelo.cs</DependentUpon>
     </EmbeddedResource>

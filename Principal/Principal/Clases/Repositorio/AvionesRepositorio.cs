@@ -63,7 +63,8 @@ namespace Principal.Clases
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                if (ex.HResult.ToString() == "-2146232060") { MessageBox.Show($"Error, ya existe un avion con este nro y tipo de avion."); }
+                else { MessageBox.Show($"Error: {ex.HResult} = {ex.Message}"); }
             }
         }
 
